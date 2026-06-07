@@ -29,6 +29,8 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
   double _minMessageCount = 0; // Minimum message count filter
   String _loadingMessage = 'Loading conversations...';
   Timer? _loadingTimer;
+  bool _isSelectingConversation = false;
+  String _selectingConversationName = '';
 
   AppLocalizations get l10n => AppLocalizations.of(context)!;
 
@@ -344,10 +346,10 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
       final controller = widget.controller;
 
       setState(() {
-        _isLoading = true;
+        _isSelectingConversation = true;
+        _selectingConversationName = partner.displayName;
         _errorMessage = null;
       });
-      _startLoadingTimer();
 
       // Fetch the full conversation thread
       final thread = await _smsService.fetchConversationThread(partner.id);
@@ -356,15 +358,12 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
       controller.loadSmsThread(thread);
 
       if (mounted) {
-        // Show success message
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(AppLocalizations.of(context)!.conversationLoaded(thread.messages.length, partner.displayName)),
             backgroundColor: Colors.green,
           ),
         );
-
-        // Go back to the dashboard
         Navigator.of(context).pop();
       }
     } catch (e) {
@@ -380,8 +379,7 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
         _errorMessage = AppLocalizations.of(context)!.errorLoadingConversations;
       });
     } finally {
-      _stopLoadingTimer();
-      setState(() => _isLoading = false);
+      setState(() => _isSelectingConversation = false);
     }
   }
 
@@ -408,7 +406,9 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
         ),
         backgroundColor: colorScheme.inversePrimary,
       ),
-      body: Column(
+      body: Stack(
+        children: [
+        Column(
         children: [
           // Search bar and filters
           if (_hasPermission && _conversations != null)
@@ -708,6 +708,36 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
 
           // Main content
           Expanded(child: _buildContent(colorScheme)),
+        ],
+        ),
+        // Jet-black overlay while a thread is loading
+        if (_isSelectingConversation)
+          Positioned.fill(
+            child: Container(
+              color: Colors.black,
+              child: Center(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const CircularProgressIndicator(
+                      color: Colors.red,
+                      strokeWidth: 4,
+                    ),
+                    const SizedBox(height: 24),
+                    Text(
+                      'Loading conversation\nwith $_selectingConversationName…',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
