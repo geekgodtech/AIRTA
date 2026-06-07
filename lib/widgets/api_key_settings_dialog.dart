@@ -71,9 +71,9 @@ class _ApiKeySettingsDialogState extends State<ApiKeySettingsDialog> {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.blue.withAlpha( 0.1),
+                color: Colors.blue.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.blue.withAlpha( 0.3)),
+                border: Border.all(color: Colors.blue.withOpacity(0.3)),
               ),
               child: const Row(
                 children: [

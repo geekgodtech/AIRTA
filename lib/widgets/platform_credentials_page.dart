@@ -176,7 +176,7 @@ class _PlatformCredentialsPageState extends State<PlatformCredentialsPage> {
               children: [
                 Container(
                   padding: const EdgeInsets.all(16),
-                  color: Colors.blue.withAlpha( 0.1),
+                  color: Colors.blue.withOpacity(0.1),
                   child: Row(
                     children: [
                       const Icon(Icons.info_outline, color: Colors.blue),
@@ -210,7 +210,7 @@ class _PlatformCredentialsPageState extends State<PlatformCredentialsPage> {
                     color: Theme.of(context).colorScheme.surface,
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withAlpha( 0.1),
+                        color: Colors.black.withOpacity(0.1),
                         blurRadius: 8,
                         offset: const Offset(0, -2),
                       ),

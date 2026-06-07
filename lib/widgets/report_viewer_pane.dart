@@ -94,7 +94,7 @@ class _AnalysisLoadingViewState extends State<_AnalysisLoadingView>
             border: Border.all(color: Colors.blue, width: 3),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withAlpha( 0.3),
+                color: Colors.black.withOpacity(0.3),
                 blurRadius: 20,
                 spreadRadius: 5,
               ),
