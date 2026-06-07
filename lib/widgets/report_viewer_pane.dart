@@ -152,8 +152,8 @@ class _AnalysisReportViewState extends State<_AnalysisReportView> {
     final canAccessFullReport = controller.canAccessFullCurrentReport;
 
     return Stack(
-        children: [
-          Positioned.fill(
+      children: [
+        Positioned.fill(
             child: SingleChildScrollView(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 96),
               child: Column(
@@ -297,8 +297,7 @@ class _AnalysisReportViewState extends State<_AnalysisReportView> {
                 ),
               ),
             ),
-        ],
-      ),
+      ],
     );
   }
 }
