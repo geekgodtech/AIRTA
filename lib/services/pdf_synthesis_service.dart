@@ -48,7 +48,7 @@ class PdfSynthesisService {
                   .map(
                     (entry) => [
                       _sanitizePdfText(entry.key),
-                      entry.value.clamp(0.0, 1.0).toStringAsFixed(2),
+                      '${(entry.value.clamp(0.0, 1.0) * 100).toStringAsFixed(0)}%',
                     ],
                   )
                   .toList(),

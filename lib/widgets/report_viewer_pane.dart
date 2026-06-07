@@ -682,7 +682,7 @@ class _MetricScoreRow extends StatelessWidget {
           Row(
             children: [
               Expanded(child: Text(metricName)),
-              Text(normalizedScore.toStringAsFixed(2)),
+              Text('${(normalizedScore * 100).toStringAsFixed(0)}%'),
             ],
           ),
           const SizedBox(height: 6),
