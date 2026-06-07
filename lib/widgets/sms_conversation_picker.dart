@@ -118,6 +118,7 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
       setState(() => _hasPermission = hasPermission);
 
       if (hasPermission) {
+        await _showLargeThreadWarning();
         await _loadConversations();
       }
     } catch (e) {
@@ -128,6 +129,28 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
       _stopLoadingTimer();
       setState(() => _isLoading = false);
     }
+  }
+
+  Future<void> _showLargeThreadWarning() async {
+    if (!mounted) return;
+    await showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: const Text('NOTICE TO USER'),
+        content: const Text(
+          'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\n'
+          'The application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\n'
+          'Please be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
   }
 
   Future<void> _requestPermission() async {
@@ -142,6 +165,7 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
       setState(() => _hasPermission = granted);
 
       if (granted) {
+        await _showLargeThreadWarning();
         await _loadConversations();
       } else {
         setState(() {
