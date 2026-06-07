@@ -683,5 +683,73 @@
   "metric_99_name": "Emotional Safety Language",
   "metric_99_description": "Identifies language that invites honesty, lowers fear, protects dignity, and reassures safe expression.",
   "metric_100_name": "Relationship Ambivalence",
-  "metric_100_description": "Detects uncertainty, mixed commitment, push-pull messaging, or unclear desire to continue."
+  "metric_100_description": "Detects uncertainty, mixed commitment, push-pull messaging, or unclear desire to continue.",
+
+  "unableToOpenConversations": "Unable to Open Conversations",
+  "unableToOpenConversationsBody": "Something went wrong loading your conversations. Please try again.",
+  "unableToLoadConversationsBody": "Unable to load conversations. Please check your permissions and try again.",
+  "errorLoadingConversationsBody": "Error loading conversations. Please try again.",
+  "smsPermissionRequired": "SMS Permission Required",
+  "smsPermissionRequiredBody": "To analyze SMS conversations, we need permission to read your messages. Your privacy is important — messages are only analyzed locally and never stored on our servers.",
+  "grantSmsPermission": "Grant SMS Permission",
+  "noSmsConversationsFound": "No SMS conversations found",
+  "noConversationsMatchSearch": "No conversations match your search",
+  "noSmsMessagesOnDevice": "You don't have any SMS messages on this device",
+  "tryDifferentSearch": "Try a different search term",
+  "clearSearch": "Clear Search",
+  "selectedFile": "Selected: {filename}",
+  "@selectedFile": {
+    "placeholders": {
+      "filename": { "type": "String" }
+    }
+  },
+  "invalidFile": "Invalid File",
+  "fileImport": "File Import",
+  "fileImportNotImplemented": "File parsing is not yet implemented for this file type.",
+  "errorPickingFile": "Unable to open the file. Please try again.",
+  "readyToCapture": "Ready to Capture",
+  "readyToCaptureBody": "Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you're done and tap \"Finish & Process\".",
+  "gotIt": "Got it",
+  "noScreenshotsToProcess": "No screenshots to process.",
+  "processingScreenshot": "Processing screenshot {current} of {total}...",
+  "@processingScreenshot": {
+    "placeholders": {
+      "current": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "noMessagesFound": "No Messages Found",
+  "noMessagesFoundBody": "Could not extract any messages from the screenshots.\n\nPlease ensure the screenshots clearly show the message conversation.",
+  "loadedMessages": "Loaded {count} messages from screenshots",
+  "@loadedMessages": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "processingError": "Processing Error",
+  "processingErrorBody": "Error processing screenshots. Please try again.",
+  "metricListSavedAs": "Your selections have been saved as \"{name}\".",
+  "@metricListSavedAs": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "metricListLoadedName": "Selections \"{name}\" have been retrieved and applied.",
+  "@metricListLoadedName": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "conversationLoaded": "Loaded {count} messages from {name}",
+  "@conversationLoaded": {
+    "placeholders": {
+      "count": { "type": "int" },
+      "name": { "type": "String" }
+    }
+  },
+  "loadButton": "Load",
+  "photoPermissionRequired": "Photo library permission is required to detect screenshots.",
+  "initializingConnection": "Initializing secure connection...",
+  "configurationRequired": "Configuration Required",
+  "goBack": "Go Back"
 }

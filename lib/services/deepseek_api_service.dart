@@ -56,12 +56,6 @@ class DeepSeekApiService {
     };
 
     try {
-      // Debug: Print the exact endpoint being used
-      print('DeepSeek API endpoint: $endpoint');
-      print('DeepSeek API endpoint toString: ${endpoint.toString()}');
-      if (currentAttempt > 0) {
-        print('Retry attempt $currentAttempt of $maxRetries');
-      }
 
       final response = await httpClient.post(
         endpoint,
@@ -77,8 +71,6 @@ class DeepSeekApiService {
         if (currentAttempt < maxRetries) {
           // Exponential backoff: 2s, 4s, 8s
           final delaySeconds = 2 * (1 << currentAttempt);
-          print(
-              'Rate limit hit (429). Waiting ${delaySeconds}s before retry...');
           await Future.delayed(Duration(seconds: delaySeconds));
           return _executeWithRetry(
             targetThread: targetThread,

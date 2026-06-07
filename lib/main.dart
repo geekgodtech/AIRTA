@@ -114,10 +114,8 @@ class _ToxicityAnalyzerAppState extends State<ToxicityAnalyzerApp> {
   }
 
   Future<void> _requestPermissions() async {
-    print('DEBUG: Requesting SMS and Contacts permissions...');
     await Permission.sms.request();
     await Permission.contacts.request();
-    print('DEBUG: Permissions requested');
 
     setState(() {
       _showPermissionDialog = false;

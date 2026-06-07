@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
 // FIX 1: We must use the internal project folder name here, no spaces allowed!
-import 'package:which_partner_is_toxic/main.dart'; 
+import 'package:airta/main.dart';
 
 void main() {
   testWidgets('App loads smoke test', (WidgetTester tester) async {

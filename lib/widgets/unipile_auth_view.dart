@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:airta/services/unipile_integration_service.dart';
+import 'package:airta/l10n/app_localizations.dart';
 
 class UnipileAuthView extends StatefulWidget {
   const UnipileAuthView({super.key});
@@ -99,13 +100,13 @@ class _UnipileAuthViewState extends State<UnipileAuthView> {
 
   Widget _buildBody() {
     if (_isLoading) {
-      return const Center(
+      return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircularProgressIndicator(),
-            SizedBox(height: 16),
-            Text('Initializing secure connection...'),
+            const CircularProgressIndicator(),
+            const SizedBox(height: 16),
+            Text(AppLocalizations.of(context)!.initializingConnection),
           ],
         ),
       );
@@ -120,9 +121,9 @@ class _UnipileAuthViewState extends State<UnipileAuthView> {
             children: [
               const Icon(Icons.error_outline, size: 64, color: Colors.orange),
               const SizedBox(height: 16),
-              const Text(
-                'Configuration Required',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              Text(
+                AppLocalizations.of(context)!.configurationRequired,
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 16),
               Text(
@@ -132,7 +133,7 @@ class _UnipileAuthViewState extends State<UnipileAuthView> {
               const SizedBox(height: 24),
               ElevatedButton(
                 onPressed: () => Navigator.of(context).pop(false),
-                child: const Text('Go Back'),
+                child: Text(AppLocalizations.of(context)!.goBack),
               ),
             ],
           ),

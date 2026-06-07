@@ -2201,6 +2201,216 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Detects uncertainty, mixed commitment, push-pull messaging, or unclear desire to continue.'**
   String get metric_100_description;
+
+  /// No description provided for @unableToOpenConversations.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to Open Conversations'**
+  String get unableToOpenConversations;
+
+  /// No description provided for @unableToOpenConversationsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong loading your conversations. Please try again.'**
+  String get unableToOpenConversationsBody;
+
+  /// No description provided for @unableToLoadConversationsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to load conversations. Please check your permissions and try again.'**
+  String get unableToLoadConversationsBody;
+
+  /// No description provided for @errorLoadingConversationsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading conversations. Please try again.'**
+  String get errorLoadingConversationsBody;
+
+  /// No description provided for @smsPermissionRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'SMS Permission Required'**
+  String get smsPermissionRequired;
+
+  /// No description provided for @smsPermissionRequiredBody.
+  ///
+  /// In en, this message translates to:
+  /// **'To analyze SMS conversations, we need permission to read your messages. Your privacy is important — messages are only analyzed locally and never stored on our servers.'**
+  String get smsPermissionRequiredBody;
+
+  /// No description provided for @grantSmsPermission.
+  ///
+  /// In en, this message translates to:
+  /// **'Grant SMS Permission'**
+  String get grantSmsPermission;
+
+  /// No description provided for @noSmsConversationsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No SMS conversations found'**
+  String get noSmsConversationsFound;
+
+  /// No description provided for @noConversationsMatchSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'No conversations match your search'**
+  String get noConversationsMatchSearch;
+
+  /// No description provided for @noSmsMessagesOnDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'You don\'t have any SMS messages on this device'**
+  String get noSmsMessagesOnDevice;
+
+  /// No description provided for @tryDifferentSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Try a different search term'**
+  String get tryDifferentSearch;
+
+  /// No description provided for @clearSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear Search'**
+  String get clearSearch;
+
+  /// No description provided for @selectedFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected: {filename}'**
+  String selectedFile(String filename);
+
+  /// No description provided for @invalidFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid File'**
+  String get invalidFile;
+
+  /// No description provided for @fileImport.
+  ///
+  /// In en, this message translates to:
+  /// **'File Import'**
+  String get fileImport;
+
+  /// No description provided for @fileImportNotImplemented.
+  ///
+  /// In en, this message translates to:
+  /// **'File parsing is not yet implemented for this file type.'**
+  String get fileImportNotImplemented;
+
+  /// No description provided for @errorPickingFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to open the file. Please try again.'**
+  String get errorPickingFile;
+
+  /// No description provided for @readyToCapture.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready to Capture'**
+  String get readyToCapture;
+
+  /// No description provided for @readyToCaptureBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you\'re done and tap \"Finish & Process\".'**
+  String get readyToCaptureBody;
+
+  /// No description provided for @gotIt.
+  ///
+  /// In en, this message translates to:
+  /// **'Got it'**
+  String get gotIt;
+
+  /// No description provided for @noScreenshotsToProcess.
+  ///
+  /// In en, this message translates to:
+  /// **'No screenshots to process.'**
+  String get noScreenshotsToProcess;
+
+  /// No description provided for @processingScreenshot.
+  ///
+  /// In en, this message translates to:
+  /// **'Processing screenshot {current} of {total}...'**
+  String processingScreenshot(int current, int total);
+
+  /// No description provided for @noMessagesFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No Messages Found'**
+  String get noMessagesFound;
+
+  /// No description provided for @noMessagesFoundBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not extract any messages from the screenshots.\n\nPlease ensure the screenshots clearly show the message conversation.'**
+  String get noMessagesFoundBody;
+
+  /// No description provided for @loadedMessages.
+  ///
+  /// In en, this message translates to:
+  /// **'Loaded {count} messages from screenshots'**
+  String loadedMessages(int count);
+
+  /// No description provided for @processingError.
+  ///
+  /// In en, this message translates to:
+  /// **'Processing Error'**
+  String get processingError;
+
+  /// No description provided for @processingErrorBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Error processing screenshots. Please try again.'**
+  String get processingErrorBody;
+
+  /// No description provided for @metricListSavedAs.
+  ///
+  /// In en, this message translates to:
+  /// **'Your selections have been saved as \"{name}\".'**
+  String metricListSavedAs(String name);
+
+  /// No description provided for @metricListLoadedName.
+  ///
+  /// In en, this message translates to:
+  /// **'Selections \"{name}\" have been retrieved and applied.'**
+  String metricListLoadedName(String name);
+
+  /// No description provided for @conversationLoaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Loaded {count} messages from {name}'**
+  String conversationLoaded(int count, String name);
+
+  /// No description provided for @loadButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Load'**
+  String get loadButton;
+
+  /// No description provided for @photoPermissionRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo library permission is required to detect screenshots.'**
+  String get photoPermissionRequired;
+
+  /// No description provided for @initializingConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Initializing secure connection...'**
+  String get initializingConnection;
+
+  /// No description provided for @configurationRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Configuration Required'**
+  String get configurationRequired;
+
+  /// No description provided for @goBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Go Back'**
+  String get goBack;
 }
 
 class _AppLocalizationsDelegate

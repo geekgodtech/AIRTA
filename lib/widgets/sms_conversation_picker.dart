@@ -35,14 +35,11 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
   @override
   void initState() {
     super.initState();
-    print('DEBUG: SmsConversationPicker initState called');
     try {
       _checkPermissionAndLoad();
-    } catch (e, stackTrace) {
-      print('ERROR: Exception in initState: $e');
-      print('ERROR: Stack trace: $stackTrace');
+    } catch (e) {
       setState(() {
-        _errorMessage = 'Failed to initialize: $e';
+        _errorMessage = 'Failed to initialize. Please restart the app.';
       });
     }
   }
@@ -110,7 +107,6 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
   }
 
   Future<void> _checkPermissionAndLoad() async {
-    print('DEBUG: _checkPermissionAndLoad started');
     setState(() {
       _isLoading = true;
       _errorMessage = null;
@@ -118,22 +114,15 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
     _startLoadingTimer();
 
     try {
-      print('DEBUG: Checking SMS permission...');
       final hasPermission = await _smsService.hasSmsPermission();
-      print('DEBUG: SMS permission: $hasPermission');
       setState(() => _hasPermission = hasPermission);
 
       if (hasPermission) {
-        print('DEBUG: Permission granted, loading conversations...');
         await _loadConversations();
-      } else {
-        print('DEBUG: Permission not granted');
       }
-    } catch (e, stackTrace) {
-      print('ERROR: Exception in _checkPermissionAndLoad: $e');
-      print('ERROR: Stack trace: $stackTrace');
+    } catch (e) {
       setState(() {
-        _errorMessage = 'Error checking permissions: $e\n\nStack: $stackTrace';
+        _errorMessage = 'Error checking permissions. Please try again.';
       });
     } finally {
       _stopLoadingTimer();
@@ -177,13 +166,10 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
     _startLoadingTimer();
 
     try {
-      print('DEBUG: _loadConversations called');
       final conversations = _searchQuery.isEmpty
           ? await _smsService.fetchAllConversations()
           : await _smsService.searchConversations(_searchQuery);
 
-      print('DEBUG: Got ${conversations.length} conversations before filtering');
-      
       // Filter conversations based on "Named only" checkbox and message count filter
       final filteredConversations = conversations.where((partner) {
         // Apply "Named only" filter
@@ -207,8 +193,6 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
         return true;
       }).toList();
       
-      print('DEBUG: Got ${filteredConversations.length} conversations after filtering');
-      
       // Merge threads with same contact name - keep only the one with most messages
       final mergedConversations = <ConversationPartner>[];
       final nameToThreads = <String, List<ConversationPartner>>{};
@@ -229,40 +213,33 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
           // Sort by message count descending and take the first
           threads.sort((a, b) => b.messageCount.compareTo(a.messageCount));
           mergedConversations.add(threads.first);
-          print('DEBUG: Merged ${threads.length} threads for ${threads.first.displayName}, keeping thread with ${threads.first.messageCount} messages');
         }
       }
-      
-      print('DEBUG: Got ${mergedConversations.length} conversations after merging');
       
       setState(() {
         _conversations = _sortConversations(mergedConversations);
       });
-    } catch (e, stackTrace) {
-      print('ERROR: Exception in _loadConversations: $e');
-      print('ERROR: Stack trace: $stackTrace');
-
-      // Show error dialog
+    } catch (e) {
       if (mounted) {
         showDialog(
           context: context,
-          builder: (context) => AlertDialog(
-            title:
-                Text(AppLocalizations.of(context)!.errorLoadingConversations),
-            content: SingleChildScrollView(
-              child: SelectableText('Error: $e\n\nStack trace:\n$stackTrace'),
-            ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text('OK'),
-              ),
-            ],
-          ),
+          builder: (context) {
+            final l10n = AppLocalizations.of(context)!;
+            return AlertDialog(
+              title: Text(l10n.errorLoadingConversations),
+              content: Text(l10n.unableToLoadConversationsBody),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(l10n.ok),
+                ),
+              ],
+            );
+          },
         );
       }
       setState(() {
-        _errorMessage = 'Error loading conversations: $e';
+        _errorMessage = AppLocalizations.of(context)!.errorLoadingConversationsBody;
       });
     } finally {
       _stopLoadingTimer();
@@ -321,24 +298,18 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
   }
 
   void _applySort(String newSortOption) {
-    print('DEBUG: _applySort called with newSortOption=$newSortOption, current _sortOption=$_sortOption, _sortAscending=$_sortAscending');
     if (newSortOption == _sortOption) {
-      // Same option selected, reverse direction
-      print('DEBUG: Same option selected, reversing sort direction');
       setState(() {
         _sortAscending = !_sortAscending;
         _conversations = _sortConversations(_conversations!);
       });
     } else {
-      // Different option selected, use it and reset to descending
-      print('DEBUG: Different option selected, resetting to descending');
       setState(() {
         _sortOption = newSortOption;
         _sortAscending = false;
         _conversations = _sortConversations(_conversations!);
       });
     }
-    print('DEBUG: After _applySort - _sortOption=$_sortOption, _sortAscending=$_sortAscending');
   }
 
   Future<void> _selectConversation(ConversationPartner partner) async {
@@ -361,9 +332,7 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
         // Show success message
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-              'Loaded ${thread.messages.length} messages from ${partner.displayName}',
-            ),
+            content: Text(AppLocalizations.of(context)!.conversationLoaded(thread.messages.length, partner.displayName)),
             backgroundColor: Colors.green,
           ),
         );
@@ -371,22 +340,17 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
         // Go back to the dashboard
         Navigator.of(context).pop();
       }
-    } catch (e, stackTrace) {
-      print('ERROR: Exception in _selectConversation: $e');
-      print('ERROR: Stack trace: $stackTrace');
-
+    } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Error loading conversation: $e'),
+            content: Text(AppLocalizations.of(context)!.errorLoadingConversations),
             backgroundColor: Colors.red,
-            duration: const Duration(seconds: 5),
           ),
         );
       }
-
       setState(() {
-        _errorMessage = 'Error loading conversation: $e';
+        _errorMessage = AppLocalizations.of(context)!.errorLoadingConversations;
       });
     } finally {
       _stopLoadingTimer();
@@ -746,14 +710,14 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
               Icon(Icons.sms_outlined, size: 80, color: colorScheme.primary),
               const SizedBox(height: 24),
               Text(
-                'SMS Permission Required',
+                l10n.smsPermissionRequired,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
               ),
               const SizedBox(height: 12),
               Text(
-                'To analyze SMS conversations, we need permission to read your messages. Your privacy is important - messages are only analyzed locally and never stored on our servers.',
+                l10n.smsPermissionRequiredBody,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
@@ -761,7 +725,7 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
               FilledButton.icon(
                 onPressed: _requestPermission,
                 icon: const Icon(Icons.security),
-                label: const Text('Grant SMS Permission'),
+                label: Text(l10n.grantSmsPermission),
                 style: FilledButton.styleFrom(minimumSize: const Size(200, 48)),
               ),
             ],
@@ -785,15 +749,15 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
               const SizedBox(height: 24),
               Text(
                 _searchQuery.isEmpty
-                    ? 'No SMS conversations found'
-                    : 'No conversations match your search',
+                    ? l10n.noSmsConversationsFound
+                    : l10n.noConversationsMatchSearch,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 12),
               Text(
                 _searchQuery.isEmpty
-                    ? 'You don\'t have any SMS messages on this device'
-                    : 'Try a different search term',
+                    ? l10n.noSmsMessagesOnDevice
+                    : l10n.tryDifferentSearch,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
@@ -804,7 +768,7 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
                     setState(() => _searchQuery = '');
                     _loadConversations();
                   },
-                  child: const Text('Clear Search'),
+                  child: Text(l10n.clearSearch),
                 ),
               ],
             ],

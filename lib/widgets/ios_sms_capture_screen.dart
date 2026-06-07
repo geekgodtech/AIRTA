@@ -5,6 +5,7 @@ import 'package:google_mlkit_text_recognition/google_mlkit_text_recognition.dart
 import 'package:provider/provider.dart';
 import 'package:airta/controllers/toxicity_analyzer_controller.dart';
 import 'package:airta/models.dart';
+import 'package:airta/l10n/app_localizations.dart';
 
 /// Screen for capturing iOS SMS messages via screenshots
 /// Since iOS doesn't allow direct SMS access, we guide users through
@@ -235,10 +236,8 @@ class _IosSmsCaptureScreenState extends State<IosSmssCaptureScreen> {
     if (!permission.isAuth) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text(
-              'Photo library permission is required to detect screenshots.',
-            ),
+          SnackBar(
+            content: Text(AppLocalizations.of(context)!.photoPermissionRequired),
             backgroundColor: Colors.red,
           ),
         );
@@ -257,19 +256,19 @@ class _IosSmsCaptureScreenState extends State<IosSmssCaptureScreen> {
     if (mounted) {
       showDialog(
         context: context,
-        builder: (context) => AlertDialog(
-          title: const Text('Ready to Capture'),
-          content: const Text(
-            'Switch to the Messages app now and start taking screenshots.\n\n'
-            'Return to this app when you\'re done and tap "Finish & Process".',
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('Got it'),
-            ),
-          ],
-        ),
+        builder: (context) {
+          final l10n = AppLocalizations.of(context)!;
+          return AlertDialog(
+            title: Text(l10n.readyToCapture),
+            content: Text(l10n.readyToCaptureBody),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text(l10n.gotIt),
+              ),
+            ],
+          );
+        },
       );
     }
 
@@ -359,7 +358,7 @@ class _IosSmsCaptureScreenState extends State<IosSmssCaptureScreen> {
   Future<void> _processScreenshots() async {
     if (_screenshots.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('No screenshots to process')),
+        SnackBar(content: Text(AppLocalizations.of(context)!.noScreenshotsToProcess)),
       );
       return;
     }
@@ -384,9 +383,7 @@ class _IosSmsCaptureScreenState extends State<IosSmssCaptureScreen> {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(
-                'Processing screenshot ${i + 1} of ${_screenshots.length}...',
-              ),
+              content: Text(AppLocalizations.of(context)!.processingScreenshot(i + 1, _screenshots.length)),
               duration: const Duration(milliseconds: 500),
             ),
           );
@@ -400,19 +397,19 @@ class _IosSmsCaptureScreenState extends State<IosSmssCaptureScreen> {
         if (mounted) {
           showDialog(
             context: context,
-            builder: (context) => AlertDialog(
-              title: const Text('No Messages Found'),
-              content: const Text(
-                'Could not extract any messages from the screenshots.\n\n'
-                'Please ensure the screenshots clearly show the message conversation.',
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: const Text('OK'),
-                ),
-              ],
-            ),
+            builder: (context) {
+              final l10n = AppLocalizations.of(context)!;
+              return AlertDialog(
+                title: Text(l10n.noMessagesFound),
+                content: Text(l10n.noMessagesFoundBody),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: Text(l10n.ok),
+                  ),
+                ],
+              );
+            },
           );
         }
         return;
@@ -430,9 +427,7 @@ class _IosSmsCaptureScreenState extends State<IosSmssCaptureScreen> {
 
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-              'Loaded ${messages.length} messages from screenshots',
-            ),
+            content: Text(AppLocalizations.of(context)!.loadedMessages(messages.length)),
             backgroundColor: Colors.green,
           ),
         );
@@ -444,16 +439,19 @@ class _IosSmsCaptureScreenState extends State<IosSmssCaptureScreen> {
       if (mounted) {
         showDialog(
           context: context,
-          builder: (context) => AlertDialog(
-            title: const Text('Processing Error'),
-            content: Text('Error processing screenshots: $e'),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text('OK'),
-              ),
-            ],
-          ),
+          builder: (context) {
+            final l10n = AppLocalizations.of(context)!;
+            return AlertDialog(
+              title: Text(l10n.processingError),
+              content: Text(l10n.processingErrorBody),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(l10n.ok),
+                ),
+              ],
+            );
+          },
         );
       }
     } finally {

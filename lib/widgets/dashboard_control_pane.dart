@@ -346,43 +346,35 @@ class _TextingApplicationButton extends StatelessWidget {
   }
 
   Future<void> _openSmsConversationPicker(BuildContext context) async {
-    print('DEBUG: Opening SMS conversation picker...');
     try {
       await Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) {
-            // On iOS, use screenshot capture method
-            // On Android, use direct SMS access
             if (Platform.isIOS) {
-              print('DEBUG: Building IosSmssCaptureScreen widget...');
               return const IosSmssCaptureScreen();
             } else {
-              print('DEBUG: Building SmsConversationPicker widget...');
               return SmsConversationPicker(controller: controller);
             }
           },
         ),
       );
-      print('DEBUG: SMS picker closed');
-    } catch (e, stackTrace) {
-      print('ERROR: Exception opening SMS picker: $e');
-      print('ERROR: Stack trace: $stackTrace');
-
+    } catch (e) {
       if (context.mounted) {
         showDialog(
           context: context,
-          builder: (context) => AlertDialog(
-            title: const Text('Error Opening SMS Picker'),
-            content: SingleChildScrollView(
-              child: SelectableText('Error: $e\n\nStack trace:\n$stackTrace'),
-            ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text('OK'),
-              ),
-            ],
-          ),
+          builder: (context) {
+            final l10n = AppLocalizations.of(context)!;
+            return AlertDialog(
+              title: Text(l10n.unableToOpenConversations),
+              content: Text(l10n.unableToOpenConversationsBody),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(l10n.ok),
+                ),
+              ],
+            );
+          },
         );
       }
     }
@@ -444,7 +436,7 @@ class _FromFileButton extends StatelessWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Selected: ${file.name}'),
+            content: Text(AppLocalizations.of(context)!.selectedFile(file.name)),
             duration: const Duration(seconds: 2),
           ),
         );
@@ -456,9 +448,7 @@ class _FromFileButton extends StatelessWidget {
         try {
           final fileBytes = await File(file.path!).readAsBytes();
           fileContent = utf8.decode(fileBytes, allowMalformed: true);
-        } catch (e) {
-          print('ERROR: Could not read file: $e');
-        }
+        } catch (_) {}
       } else if (file.bytes != null) {
         fileContent = utf8.decode(file.bytes!, allowMalformed: true);
       }
@@ -470,16 +460,19 @@ class _FromFileButton extends StatelessWidget {
           if (context.mounted) {
             showDialog(
               context: context,
-              builder: (context) => AlertDialog(
-                title: const Text('Invalid File'),
-                content: Text(validationError),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.pop(context),
-                    child: const Text('OK'),
-                  ),
-                ],
-              ),
+              builder: (context) {
+                final l10n = AppLocalizations.of(context)!;
+                return AlertDialog(
+                  title: Text(l10n.invalidFile),
+                  content: Text(validationError),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: Text(l10n.ok),
+                    ),
+                  ],
+                );
+              },
             );
           }
           return;
@@ -491,39 +484,33 @@ class _FromFileButton extends StatelessWidget {
       if (context.mounted) {
         showDialog(
           context: context,
-          builder: (context) => AlertDialog(
-            title: const Text('File Import'),
-            content: Text(
-              'File parsing not yet implemented.\n\n'
-              'Selected file: ${file.name}\n'
-              'Size: ${file.size} bytes\n'
-              'Type: ${file.extension}',
-            ),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text('OK'),
-              ),
-            ],
-          ),
+          builder: (context) {
+            final l10n = AppLocalizations.of(context)!;
+            return AlertDialog(
+              title: Text(l10n.fileImport),
+              content: Text(l10n.fileImportNotImplemented),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(l10n.ok),
+                ),
+              ],
+            );
+          },
         );
       }
-    } catch (e, stackTrace) {
-      print('ERROR: Exception picking file: $e');
-      print('ERROR: Stack trace: $stackTrace');
-
+    } catch (e) {
       if (context.mounted) {
+        final l10n = AppLocalizations.of(context)!;
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
-            title: const Text('Error Picking File'),
-            content: SingleChildScrollView(
-              child: SelectableText('Error: $e\n\nStack trace:\n$stackTrace'),
-            ),
+            title: Text(l10n.error),
+            content: Text(l10n.errorPickingFile),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text('OK'),
+                child: Text(l10n.ok),
               ),
             ],
           ),
@@ -777,96 +764,51 @@ class _MetricSelectorSection extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 8),
-              LayoutBuilder(
-                builder: (context, constraints) {
-                  final isNarrow = constraints.maxWidth < 400;
-                  
-                  if (isNarrow) {
-                    // Narrow screens: stack vertically
-                    return Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          l10n.selectUpToCount(ToxicityAnalyzerController.requiredMetricSelectionCount, controller.selectedMetricCount),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    l10n.selectUpToCount(ToxicityAnalyzerController.requiredMetricSelectionCount, controller.selectedMetricCount),
+                  ),
+                  const SizedBox(height: 4),
+                  Wrap(
+                    spacing: 0,
+                    runSpacing: 0,
+                    children: [
+                      TextButton.icon(
+                        onPressed: controller.selectedMetricCount > 0
+                            ? () => _showSaveMetricListDialog(context, controller)
+                            : null,
+                        icon: const Icon(Icons.save, size: 16),
+                        label: Text(l10n.saveSelections),
+                        style: TextButton.styleFrom(
+                          visualDensity: VisualDensity.compact,
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
                         ),
-                        const SizedBox(height: 8),
-                        TextButton.icon(
-                          onPressed: controller.selectedMetricCount > 0
-                              ? () => _showSaveMetricListDialog(context, controller)
-                              : null,
-                          icon: const Icon(Icons.save, size: 16),
-                          label: Text(l10n.saveSelections),
-                          style: TextButton.styleFrom(
-                            visualDensity: VisualDensity.compact,
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                          ),
+                      ),
+                      TextButton.icon(
+                        onPressed: () => _showLoadMetricListDialog(context, controller),
+                        icon: const Icon(Icons.folder_open, size: 16),
+                        label: Text(l10n.loadSelections),
+                        style: TextButton.styleFrom(
+                          visualDensity: VisualDensity.compact,
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
                         ),
-                        TextButton.icon(
-                          onPressed: () => _showLoadMetricListDialog(context, controller),
-                          icon: const Icon(Icons.folder_open, size: 16),
-                          label: Text(l10n.loadSelections),
-                          style: TextButton.styleFrom(
-                            visualDensity: VisualDensity.compact,
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                          ),
+                      ),
+                      TextButton.icon(
+                        onPressed: controller.selectedMetricCount > 0
+                            ? controller.clearMetricSelection
+                            : null,
+                        icon: const Icon(Icons.clear_all, size: 16),
+                        label: Text(l10n.clearSelections),
+                        style: TextButton.styleFrom(
+                          visualDensity: VisualDensity.compact,
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
                         ),
-                        TextButton.icon(
-                          onPressed: controller.selectedMetricCount > 0
-                              ? controller.clearMetricSelection
-                              : null,
-                          icon: const Icon(Icons.clear_all, size: 16),
-                          label: Text(l10n.clearSelections),
-                          style: TextButton.styleFrom(
-                            visualDensity: VisualDensity.compact,
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                          ),
-                        ),
-                      ],
-                    );
-                  } else {
-                    // Wide screens: single row
-                    return Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            l10n.selectUpToCount(ToxicityAnalyzerController.requiredMetricSelectionCount, controller.selectedMetricCount),
-                          ),
-                        ),
-                        TextButton.icon(
-                          onPressed: controller.selectedMetricCount > 0
-                              ? () => _showSaveMetricListDialog(context, controller)
-                              : null,
-                          icon: const Icon(Icons.save, size: 16),
-                          label: Text(l10n.saveSelections),
-                          style: TextButton.styleFrom(
-                            visualDensity: VisualDensity.compact,
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                          ),
-                        ),
-                        TextButton.icon(
-                          onPressed: () => _showLoadMetricListDialog(context, controller),
-                          icon: const Icon(Icons.folder_open, size: 16),
-                          label: Text(l10n.loadSelections),
-                          style: TextButton.styleFrom(
-                            visualDensity: VisualDensity.compact,
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                          ),
-                        ),
-                        TextButton.icon(
-                          onPressed: controller.selectedMetricCount > 0
-                              ? controller.clearMetricSelection
-                              : null,
-                          icon: const Icon(Icons.clear_all, size: 16),
-                          label: Text(l10n.clearSelections),
-                          style: TextButton.styleFrom(
-                            visualDensity: VisualDensity.compact,
-                            padding: const EdgeInsets.symmetric(horizontal: 8),
-                          ),
-                        ),
-                      ],
-                    );
-                  }
-                },
+                      ),
+                    ],
+                  ),
+                ],
               ),
               const SizedBox(height: 6),
               Text(
@@ -1394,22 +1336,25 @@ void _showSaveMetricListDialog(BuildContext context, ToxicityAnalyzerController 
                 Navigator.of(context).pop();
                 showDialog(
                   context: context,
-                  builder: (context) => AlertDialog(
-                    content: Text('Your custom Selections have been saved as $name'),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.of(context).pop(),
-                        child: const Text('OK'),
-                      ),
-                    ],
-                  ),
+                  builder: (context) {
+                    final l10n = AppLocalizations.of(context)!;
+                    return AlertDialog(
+                      content: Text(l10n.metricListSavedAs(name)),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.of(context).pop(),
+                          child: Text(l10n.ok),
+                        ),
+                      ],
+                    );
+                  },
                 );
               }
             } catch (e) {
               if (context.mounted) {
                 Navigator.of(context).pop();
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Error: $e')),
+                  SnackBar(content: Text(l10n.error)),
                 );
               }
             }
@@ -1506,49 +1451,39 @@ void _showLoadMetricListDialog(BuildContext context, ToxicityAnalyzerController 
                   Navigator.of(context).pop();
                   showDialog(
                     context: context,
-                    builder: (context) => AlertDialog(
-                      content: Text('Your custom Selections $selectedList have been retrieved and selected.'),
+                    builder: (context) {
+                    final l10n = AppLocalizations.of(context)!;
+                    return AlertDialog(
+                      content: Text(l10n.metricListLoadedName(selectedList!)),
                       actions: [
                         TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                            showDialog(
-                              context: context,
-                              builder: (context) => AlertDialog(
-                                content: const Text('Awaiting deployment of analysis...'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () => Navigator.of(context).pop(),
-                                    child: const Text('OK'),
-                                  ),
-                                ],
-                              ),
-                            );
-                          },
-                          child: const Text('OK'),
+                          onPressed: () => Navigator.of(context).pop(),
+                          child: Text(l10n.ok),
                         ),
                       ],
-                    ),
+                    );
+                  },
                   );
                 }
               } catch (e) {
                 if (context.mounted) {
                   Navigator.of(context).pop();
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Error: $e')),
+                    SnackBar(content: Text(l10n.error)),
                   );
                 }
               }
             },
-            child: const Text('LOAD'),
+            child: Text(l10n.loadButton),
           ),
         ],
       ),
     );
   } catch (e) {
     if (context.mounted) {
+      final l10n = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: $e')),
+        SnackBar(content: Text(l10n.error)),
       );
     }
   }

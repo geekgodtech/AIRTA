@@ -1176,4 +1176,131 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get metric_100_description =>
       'Виявляє невизначеність, змішані зобов\'язання, притягування-відштовхування або незрозуміле бажання продовжувати.';
+
+  @override
+  String get unableToOpenConversations => 'Unable to Open Conversations';
+
+  @override
+  String get unableToOpenConversationsBody =>
+      'Something went wrong loading your conversations. Please try again.';
+
+  @override
+  String get unableToLoadConversationsBody =>
+      'Unable to load conversations. Please check your permissions and try again.';
+
+  @override
+  String get errorLoadingConversationsBody =>
+      'Error loading conversations. Please try again.';
+
+  @override
+  String get smsPermissionRequired => 'SMS Permission Required';
+
+  @override
+  String get smsPermissionRequiredBody =>
+      'To analyze SMS conversations, we need permission to read your messages. Your privacy is important — messages are only analyzed locally and never stored on our servers.';
+
+  @override
+  String get grantSmsPermission => 'Grant SMS Permission';
+
+  @override
+  String get noSmsConversationsFound => 'No SMS conversations found';
+
+  @override
+  String get noConversationsMatchSearch => 'No conversations match your search';
+
+  @override
+  String get noSmsMessagesOnDevice =>
+      'You don\'t have any SMS messages on this device';
+
+  @override
+  String get tryDifferentSearch => 'Try a different search term';
+
+  @override
+  String get clearSearch => 'Clear Search';
+
+  @override
+  String selectedFile(String filename) {
+    return 'Selected: $filename';
+  }
+
+  @override
+  String get invalidFile => 'Invalid File';
+
+  @override
+  String get fileImport => 'File Import';
+
+  @override
+  String get fileImportNotImplemented =>
+      'File parsing is not yet implemented for this file type.';
+
+  @override
+  String get errorPickingFile => 'Unable to open the file. Please try again.';
+
+  @override
+  String get readyToCapture => 'Ready to Capture';
+
+  @override
+  String get readyToCaptureBody =>
+      'Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you\'re done and tap \"Finish & Process\".';
+
+  @override
+  String get gotIt => 'Got it';
+
+  @override
+  String get noScreenshotsToProcess => 'No screenshots to process.';
+
+  @override
+  String processingScreenshot(int current, int total) {
+    return 'Processing screenshot $current of $total...';
+  }
+
+  @override
+  String get noMessagesFound => 'No Messages Found';
+
+  @override
+  String get noMessagesFoundBody =>
+      'Could not extract any messages from the screenshots.\n\nPlease ensure the screenshots clearly show the message conversation.';
+
+  @override
+  String loadedMessages(int count) {
+    return 'Loaded $count messages from screenshots';
+  }
+
+  @override
+  String get processingError => 'Processing Error';
+
+  @override
+  String get processingErrorBody =>
+      'Error processing screenshots. Please try again.';
+
+  @override
+  String metricListSavedAs(String name) {
+    return 'Your selections have been saved as \"$name\".';
+  }
+
+  @override
+  String metricListLoadedName(String name) {
+    return 'Selections \"$name\" have been retrieved and applied.';
+  }
+
+  @override
+  String conversationLoaded(int count, String name) {
+    return 'Loaded $count messages from $name';
+  }
+
+  @override
+  String get loadButton => 'Load';
+
+  @override
+  String get photoPermissionRequired =>
+      'Photo library permission is required to detect screenshots.';
+
+  @override
+  String get initializingConnection => 'Initializing secure connection...';
+
+  @override
+  String get configurationRequired => 'Configuration Required';
+
+  @override
+  String get goBack => 'Go Back';
 }

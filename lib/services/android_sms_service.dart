@@ -35,33 +35,24 @@ class AndroidSmsService {
 
   /// Get contact name from phone number using platform channel
   Future<String> _getContactName(String phoneNumber) async {
-    print('DEBUG: _getContactName called for: $phoneNumber');
-
     try {
-      print('DEBUG: Calling platform channel to get contact name...');
       final String? contactName = await platform.invokeMethod(
         'getContactName',
         {'phoneNumber': phoneNumber},
       );
 
       if (contactName != null && contactName.isNotEmpty) {
-        print('DEBUG: Found contact name: $contactName');
         return contactName;
       }
 
-      print('DEBUG: No contact found, returning phone number');
       return phoneNumber;
-    } catch (e, stackTrace) {
-      print('ERROR: Exception in _getContactName: $e');
-      print('ERROR: Stack trace: $stackTrace');
+    } catch (e) {
       return phoneNumber;
     }
   }
 
   /// Fetch all SMS messages and group them by conversation partner
   Future<List<ConversationPartner>> fetchAllConversations() async {
-    print('DEBUG: fetchAllConversations started');
-
     if (!Platform.isAndroid) {
       throw UnsupportedError('SMS reading is only supported on Android');
     }
@@ -71,22 +62,15 @@ class AndroidSmsService {
       throw Exception('SMS permission not granted');
     }
 
-    print('DEBUG: Fetching inbox messages...');
-    // Fetch all SMS messages (inbox and sent)
     final messages = await _telephony.getInboxSms(
       columns: [SmsColumn.ADDRESS, SmsColumn.BODY, SmsColumn.DATE],
     );
-    print('DEBUG: Fetched ${messages.length} inbox messages');
-
-    print('DEBUG: Fetching sent messages...');
     final sentMessages = await _telephony.getSentSms(
       columns: [SmsColumn.ADDRESS, SmsColumn.BODY, SmsColumn.DATE],
     );
-    print('DEBUG: Fetched ${sentMessages.length} sent messages');
 
     // Combine all messages
     final allMessages = [...messages, ...sentMessages];
-    print('DEBUG: Total messages: ${allMessages.length}');
 
     // Group messages by phone number/address
     final Map<String, List<SmsMessage>> conversationMap = {};
@@ -98,12 +82,9 @@ class AndroidSmsService {
       }
       conversationMap[address]!.add(msg);
     }
-    print('DEBUG: Grouped into ${conversationMap.length} conversations');
-
     // Convert to ConversationPartner list
     final conversations = <ConversationPartner>[];
 
-    int processedCount = 0;
     for (final entry in conversationMap.entries) {
       final address = entry.key;
       final messages = entry.value;
@@ -121,9 +102,6 @@ class AndroidSmsService {
           ? (messages.last.date ?? 0)
           : 0;
 
-      print(
-        'DEBUG: Processing conversation $processedCount/${conversationMap.length} for $address',
-      );
       // Get contact name for this phone number
       final displayName = await _getContactName(address);
 
@@ -136,12 +114,8 @@ class AndroidSmsService {
         ),
       );
 
-      processedCount++;
     }
 
-    print(
-      'DEBUG: Sorting conversations by contact name first, then most recent...',
-    );
     // Sort by: 1) Has contact name (not just phone number), 2) Most recent
     conversations.sort((a, b) {
       // Check if displayName is a phone number (contains only digits, spaces, dashes, etc.)
@@ -160,9 +134,6 @@ class AndroidSmsService {
       return b.lastMessageDate.compareTo(a.lastMessageDate);
     });
 
-    print(
-      'DEBUG: fetchAllConversations completed, returning ${conversations.length} conversations',
-    );
     return conversations;
   }
 
@@ -189,7 +160,6 @@ class AndroidSmsService {
       filter: SmsFilter.where(SmsColumn.ADDRESS).equals(address),
     );
 
-    // Update SMS count for debug info
     _lastFetchSmsCount = inboxMessages.length + sentMessages.length;
 
     // Fetch MMS messages (includes RCS stored as MMS, combines threads with like numbers)

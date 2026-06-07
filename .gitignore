@@ -50,3 +50,8 @@ app.*.map.json
 *.keystore
 *.jks
 android/app/keystore-base64.txt
+
+# Local build artifacts and logs
+Build Logs/
+Builds/
+job-logs.txt
