@@ -1173,150 +1173,149 @@ class AppLocalizationsAr extends AppLocalizations {
       'يكتشف عدم اليقين، الالتزام المختلط، رسائل الدفع والسحب، أو الرغبة غير الواضحة في الاستمرار.';
 
   @override
-  String get unableToOpenConversations => 'Unable to Open Conversations';
+  String get unableToOpenConversations => 'لا يمكن فتح المحادثات';
 
   @override
   String get unableToOpenConversationsBody =>
-      'Something went wrong loading your conversations. Please try again.';
+      'حدث خطأ أثناء تحميل محادثاتك. يرجى المحاولة مرة أخرى.';
 
   @override
   String get unableToLoadConversationsBody =>
-      'Unable to load conversations. Please check your permissions and try again.';
+      'لا يمكن تحميل المحادثات. يرجى التحقق من الأذونات والمحاولة مرة أخرى.';
 
   @override
   String get errorLoadingConversationsBody =>
-      'Error loading conversations. Please try again.';
+      'خطأ في تحميل المحادثات. يرجى المحاولة مرة أخرى.';
 
   @override
-  String get smsPermissionRequired => 'SMS Permission Required';
+  String get smsPermissionRequired => 'إذن SMS مطلوب';
 
   @override
   String get smsPermissionRequiredBody =>
-      'To analyze SMS conversations, we need permission to read your messages. Your privacy is important — messages are only analyzed locally and never stored on our servers.';
+      'لتحليل محادثات SMS، نحتاج إلى إذن لقراءة رسائلك. خصوصيتك مهمة — يتم تحليل الرسائل محليًا فقط ولا يتم تخزينها أبدًا على خوادمنا.';
 
   @override
-  String get grantSmsPermission => 'Grant SMS Permission';
+  String get grantSmsPermission => 'منح إذن SMS';
 
   @override
-  String get noSmsConversationsFound => 'No SMS conversations found';
+  String get noSmsConversationsFound => 'لم يتم العثور على محادثات SMS';
 
   @override
-  String get noConversationsMatchSearch => 'No conversations match your search';
+  String get noConversationsMatchSearch => 'لا توجد محادثات تطابق بحثك';
 
   @override
-  String get noSmsMessagesOnDevice =>
-      'You don\'t have any SMS messages on this device';
+  String get noSmsMessagesOnDevice => 'ليس لديك رسائل SMS على هذا الجهاز';
 
   @override
-  String get tryDifferentSearch => 'Try a different search term';
+  String get tryDifferentSearch => 'جرب مصطلح بحث مختلف';
 
   @override
-  String get clearSearch => 'Clear Search';
+  String get clearSearch => 'مسح البحث';
 
   @override
   String selectedFile(String filename) {
-    return 'Selected: $filename';
+    return 'محدد: $filename';
   }
 
   @override
-  String get invalidFile => 'Invalid File';
+  String get invalidFile => 'ملف غير صالح';
 
   @override
-  String get fileImport => 'File Import';
+  String get fileImport => 'استيراد ملف';
 
   @override
   String get fileImportNotImplemented =>
-      'File parsing is not yet implemented for this file type.';
+      'تحليل الملفات غير مطبق بعد لنوع الملف هذا.';
 
   @override
-  String get errorPickingFile => 'Unable to open the file. Please try again.';
+  String get errorPickingFile => 'لا يمكن فتح الملف. يرجى المحاولة مرة أخرى.';
 
   @override
-  String get readyToCapture => 'Ready to Capture';
+  String get readyToCapture => 'جاهز لالتقاط';
 
   @override
   String get readyToCaptureBody =>
-      'Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you\'re done and tap \"Finish & Process\".';
+      'انتقل الآن إلى تطبيق الرسائل وابدأ في أخذ لقطات الشاشة.\n\nعد إلى هذا التطبيق عند الانتهاء واضغط على \"إنهاء ومعالجة\".';
 
   @override
-  String get gotIt => 'Got it';
+  String get gotIt => 'فهمت';
 
   @override
-  String get noScreenshotsToProcess => 'No screenshots to process.';
+  String get noScreenshotsToProcess => 'لا توجد لقطات شاشة للمعالجة.';
 
   @override
   String processingScreenshot(int current, int total) {
-    return 'Processing screenshot $current of $total...';
+    return 'معالجة لقطة الشاشة $current من $total...';
   }
 
   @override
-  String get noMessagesFound => 'No Messages Found';
+  String get noMessagesFound => 'لم يتم العثور على رسائل';
 
   @override
   String get noMessagesFoundBody =>
-      'Could not extract any messages from the screenshots.\n\nPlease ensure the screenshots clearly show the message conversation.';
+      'لا يمكن استخراج رسائل من لقطات الشاشة.\n\nتأكد من أن لقطات الشاشة تظهر المحادثة بوضوح.';
 
   @override
   String loadedMessages(int count) {
-    return 'Loaded $count messages from screenshots';
+    return '$count رسائل محملة من لقطات الشاشة';
   }
 
   @override
-  String get processingError => 'Processing Error';
+  String get processingError => 'خطأ في المعالجة';
 
   @override
   String get processingErrorBody =>
-      'Error processing screenshots. Please try again.';
+      'خطأ في معالجة لقطات الشاشة. يرجى المحاولة مرة أخرى.';
 
   @override
   String metricListSavedAs(String name) {
-    return 'Your selections have been saved as \"$name\".';
+    return 'تم حفظ اختياراتك باسم \"$name\".';
   }
 
   @override
   String metricListLoadedName(String name) {
-    return 'Selections \"$name\" have been retrieved and applied.';
+    return 'تم استرجاع الاختيارات \"$name\" وتطبيقها.';
   }
 
   @override
   String conversationLoaded(int count, String name) {
-    return 'Loaded $count messages from $name';
+    return '$count رسائل محملة من $name';
   }
 
   @override
-  String get loadButton => 'Load';
+  String get loadButton => 'تحميل';
 
   @override
   String get photoPermissionRequired =>
-      'Photo library permission is required to detect screenshots.';
+      'إذن مكتبة الصور مطلوب للكشف عن لقطات الشاشة.';
 
   @override
-  String get initializingConnection => 'Initializing secure connection...';
+  String get initializingConnection => 'تهيئة الاتصال الآمن...';
 
   @override
-  String get configurationRequired => 'Configuration Required';
+  String get configurationRequired => 'تكوين مطلوب';
 
   @override
-  String get goBack => 'Go Back';
+  String get goBack => 'رجوع';
 
   @override
-  String get enableDateRangeFiltering => 'Enable date range filtering';
+  String get enableDateRangeFiltering => 'تمكين التصفية حسب نطاق التاريخ';
 
   @override
-  String get clearSelectedDateRange => 'Clear Selected Date Range';
+  String get clearSelectedDateRange => 'مسح نطاق التاريخ المحدد';
 
   @override
-  String get largeThreadNoticeTitle => 'NOTICE TO USER';
+  String get largeThreadNoticeTitle => 'إشعار للمستخدم';
 
   @override
   String get largeThreadNoticeBody =>
-      'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\nThe application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\nPlease be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.';
+      'عند التعامل مع سلاسل نصية كبيرة بشكل استثنائي، قد تتجاوز بعض شاشات التحميل في هذا التطبيق دقيقة ونصف أحيانًا.\n\nالتطبيق لا يتوقف. إذا رأيت مؤشر حالة يدور، التطبيق لا يزال قيد التحميل.\n\nيرجى الصبر في هذه الحالات، حيث قد يكون وقت التحميل أطول من المعتاد مقارنة بالتطبيقات الأخرى، خاصة عند التعامل مع مجموعة بيانات كبيرة مثل سلسلة مع 50000 رسالة.';
 
   @override
-  String get neverShowThisAgain => 'Never show this message again';
+  String get neverShowThisAgain => 'عدم عرض هذه الرسالة مرة أخرى';
 
   @override
   String loadingConversationWith(String name) {
-    return 'Loading conversation\nwith $name…';
+    return 'تحميل المحادثة\nمع $name…';
   }
 }

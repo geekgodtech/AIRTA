@@ -1183,150 +1183,154 @@ class AppLocalizationsDe extends AppLocalizations {
       'Erkennt Unsicherheit, gemischte Verpflichtung, Drück-Zieh-Nachrichten oder unklaren Wunsch fortzufahren.';
 
   @override
-  String get unableToOpenConversations => 'Unable to Open Conversations';
+  String get unableToOpenConversations =>
+      'Gespräche können nicht geöffnet werden';
 
   @override
   String get unableToOpenConversationsBody =>
-      'Something went wrong loading your conversations. Please try again.';
+      'Beim Laden Ihrer Gespräche ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.';
 
   @override
   String get unableToLoadConversationsBody =>
-      'Unable to load conversations. Please check your permissions and try again.';
+      'Gespräche können nicht geladen werden. Bitte überprüfen Sie Ihre Berechtigungen und versuchen Sie es erneut.';
 
   @override
   String get errorLoadingConversationsBody =>
-      'Error loading conversations. Please try again.';
+      'Fehler beim Laden der Gespräche. Bitte versuchen Sie es erneut.';
 
   @override
-  String get smsPermissionRequired => 'SMS Permission Required';
+  String get smsPermissionRequired => 'SMS-Berechtigung erforderlich';
 
   @override
   String get smsPermissionRequiredBody =>
-      'To analyze SMS conversations, we need permission to read your messages. Your privacy is important — messages are only analyzed locally and never stored on our servers.';
+      'Um SMS-Gespräche zu analysieren, benötigen wir die Berechtigung, Ihre Nachrichten zu lesen. Ihre Privatsphäre ist wichtig — Nachrichten werden nur lokal analysiert und nie auf unseren Servern gespeichert.';
 
   @override
-  String get grantSmsPermission => 'Grant SMS Permission';
+  String get grantSmsPermission => 'SMS-Berechtigung erteilen';
 
   @override
-  String get noSmsConversationsFound => 'No SMS conversations found';
+  String get noSmsConversationsFound => 'Keine SMS-Gespräche gefunden';
 
   @override
-  String get noConversationsMatchSearch => 'No conversations match your search';
+  String get noConversationsMatchSearch =>
+      'Keine Gespräche entsprechen Ihrer Suche';
 
   @override
   String get noSmsMessagesOnDevice =>
-      'You don\'t have any SMS messages on this device';
+      'Sie haben keine SMS-Nachrichten auf diesem Gerät';
 
   @override
-  String get tryDifferentSearch => 'Try a different search term';
+  String get tryDifferentSearch => 'Versuchen Sie einen anderen Suchbegriff';
 
   @override
-  String get clearSearch => 'Clear Search';
+  String get clearSearch => 'Suche löschen';
 
   @override
   String selectedFile(String filename) {
-    return 'Selected: $filename';
+    return 'Ausgewählt: $filename';
   }
 
   @override
-  String get invalidFile => 'Invalid File';
+  String get invalidFile => 'Ungültige Datei';
 
   @override
-  String get fileImport => 'File Import';
+  String get fileImport => 'Datei importieren';
 
   @override
   String get fileImportNotImplemented =>
-      'File parsing is not yet implemented for this file type.';
+      'Die Dateianalyse ist für diesen Dateityp noch nicht implementiert.';
 
   @override
-  String get errorPickingFile => 'Unable to open the file. Please try again.';
+  String get errorPickingFile =>
+      'Die Datei kann nicht geöffnet werden. Bitte versuchen Sie es erneut.';
 
   @override
-  String get readyToCapture => 'Ready to Capture';
+  String get readyToCapture => 'Bereit zur Aufnahme';
 
   @override
   String get readyToCaptureBody =>
-      'Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you\'re done and tap \"Finish & Process\".';
+      'Wechseln Sie jetzt zur Nachrichten-App und beginnen Sie mit Screenshots.\n\nKehren Sie zu dieser App zurück, wenn Sie fertig sind, und tippen Sie auf \"Fertig & Verarbeiten\".';
 
   @override
-  String get gotIt => 'Got it';
+  String get gotIt => 'Verstanden';
 
   @override
-  String get noScreenshotsToProcess => 'No screenshots to process.';
+  String get noScreenshotsToProcess => 'Keine Screenshots zu verarbeiten.';
 
   @override
   String processingScreenshot(int current, int total) {
-    return 'Processing screenshot $current of $total...';
+    return 'Screenshot $current von $total wird verarbeitet...';
   }
 
   @override
-  String get noMessagesFound => 'No Messages Found';
+  String get noMessagesFound => 'Keine Nachrichten gefunden';
 
   @override
   String get noMessagesFoundBody =>
-      'Could not extract any messages from the screenshots.\n\nPlease ensure the screenshots clearly show the message conversation.';
+      'Aus den Screenshots konnten keine Nachrichten extrahiert werden.\n\nStellen Sie sicher, dass die Screenshots das Gespräch deutlich zeigen.';
 
   @override
   String loadedMessages(int count) {
-    return 'Loaded $count messages from screenshots';
+    return '$count Nachrichten aus Screenshots geladen';
   }
 
   @override
-  String get processingError => 'Processing Error';
+  String get processingError => 'Verarbeitungsfehler';
 
   @override
   String get processingErrorBody =>
-      'Error processing screenshots. Please try again.';
+      'Fehler bei der Verarbeitung von Screenshots. Bitte versuchen Sie es erneut.';
 
   @override
   String metricListSavedAs(String name) {
-    return 'Your selections have been saved as \"$name\".';
+    return 'Ihre Auswahl wurde als \"$name\" gespeichert.';
   }
 
   @override
   String metricListLoadedName(String name) {
-    return 'Selections \"$name\" have been retrieved and applied.';
+    return 'Die Auswahl \"$name\" wurde abgerufen und angewendet.';
   }
 
   @override
   String conversationLoaded(int count, String name) {
-    return 'Loaded $count messages from $name';
+    return '$count Nachrichten von $name geladen';
   }
 
   @override
-  String get loadButton => 'Load';
+  String get loadButton => 'Laden';
 
   @override
   String get photoPermissionRequired =>
-      'Photo library permission is required to detect screenshots.';
+      'Fotobibliothek-Berechtigung ist erforderlich, um Screenshots zu erkennen.';
 
   @override
-  String get initializingConnection => 'Initializing secure connection...';
+  String get initializingConnection =>
+      'Sichere Verbindung wird initialisiert...';
 
   @override
-  String get configurationRequired => 'Configuration Required';
+  String get configurationRequired => 'Konfiguration erforderlich';
 
   @override
-  String get goBack => 'Go Back';
+  String get goBack => 'Zurück';
 
   @override
-  String get enableDateRangeFiltering => 'Enable date range filtering';
+  String get enableDateRangeFiltering => 'Datumsbereichsfilterung aktivieren';
 
   @override
-  String get clearSelectedDateRange => 'Clear Selected Date Range';
+  String get clearSelectedDateRange => 'Ausgewählten Datumsbereich löschen';
 
   @override
-  String get largeThreadNoticeTitle => 'NOTICE TO USER';
+  String get largeThreadNoticeTitle => 'HINWEIS AN DEN BENUTZER';
 
   @override
   String get largeThreadNoticeBody =>
-      'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\nThe application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\nPlease be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.';
+      'Bei sehr großen Textthreads können einige Ladebildschirme in dieser App manchmal über eine Minute und eine halbe dauern.\n\nDie Anwendung hängt sich nicht auf. Wenn Sie einen sich drehenden Statusindikator sehen, lädt die App noch.\n\nBitte haben Sie in diesen Fällen Geduld, da die Ladezeit im Vergleich zu anderen Anwendungen länger als üblich sein kann, besonders bei einem großen Datensatz wie einem Thread mit 50.000 Nachrichten.';
 
   @override
-  String get neverShowThisAgain => 'Never show this message again';
+  String get neverShowThisAgain => 'Diese Meldung nicht mehr anzeigen';
 
   @override
   String loadingConversationWith(String name) {
-    return 'Loading conversation\nwith $name…';
+    return 'Gespräch wird geladen\nmit $name…';
   }
 }

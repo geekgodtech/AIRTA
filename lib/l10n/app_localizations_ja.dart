@@ -1118,150 +1118,144 @@ class AppLocalizationsJa extends AppLocalizations {
       '不確実性、混合されたコミットメント、プッシュプルメッセージ、または継続する明確でない願望を検出します。';
 
   @override
-  String get unableToOpenConversations => 'Unable to Open Conversations';
+  String get unableToOpenConversations => '会話を開けません';
 
   @override
   String get unableToOpenConversationsBody =>
-      'Something went wrong loading your conversations. Please try again.';
+      '会話の読み込み中にエラーが発生しました。もう一度お試しください。';
 
   @override
-  String get unableToLoadConversationsBody =>
-      'Unable to load conversations. Please check your permissions and try again.';
+  String get unableToLoadConversationsBody => '会話を読み込めません。権限を確認して、もう一度お試しください。';
 
   @override
-  String get errorLoadingConversationsBody =>
-      'Error loading conversations. Please try again.';
+  String get errorLoadingConversationsBody => '会話の読み込みエラー。もう一度お試しください。';
 
   @override
-  String get smsPermissionRequired => 'SMS Permission Required';
+  String get smsPermissionRequired => 'SMS権限が必要です';
 
   @override
   String get smsPermissionRequiredBody =>
-      'To analyze SMS conversations, we need permission to read your messages. Your privacy is important — messages are only analyzed locally and never stored on our servers.';
+      'SMS会話を分析するには、メッセージを読み取る権限が必要です。プライバシーは重要です — メッセージはローカルでのみ分析され、サーバーに保存されることはありません。';
 
   @override
-  String get grantSmsPermission => 'Grant SMS Permission';
+  String get grantSmsPermission => 'SMS権限を許可';
 
   @override
-  String get noSmsConversationsFound => 'No SMS conversations found';
+  String get noSmsConversationsFound => 'SMS会話が見つかりません';
 
   @override
-  String get noConversationsMatchSearch => 'No conversations match your search';
+  String get noConversationsMatchSearch => '検索に一致する会話がありません';
 
   @override
-  String get noSmsMessagesOnDevice =>
-      'You don\'t have any SMS messages on this device';
+  String get noSmsMessagesOnDevice => 'このデバイスにSMSメッセージがありません';
 
   @override
-  String get tryDifferentSearch => 'Try a different search term';
+  String get tryDifferentSearch => '別の検索語を試してください';
 
   @override
-  String get clearSearch => 'Clear Search';
+  String get clearSearch => '検索をクリア';
 
   @override
   String selectedFile(String filename) {
-    return 'Selected: $filename';
+    return '選択済み: $filename';
   }
 
   @override
-  String get invalidFile => 'Invalid File';
+  String get invalidFile => '無効なファイル';
 
   @override
-  String get fileImport => 'File Import';
+  String get fileImport => 'ファイルをインポート';
 
   @override
-  String get fileImportNotImplemented =>
-      'File parsing is not yet implemented for this file type.';
+  String get fileImportNotImplemented => 'このファイルタイプのファイル解析はまだ実装されていません。';
 
   @override
-  String get errorPickingFile => 'Unable to open the file. Please try again.';
+  String get errorPickingFile => 'ファイルを開けません。もう一度お試しください。';
 
   @override
-  String get readyToCapture => 'Ready to Capture';
+  String get readyToCapture => 'キャプチャ準備完了';
 
   @override
   String get readyToCaptureBody =>
-      'Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you\'re done and tap \"Finish & Process\".';
+      '今すぐメッセージアプリに移動してスクリーンショットの撮影を開始してください。\n\n完了したらこのアプリに戻り、「完了して処理」をタップしてください。';
 
   @override
-  String get gotIt => 'Got it';
+  String get gotIt => '了解';
 
   @override
-  String get noScreenshotsToProcess => 'No screenshots to process.';
+  String get noScreenshotsToProcess => '処理するスクリーンショットがありません。';
 
   @override
   String processingScreenshot(int current, int total) {
-    return 'Processing screenshot $current of $total...';
+    return 'スクリーンショット $current / $total を処理中...';
   }
 
   @override
-  String get noMessagesFound => 'No Messages Found';
+  String get noMessagesFound => 'メッセージが見つかりません';
 
   @override
   String get noMessagesFoundBody =>
-      'Could not extract any messages from the screenshots.\n\nPlease ensure the screenshots clearly show the message conversation.';
+      'スクリーンショットからメッセージを抽出できませんでした。\n\nスクリーンショットが会話を明確に表示していることを確認してください。';
 
   @override
   String loadedMessages(int count) {
-    return 'Loaded $count messages from screenshots';
+    return 'スクリーンショットから $count 件のメッセージを読み込みました';
   }
 
   @override
-  String get processingError => 'Processing Error';
+  String get processingError => '処理エラー';
 
   @override
-  String get processingErrorBody =>
-      'Error processing screenshots. Please try again.';
+  String get processingErrorBody => 'スクリーンショットの処理中にエラーが発生しました。もう一度お試しください。';
 
   @override
   String metricListSavedAs(String name) {
-    return 'Your selections have been saved as \"$name\".';
+    return '選択が \"$name\" として保存されました。';
   }
 
   @override
   String metricListLoadedName(String name) {
-    return 'Selections \"$name\" have been retrieved and applied.';
+    return '選択 \"$name\" が取得され、適用されました。';
   }
 
   @override
   String conversationLoaded(int count, String name) {
-    return 'Loaded $count messages from $name';
+    return '$name から $count 件のメッセージを読み込みました';
   }
 
   @override
-  String get loadButton => 'Load';
+  String get loadButton => '読み込み';
 
   @override
-  String get photoPermissionRequired =>
-      'Photo library permission is required to detect screenshots.';
+  String get photoPermissionRequired => 'スクリーンショットを検出するにはフォトライブラリ権限が必要です。';
 
   @override
-  String get initializingConnection => 'Initializing secure connection...';
+  String get initializingConnection => '安全な接続を初期化中...';
 
   @override
-  String get configurationRequired => 'Configuration Required';
+  String get configurationRequired => '設定が必要です';
 
   @override
-  String get goBack => 'Go Back';
+  String get goBack => '戻る';
 
   @override
-  String get enableDateRangeFiltering => 'Enable date range filtering';
+  String get enableDateRangeFiltering => '日付範囲フィルタリングを有効にする';
 
   @override
-  String get clearSelectedDateRange => 'Clear Selected Date Range';
+  String get clearSelectedDateRange => '選択した日付範囲をクリア';
 
   @override
-  String get largeThreadNoticeTitle => 'NOTICE TO USER';
+  String get largeThreadNoticeTitle => 'ユーザーへの通知';
 
   @override
   String get largeThreadNoticeBody =>
-      'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\nThe application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\nPlease be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.';
+      '例外的に大きなテキストスレッドを扱う場合、このアプリの一部の読み込み画面が1分半を超えることがあります。\n\nアプリはフリーズしていません。回転するステータスインジケーターが表示されている場合、アプリはまだ読み込んでいます。\n\nこれらの場合は忍耐強くお待ちください。他のアプリと比較して読み込み時間が長くなる可能性があります。特に50,000件のメッセージがあるスレッドのような大規模なデータセットの場合。';
 
   @override
-  String get neverShowThisAgain => 'Never show this message again';
+  String get neverShowThisAgain => 'このメッセージを再度表示しない';
 
   @override
   String loadingConversationWith(String name) {
-    return 'Loading conversation\nwith $name…';
+    return '会話を読み込み中\n$name と…';
   }
 }

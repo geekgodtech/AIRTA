@@ -1058,150 +1058,141 @@ class AppLocalizationsZh extends AppLocalizations {
   String get metric_100_description => '检测不确定性、混合承诺、推拉消息或不明确的继续愿望。';
 
   @override
-  String get unableToOpenConversations => 'Unable to Open Conversations';
+  String get unableToOpenConversations => '无法打开对话';
 
   @override
-  String get unableToOpenConversationsBody =>
-      'Something went wrong loading your conversations. Please try again.';
+  String get unableToOpenConversationsBody => '加载对话时出错。请重试。';
 
   @override
-  String get unableToLoadConversationsBody =>
-      'Unable to load conversations. Please check your permissions and try again.';
+  String get unableToLoadConversationsBody => '无法加载对话。请检查权限并重试。';
 
   @override
-  String get errorLoadingConversationsBody =>
-      'Error loading conversations. Please try again.';
+  String get errorLoadingConversationsBody => '加载对话错误。请重试。';
 
   @override
-  String get smsPermissionRequired => 'SMS Permission Required';
+  String get smsPermissionRequired => '需要 SMS 权限';
 
   @override
   String get smsPermissionRequiredBody =>
-      'To analyze SMS conversations, we need permission to read your messages. Your privacy is important — messages are only analyzed locally and never stored on our servers.';
+      '要分析 SMS 对话，我们需要读取消息的权限。您的隐私很重要 — 消息仅在本地分析，绝不会存储在我们的服务器上。';
 
   @override
-  String get grantSmsPermission => 'Grant SMS Permission';
+  String get grantSmsPermission => '授予 SMS 权限';
 
   @override
-  String get noSmsConversationsFound => 'No SMS conversations found';
+  String get noSmsConversationsFound => '未找到 SMS 对话';
 
   @override
-  String get noConversationsMatchSearch => 'No conversations match your search';
+  String get noConversationsMatchSearch => '没有对话匹配您的搜索';
 
   @override
-  String get noSmsMessagesOnDevice =>
-      'You don\'t have any SMS messages on this device';
+  String get noSmsMessagesOnDevice => '此设备上没有 SMS 消息';
 
   @override
-  String get tryDifferentSearch => 'Try a different search term';
+  String get tryDifferentSearch => '尝试不同的搜索词';
 
   @override
-  String get clearSearch => 'Clear Search';
+  String get clearSearch => '清除搜索';
 
   @override
   String selectedFile(String filename) {
-    return 'Selected: $filename';
+    return '已选择: $filename';
   }
 
   @override
-  String get invalidFile => 'Invalid File';
+  String get invalidFile => '无效文件';
 
   @override
-  String get fileImport => 'File Import';
+  String get fileImport => '导入文件';
 
   @override
-  String get fileImportNotImplemented =>
-      'File parsing is not yet implemented for this file type.';
+  String get fileImportNotImplemented => '此文件类型的文件分析尚未实现。';
 
   @override
-  String get errorPickingFile => 'Unable to open the file. Please try again.';
+  String get errorPickingFile => '无法打开文件。请重试。';
 
   @override
-  String get readyToCapture => 'Ready to Capture';
+  String get readyToCapture => '准备捕获';
 
   @override
-  String get readyToCaptureBody =>
-      'Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you\'re done and tap \"Finish & Process\".';
+  String get readyToCaptureBody => '现在转到消息应用并开始截屏。\n\n完成后返回此应用并点击\"完成并处理\"。';
 
   @override
-  String get gotIt => 'Got it';
+  String get gotIt => '明白了';
 
   @override
-  String get noScreenshotsToProcess => 'No screenshots to process.';
+  String get noScreenshotsToProcess => '没有要处理的截图。';
 
   @override
   String processingScreenshot(int current, int total) {
-    return 'Processing screenshot $current of $total...';
+    return '正在处理截图 $current / $total...';
   }
 
   @override
-  String get noMessagesFound => 'No Messages Found';
+  String get noMessagesFound => '未找到消息';
 
   @override
-  String get noMessagesFoundBody =>
-      'Could not extract any messages from the screenshots.\n\nPlease ensure the screenshots clearly show the message conversation.';
+  String get noMessagesFoundBody => '无法从截图中提取消息。\n\n确保截图清晰显示对话。';
 
   @override
   String loadedMessages(int count) {
-    return 'Loaded $count messages from screenshots';
+    return '从截图加载了 $count 条消息';
   }
 
   @override
-  String get processingError => 'Processing Error';
+  String get processingError => '处理错误';
 
   @override
-  String get processingErrorBody =>
-      'Error processing screenshots. Please try again.';
+  String get processingErrorBody => '处理截图时出错。请重试。';
 
   @override
   String metricListSavedAs(String name) {
-    return 'Your selections have been saved as \"$name\".';
+    return '您的选择已保存为 \"$name\"。';
   }
 
   @override
   String metricListLoadedName(String name) {
-    return 'Selections \"$name\" have been retrieved and applied.';
+    return '选择 \"$name\" 已检索并应用。';
   }
 
   @override
   String conversationLoaded(int count, String name) {
-    return 'Loaded $count messages from $name';
+    return '从 $name 加载了 $count 条消息';
   }
 
   @override
-  String get loadButton => 'Load';
+  String get loadButton => '加载';
 
   @override
-  String get photoPermissionRequired =>
-      'Photo library permission is required to detect screenshots.';
+  String get photoPermissionRequired => '需要照片库权限才能检测截图。';
 
   @override
-  String get initializingConnection => 'Initializing secure connection...';
+  String get initializingConnection => '正在初始化安全连接...';
 
   @override
-  String get configurationRequired => 'Configuration Required';
+  String get configurationRequired => '需要配置';
 
   @override
-  String get goBack => 'Go Back';
+  String get goBack => '返回';
 
   @override
-  String get enableDateRangeFiltering => 'Enable date range filtering';
+  String get enableDateRangeFiltering => '启用日期范围过滤';
 
   @override
-  String get clearSelectedDateRange => 'Clear Selected Date Range';
+  String get clearSelectedDateRange => '清除选定的日期范围';
 
   @override
-  String get largeThreadNoticeTitle => 'NOTICE TO USER';
+  String get largeThreadNoticeTitle => '用户通知';
 
   @override
   String get largeThreadNoticeBody =>
-      'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\nThe application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\nPlease be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.';
+      '处理异常大的文本线程时，此应用程序中的某些加载屏幕有时可能超过一分半钟。\n\n应用程序不会挂起。如果您看到旋转的状态指示器，应用程序仍在加载。\n\n请在这种情况下保持耐心，因为与其他应用程序相比，加载时间可能会更长，特别是在处理大型数据集（例如包含 50,000 条消息的线程）时。';
 
   @override
-  String get neverShowThisAgain => 'Never show this message again';
+  String get neverShowThisAgain => '不再显示此消息';
 
   @override
   String loadingConversationWith(String name) {
-    return 'Loading conversation\nwith $name…';
+    return '正在加载对话\n与 $name…';
   }
 }
