@@ -1185,7 +1185,7 @@ class _DateRangeFilterSectionState extends State<_DateRangeFilterSection> {
                   ),
                   const SizedBox(width: 4),
                   Text(
-                    'Enable date range filtering',
+                    l10n.enableDateRangeFiltering,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       color: hasLoadedConversation && !isFreeTier
                           ? null
@@ -1251,7 +1251,7 @@ class _DateRangeFilterSectionState extends State<_DateRangeFilterSection> {
                   child: TextButton.icon(
                     onPressed: canUse ? () => controller.clearDateRange() : null,
                     icon: const Icon(Icons.cancel_outlined, size: 18),
-                    label: const Text('Clear Selected Date Range'),
+                    label: Text(l10n.clearSelectedDateRange),
                   ),
                 ),
               ],

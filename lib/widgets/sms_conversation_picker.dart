@@ -149,16 +149,12 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
       barrierDismissible: false,
       builder: (context) => StatefulBuilder(
         builder: (context, setDialogState) => AlertDialog(
-          title: const Text('NOTICE TO USER'),
+          title: Text(AppLocalizations.of(context)!.largeThreadNoticeTitle),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\n'
-                'The application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\n'
-                'Please be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.',
-              ),
+              Text(AppLocalizations.of(context)!.largeThreadNoticeBody),
               const SizedBox(height: 16),
               InkWell(
                 onTap: () => setDialogState(() => neverShow = !neverShow),
@@ -169,8 +165,8 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
                       onChanged: (val) => setDialogState(() => neverShow = val ?? false),
                     ),
                     const SizedBox(width: 4),
-                    const Expanded(
-                      child: Text('Never show this message again'),
+                    Expanded(
+                      child: Text(AppLocalizations.of(context)!.neverShowThisAgain),
                     ),
                   ],
                 ),
@@ -760,7 +756,7 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
                     ),
                     const SizedBox(height: 24),
                     Text(
-                      'Loading conversation\nwith $_selectingConversationName…',
+                      AppLocalizations.of(context)!.loadingConversationWith(_selectingConversationName),
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         color: Colors.white,
