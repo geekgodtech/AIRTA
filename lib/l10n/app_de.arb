@@ -410,5 +410,12 @@
   "yourApiKeyIsStoredSecurely": "Ihr API-Schlüssel wird sicher auf Ihrem Gerät gespeichert und niemals geteilt.",
   "pleaseEnterApiKey": "Bitte geben Sie einen API-Schlüssel ein",
   "apiKeySavedSuccessfully": "API-Schlüssel erfolgreich gespeichert!",
-  "save": "Speichern"
+  "save": "Speichern",
+  "loadingConversationWith": "Gespräch wird geladen\nmit {name}…",
+  "@loadingConversationWith": { "placeholders": { "name": { "type": "String" } } },
+  "pleaseBePatientLongerTextThreads": "Bitte haben Sie Geduld, längere Text-Thread-Datensätze dauern ziemlich lange zum Laden",
+  "almostThereBigOne": "Fast fertig, Wow, das muss ein großer gewesen sein",
+  "pleaseBePatientLargeDatasets": "Bitte haben Sie Geduld, große Datensätze könnten zu Ladezeiten von mehr als eineinhalb Minuten führen",
+  "continuingToLoadMassiveThread": "Lade weiterhin den massiven Thread mit {name}…",
+  "@continuingToLoadMassiveThread": { "placeholders": { "name": { "type": "String" } } }
 }

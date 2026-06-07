@@ -410,5 +410,12 @@
   "yourApiKeyIsStoredSecurely": "API anahtarınız cihazınızda güvenli bir şekilde saklanır ve asla paylaşılmaz.",
   "pleaseEnterApiKey": "Lütfen bir API anahtarı girin",
   "apiKeySavedSuccessfully": "API anahtarı başarıyla kaydedildi!",
-  "save": "Kaydet"
+  "save": "Kaydet",
+  "loadingConversationWith": "Konuşma yükleniyor\n{name} ile…",
+  "@loadingConversationWith": { "placeholders": { "name": { "type": "String" } } },
+  "pleaseBePatientLongerTextThreads": "Lütfen sabırlı olun, daha uzun metin dizisi veri kümeleri yüklenmek için oldukça zaman alır",
+  "almostThereBigOne": "Neredeyse bitti, Vay canına, bu büyük olmalı",
+  "pleaseBePatientLargeDatasets": "Lütfen sabırlı olun, büyük veri kümeleri bir buçuk dakikadan fazla yükleme sürelerine neden olabilir",
+  "continuingToLoadMassiveThread": "Devam ediyor, {name} ile devasa diziyi yükleniyor…",
+  "@continuingToLoadMassiveThread": { "placeholders": { "name": { "type": "String" } } }
 }

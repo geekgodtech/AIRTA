@@ -410,5 +410,12 @@
   "yourApiKeyIsStoredSecurely": "APIキーはデバイスに安全に保存され、共有されることはありません。",
   "pleaseEnterApiKey": "APIキーを入力してください",
   "apiKeySavedSuccessfully": "APIキーが正常に保存されました！",
-  "save": "保存"
+  "save": "保存",
+  "loadingConversationWith": "会話を読み込み中\n{name} と…",
+  "@loadingConversationWith": { "placeholders": { "name": { "type": "String" } } },
+  "pleaseBePatientLongerTextThreads": "忍耐強くお待ちください、長いテキストスレッドのデータセットは読み込みにかなり時間がかかります",
+  "almostThereBigOne": "もうすぐ完了、わあ、これは大きかったですね",
+  "pleaseBePatientLargeDatasets": "忍耐強くお待ちください、大きなデータセットでは読み込み時間が1分半を超える可能性があります",
+  "continuingToLoadMassiveThread": "巨大なスレッドを {name} と共に読み込み中…",
+  "@continuingToLoadMassiveThread": { "placeholders": { "name": { "type": "String" } } }
 }

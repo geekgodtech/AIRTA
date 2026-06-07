@@ -1361,4 +1361,20 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get apiKeySavedSuccessfully => 'Ключ API успішно збережено!';
+
+  @override
+  String get pleaseBePatientLongerTextThreads =>
+      'Будь ласка, будьте терплячими, довші текстові потоки даних завантажуються доволі довго';
+
+  @override
+  String get almostThereBigOne => 'Майже готово, Вау, це мало бути великим';
+
+  @override
+  String get pleaseBePatientLargeDatasets =>
+      'Будь ласка, будьте терплячими, великі набори даних можуть призвести до часу завантаження понад півтори хвилини';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return 'Продовжую завантажувати масивний потік з $name…';
+  }
 }

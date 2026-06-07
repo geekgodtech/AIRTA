@@ -1362,4 +1362,21 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get apiKeySavedSuccessfully => 'API-sleutel succesvol opgeslagen!';
+
+  @override
+  String get pleaseBePatientLongerTextThreads =>
+      'Wees geduldig, langere tekstthread-datasets duren behoorlijk lang om te laden';
+
+  @override
+  String get almostThereBigOne =>
+      'Bijna klaar, Wow, dit moet groot zijn geweest';
+
+  @override
+  String get pleaseBePatientLargeDatasets =>
+      'Wees geduldig, grote datasets kunnen leiden tot laadtijden van meer dan anderhalve minuut';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return 'Doorgaan met laden van de massieve thread met $name…';
+  }
 }

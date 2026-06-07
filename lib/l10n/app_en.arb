@@ -773,5 +773,20 @@
   "yourApiKeyIsStoredSecurely": "Your API key is stored securely on your device and never shared.",
   "pleaseEnterApiKey": "Please enter an API key",
   "apiKeySavedSuccessfully": "API key saved successfully!",
-  "save": "Save"
+  "save": "Save",
+  "loadingConversationWith": "Loading conversation\nwith {name}…",
+  "@loadingConversationWith": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "pleaseBePatientLongerTextThreads": "Please be patient, Longer text thread datasets take quite a while to load",
+  "almostThereBigOne": "Almost there, Wow this must have been a big one",
+  "pleaseBePatientLargeDatasets": "Please be patient, large datasets could result in loading times greater than a minute and a half",
+  "continuingToLoadMassiveThread": "Continuing to load the massive thread with {name}…",
+  "@continuingToLoadMassiveThread": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  }
 }

@@ -1362,4 +1362,21 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get apiKeySavedSuccessfully => 'Ключ API успешно сохранен!';
+
+  @override
+  String get pleaseBePatientLongerTextThreads =>
+      'Пожалуйста, будьте терпеливы, наборы данных более длинных текстовых потоков загружаются довольно долго';
+
+  @override
+  String get almostThereBigOne =>
+      'Почти готово, Wow, это должно было быть большим';
+
+  @override
+  String get pleaseBePatientLargeDatasets =>
+      'Пожалуйста, будьте терпеливы, большие наборы данных могут привести к времени загрузки более полутора минут';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return 'Продолжаю загружать массивный поток с $name…';
+  }
 }

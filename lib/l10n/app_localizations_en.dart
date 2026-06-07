@@ -1353,4 +1353,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get apiKeySavedSuccessfully => 'API key saved successfully!';
+
+  @override
+  String get pleaseBePatientLongerTextThreads =>
+      'Please be patient, Longer text thread datasets take quite a while to load';
+
+  @override
+  String get almostThereBigOne =>
+      'Almost there, Wow this must have been a big one';
+
+  @override
+  String get pleaseBePatientLargeDatasets =>
+      'Please be patient, large datasets could result in loading times greater than a minute and a half';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return 'Continuing to load the massive thread with $name…';
+  }
 }

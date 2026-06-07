@@ -410,5 +410,12 @@
   "yourApiKeyIsStoredSecurely": "您的 API 密钥安全地存储在您的设备上，绝不会共享。",
   "pleaseEnterApiKey": "请输入 API 密钥",
   "apiKeySavedSuccessfully": "API 密钥保存成功！",
-  "save": "保存"
+  "save": "保存",
+  "loadingConversationWith": "正在加载对话\n与 {name}…",
+  "@loadingConversationWith": { "placeholders": { "name": { "type": "String" } } },
+  "pleaseBePatientLongerTextThreads": "请耐心等待，较长的文本线程数据集加载需要相当长的时间",
+  "almostThereBigOne": "即将完成，哇，这个一定很大",
+  "pleaseBePatientLargeDatasets": "请耐心等待，大型数据集可能导致加载时间超过一分半钟",
+  "continuingToLoadMassiveThread": "继续加载与 {name} 的巨大线程…",
+  "@continuingToLoadMassiveThread": { "placeholders": { "name": { "type": "String" } } }
 }

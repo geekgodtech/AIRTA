@@ -1367,4 +1367,21 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get apiKeySavedSuccessfully => 'Chiave API salvata con successo!';
+
+  @override
+  String get pleaseBePatientLongerTextThreads =>
+      'Sii paziente, i set di dati di thread di testo più lunghi richiedono molto tempo per caricare';
+
+  @override
+  String get almostThereBigOne =>
+      'Quasi finito, Wow, questo deve essere stato grande';
+
+  @override
+  String get pleaseBePatientLargeDatasets =>
+      'Sii paziente, i set di dati grandi potrebbero comportare tempi di caricamento superiori a un minuto e mezzo';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return 'Continuando a caricare il thread massiccio con $name…';
+  }
 }

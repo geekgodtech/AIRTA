@@ -1357,4 +1357,21 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get apiKeySavedSuccessfully => 'API anahtarı başarıyla kaydedildi!';
+
+  @override
+  String get pleaseBePatientLongerTextThreads =>
+      'Lütfen sabırlı olun, daha uzun metin dizisi veri kümeleri yüklenmek için oldukça zaman alır';
+
+  @override
+  String get almostThereBigOne =>
+      'Neredeyse bitti, Vay canına, bu büyük olmalı';
+
+  @override
+  String get pleaseBePatientLargeDatasets =>
+      'Lütfen sabırlı olun, büyük veri kümeleri bir buçuk dakikadan fazla yükleme sürelerine neden olabilir';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return 'Devam ediyor, $name ile devasa diziyi yükleniyor…';
+  }
 }

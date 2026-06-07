@@ -410,5 +410,12 @@
   "yourApiKeyIsStoredSecurely": "Twój klucz API jest bezpiecznie przechowywany na Twoim urządzeniu i nigdy nie jest udostępniany.",
   "pleaseEnterApiKey": "Proszę wprowadzić klucz API",
   "apiKeySavedSuccessfully": "Klucz API został pomyślnie zapisany!",
-  "save": "Zapisz"
+  "save": "Zapisz",
+  "loadingConversationWith": "Ładowanie rozmowy\nz {name}…",
+  "@loadingConversationWith": { "placeholders": { "name": { "type": "String" } } },
+  "pleaseBePatientLongerTextThreads": "Proszę o cierpliwość, dłuższe zestawy danych wątków tekstowych ładują się dość długo",
+  "almostThereBigOne": "Prawie gotowe, Wow, to musiało być duże",
+  "pleaseBePatientLargeDatasets": "Proszę o cierpliwość, duże zestawy danych mogą spowodować czas ładowania dłuższy niż półtorej minuty",
+  "continuingToLoadMassiveThread": "Kontynuuję ładowanie masywnego wątku z {name}…",
+  "@continuingToLoadMassiveThread": { "placeholders": { "name": { "type": "String" } } }
 }

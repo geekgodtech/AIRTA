@@ -410,5 +410,12 @@
   "yourApiKeyIsStoredSecurely": "يتم تخزين مفتاح API الخاص بك بشكل آمن على جهازك ولا يتم مشاركته أبدًا.",
   "pleaseEnterApiKey": "الرجاء إدخال مفتاح API",
   "apiKeySavedSuccessfully": "تم حفظ مفتاح API بنجاح!",
-  "save": "حفظ"
+  "save": "حفظ",
+  "loadingConversationWith": "تحميل المحادثة\nمع {name}…",
+  "@loadingConversationWith": { "placeholders": { "name": { "type": "String" } } },
+  "pleaseBePatientLongerTextThreads": "يرجى الصبر، مجموعات البيانات لمسارات النصوص الأطول تستغرق وقتًا طويلاً للتحميل",
+  "almostThereBigOne": "قريبًا، واو، يجب أن يكون هذا كبيرًا",
+  "pleaseBePatientLargeDatasets": "يرجى الصبر، مجموعات البيانات الكبيرة قد تؤدي إلى أوقات تحميل تزيد عن دقيقة ونصف",
+  "continuingToLoadMassiveThread": "متابعة تحميل المسار الضخم مع {name}…",
+  "@continuingToLoadMassiveThread": { "placeholders": { "name": { "type": "String" } } }
 }

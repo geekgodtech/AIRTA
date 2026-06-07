@@ -1346,4 +1346,20 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get apiKeySavedSuccessfully => 'API 키가 성공적으로 저장되었습니다!';
+
+  @override
+  String get pleaseBePatientLongerTextThreads =>
+      '인내심을 가지십시오, 더 긴 텍스트 스레드 데이터 세트는 로드하는 데 상당한 시간이 걸립니다';
+
+  @override
+  String get almostThereBigOne => '거의 완료, 와, 이건 컸던 것 같네요';
+
+  @override
+  String get pleaseBePatientLargeDatasets =>
+      '인내심을 가지십시오, 큰 데이터 세트는 로드 시간이 1분 반 이상 걸릴 수 있습니다';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return '$name와(과) 함께 거대한 스레드를 계속 로드 중…';
+  }
 }

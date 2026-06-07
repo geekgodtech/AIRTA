@@ -1368,4 +1368,21 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get apiKeySavedSuccessfully =>
       'API-Schlüssel erfolgreich gespeichert!';
+
+  @override
+  String get pleaseBePatientLongerTextThreads =>
+      'Bitte haben Sie Geduld, längere Text-Thread-Datensätze dauern ziemlich lange zum Laden';
+
+  @override
+  String get almostThereBigOne =>
+      'Fast fertig, Wow, das muss ein großer gewesen sein';
+
+  @override
+  String get pleaseBePatientLargeDatasets =>
+      'Bitte haben Sie Geduld, große Datensätze könnten zu Ladezeiten von mehr als eineinhalb Minuten führen';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return 'Lade weiterhin den massiven Thread mit $name…';
+  }
 }

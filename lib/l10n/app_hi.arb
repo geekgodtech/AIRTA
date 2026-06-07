@@ -410,5 +410,12 @@
   "yourApiKeyIsStoredSecurely": "आपकी API कुंजी आपके डिवाइस पर सुरक्षित रूप से संग्रहीत है और कभी साझा नहीं की जाती।",
   "pleaseEnterApiKey": "कृपया एक API कुंजी दर्ज करें",
   "apiKeySavedSuccessfully": "API कुंजी सफलतापूर्वक सहेजी गई!",
-  "save": "सहेजें"
+  "save": "सहेजें",
+  "loadingConversationWith": "बातचीत लोड हो रही है\n{name} के साथ…",
+  "@loadingConversationWith": { "placeholders": { "name": { "type": "String" } } },
+  "pleaseBePatientLongerTextThreads": "कृपया धैर्य रखें, लंबे टेक्स्ट थ्रेड डेटासेट लोड होने में काफी समय लेते हैं",
+  "almostThereBigOne": "लगभग हो गया, वाह, यह बड़ा होना चाहिए था",
+  "pleaseBePatientLargeDatasets": "कृपया धैर्य रखें, बड़े डेटासेट के कारण लोडिंग समय डेढ़ मिनट से अधिक हो सकता है",
+  "continuingToLoadMassiveThread": "विशाल थ्रेड को {name} के साथ लोड करना जारी है…",
+  "@continuingToLoadMassiveThread": { "placeholders": { "name": { "type": "String" } } }
 }

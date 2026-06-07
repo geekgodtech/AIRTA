@@ -1228,4 +1228,18 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get apiKeySavedSuccessfully => 'API 密钥保存成功！';
+
+  @override
+  String get pleaseBePatientLongerTextThreads => '请耐心等待，较长的文本线程数据集加载需要相当长的时间';
+
+  @override
+  String get almostThereBigOne => '即将完成，哇，这个一定很大';
+
+  @override
+  String get pleaseBePatientLargeDatasets => '请耐心等待，大型数据集可能导致加载时间超过一分半钟';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return '继续加载与 $name 的巨大线程…';
+  }
 }

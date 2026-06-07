@@ -2507,6 +2507,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'API key saved successfully!'**
   String get apiKeySavedSuccessfully;
+
+  /// No description provided for @pleaseBePatientLongerTextThreads.
+  ///
+  /// In en, this message translates to:
+  /// **'Please be patient, Longer text thread datasets take quite a while to load'**
+  String get pleaseBePatientLongerTextThreads;
+
+  /// No description provided for @almostThereBigOne.
+  ///
+  /// In en, this message translates to:
+  /// **'Almost there, Wow this must have been a big one'**
+  String get almostThereBigOne;
+
+  /// No description provided for @pleaseBePatientLargeDatasets.
+  ///
+  /// In en, this message translates to:
+  /// **'Please be patient, large datasets could result in loading times greater than a minute and a half'**
+  String get pleaseBePatientLargeDatasets;
+
+  /// No description provided for @continuingToLoadMassiveThread.
+  ///
+  /// In en, this message translates to:
+  /// **'Continuing to load the massive thread with {name}…'**
+  String continuingToLoadMassiveThread(String name);
 }
 
 class _AppLocalizationsDelegate

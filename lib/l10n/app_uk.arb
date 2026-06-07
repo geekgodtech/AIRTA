@@ -410,5 +410,12 @@
   "yourApiKeyIsStoredSecurely": "Ваш ключ API безпечно зберігається на вашому пристрої і ніколи не передається.",
   "pleaseEnterApiKey": "Будь ласка, введіть ключ API",
   "apiKeySavedSuccessfully": "Ключ API успішно збережено!",
-  "save": "Зберегти"
+  "save": "Зберегти",
+  "loadingConversationWith": "Завантаження розмови\nз {name}…",
+  "@loadingConversationWith": { "placeholders": { "name": { "type": "String" } } },
+  "pleaseBePatientLongerTextThreads": "Будь ласка, будьте терплячими, довші текстові потоки даних завантажуються доволі довго",
+  "almostThereBigOne": "Майже готово, Вау, це мало бути великим",
+  "pleaseBePatientLargeDatasets": "Будь ласка, будьте терплячими, великі набори даних можуть призвести до часу завантаження понад півтори хвилини",
+  "continuingToLoadMassiveThread": "Продовжую завантажувати масивний потік з {name}…",
+  "@continuingToLoadMassiveThread": { "placeholders": { "name": { "type": "String" } } }
 }

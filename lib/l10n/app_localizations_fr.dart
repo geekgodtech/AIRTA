@@ -1372,4 +1372,21 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get apiKeySavedSuccessfully => 'Clé API enregistrée avec succès !';
+
+  @override
+  String get pleaseBePatientLongerTextThreads =>
+      'Soyez patient, les ensembles de données de fils de texte plus longs prennent assez de temps à charger';
+
+  @override
+  String get almostThereBigOne =>
+      'Presque terminé, Wow, celui-ci doit avoir été grand';
+
+  @override
+  String get pleaseBePatientLargeDatasets =>
+      'Soyez patient, les grands ensembles de données pourraient entraîner des temps de charge supérieurs à une minute et demie';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return 'Continuant à charger le fil massif avec $name…';
+  }
 }

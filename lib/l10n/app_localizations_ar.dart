@@ -1352,4 +1352,20 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get apiKeySavedSuccessfully => 'تم حفظ مفتاح API بنجاح!';
+
+  @override
+  String get pleaseBePatientLongerTextThreads =>
+      'يرجى الصبر، مجموعات البيانات لمسارات النصوص الأطول تستغرق وقتًا طويلاً للتحميل';
+
+  @override
+  String get almostThereBigOne => 'قريبًا، واو، يجب أن يكون هذا كبيرًا';
+
+  @override
+  String get pleaseBePatientLargeDatasets =>
+      'يرجى الصبر، مجموعات البيانات الكبيرة قد تؤدي إلى أوقات تحميل تزيد عن دقيقة ونصف';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return 'متابعة تحميل المسار الضخم مع $name…';
+  }
 }

@@ -1290,4 +1290,20 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get apiKeySavedSuccessfully => 'APIキーが正常に保存されました！';
+
+  @override
+  String get pleaseBePatientLongerTextThreads =>
+      '忍耐強くお待ちください、長いテキストスレッドのデータセットは読み込みにかなり時間がかかります';
+
+  @override
+  String get almostThereBigOne => 'もうすぐ完了、わあ、これは大きかったですね';
+
+  @override
+  String get pleaseBePatientLargeDatasets =>
+      '忍耐強くお待ちください、大きなデータセットでは読み込み時間が1分半を超える可能性があります';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return '巨大なスレッドを $name と共に読み込み中…';
+  }
 }

@@ -410,5 +410,12 @@
   "yourApiKeyIsStoredSecurely": "Uw API-sleutel wordt veilig op uw apparaat opgeslagen en nooit gedeeld.",
   "pleaseEnterApiKey": "Voer een API-sleutel in",
   "apiKeySavedSuccessfully": "API-sleutel succesvol opgeslagen!",
-  "save": "Opslaan"
+  "save": "Opslaan",
+  "loadingConversationWith": "Gesprek laden\nmet {name}…",
+  "@loadingConversationWith": { "placeholders": { "name": { "type": "String" } } },
+  "pleaseBePatientLongerTextThreads": "Wees geduldig, langere tekstthread-datasets duren behoorlijk lang om te laden",
+  "almostThereBigOne": "Bijna klaar, Wow, dit moet groot zijn geweest",
+  "pleaseBePatientLargeDatasets": "Wees geduldig, grote datasets kunnen leiden tot laadtijden van meer dan anderhalve minuut",
+  "continuingToLoadMassiveThread": "Doorgaan met laden van de massieve thread met {name}…",
+  "@continuingToLoadMassiveThread": { "placeholders": { "name": { "type": "String" } } }
 }

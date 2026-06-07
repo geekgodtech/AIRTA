@@ -32,6 +32,8 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
   Timer? _loadingTimer;
   bool _isSelectingConversation = false;
   String _selectingConversationName = '';
+  Timer? _selectingLoadingTimer;
+  int _selectingLoadingMessageIndex = 0;
 
   AppLocalizations get l10n => AppLocalizations.of(context)!;
 
@@ -50,6 +52,7 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
   @override
   void dispose() {
     _loadingTimer?.cancel();
+    _selectingLoadingTimer?.cancel();
     super.dispose();
   }
 
@@ -107,6 +110,41 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
   void _stopLoadingTimer() {
     _loadingTimer?.cancel();
     _loadingTimer = null;
+  }
+
+  void _startSelectingLoadingTimer() {
+    _selectingLoadingTimer?.cancel();
+    _selectingLoadingMessageIndex = 0;
+
+    _selectingLoadingTimer = Timer.periodic(const Duration(seconds: 20), (timer) {
+      if (mounted) {
+        setState(() {
+          _selectingLoadingMessageIndex = (_selectingLoadingMessageIndex + 1) % 5;
+        });
+      }
+    });
+  }
+
+  void _stopSelectingLoadingTimer() {
+    _selectingLoadingTimer?.cancel();
+  }
+
+  String _getSelectingLoadingMessage() {
+    final l10n = AppLocalizations.of(context)!;
+    switch (_selectingLoadingMessageIndex) {
+      case 0:
+        return l10n.loadingConversationWith(_selectingConversationName);
+      case 1:
+        return l10n.pleaseBePatientLongerTextThreads;
+      case 2:
+        return l10n.almostThereBigOne;
+      case 3:
+        return l10n.pleaseBePatientLargeDatasets;
+      case 4:
+        return l10n.continuingToLoadMassiveThread(_selectingConversationName);
+      default:
+        return l10n.loadingConversationWith(_selectingConversationName);
+    }
   }
 
   Future<void> _checkPermissionAndLoad() async {
@@ -381,6 +419,7 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
         _selectingConversationName = partner.displayName;
         _errorMessage = null;
       });
+      _startSelectingLoadingTimer();
 
       // Fetch the full conversation thread
       final thread = await _smsService.fetchConversationThread(partner.id);
@@ -410,6 +449,7 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
         _errorMessage = AppLocalizations.of(context)!.errorLoadingConversations;
       });
     } finally {
+      _stopSelectingLoadingTimer();
       setState(() => _isSelectingConversation = false);
     }
   }
@@ -756,7 +796,7 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
                     ),
                     const SizedBox(height: 24),
                     Text(
-                      AppLocalizations.of(context)!.loadingConversationWith(_selectingConversationName),
+                      _getSelectingLoadingMessage(),
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         color: Colors.white,

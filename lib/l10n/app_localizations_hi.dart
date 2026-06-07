@@ -1362,4 +1362,20 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get apiKeySavedSuccessfully => 'API कुंजी सफलतापूर्वक सहेजी गई!';
+
+  @override
+  String get pleaseBePatientLongerTextThreads =>
+      'कृपया धैर्य रखें, लंबे टेक्स्ट थ्रेड डेटासेट लोड होने में काफी समय लेते हैं';
+
+  @override
+  String get almostThereBigOne => 'लगभग हो गया, वाह, यह बड़ा होना चाहिए था';
+
+  @override
+  String get pleaseBePatientLargeDatasets =>
+      'कृपया धैर्य रखें, बड़े डेटासेट के कारण लोडिंग समय डेढ़ मिनट से अधिक हो सकता है';
+
+  @override
+  String continuingToLoadMassiveThread(String name) {
+    return 'विशाल थ्रेड को $name के साथ लोड करना जारी है…';
+  }
 }
