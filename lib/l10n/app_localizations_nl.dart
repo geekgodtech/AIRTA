@@ -1180,150 +1180,152 @@ class AppLocalizationsNl extends AppLocalizations {
       'Detecteert onzekerheid, gemengde toewijding, duw-trek berichten of onduidelijke wens om door te gaan.';
 
   @override
-  String get unableToOpenConversations => 'Unable to Open Conversations';
+  String get unableToOpenConversations => 'Kan gesprekken niet openen';
 
   @override
   String get unableToOpenConversationsBody =>
-      'Something went wrong loading your conversations. Please try again.';
+      'Er is een fout opgetreden bij het laden van uw gesprekken. Probeer het opnieuw.';
 
   @override
   String get unableToLoadConversationsBody =>
-      'Unable to load conversations. Please check your permissions and try again.';
+      'Kan gesprekken niet laden. Controleer uw machtigingen en probeer het opnieuw.';
 
   @override
   String get errorLoadingConversationsBody =>
-      'Error loading conversations. Please try again.';
+      'Fout bij het laden van gesprekken. Probeer het opnieuw.';
 
   @override
-  String get smsPermissionRequired => 'SMS Permission Required';
+  String get smsPermissionRequired => 'SMS-machtiging vereist';
 
   @override
   String get smsPermissionRequiredBody =>
-      'To analyze SMS conversations, we need permission to read your messages. Your privacy is important — messages are only analyzed locally and never stored on our servers.';
+      'Om SMS-gesprekken te analyseren, hebben we toestemming nodig om uw berichten te lezen. Uw privacy is belangrijk — berichten worden alleen lokaal geanalyseerd en nooit op onze servers opgeslagen.';
 
   @override
-  String get grantSmsPermission => 'Grant SMS Permission';
+  String get grantSmsPermission => 'SMS-machtiging verlenen';
 
   @override
-  String get noSmsConversationsFound => 'No SMS conversations found';
+  String get noSmsConversationsFound => 'Geen SMS-gesprekken gevonden';
 
   @override
-  String get noConversationsMatchSearch => 'No conversations match your search';
+  String get noConversationsMatchSearch =>
+      'Geen gesprekken komen overeen met uw zoekopdracht';
 
   @override
   String get noSmsMessagesOnDevice =>
-      'You don\'t have any SMS messages on this device';
+      'U heeft geen SMS-berichten op dit apparaat';
 
   @override
-  String get tryDifferentSearch => 'Try a different search term';
+  String get tryDifferentSearch => 'Probeer een andere zoekterm';
 
   @override
-  String get clearSearch => 'Clear Search';
+  String get clearSearch => 'Zoekopdracht wissen';
 
   @override
   String selectedFile(String filename) {
-    return 'Selected: $filename';
+    return 'Geselecteerd: $filename';
   }
 
   @override
-  String get invalidFile => 'Invalid File';
+  String get invalidFile => 'Ongeldig bestand';
 
   @override
-  String get fileImport => 'File Import';
+  String get fileImport => 'Bestand importeren';
 
   @override
   String get fileImportNotImplemented =>
-      'File parsing is not yet implemented for this file type.';
+      'Bestandsanalyse is nog niet geïmplementeerd voor dit bestandstype.';
 
   @override
-  String get errorPickingFile => 'Unable to open the file. Please try again.';
+  String get errorPickingFile =>
+      'Kan het bestand niet openen. Probeer het opnieuw.';
 
   @override
-  String get readyToCapture => 'Ready to Capture';
+  String get readyToCapture => 'Klaar om vast te leggen';
 
   @override
   String get readyToCaptureBody =>
-      'Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you\'re done and tap \"Finish & Process\".';
+      'Ga nu naar de Berichten-app en begin met het maken van screenshots.\n\nKeer terug naar deze app wanneer u klaar bent en tik op \"Voltooien & Verwerken\".';
 
   @override
-  String get gotIt => 'Got it';
+  String get gotIt => 'Begrepen';
 
   @override
-  String get noScreenshotsToProcess => 'No screenshots to process.';
+  String get noScreenshotsToProcess => 'Geen screenshots om te verwerken.';
 
   @override
   String processingScreenshot(int current, int total) {
-    return 'Processing screenshot $current of $total...';
+    return 'Screenshot $current van $total verwerken...';
   }
 
   @override
-  String get noMessagesFound => 'No Messages Found';
+  String get noMessagesFound => 'Geen berichten gevonden';
 
   @override
   String get noMessagesFoundBody =>
-      'Could not extract any messages from the screenshots.\n\nPlease ensure the screenshots clearly show the message conversation.';
+      'Kan geen berichten uit de screenshots halen.\n\nZorg ervoor dat de screenshots het gesprek duidelijk tonen.';
 
   @override
   String loadedMessages(int count) {
-    return 'Loaded $count messages from screenshots';
+    return '$count berichten geladen uit screenshots';
   }
 
   @override
-  String get processingError => 'Processing Error';
+  String get processingError => 'Verwerkingsfout';
 
   @override
   String get processingErrorBody =>
-      'Error processing screenshots. Please try again.';
+      'Fout bij het verwerken van screenshots. Probeer het opnieuw.';
 
   @override
   String metricListSavedAs(String name) {
-    return 'Your selections have been saved as \"$name\".';
+    return 'Uw selecties zijn opgeslagen als \"$name\".';
   }
 
   @override
   String metricListLoadedName(String name) {
-    return 'Selections \"$name\" have been retrieved and applied.';
+    return 'De selecties \"$name\" zijn opgehaald en toegepast.';
   }
 
   @override
   String conversationLoaded(int count, String name) {
-    return 'Loaded $count messages from $name';
+    return '$count berichten geladen van $name';
   }
 
   @override
-  String get loadButton => 'Load';
+  String get loadButton => 'Laden';
 
   @override
   String get photoPermissionRequired =>
-      'Photo library permission is required to detect screenshots.';
+      'Fotobibliotheek-machtiging is vereist om screenshots te detecteren.';
 
   @override
-  String get initializingConnection => 'Initializing secure connection...';
+  String get initializingConnection => 'Beveiligde verbinding initialiseren...';
 
   @override
-  String get configurationRequired => 'Configuration Required';
+  String get configurationRequired => 'Configuratie vereist';
 
   @override
-  String get goBack => 'Go Back';
+  String get goBack => 'Terug';
 
   @override
-  String get enableDateRangeFiltering => 'Enable date range filtering';
+  String get enableDateRangeFiltering => 'Datumbereikfiltering inschakelen';
 
   @override
-  String get clearSelectedDateRange => 'Clear Selected Date Range';
+  String get clearSelectedDateRange => 'Geselecteerd datumbereik wissen';
 
   @override
-  String get largeThreadNoticeTitle => 'NOTICE TO USER';
+  String get largeThreadNoticeTitle => 'KENNISGEVING AAN GEBRUIKER';
 
   @override
   String get largeThreadNoticeBody =>
-      'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\nThe application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\nPlease be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.';
+      'Bij het verwerken van uitzonderlijk grote tekstthreads kunnen sommige laadschermen in deze app soms meer dan anderhalf minuut duren.\n\nDe app hangt niet. Als u een draaiende statusindicator ziet, laadt de app nog steeds.\n\nWees geduldig in deze gevallen, aangezien de laadtijd langer dan normaal kan zijn in vergelijking met andere apps, vooral bij een grote dataset zoals een thread met 50.000 berichten.';
 
   @override
-  String get neverShowThisAgain => 'Never show this message again';
+  String get neverShowThisAgain => 'Dit bericht niet meer weergeven';
 
   @override
   String loadingConversationWith(String name) {
-    return 'Loading conversation\nwith $name…';
+    return 'Gesprek laden\nmet $name…';
   }
 }

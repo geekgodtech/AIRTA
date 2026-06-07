@@ -1177,150 +1177,150 @@ class AppLocalizationsTr extends AppLocalizations {
       'Belirsizliği, karışık taahhütü, it-çek mesajlaşmasını veya devam etme isteğinin belirsizliğini tespit eder.';
 
   @override
-  String get unableToOpenConversations => 'Unable to Open Conversations';
+  String get unableToOpenConversations => 'Konuşmalar açılamıyor';
 
   @override
   String get unableToOpenConversationsBody =>
-      'Something went wrong loading your conversations. Please try again.';
+      'Konuşmalarınız yüklenirken bir hata oluştu. Lütfen tekrar deneyin.';
 
   @override
   String get unableToLoadConversationsBody =>
-      'Unable to load conversations. Please check your permissions and try again.';
+      'Konuşmalar yüklenemiyor. Lütfen izinlerinizi kontrol edin ve tekrar deneyin.';
 
   @override
   String get errorLoadingConversationsBody =>
-      'Error loading conversations. Please try again.';
+      'Konuşma yükleme hatası. Lütfen tekrar deneyin.';
 
   @override
-  String get smsPermissionRequired => 'SMS Permission Required';
+  String get smsPermissionRequired => 'SMS izni gerekli';
 
   @override
   String get smsPermissionRequiredBody =>
-      'To analyze SMS conversations, we need permission to read your messages. Your privacy is important — messages are only analyzed locally and never stored on our servers.';
+      'SMS konuşmalarını analiz etmek için mesajlarınızı okuma iznine ihtiyacımız var. Gizliliğiniz önemlidir — mesajlar sadece yerel olarak analiz edilir ve asla sunucularımızda saklanmaz.';
 
   @override
-  String get grantSmsPermission => 'Grant SMS Permission';
+  String get grantSmsPermission => 'SMS izni ver';
 
   @override
-  String get noSmsConversationsFound => 'No SMS conversations found';
+  String get noSmsConversationsFound => 'SMS konuşması bulunamadı';
 
   @override
-  String get noConversationsMatchSearch => 'No conversations match your search';
+  String get noConversationsMatchSearch => 'Aramanızla eşleşen konuşma yok';
 
   @override
-  String get noSmsMessagesOnDevice =>
-      'You don\'t have any SMS messages on this device';
+  String get noSmsMessagesOnDevice => 'Bu cihazda SMS mesajınız yok';
 
   @override
-  String get tryDifferentSearch => 'Try a different search term';
+  String get tryDifferentSearch => 'Farklı bir arama terimi deneyin';
 
   @override
-  String get clearSearch => 'Clear Search';
+  String get clearSearch => 'Aramayı temizle';
 
   @override
   String selectedFile(String filename) {
-    return 'Selected: $filename';
+    return 'Seçilen: $filename';
   }
 
   @override
-  String get invalidFile => 'Invalid File';
+  String get invalidFile => 'Geçersiz dosya';
 
   @override
-  String get fileImport => 'File Import';
+  String get fileImport => 'Dosya içe aktar';
 
   @override
   String get fileImportNotImplemented =>
-      'File parsing is not yet implemented for this file type.';
+      'Bu dosya türü için dosya analizi henüz uygulanmadı.';
 
   @override
-  String get errorPickingFile => 'Unable to open the file. Please try again.';
+  String get errorPickingFile => 'Dosya açılamıyor. Lütfen tekrar deneyin.';
 
   @override
-  String get readyToCapture => 'Ready to Capture';
+  String get readyToCapture => 'Yakalamaya hazır';
 
   @override
   String get readyToCaptureBody =>
-      'Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you\'re done and tap \"Finish & Process\".';
+      'Şimdi Mesajlar uygulamasına gidin ve ekran görüntüsü almaya başlayın.\n\nBittiğinde bu uygulamaya geri dönün ve \"Bitir ve İşle\" düğmesine basın.';
 
   @override
-  String get gotIt => 'Got it';
+  String get gotIt => 'Anladım';
 
   @override
-  String get noScreenshotsToProcess => 'No screenshots to process.';
+  String get noScreenshotsToProcess => 'İşlenecek ekran görüntüsü yok.';
 
   @override
   String processingScreenshot(int current, int total) {
-    return 'Processing screenshot $current of $total...';
+    return 'Ekran görüntüsü $current / $total işleniyor...';
   }
 
   @override
-  String get noMessagesFound => 'No Messages Found';
+  String get noMessagesFound => 'Mesaj bulunamadı';
 
   @override
   String get noMessagesFoundBody =>
-      'Could not extract any messages from the screenshots.\n\nPlease ensure the screenshots clearly show the message conversation.';
+      'Ekran görüntülerinden mesaj çıkarılamadı.\n\nEkran görüntülerinin konuşmayı net gösterdiğinden emin olun.';
 
   @override
   String loadedMessages(int count) {
-    return 'Loaded $count messages from screenshots';
+    return 'Ekran görüntülerinden $count mesaj yüklendi';
   }
 
   @override
-  String get processingError => 'Processing Error';
+  String get processingError => 'İşleme hatası';
 
   @override
   String get processingErrorBody =>
-      'Error processing screenshots. Please try again.';
+      'Ekran görüntüleri işlenirken hata oluştu. Lütfen tekrar deneyin.';
 
   @override
   String metricListSavedAs(String name) {
-    return 'Your selections have been saved as \"$name\".';
+    return 'Seçimleriniz \"$name\" olarak kaydedildi.';
   }
 
   @override
   String metricListLoadedName(String name) {
-    return 'Selections \"$name\" have been retrieved and applied.';
+    return 'Seçimler \"$name\" alındı ve uygulandı.';
   }
 
   @override
   String conversationLoaded(int count, String name) {
-    return 'Loaded $count messages from $name';
+    return '$name üzerinden $count mesaj yüklendi';
   }
 
   @override
-  String get loadButton => 'Load';
+  String get loadButton => 'Yükle';
 
   @override
   String get photoPermissionRequired =>
-      'Photo library permission is required to detect screenshots.';
+      'Ekran görüntülerini algılamak için fotoğraf kitaplığı izni gerekli.';
 
   @override
-  String get initializingConnection => 'Initializing secure connection...';
+  String get initializingConnection => 'Güvenli bağlantı başlatılıyor...';
 
   @override
-  String get configurationRequired => 'Configuration Required';
+  String get configurationRequired => 'Yapılandırma gerekli';
 
   @override
-  String get goBack => 'Go Back';
+  String get goBack => 'Geri';
 
   @override
-  String get enableDateRangeFiltering => 'Enable date range filtering';
+  String get enableDateRangeFiltering =>
+      'Tarih aralığı filtrelemeyi etkinleştir';
 
   @override
-  String get clearSelectedDateRange => 'Clear Selected Date Range';
+  String get clearSelectedDateRange => 'Seçilen tarih aralığını temizle';
 
   @override
-  String get largeThreadNoticeTitle => 'NOTICE TO USER';
+  String get largeThreadNoticeTitle => 'KULLANICIYA BİLDİRİM';
 
   @override
   String get largeThreadNoticeBody =>
-      'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\nThe application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\nPlease be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.';
+      'Özellikle büyük metin dizileriyle çalışırken, bu uygulamadaki bazı yükleme ekranları bazen bir buçuk dakikayı aşabilir.\n\nUygulama donmuyor. Dönen bir durum göstergesi görüyorsanız, uygulama hala yükleniyor demektir.\n\nBu durumlarda sabırlı olun, çünkü yükleme süresi diğer uygulamalara göre daha uzun olabilir, özellikle 50.000 mesaj içeren bir dizi gibi büyük bir veri setiyle çalışırken.';
 
   @override
-  String get neverShowThisAgain => 'Never show this message again';
+  String get neverShowThisAgain => 'Bu mesajı tekrar gösterme';
 
   @override
   String loadingConversationWith(String name) {
-    return 'Loading conversation\nwith $name…';
+    return 'Konuşma yükleniyor\n$name ile…';
   }
 }

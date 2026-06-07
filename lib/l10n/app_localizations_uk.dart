@@ -1178,150 +1178,153 @@ class AppLocalizationsUk extends AppLocalizations {
       'Виявляє невизначеність, змішані зобов\'язання, притягування-відштовхування або незрозуміле бажання продовжувати.';
 
   @override
-  String get unableToOpenConversations => 'Unable to Open Conversations';
+  String get unableToOpenConversations => 'Не вдається відкрити розмови';
 
   @override
   String get unableToOpenConversationsBody =>
-      'Something went wrong loading your conversations. Please try again.';
+      'Сталася помилка під час завантаження ваших розмов. Будь ласка, спробуйте ще раз.';
 
   @override
   String get unableToLoadConversationsBody =>
-      'Unable to load conversations. Please check your permissions and try again.';
+      'Не вдається завантажити розмови. Перевірте дозволи та спробуйте ще раз.';
 
   @override
   String get errorLoadingConversationsBody =>
-      'Error loading conversations. Please try again.';
+      'Помилка завантаження розмов. Будь ласка, спробуйте ще раз.';
 
   @override
-  String get smsPermissionRequired => 'SMS Permission Required';
+  String get smsPermissionRequired => 'Потрібен дозвіл SMS';
 
   @override
   String get smsPermissionRequiredBody =>
-      'To analyze SMS conversations, we need permission to read your messages. Your privacy is important — messages are only analyzed locally and never stored on our servers.';
+      'Для аналізу SMS-розмов нам потрібен дозвіл на читання ваших повідомлень. Ваша конфіденційність важлива — повідомлення аналізуються лише локально і ніколи не зберігаються на наших серверах.';
 
   @override
-  String get grantSmsPermission => 'Grant SMS Permission';
+  String get grantSmsPermission => 'Надати дозвіл SMS';
 
   @override
-  String get noSmsConversationsFound => 'No SMS conversations found';
+  String get noSmsConversationsFound => 'SMS-розмов не знайдено';
 
   @override
-  String get noConversationsMatchSearch => 'No conversations match your search';
+  String get noConversationsMatchSearch =>
+      'Немає розмов, що відповідають вашому пошуку';
 
   @override
   String get noSmsMessagesOnDevice =>
-      'You don\'t have any SMS messages on this device';
+      'У вас немає SMS-повідомлень на цьому пристрої';
 
   @override
-  String get tryDifferentSearch => 'Try a different search term';
+  String get tryDifferentSearch => 'Спробуйте інший пошуковий запит';
 
   @override
-  String get clearSearch => 'Clear Search';
+  String get clearSearch => 'Очистити пошук';
 
   @override
   String selectedFile(String filename) {
-    return 'Selected: $filename';
+    return 'Вибрано: $filename';
   }
 
   @override
-  String get invalidFile => 'Invalid File';
+  String get invalidFile => 'Недійсний файл';
 
   @override
-  String get fileImport => 'File Import';
+  String get fileImport => 'Імпорт файлу';
 
   @override
   String get fileImportNotImplemented =>
-      'File parsing is not yet implemented for this file type.';
+      'Аналіз файлів ще не реалізовано для цього типу файлу.';
 
   @override
-  String get errorPickingFile => 'Unable to open the file. Please try again.';
+  String get errorPickingFile =>
+      'Не вдається відкрити файл. Будь ласка, спробуйте ще раз.';
 
   @override
-  String get readyToCapture => 'Ready to Capture';
+  String get readyToCapture => 'Готовий до захоплення';
 
   @override
   String get readyToCaptureBody =>
-      'Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you\'re done and tap \"Finish & Process\".';
+      'Перейдіть зараз до програми повідомлень і почніть робити знімки екрана.\n\nПоверніться до цієї програми, коли закінчите, і натисніть \"Завершити та обробити\".';
 
   @override
-  String get gotIt => 'Got it';
+  String get gotIt => 'Зрозумів';
 
   @override
-  String get noScreenshotsToProcess => 'No screenshots to process.';
+  String get noScreenshotsToProcess => 'Немає знімків екрана для обробки.';
 
   @override
   String processingScreenshot(int current, int total) {
-    return 'Processing screenshot $current of $total...';
+    return 'Обробка знімка екрана $current з $total...';
   }
 
   @override
-  String get noMessagesFound => 'No Messages Found';
+  String get noMessagesFound => 'Повідомлення не знайдено';
 
   @override
   String get noMessagesFoundBody =>
-      'Could not extract any messages from the screenshots.\n\nPlease ensure the screenshots clearly show the message conversation.';
+      'Не вдалося витягти повідомлення зі знімків екрана.\n\nПереконайтеся, що знімки чітко показують розмову.';
 
   @override
   String loadedMessages(int count) {
-    return 'Loaded $count messages from screenshots';
+    return '$count повідомлень завантажено зі знімків екрана';
   }
 
   @override
-  String get processingError => 'Processing Error';
+  String get processingError => 'Помилка обробки';
 
   @override
   String get processingErrorBody =>
-      'Error processing screenshots. Please try again.';
+      'Помилка під час обробки знімків екрана. Будь ласка, спробуйте ще раз.';
 
   @override
   String metricListSavedAs(String name) {
-    return 'Your selections have been saved as \"$name\".';
+    return 'Ваші вибори збережено як \"$name\".';
   }
 
   @override
   String metricListLoadedName(String name) {
-    return 'Selections \"$name\" have been retrieved and applied.';
+    return 'Вибори \"$name\" отримано та застосовано.';
   }
 
   @override
   String conversationLoaded(int count, String name) {
-    return 'Loaded $count messages from $name';
+    return '$count повідомлень завантажено з $name';
   }
 
   @override
-  String get loadButton => 'Load';
+  String get loadButton => 'Завантажити';
 
   @override
   String get photoPermissionRequired =>
-      'Photo library permission is required to detect screenshots.';
+      'Дозвіл бібліотеки фотографій необхідний для виявлення знімків екрана.';
 
   @override
-  String get initializingConnection => 'Initializing secure connection...';
+  String get initializingConnection => 'Ініціалізація безпечного з\'єднання...';
 
   @override
-  String get configurationRequired => 'Configuration Required';
+  String get configurationRequired => 'Конфігурація необхідна';
 
   @override
-  String get goBack => 'Go Back';
+  String get goBack => 'Назад';
 
   @override
-  String get enableDateRangeFiltering => 'Enable date range filtering';
+  String get enableDateRangeFiltering =>
+      'Увімкнути фільтрацію за діапазоном дат';
 
   @override
-  String get clearSelectedDateRange => 'Clear Selected Date Range';
+  String get clearSelectedDateRange => 'Очистити вибраний діапазон дат';
 
   @override
-  String get largeThreadNoticeTitle => 'NOTICE TO USER';
+  String get largeThreadNoticeTitle => 'ПОВІДОМЛЕННЯ КОРИСТУВАЧУ';
 
   @override
   String get largeThreadNoticeBody =>
-      'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\nThe application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\nPlease be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.';
+      'При роботі з винятково великими текстовими потоками деякі екрани завантаження в цій програмі можуть іноді перевищувати півтори хвилини.\n\nПрограма не зависає. Якщо ви бачите обертовий індикатор стану, програма все ще завантажується.\n\nБудь ласка, будьте терплячими в цих випадках, оскільки час завантаження може бути довшим за звичайний порівняно з іншими програмами, особливо при роботі з великим набором даних, таким як потік із 50 000 повідомлень.';
 
   @override
-  String get neverShowThisAgain => 'Never show this message again';
+  String get neverShowThisAgain => 'Більше не показувати це повідомлення';
 
   @override
   String loadingConversationWith(String name) {
-    return 'Loading conversation\nwith $name…';
+    return 'Завантаження розмови\nз $name…';
   }
 }
