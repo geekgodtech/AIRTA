@@ -2411,6 +2411,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Go Back'**
   String get goBack;
+
+  /// No description provided for @enableDateRangeFiltering.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable date range filtering'**
+  String get enableDateRangeFiltering;
+
+  /// No description provided for @clearSelectedDateRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear Selected Date Range'**
+  String get clearSelectedDateRange;
+
+  /// No description provided for @largeThreadNoticeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'NOTICE TO USER'**
+  String get largeThreadNoticeTitle;
+
+  /// No description provided for @largeThreadNoticeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\nThe application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\nPlease be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.'**
+  String get largeThreadNoticeBody;
+
+  /// No description provided for @neverShowThisAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Never show this message again'**
+  String get neverShowThisAgain;
+
+  /// No description provided for @loadingConversationWith.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading conversation\nwith {name}…'**
+  String loadingConversationWith(String name);
 }
 
 class _AppLocalizationsDelegate

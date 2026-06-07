@@ -1304,4 +1304,25 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get goBack => 'Go Back';
+
+  @override
+  String get enableDateRangeFiltering => 'Enable date range filtering';
+
+  @override
+  String get clearSelectedDateRange => 'Clear Selected Date Range';
+
+  @override
+  String get largeThreadNoticeTitle => 'NOTICE TO USER';
+
+  @override
+  String get largeThreadNoticeBody =>
+      'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\nThe application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\nPlease be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.';
+
+  @override
+  String get neverShowThisAgain => 'Never show this message again';
+
+  @override
+  String loadingConversationWith(String name) {
+    return 'Loading conversation\nwith $name…';
+  }
 }

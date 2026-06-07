@@ -751,5 +751,16 @@
   "photoPermissionRequired": "Photo library permission is required to detect screenshots.",
   "initializingConnection": "Initializing secure connection...",
   "configurationRequired": "Configuration Required",
-  "goBack": "Go Back"
+  "goBack": "Go Back",
+  "enableDateRangeFiltering": "Enable date range filtering",
+  "clearSelectedDateRange": "Clear Selected Date Range",
+  "largeThreadNoticeTitle": "NOTICE TO USER",
+  "largeThreadNoticeBody": "When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\nThe application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\nPlease be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.",
+  "neverShowThisAgain": "Never show this message again",
+  "loadingConversationWith": "Loading conversation\nwith {name}…",
+  "@loadingConversationWith": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  }
 }
