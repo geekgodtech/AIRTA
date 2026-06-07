@@ -193,56 +193,6 @@ class ToxicityAnalyzerController extends ChangeNotifier {
   int _filteredMessageCount = 0;
   int _totalMessagesWithTimestamp = 0;
 
-  String getDebugInfo() {
-    DateTime? newestMessageTimestamp;
-    if (activeThread != null && activeThread!.messages.isNotEmpty) {
-      newestMessageTimestamp = activeThread!.messages
-          .map((m) => m.timestamp)
-          .where((t) => t != null)
-          .cast<DateTime>()
-          .reduce((a, b) => a.isAfter(b) ? a : b);
-    }
-
-    // Count message types in current thread
-    int smsCount = 0;
-    int mmsCount = 0;
-    if (activeThread != null) {
-      for (final msg in activeThread!.messages) {
-        if (msg.messageType == 'SMS') {
-          smsCount++;
-        } else if (msg.messageType == 'MMS') {
-          mmsCount++;
-        }
-      }
-    }
-
-    // Load global counts if not already loaded
-    if (!_globalCountsLoaded && Platform.isAndroid) {
-      _loadGlobalMessageCounts();
-    }
-
-    return '''Date Range Debug Info:
-- hasDateRange: $hasDateRange
-- dateRangeStart: $dateRangeStart
-- dateRangeEnd: $dateRangeEnd
-- selectedMetricCount: $selectedMetricCount
-- hasSelectedMetricCount: $hasSelectedMetricCount
-- activeThread: ${activeThread != null ? 'Loaded (${activeThread!.messages.length} messages)' : 'Not loaded'}
-- isAnalyzing: $isAnalyzing
-- hasApiKey: $hasApiKey
-- hasReachedStandardDailyReportLimit: $hasReachedStandardDailyReportLimit
-- selectedMetricIds: $selectedMetricIds
-- Messages with timestamps: $_totalMessagesWithTimestamp
-- Messages in date range: $_filteredMessageCount
-- Newest message timestamp: $newestMessageTimestamp
-- Current thread SMS messages: $smsCount
-- Current thread MMS messages (pictures, videos, group texts): $mmsCount
-- Last fetch SMS messages: $_lastFetchSmsCount
-- Last fetch MMS messages: $_lastFetchMmsCount
-- Global SMS messages: $_globalSmsCount
-- Global MMS messages (pictures, videos, group texts): $_globalMmsCount''';
-  }
-
   Future<void> _loadGlobalMessageCounts() async {
     if (Platform.isAndroid) {
       try {

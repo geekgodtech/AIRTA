@@ -1020,18 +1020,7 @@ class _AnalysisActionSection extends StatelessWidget {
     final hasLoadedConversation = controller.activeThread != null;
     final canPressAnalyze = hasLoadedConversation && !controller.isAnalyzing;
 
-    return GestureDetector(
-      onLongPress: canPressAnalyze
-          ? () {
-              if (!controller.hasSelectedMetricCount) {
-                return;
-              }
-              HapticFeedback.mediumImpact();
-              controller.isCurrentReportUnlocked = true;
-              controller.executeAnalysis();
-            }
-          : null,
-      child: ElevatedButton.icon(
+    return ElevatedButton.icon(
         onPressed: canPressAnalyze
             ? () {
                 if (!controller.hasSelectedMetricCount) {
@@ -1045,12 +1034,9 @@ class _AnalysisActionSection extends StatelessWidget {
                   return;
                 }
 
-                _showDebugDialog(context, controller);
                 controller.executeAnalysis();
               }
-            : () {
-                _showDebugDialog(context, controller);
-              },
+            : null,
         style: ElevatedButton.styleFrom(
           minimumSize: const Size.fromHeight(56),
           shape: RoundedRectangleBorder(
@@ -1064,7 +1050,6 @@ class _AnalysisActionSection extends StatelessWidget {
               : AppLocalizations.of(context)!.loadConversationAndSelectMetric,
           textAlign: TextAlign.center,
         ),
-      ),
     );
   }
 }
@@ -1208,15 +1193,6 @@ class _DateRangeFilterSection extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                TextButton.icon(
-                  icon: const Icon(Icons.bug_report, size: 16),
-                  label: const Text('Debug', style: TextStyle(fontSize: 12)),
-                  onPressed: () => _showDebugDialog(context, controller),
-                  style: TextButton.styleFrom(
-                    visualDensity: VisualDensity.compact,
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
-                  ),
-                ),
               ],
             ),
             if (controller.hasDateRange) ...[
@@ -1370,35 +1346,6 @@ class _DateField extends StatelessWidget {
   }
 }
 
-void _showDebugDialog(BuildContext context, ToxicityAnalyzerController controller) {
-  final debugInfo = controller.getDebugInfo();
-  showDialog(
-    context: context,
-    builder: (context) => AlertDialog(
-      title: const Text('Debug Info'),
-      content: SelectableText(
-        debugInfo,
-        style: const TextStyle(fontFamily: 'monospace'),
-      ),
-      actions: [
-        TextButton.icon(
-          icon: const Icon(Icons.copy, size: 16),
-          label: const Text('Copy'),
-          onPressed: () {
-            Clipboard.setData(ClipboardData(text: debugInfo));
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Copied to clipboard')),
-            );
-          },
-        ),
-        TextButton(
-          onPressed: () => Navigator.of(context).pop(),
-          child: const Text('Close'),
-        ),
-      ],
-    ),
-  );
-}
 
 void _showSaveMetricListDialog(BuildContext context, ToxicityAnalyzerController controller) {
   final l10n = AppLocalizations.of(context)!;

@@ -142,7 +142,6 @@ class _AnalysisReportView extends StatefulWidget {
 
 class _AnalysisReportViewState extends State<_AnalysisReportView> {
   bool _isPdfPreviewOpen = false;
-  bool _debugBlurDisabled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -150,34 +149,9 @@ class _AnalysisReportViewState extends State<_AnalysisReportView> {
     final pdfBytes = widget.pdfBytes;
     final controller = context.watch<ToxicityAnalyzerController>();
     final l10n = AppLocalizations.of(context)!;
-    final canAccessFullReport =
-        controller.canAccessFullCurrentReport || _debugBlurDisabled;
+    final canAccessFullReport = controller.canAccessFullCurrentReport;
 
-    return Focus(
-      autofocus: true,
-      onKeyEvent: (node, event) {
-        if (event is KeyDownEvent &&
-            event.logicalKey == LogicalKeyboardKey.keyH &&
-            HardwareKeyboard.instance.isControlPressed &&
-            HardwareKeyboard.instance.isAltPressed) {
-          setState(() {
-            _debugBlurDisabled = !_debugBlurDisabled;
-          });
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                _debugBlurDisabled
-                    ? 'Debug: Blur disabled'
-                    : 'Debug: Blur enabled',
-              ),
-              duration: const Duration(seconds: 1),
-            ),
-          );
-          return KeyEventResult.handled;
-        }
-        return KeyEventResult.ignored;
-      },
-      child: Stack(
+    return Stack(
         children: [
           Positioned.fill(
             child: SingleChildScrollView(

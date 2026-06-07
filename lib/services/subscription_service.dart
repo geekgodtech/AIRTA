@@ -193,12 +193,6 @@ class SubscriptionService extends ChangeNotifier {
     return _activeTier.index >= tier.index;
   }
 
-  /// Debug method to manually set tier for testing
-  Future<void> debugSetTier(MembershipTier tier) async {
-    await _activateTier(tier);
-    debugPrint('DEBUG: Manually set tier to $tier');
-  }
-
   /// Get product by ID
   ProductDetails? getProduct(String productId) {
     try {
