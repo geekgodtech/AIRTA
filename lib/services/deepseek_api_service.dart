@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:airta/models.dart';
 
 class DeepSeekApiService {
-  static const String deepSeekModel = 'deepseek-v4-flash';
+  static const String deepSeekModel = 'deepseek-chat';
   static const String defaultEndpoint =
       'https://api.deepseek.com/chat/completions';
   // Reduced to stay under 1,048,565 token limit (1 token ≈ 4 chars)
