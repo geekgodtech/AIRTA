@@ -16,6 +16,8 @@ class AnalyzerWorkspace extends StatefulWidget {
 class _AnalyzerWorkspaceState extends State<AnalyzerWorkspace> {
   bool _isAnalysisPanelOpen = true;
   PsychologicalAnalysisReport? _lastObservedReport;
+  bool _wasAnalyzing = false;
+  String? _lastShownError;
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +32,26 @@ class _AnalyzerWorkspaceState extends State<AnalyzerWorkspace> {
             }
           });
         }
+
+        // Show SnackBar when analysis finishes with an error
+        if (_wasAnalyzing && !controller.isAnalyzing && controller.activeReport == null) {
+          final err = controller.errorMessage;
+          if (err != null && err != _lastShownError) {
+            _lastShownError = err;
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              if (mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(err),
+                    backgroundColor: Theme.of(context).colorScheme.error,
+                    duration: const Duration(seconds: 6),
+                  ),
+                );
+              }
+            });
+          }
+        }
+        _wasAnalyzing = controller.isAnalyzing;
 
         return Stack(
           children: [
