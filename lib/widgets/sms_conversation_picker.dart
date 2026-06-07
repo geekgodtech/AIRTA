@@ -131,8 +131,11 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
     }
   }
 
+  static bool _warningShownThisSession = false;
+
   Future<void> _showLargeThreadWarning() async {
-    if (!mounted) return;
+    if (!mounted || _warningShownThisSession) return;
+    _warningShownThisSession = true;
     await showDialog<void>(
       context: context,
       barrierDismissible: false,
