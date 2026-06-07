@@ -525,11 +525,10 @@ class ToxicityAnalyzerController extends ChangeNotifier {
         
         // Ensure we have messages after filtering
         if (filteredMessages.isEmpty) {
-          // Fall back to full thread rather than aborting — date range may not
-          // match timestamps in the conversation (e.g. SMS stored in UTC vs local)
-          statusMessage = 'No messages matched the date range — analyzing full conversation instead.';
+          errorMessage = 'NO_MESSAGES_IN_DATE_RANGE';
+          isAnalyzing = false;
           notifyListeners();
-          analysisThread = thread;
+          return;
         } else {
           // Apply token limit sampling if needed (DeepSeek token limit ~128k)
           const int maxTokens = 128000;

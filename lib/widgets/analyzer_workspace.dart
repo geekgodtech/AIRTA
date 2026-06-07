@@ -33,13 +33,32 @@ class _AnalyzerWorkspaceState extends State<AnalyzerWorkspace> {
           });
         }
 
-        // Show SnackBar when analysis finishes with an error
+        // Show error feedback when analysis finishes without a report
         if (_wasAnalyzing && !controller.isAnalyzing && controller.activeReport == null) {
           final err = controller.errorMessage;
           if (err != null && err != _lastShownError) {
             _lastShownError = err;
             WidgetsBinding.instance.addPostFrameCallback((_) {
-              if (mounted) {
+              if (!mounted) return;
+              if (err == 'NO_MESSAGES_IN_DATE_RANGE') {
+                showDialog<void>(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (_) => AlertDialog(
+                    title: const Text('No Messages Found in Date Range'),
+                    content: const Text(
+                      'There are no messages in the loaded thread that match your selected date range.\n\n'
+                      'Please revise your date selection or load a different text thread that contains messages within your selected date range.',
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.of(context).pop(),
+                        child: const Text('OK'),
+                      ),
+                    ],
+                  ),
+                );
+              } else {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text(err),
