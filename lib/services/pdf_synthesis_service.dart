@@ -29,9 +29,9 @@ class PdfSynthesisService {
 
           // Add date range if specified
           if (dateRangeStart != null && dateRangeEnd != null) {
-            final dateFormat = '${dateRangeStart.year}-${dateRangeStart.month.toString().padLeft(2, '0')}-${dateRangeStart.day.toString().padLeft(2, '0')}';
-            final endDateFormat = '${dateRangeEnd.year}-${dateRangeEnd.month.toString().padLeft(2, '0')}-${dateRangeEnd.day.toString().padLeft(2, '0')}';
-            headerChildren.add(pw.Text('Analysis date range: $dateFormat to $endDateFormat'));
+            final dateFormat = '${dateRangeStart.month}/${dateRangeStart.day}/${dateRangeStart.year}';
+            final endDateFormat = '${dateRangeEnd.month}/${dateRangeEnd.day}/${dateRangeEnd.year}';
+            headerChildren.add(pw.Text('Date range for analysis: $dateFormat - $endDateFormat'));
           }
 
           headerChildren.add(pw.SizedBox(height: 18));
