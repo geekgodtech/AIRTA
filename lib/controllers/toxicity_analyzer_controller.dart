@@ -525,23 +525,24 @@ class ToxicityAnalyzerController extends ChangeNotifier {
         
         // Ensure we have messages after filtering
         if (filteredMessages.isEmpty) {
-          errorMessage = 'No messages found in the selected date range. Please adjust your date range or clear it.';
-          isAnalyzing = false;
+          // Fall back to full thread rather than aborting — date range may not
+          // match timestamps in the conversation (e.g. SMS stored in UTC vs local)
+          statusMessage = 'No messages matched the date range — analyzing full conversation instead.';
           notifyListeners();
-          return;
+          analysisThread = thread;
+        } else {
+          // Apply token limit sampling if needed (DeepSeek token limit ~128k)
+          const int maxTokens = 128000;
+          filteredMessages = sampleMessagesForTokenLimit(filteredMessages, maxTokens);
+          
+          // Create a new thread with filtered messages
+          analysisThread = ConversationThread(
+            threadId: thread.threadId,
+            platformSource: thread.platformSource,
+            messages: filteredMessages,
+            fileSource: thread.fileSource,
+          );
         }
-        
-        // Apply token limit sampling if needed (DeepSeek token limit ~128k)
-        const int maxTokens = 128000;
-        filteredMessages = sampleMessagesForTokenLimit(filteredMessages, maxTokens);
-        
-        // Create a new thread with filtered messages
-        analysisThread = ConversationThread(
-          threadId: thread.threadId,
-          platformSource: thread.platformSource,
-          messages: filteredMessages,
-          fileSource: thread.fileSource,
-        );
       }
       
       final report = await _deepSeekApiService.executeForensicAnalysis(
