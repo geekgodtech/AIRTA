@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:airta/controllers/toxicity_analyzer_controller.dart';
 import 'package:airta/l10n/app_localizations.dart';
 import 'package:airta/services/android_sms_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SmsConversationPicker extends StatefulWidget {
   final ToxicityAnalyzerController controller;
@@ -134,26 +135,60 @@ class _SmsConversationPickerState extends State<SmsConversationPicker> {
   }
 
   static bool _warningShownThisSession = false;
+  static const String _prefKey = 'large_thread_warning_suppressed';
 
   Future<void> _showLargeThreadWarning() async {
     if (!mounted || _warningShownThisSession) return;
+    final prefs = await SharedPreferences.getInstance();
+    if (prefs.getBool(_prefKey) == true) return;
     _warningShownThisSession = true;
+    if (!mounted) return;
+    bool neverShow = false;
     await showDialog<void>(
       context: context,
       barrierDismissible: false,
-      builder: (context) => AlertDialog(
-        title: const Text('NOTICE TO USER'),
-        content: const Text(
-          'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\n'
-          'The application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\n'
-          'Please be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text('OK'),
+      builder: (context) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: const Text('NOTICE TO USER'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'When dealing with exceptionally large text threads, some loading screens within this app could exceed over a minute and a half at times.\n\n'
+                'The application does not hang. If you see a circling status indicator spinning, the app is still loading.\n\n'
+                'Please be patient in those cases, as loading time could be longer than usual compared to your average load time in other applications — especially when dealing with a large dataset such as a thread with 50,000 messages.',
+              ),
+              const SizedBox(height: 16),
+              InkWell(
+                onTap: () => setDialogState(() => neverShow = !neverShow),
+                child: Row(
+                  children: [
+                    Checkbox(
+                      value: neverShow,
+                      onChanged: (val) => setDialogState(() => neverShow = val ?? false),
+                    ),
+                    const SizedBox(width: 4),
+                    const Expanded(
+                      child: Text('Never show this message again'),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-        ],
+          actions: [
+            TextButton(
+              onPressed: () async {
+                if (neverShow) {
+                  await prefs.setBool(_prefKey, true);
+                }
+                if (context.mounted) Navigator.of(context).pop();
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        ),
       ),
     );
   }

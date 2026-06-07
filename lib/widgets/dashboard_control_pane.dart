@@ -1096,10 +1096,19 @@ class _ConversationSelectionSection extends StatelessWidget {
   }
 }
 
-class _DateRangeFilterSection extends StatelessWidget {
+class _DateRangeFilterSection extends StatefulWidget {
   final ToxicityAnalyzerController controller;
 
   const _DateRangeFilterSection({required this.controller});
+
+  @override
+  State<_DateRangeFilterSection> createState() => _DateRangeFilterSectionState();
+}
+
+class _DateRangeFilterSectionState extends State<_DateRangeFilterSection> {
+  bool _dateRangeEnabled = false;
+
+  ToxicityAnalyzerController get controller => widget.controller;
 
   @override
   Widget build(BuildContext context) {
@@ -1107,7 +1116,8 @@ class _DateRangeFilterSection extends StatelessWidget {
     final hasLoadedConversation = controller.activeThread != null;
     final subscriptionService = SubscriptionService();
     final isFreeTier = subscriptionService.activeTier == MembershipTier.free;
-    
+    final canUse = hasLoadedConversation && !isFreeTier && _dateRangeEnabled;
+
     return Card(
       elevation: 2,
       color: Theme.of(context).colorScheme.secondaryContainer.withOpacity(0.5),
@@ -1116,101 +1126,136 @@ class _DateRangeFilterSection extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Header row with icon, title, and enable checkbox
             Row(
               children: [
                 Icon(
                   Icons.date_range_outlined,
                   size: 20,
-                  color: hasLoadedConversation && !isFreeTier
+                  color: canUse
                       ? Theme.of(context).colorScheme.primary
                       : Theme.of(context).colorScheme.onSurface.withOpacity(0.38),
                 ),
                 const SizedBox(width: 8),
-                Text(
-                  '${l10n.dateRangeFilter} ${l10n.dateRangeOptional}',
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: hasLoadedConversation && !isFreeTier
-                        ? null
-                        : Theme.of(context).colorScheme.onSurface.withOpacity(0.38),
+                Expanded(
+                  child: Text(
+                    '${l10n.dateRangeFilter} ${l10n.dateRangeOptional}',
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                      color: canUse
+                          ? null
+                          : Theme.of(context).colorScheme.onSurface.withOpacity(0.38),
+                    ),
                   ),
                 ),
-                const Spacer(),
               ],
             ),
-            if (controller.hasDateRange) ...[
-              const SizedBox(height: 8),
-              Center(
-                child: TextButton.icon(
-                  onPressed: hasLoadedConversation && !isFreeTier
-                      ? () => controller.clearDateRange()
+            const SizedBox(height: 8),
+            // Enable checkbox
+            InkWell(
+              onTap: hasLoadedConversation && !isFreeTier
+                  ? () {
+                      setState(() {
+                        _dateRangeEnabled = !_dateRangeEnabled;
+                        if (!_dateRangeEnabled) {
+                          controller.clearDateRange();
+                        }
+                      });
+                    }
+                  : isFreeTier
+                      ? () => Navigator.of(context).push(
+                            MaterialPageRoute<void>(
+                              builder: (context) => const MembershipLandingPage(),
+                            ),
+                          )
                       : null,
-                  icon: const Icon(Icons.clear, size: 16),
-                  label: Text(l10n.clear),
-                ),
-              ),
-            ],
-            const SizedBox(height: 12),
-            Row(
-              children: [
-                Expanded(
-                  child: _DateField(
-                    label: l10n.startDate,
-                    date: controller.dateRangeStart,
-                    enabled: hasLoadedConversation && !isFreeTier,
-                    onTap: hasLoadedConversation && !isFreeTier
-                        ? () async {
-                            final picked = await showDatePicker(
-                              context: context,
-                              initialDate: controller.dateRangeStart ?? DateTime.now(),
-                              firstDate: DateTime(2000),
-                              lastDate: DateTime.now(),
-                            );
-                            if (picked != null) {
-                              controller.setDateRange(picked, controller.dateRangeEnd);
-                            }
+              child: Row(
+                children: [
+                  Checkbox(
+                    value: _dateRangeEnabled,
+                    onChanged: hasLoadedConversation && !isFreeTier
+                        ? (val) {
+                            setState(() {
+                              _dateRangeEnabled = val ?? false;
+                              if (!_dateRangeEnabled) {
+                                controller.clearDateRange();
+                              }
+                            });
                           }
-                        : () {
-                            if (isFreeTier) {
-                              Navigator.of(context).push(
-                                MaterialPageRoute<void>(
-                                  builder: (context) => const MembershipLandingPage(),
-                                ),
-                              );
-                            }
-                          },
+                        : null,
                   ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: _DateField(
-                    label: l10n.endDate,
-                    date: controller.dateRangeEnd,
-                    enabled: hasLoadedConversation && !isFreeTier,
-                    onTap: hasLoadedConversation && !isFreeTier
-                        ? () async {
-                            final picked = await showDatePicker(
-                              context: context,
-                              initialDate: controller.dateRangeEnd ?? DateTime.now(),
-                              firstDate: DateTime(2000),
-                              lastDate: DateTime.now(),
-                            );
-                            if (picked != null) {
-                              controller.setDateRange(controller.dateRangeStart, picked);
+                  const SizedBox(width: 4),
+                  Text(
+                    'Enable date range filtering',
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                      color: hasLoadedConversation && !isFreeTier
+                          ? null
+                          : Theme.of(context).colorScheme.onSurface.withOpacity(0.38),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            // Date pickers — only shown when enabled
+            if (_dateRangeEnabled) ...[
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  Expanded(
+                    child: _DateField(
+                      label: l10n.startDate,
+                      date: controller.dateRangeStart,
+                      enabled: canUse,
+                      onTap: canUse
+                          ? () {
+                              showDatePicker(
+                                context: context,
+                                initialDate: controller.dateRangeStart ?? DateTime.now(),
+                                firstDate: DateTime(2000),
+                                lastDate: DateTime.now(),
+                              ).then((picked) {
+                                if (picked != null) {
+                                  controller.setDateRange(picked, controller.dateRangeEnd);
+                                }
+                              });
                             }
-                          }
-                        : () {
-                            if (isFreeTier) {
-                              Navigator.of(context).push(
-                                MaterialPageRoute<void>(
-                                  builder: (context) => const MembershipLandingPage(),
-                                ),
-                              );
+                          : null,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: _DateField(
+                      label: l10n.endDate,
+                      date: controller.dateRangeEnd,
+                      enabled: canUse,
+                      onTap: canUse
+                          ? () {
+                              showDatePicker(
+                                context: context,
+                                initialDate: controller.dateRangeEnd ?? DateTime.now(),
+                                firstDate: DateTime(2000),
+                                lastDate: DateTime.now(),
+                              ).then((picked) {
+                                if (picked != null) {
+                                  controller.setDateRange(controller.dateRangeStart, picked);
+                                }
+                              });
                             }
-                          },
+                          : null,
+                    ),
+                  ),
+                ],
+              ),
+              if (controller.hasDateRange) ...[
+                const SizedBox(height: 8),
+                Center(
+                  child: TextButton.icon(
+                    onPressed: canUse ? () => controller.clearDateRange() : null,
+                    icon: const Icon(Icons.cancel_outlined, size: 18),
+                    label: const Text('Clear Selected Date Range'),
                   ),
                 ),
               ],
-            ),
+            ],
             if (isFreeTier) ...[
               const SizedBox(height: 8),
               Text(
@@ -1232,7 +1277,7 @@ class _DateField extends StatelessWidget {
   final String label;
   final DateTime? date;
   final bool enabled;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   const _DateField({
     required this.label,
