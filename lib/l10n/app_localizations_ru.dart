@@ -1434,4 +1434,107 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get noMessagesInDateRange =>
       'Сообщения не найдены в выбранном диапазоне дат. Выберите другие даты или очистите фильтр даты.';
+
+  @override
+  String get purchaseCustomMetricTileTitle => 'Купить Пользовательскую Метрику';
+
+  @override
+  String get purchaseCustomMetricTileDescription =>
+      'За единовременную плату \$4.99 введите имя и определение пользовательской метрики, которые будут навсегда сохранены рядом с вашими другими метриками для использования в любом будущем анализе. Покупайте неограниченное количество пользовательских метрик.';
+
+  @override
+  String get purchaseCustomMetricConfirmTitle =>
+      'Купить Пользовательскую Метрику';
+
+  @override
+  String get purchaseCustomMetricConfirmBody =>
+      'С вас будет снята плата \$4.99 (единовременно) для разблокировки одного слота пользовательской метрики.\n\nИмя и определение вашей пользовательской метрики являются постоянными и никогда не могут быть изменены после сохранения, поэтому выбирайте тщательно.';
+
+  @override
+  String get purchaseCustomMetricConfirmButton => 'Купить — \$4.99';
+
+  @override
+  String get purchaseCustomMetricEnterNameTitle =>
+      'Название Пользовательской Метрики';
+
+  @override
+  String get purchaseCustomMetricEnterNamePrompt =>
+      'Введите название вашей пользовательской метрики:';
+
+  @override
+  String get purchaseCustomMetricNameHint => 'Название Метрики';
+
+  @override
+  String get purchaseCustomMetricConfirmNameTitle =>
+      'Подтвердите Название Метрики';
+
+  @override
+  String get purchaseCustomMetricConfirmNameYouEntered => 'Вы ввели:\n\n';
+
+  @override
+  String get purchaseCustomMetricConfirmNameWarning =>
+      '\n\n⚠️  Это ОКОНЧАТЕЛЬНО и НИКОГДА не может быть изменено.';
+
+  @override
+  String get purchaseCustomMetricReenterName => 'Упс — Введите Название Заново';
+
+  @override
+  String get purchaseCustomMetricSaveName => 'OK — Сохранить Название Метрики';
+
+  @override
+  String purchaseCustomMetricDefineTitleWithName(String name) {
+    return 'Определить: $name';
+  }
+
+  @override
+  String purchaseCustomMetricDefinePromptWithName(String name) {
+    return 'Введите значение вашей Пользовательской Метрики: $name';
+  }
+
+  @override
+  String get purchaseCustomMetricMeaningHint =>
+      'Опишите, что означает эта метрика, какие поведения она отслеживает и как применяется к динамике отношений...';
+
+  @override
+  String get purchaseCustomMetricReenter => 'Упс — Ввести Заново';
+
+  @override
+  String get purchaseCustomMetricSaveMeaning => 'OK — Сохранить Значение';
+
+  @override
+  String get purchaseCustomMetricPreviewTitle =>
+      'Предпросмотр Вашей Пользовательской Метрики';
+
+  @override
+  String get purchaseCustomMetricPreviewSubtitle =>
+      'Вот как будет выглядеть ваш блок:';
+
+  @override
+  String get purchaseCustomMetricLastChanceWarning =>
+      '⚠️  Это ваш ПОСЛЕДНИЙ ШАНС передумать.\nПосле подтверждения название и определение становятся постоянными.';
+
+  @override
+  String get purchaseCustomMetricCancelEverything => 'Отменить Всё';
+
+  @override
+  String get purchaseCustomMetricCommit =>
+      'Подтвердить Пользовательскую Метрику';
+
+  @override
+  String purchaseCustomMetricSuccess(String name) {
+    return '✓ \"$name\" добавлено в ваши метрики! Теперь вы можете выбрать её для анализа.';
+  }
+
+  @override
+  String get purchaseCustomMetricProcessingTitle => 'Обработка Покупки...';
+
+  @override
+  String get purchaseCustomMetricProcessingBody =>
+      'Ожидание подтверждения от магазина.\nПожалуйста, не закрывайте приложение.';
+
+  @override
+  String get next => 'Далее';
+
+  @override
+  String get cancelNotReady => 'Отмена — Я не был(а) готов(а)';
 }

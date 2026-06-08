@@ -2627,6 +2627,174 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No messages found in the selected date range. Please select different dates or clear the date filter.'**
   String get noMessagesInDateRange;
+
+  /// Title label on the Purchase Custom Metric tile in the metrics grid
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase Custom Metric'**
+  String get purchaseCustomMetricTileTitle;
+
+  /// Description on the Purchase Custom Metric tile explaining what the purchase does
+  ///
+  /// In en, this message translates to:
+  /// **'For a one-time fee of \$4.99, enter a custom metric name and definition saved permanently alongside your other metrics for use in any future analysis. Purchase unlimited custom metrics.'**
+  String get purchaseCustomMetricTileDescription;
+
+  /// Title of the purchase confirmation dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase Custom Metric'**
+  String get purchaseCustomMetricConfirmTitle;
+
+  /// Body text of the purchase confirmation dialog
+  ///
+  /// In en, this message translates to:
+  /// **'You will be charged \$4.99 (one-time) to unlock one custom metric slot.\n\nYour custom metric name and definition are permanent and cannot ever be changed once saved, so please choose carefully.'**
+  String get purchaseCustomMetricConfirmBody;
+
+  /// Confirm button label on the purchase dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase — \$4.99'**
+  String get purchaseCustomMetricConfirmButton;
+
+  /// Title of the dialog where the user enters their custom metric name
+  ///
+  /// In en, this message translates to:
+  /// **'Custom Metric Name'**
+  String get purchaseCustomMetricEnterNameTitle;
+
+  /// Prompt text above the name text field
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the name for your custom metric:'**
+  String get purchaseCustomMetricEnterNamePrompt;
+
+  /// Hint text inside the metric name text field
+  ///
+  /// In en, this message translates to:
+  /// **'Metric Name'**
+  String get purchaseCustomMetricNameHint;
+
+  /// Title of the name confirmation dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Metric Name'**
+  String get purchaseCustomMetricConfirmNameTitle;
+
+  /// Label before showing the entered metric name back to the user
+  ///
+  /// In en, this message translates to:
+  /// **'You entered:\n\n'**
+  String get purchaseCustomMetricConfirmNameYouEntered;
+
+  /// Warning shown after the metric name in the confirmation dialog
+  ///
+  /// In en, this message translates to:
+  /// **'\n\n⚠️  This is FINAL and can NEVER be changed.'**
+  String get purchaseCustomMetricConfirmNameWarning;
+
+  /// Button to go back and re-enter the metric name
+  ///
+  /// In en, this message translates to:
+  /// **'Oops — Re-Enter Name'**
+  String get purchaseCustomMetricReenterName;
+
+  /// Button to confirm and save the metric name
+  ///
+  /// In en, this message translates to:
+  /// **'OK — Save Metric Name'**
+  String get purchaseCustomMetricSaveName;
+
+  /// Title of the dialog where the user defines the metric meaning. {name} is the metric name they entered.
+  ///
+  /// In en, this message translates to:
+  /// **'Define: {name}'**
+  String purchaseCustomMetricDefineTitleWithName(String name);
+
+  /// Prompt text above the meaning text field. {name} is the metric name.
+  ///
+  /// In en, this message translates to:
+  /// **'Input the meaning of your Custom Metric: {name}'**
+  String purchaseCustomMetricDefinePromptWithName(String name);
+
+  /// Hint text inside the metric definition/meaning text field
+  ///
+  /// In en, this message translates to:
+  /// **'Describe what this metric means, what behaviors it looks for, and how it applies to relationship dynamics...'**
+  String get purchaseCustomMetricMeaningHint;
+
+  /// Generic re-enter button (used in meaning dialog)
+  ///
+  /// In en, this message translates to:
+  /// **'Oops — Re-Enter'**
+  String get purchaseCustomMetricReenter;
+
+  /// Button to confirm and save the metric meaning/definition
+  ///
+  /// In en, this message translates to:
+  /// **'OK — Save Meaning'**
+  String get purchaseCustomMetricSaveMeaning;
+
+  /// Title of the final preview dialog before committing the custom metric
+  ///
+  /// In en, this message translates to:
+  /// **'Preview Your Custom Metric'**
+  String get purchaseCustomMetricPreviewTitle;
+
+  /// Subtitle text above the tile preview in the final preview dialog
+  ///
+  /// In en, this message translates to:
+  /// **'This is how your tile will look:'**
+  String get purchaseCustomMetricPreviewSubtitle;
+
+  /// Final warning shown in the preview dialog before the user commits
+  ///
+  /// In en, this message translates to:
+  /// **'⚠️  This is your LAST CHANCE to change your mind.\nOnce committed, the name and definition are permanent.'**
+  String get purchaseCustomMetricLastChanceWarning;
+
+  /// Button to cancel the entire custom metric purchase and setup flow
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel Everything'**
+  String get purchaseCustomMetricCancelEverything;
+
+  /// Final commit button that permanently saves the custom metric
+  ///
+  /// In en, this message translates to:
+  /// **'Commit to Custom Metric'**
+  String get purchaseCustomMetricCommit;
+
+  /// Snackbar message shown after a custom metric is successfully created. {name} is the metric name.
+  ///
+  /// In en, this message translates to:
+  /// **'✓ \"{name}\" added to your metrics! You can now select it for analysis.'**
+  String purchaseCustomMetricSuccess(String name);
+
+  /// Title of the dialog shown while waiting for the store to confirm a purchase
+  ///
+  /// In en, this message translates to:
+  /// **'Processing Purchase...'**
+  String get purchaseCustomMetricProcessingTitle;
+
+  /// Body text of the processing/pending purchase dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for store confirmation.\nPlease do not close the app.'**
+  String get purchaseCustomMetricProcessingBody;
+
+  /// Generic Next button label used in multi-step flows
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// Cancel button used across custom metric dialogs when the user wasn't ready to proceed
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel — I Wasn\'t Ready'**
+  String get cancelNotReady;
 }
 
 class _AppLocalizationsDelegate

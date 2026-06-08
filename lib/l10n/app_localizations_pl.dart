@@ -1428,4 +1428,102 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get noMessagesInDateRange =>
       'Nie znaleziono wiadomości w wybranym zakresie dat. Wybierz inne daty lub wyczyść filtr daty.';
+
+  @override
+  String get purchaseCustomMetricTileTitle => 'Kup Metrykę Własną';
+
+  @override
+  String get purchaseCustomMetricTileDescription =>
+      'Za jednorazową opłatą \$4.99 wprowadź własną nazwę i definicję metryki, która zostanie trwale zapisana obok innych metryk i będzie dostępna w każdej przyszłej analizie. Kupuj nieograniczoną liczbę metryk własnych.';
+
+  @override
+  String get purchaseCustomMetricConfirmTitle => 'Kup Metrykę Własną';
+
+  @override
+  String get purchaseCustomMetricConfirmBody =>
+      'Zostanie pobrana opłata \$4.99 (jednorazowa) za odblokowanie jednego miejsca na metrykę własną.\n\nNazwa i definicja metryki własnej są trwałe i nie mogą być nigdy zmienione po zapisaniu, więc proszę dobrze przemyśleć swój wybór.';
+
+  @override
+  String get purchaseCustomMetricConfirmButton => 'Kup — \$4.99';
+
+  @override
+  String get purchaseCustomMetricEnterNameTitle => 'Nazwa Metryki Własnej';
+
+  @override
+  String get purchaseCustomMetricEnterNamePrompt =>
+      'Wprowadź nazwę swojej metryki własnej:';
+
+  @override
+  String get purchaseCustomMetricNameHint => 'Nazwa Metryki';
+
+  @override
+  String get purchaseCustomMetricConfirmNameTitle => 'Potwierdź Nazwę Metryki';
+
+  @override
+  String get purchaseCustomMetricConfirmNameYouEntered => 'Wprowadzono:\n\n';
+
+  @override
+  String get purchaseCustomMetricConfirmNameWarning =>
+      '\n\n⚠️  Jest to OSTATECZNE i NIGDY nie może zostać zmienione.';
+
+  @override
+  String get purchaseCustomMetricReenterName => 'Ups — Wprowadź Ponownie Nazwę';
+
+  @override
+  String get purchaseCustomMetricSaveName => 'OK — Zapisz Nazwę Metryki';
+
+  @override
+  String purchaseCustomMetricDefineTitleWithName(String name) {
+    return 'Zdefiniuj: $name';
+  }
+
+  @override
+  String purchaseCustomMetricDefinePromptWithName(String name) {
+    return 'Wprowadź znaczenie swojej Metryki Własnej: $name';
+  }
+
+  @override
+  String get purchaseCustomMetricMeaningHint =>
+      'Opisz, co ta metryka oznacza, jakich zachowań szuka i jak odnosi się do dynamiki relacji...';
+
+  @override
+  String get purchaseCustomMetricReenter => 'Ups — Wprowadź Ponownie';
+
+  @override
+  String get purchaseCustomMetricSaveMeaning => 'OK — Zapisz Znaczenie';
+
+  @override
+  String get purchaseCustomMetricPreviewTitle => 'Podgląd Metryki Własnej';
+
+  @override
+  String get purchaseCustomMetricPreviewSubtitle =>
+      'Tak będzie wyglądać Twój kafelek:';
+
+  @override
+  String get purchaseCustomMetricLastChanceWarning =>
+      '⚠️  To Twoja OSTATNIA SZANSA na zmianę zdania.\nPo zatwierdzeniu nazwa i definicja są trwałe.';
+
+  @override
+  String get purchaseCustomMetricCancelEverything => 'Anuluj Wszystko';
+
+  @override
+  String get purchaseCustomMetricCommit => 'Zatwierdź Metrykę Własną';
+
+  @override
+  String purchaseCustomMetricSuccess(String name) {
+    return '✓ \"$name\" dodano do Twoich metryk! Możesz teraz wybrać ją do analizy.';
+  }
+
+  @override
+  String get purchaseCustomMetricProcessingTitle => 'Przetwarzanie Zakupu...';
+
+  @override
+  String get purchaseCustomMetricProcessingBody =>
+      'Oczekiwanie na potwierdzenie ze sklepu.\nProszę nie zamykać aplikacji.';
+
+  @override
+  String get next => 'Dalej';
+
+  @override
+  String get cancelNotReady => 'Anuluj — Nie byłem/am gotowy/a';
 }

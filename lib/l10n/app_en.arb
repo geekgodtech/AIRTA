@@ -519,7 +519,6 @@
   "saveMetricListName": "Save Metric List",
   "enterListName": "Enter a name for this metric list:",
   "save": "Save",
-  "cancel": "Cancel",
   "chooseSavedMetrics": "Choose saved metrics list:",
   "noSavedLists": "No saved metric lists to load at this time.",
   "metricListSaved": "Metric list saved successfully.",
@@ -869,5 +868,153 @@
       "name": { "type": "String" }
     }
   },
-  "noMessagesInDateRange": "No messages found in the selected date range. Please select different dates or clear the date filter."
+  "noMessagesInDateRange": "No messages found in the selected date range. Please select different dates or clear the date filter.",
+  "purchaseCustomMetricTileTitle": "Purchase Custom Metric",
+  "@purchaseCustomMetricTileTitle": {
+    "description": "Title label on the Purchase Custom Metric tile in the metrics grid"
+  },
+
+  "purchaseCustomMetricTileDescription": "For a one-time fee of $4.99, enter a custom metric name and definition saved permanently alongside your other metrics for use in any future analysis. Purchase unlimited custom metrics.",
+  "@purchaseCustomMetricTileDescription": {
+    "description": "Description on the Purchase Custom Metric tile explaining what the purchase does"
+  },
+
+  "purchaseCustomMetricConfirmTitle": "Purchase Custom Metric",
+  "@purchaseCustomMetricConfirmTitle": {
+    "description": "Title of the purchase confirmation dialog"
+  },
+
+  "purchaseCustomMetricConfirmBody": "You will be charged $4.99 (one-time) to unlock one custom metric slot.\n\nYour custom metric name and definition are permanent and cannot ever be changed once saved, so please choose carefully.",
+  "@purchaseCustomMetricConfirmBody": {
+    "description": "Body text of the purchase confirmation dialog"
+  },
+
+  "purchaseCustomMetricConfirmButton": "Purchase — $4.99",
+  "@purchaseCustomMetricConfirmButton": {
+    "description": "Confirm button label on the purchase dialog"
+  },
+
+  "purchaseCustomMetricEnterNameTitle": "Custom Metric Name",
+  "@purchaseCustomMetricEnterNameTitle": {
+    "description": "Title of the dialog where the user enters their custom metric name"
+  },
+
+  "purchaseCustomMetricEnterNamePrompt": "Enter the name for your custom metric:",
+  "@purchaseCustomMetricEnterNamePrompt": {
+    "description": "Prompt text above the name text field"
+  },
+
+  "purchaseCustomMetricNameHint": "Metric Name",
+  "@purchaseCustomMetricNameHint": {
+    "description": "Hint text inside the metric name text field"
+  },
+
+  "purchaseCustomMetricConfirmNameTitle": "Confirm Metric Name",
+  "@purchaseCustomMetricConfirmNameTitle": {
+    "description": "Title of the name confirmation dialog"
+  },
+
+  "purchaseCustomMetricConfirmNameYouEntered": "You entered:\n\n",
+  "@purchaseCustomMetricConfirmNameYouEntered": {
+    "description": "Label before showing the entered metric name back to the user"
+  },
+
+  "purchaseCustomMetricConfirmNameWarning": "\n\n⚠️  This is FINAL and can NEVER be changed.",
+  "@purchaseCustomMetricConfirmNameWarning": {
+    "description": "Warning shown after the metric name in the confirmation dialog"
+  },
+
+  "purchaseCustomMetricReenterName": "Oops — Re-Enter Name",
+  "@purchaseCustomMetricReenterName": {
+    "description": "Button to go back and re-enter the metric name"
+  },
+
+  "purchaseCustomMetricSaveName": "OK — Save Metric Name",
+  "@purchaseCustomMetricSaveName": {
+    "description": "Button to confirm and save the metric name"
+  },
+
+  "purchaseCustomMetricDefineTitleWithName": "Define: {name}",
+  "@purchaseCustomMetricDefineTitleWithName": {
+    "description": "Title of the dialog where the user defines the metric meaning. {name} is the metric name they entered.",
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+
+  "purchaseCustomMetricDefinePromptWithName": "Input the meaning of your Custom Metric: {name}",
+  "@purchaseCustomMetricDefinePromptWithName": {
+    "description": "Prompt text above the meaning text field. {name} is the metric name.",
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+
+  "purchaseCustomMetricMeaningHint": "Describe what this metric means, what behaviors it looks for, and how it applies to relationship dynamics...",
+  "@purchaseCustomMetricMeaningHint": {
+    "description": "Hint text inside the metric definition/meaning text field"
+  },
+
+  "purchaseCustomMetricReenter": "Oops — Re-Enter",
+  "@purchaseCustomMetricReenter": {
+    "description": "Generic re-enter button (used in meaning dialog)"
+  },
+
+  "purchaseCustomMetricSaveMeaning": "OK — Save Meaning",
+  "@purchaseCustomMetricSaveMeaning": {
+    "description": "Button to confirm and save the metric meaning/definition"
+  },
+
+  "purchaseCustomMetricPreviewTitle": "Preview Your Custom Metric",
+  "@purchaseCustomMetricPreviewTitle": {
+    "description": "Title of the final preview dialog before committing the custom metric"
+  },
+
+  "purchaseCustomMetricPreviewSubtitle": "This is how your tile will look:",
+  "@purchaseCustomMetricPreviewSubtitle": {
+    "description": "Subtitle text above the tile preview in the final preview dialog"
+  },
+
+  "purchaseCustomMetricLastChanceWarning": "⚠️  This is your LAST CHANCE to change your mind.\nOnce committed, the name and definition are permanent.",
+  "@purchaseCustomMetricLastChanceWarning": {
+    "description": "Final warning shown in the preview dialog before the user commits"
+  },
+
+  "purchaseCustomMetricCancelEverything": "Cancel Everything",
+  "@purchaseCustomMetricCancelEverything": {
+    "description": "Button to cancel the entire custom metric purchase and setup flow"
+  },
+
+  "purchaseCustomMetricCommit": "Commit to Custom Metric",
+  "@purchaseCustomMetricCommit": {
+    "description": "Final commit button that permanently saves the custom metric"
+  },
+
+  "purchaseCustomMetricSuccess": "✓ \"{name}\" added to your metrics! You can now select it for analysis.",
+  "@purchaseCustomMetricSuccess": {
+    "description": "Snackbar message shown after a custom metric is successfully created. {name} is the metric name.",
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+
+  "purchaseCustomMetricProcessingTitle": "Processing Purchase...",
+  "@purchaseCustomMetricProcessingTitle": {
+    "description": "Title of the dialog shown while waiting for the store to confirm a purchase"
+  },
+
+  "purchaseCustomMetricProcessingBody": "Waiting for store confirmation.\nPlease do not close the app.",
+  "@purchaseCustomMetricProcessingBody": {
+    "description": "Body text of the processing/pending purchase dialog"
+  },
+
+  "next": "Next",
+  "@next": {
+    "description": "Generic Next button label used in multi-step flows"
+  },
+
+  "cancelNotReady": "Cancel — I Wasn't Ready",
+  "@cancelNotReady": {
+    "description": "Cancel button used across custom metric dialogs when the user wasn't ready to proceed"
+  }
 }

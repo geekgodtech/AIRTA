@@ -1429,4 +1429,102 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get noMessagesInDateRange =>
       'Seçilen tarih aralığında mesaj bulunamadı. Lütfen farklı tarihler seçin veya tarih filtresini temizleyin.';
+
+  @override
+  String get purchaseCustomMetricTileTitle => 'Özel Metrik Satın Al';
+
+  @override
+  String get purchaseCustomMetricTileDescription =>
+      'Tek seferlik \$4.99 ücretle, kalıcı olarak diğer metriklerinizin yanına kaydedilen ve gelecekteki herhangi bir analizde kullanılabilen özel bir metrik adı ve tanımı girin. Sınırsız özel metrik satın alın.';
+
+  @override
+  String get purchaseCustomMetricConfirmTitle => 'Özel Metrik Satın Al';
+
+  @override
+  String get purchaseCustomMetricConfirmBody =>
+      'Bir özel metrik slotunun kilidini açmak için \$4.99 (tek seferlik) ücretlendirileceksiniz.\n\nÖzel metrik adınız ve tanımınız kaydedildikten sonra kalıcıdır ve asla değiştirilemez, bu yüzden lütfen dikkatlice seçin.';
+
+  @override
+  String get purchaseCustomMetricConfirmButton => 'Satın Al — \$4.99';
+
+  @override
+  String get purchaseCustomMetricEnterNameTitle => 'Özel Metrik Adı';
+
+  @override
+  String get purchaseCustomMetricEnterNamePrompt =>
+      'Özel metriğiniz için ad girin:';
+
+  @override
+  String get purchaseCustomMetricNameHint => 'Metrik Adı';
+
+  @override
+  String get purchaseCustomMetricConfirmNameTitle => 'Metrik Adını Onayla';
+
+  @override
+  String get purchaseCustomMetricConfirmNameYouEntered => 'Girdiniz:\n\n';
+
+  @override
+  String get purchaseCustomMetricConfirmNameWarning =>
+      '\n\n⚠️  Bu SON ve asla değiştirilemez.';
+
+  @override
+  String get purchaseCustomMetricReenterName => 'Hayır — Adı Yeniden Gir';
+
+  @override
+  String get purchaseCustomMetricSaveName => 'Tamam — Metrik Adını Kaydet';
+
+  @override
+  String purchaseCustomMetricDefineTitleWithName(String name) {
+    return 'Tanımla: $name';
+  }
+
+  @override
+  String purchaseCustomMetricDefinePromptWithName(String name) {
+    return 'Özel Metriğinizin anlamını girin: $name';
+  }
+
+  @override
+  String get purchaseCustomMetricMeaningHint =>
+      'Bu metriğin ne anlama geldiğini, hangi davranışları aradığını ve ilişki dinamiklerine nasıl uygulandığını açıklayın...';
+
+  @override
+  String get purchaseCustomMetricReenter => 'Hayır — Yeniden Gir';
+
+  @override
+  String get purchaseCustomMetricSaveMeaning => 'Tamam — Anlamı Kaydet';
+
+  @override
+  String get purchaseCustomMetricPreviewTitle => 'Özel Metriğinizi Önizleyin';
+
+  @override
+  String get purchaseCustomMetricPreviewSubtitle =>
+      'Kutucuğunuz böyle görünecek:';
+
+  @override
+  String get purchaseCustomMetricLastChanceWarning =>
+      '⚠️  Fikrinizi değiştirmek için SON ŞANSINIZ.\nOnaylandıktan sonra, ad ve tanım kalıcıdır.';
+
+  @override
+  String get purchaseCustomMetricCancelEverything => 'Her Şeyi İptal Et';
+
+  @override
+  String get purchaseCustomMetricCommit => 'Özel Metrike Bağlan';
+
+  @override
+  String purchaseCustomMetricSuccess(String name) {
+    return '✓ \"$name\" metriklerinize eklendi! Artık analiz için seçebilirsiniz.';
+  }
+
+  @override
+  String get purchaseCustomMetricProcessingTitle => 'Satın Alma İşleniyor...';
+
+  @override
+  String get purchaseCustomMetricProcessingBody =>
+      'Mağaza onayı bekleniyor.\nLütfen uygulamayı kapatmayın.';
+
+  @override
+  String get next => 'Sonraki';
+
+  @override
+  String get cancelNotReady => 'İptal — Hazır Değildim';
 }

@@ -1361,4 +1361,100 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get noMessagesInDateRange =>
       '選択された日付範囲内にメッセージが見つかりませんでした。別の日付を選択するか、日付フィルターをクリアしてください。';
+
+  @override
+  String get purchaseCustomMetricTileTitle => 'カスタム指標を購入';
+
+  @override
+  String get purchaseCustomMetricTileDescription =>
+      '\$4.99の一回限りの料金で、カスタム指標名と定義を入力し、他の指標と一緒に永久に保存して、将来のあらゆる分析で使用できます。無制限のカスタム指標を購入可能です。';
+
+  @override
+  String get purchaseCustomMetricConfirmTitle => 'カスタム指標を購入';
+
+  @override
+  String get purchaseCustomMetricConfirmBody =>
+      'カスタム指標スロット1つをアンロックするために\$4.99（一回限り）が請求されます。\n\nカスタム指標名と定義は保存後永久に変更できないため、慎重に選択してください。';
+
+  @override
+  String get purchaseCustomMetricConfirmButton => '購入 — \$4.99';
+
+  @override
+  String get purchaseCustomMetricEnterNameTitle => 'カスタム指標名';
+
+  @override
+  String get purchaseCustomMetricEnterNamePrompt => 'カスタム指標の名前を入力してください：';
+
+  @override
+  String get purchaseCustomMetricNameHint => '指標名';
+
+  @override
+  String get purchaseCustomMetricConfirmNameTitle => '指標名を確認';
+
+  @override
+  String get purchaseCustomMetricConfirmNameYouEntered => '入力した内容：\n\n';
+
+  @override
+  String get purchaseCustomMetricConfirmNameWarning =>
+      '\n\n⚠️  これは最終的で、永久に変更できません。';
+
+  @override
+  String get purchaseCustomMetricReenterName => 'やり直し — 名前を再入力';
+
+  @override
+  String get purchaseCustomMetricSaveName => 'OK — 指標名を保存';
+
+  @override
+  String purchaseCustomMetricDefineTitleWithName(String name) {
+    return '定義: $name';
+  }
+
+  @override
+  String purchaseCustomMetricDefinePromptWithName(String name) {
+    return 'カスタム指標「$name」の意味を入力してください';
+  }
+
+  @override
+  String get purchaseCustomMetricMeaningHint =>
+      'この指標が何を意味するか、どのような行動を探すか、関係性ダイナミクスにどう適用されるかを説明してください...';
+
+  @override
+  String get purchaseCustomMetricReenter => 'やり直し — 再入力';
+
+  @override
+  String get purchaseCustomMetricSaveMeaning => 'OK — 意味を保存';
+
+  @override
+  String get purchaseCustomMetricPreviewTitle => 'カスタム指標をプレビュー';
+
+  @override
+  String get purchaseCustomMetricPreviewSubtitle => 'タイルはこのように表示されます：';
+
+  @override
+  String get purchaseCustomMetricLastChanceWarning =>
+      '⚠️  これが最後の変更チャンスです。\n一度確定すると、名前と定義は永久に変更できません。';
+
+  @override
+  String get purchaseCustomMetricCancelEverything => 'すべてキャンセル';
+
+  @override
+  String get purchaseCustomMetricCommit => 'カスタム指標を確定';
+
+  @override
+  String purchaseCustomMetricSuccess(String name) {
+    return '✓ 「$name」が指標に追加されました！これで分析に選択できます。';
+  }
+
+  @override
+  String get purchaseCustomMetricProcessingTitle => '購入処理中...';
+
+  @override
+  String get purchaseCustomMetricProcessingBody =>
+      'ストア確認を待っています。\nアプリを閉じないでください。';
+
+  @override
+  String get next => '次へ';
+
+  @override
+  String get cancelNotReady => 'キャンセル — 準備ができていませんでした';
 }

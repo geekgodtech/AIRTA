@@ -1434,4 +1434,104 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get noMessagesInDateRange =>
       'Geen berichten gevonden in het geselecteerde datumbereik. Selecteer andere datums of wis het datumfilter.';
+
+  @override
+  String get purchaseCustomMetricTileTitle => 'Aangepaste Meting Kopen';
+
+  @override
+  String get purchaseCustomMetricTileDescription =>
+      'Voor een eenmalig bedrag van \$4.99 kunt u een aangepaste metingsnaam en definitie invoeren die permanent wordt opgeslagen naast uw andere metingen voor gebruik in toekomstige analyses. Koop onbeperkte aangepaste metingen.';
+
+  @override
+  String get purchaseCustomMetricConfirmTitle => 'Aangepaste Meting Kopen';
+
+  @override
+  String get purchaseCustomMetricConfirmBody =>
+      'Er wordt \$4.99 (eenmalig) in rekening gebracht om één aangepaste metingsslot te ontgrendelen.\n\nUw aangepaste metingsnaam en definitie zijn permanent en kunnen nooit meer worden gewijzigd zodra opgeslagen, dus kies zorgvuldig.';
+
+  @override
+  String get purchaseCustomMetricConfirmButton => 'Kopen — \$4.99';
+
+  @override
+  String get purchaseCustomMetricEnterNameTitle => 'Aangepaste Metingsnaam';
+
+  @override
+  String get purchaseCustomMetricEnterNamePrompt =>
+      'Voer de naam in voor uw aangepaste meting:';
+
+  @override
+  String get purchaseCustomMetricNameHint => 'Metingsnaam';
+
+  @override
+  String get purchaseCustomMetricConfirmNameTitle => 'Metingsnaam Bevestigen';
+
+  @override
+  String get purchaseCustomMetricConfirmNameYouEntered =>
+      'U heeft ingevoerd:\n\n';
+
+  @override
+  String get purchaseCustomMetricConfirmNameWarning =>
+      '\n\n⚠️  Dit is DEFINITIEF en kan NOOIT worden gewijzigd.';
+
+  @override
+  String get purchaseCustomMetricReenterName => 'Oeps — Naam Opnieuw Invoeren';
+
+  @override
+  String get purchaseCustomMetricSaveName => 'OK — Metingsnaam Opslaan';
+
+  @override
+  String purchaseCustomMetricDefineTitleWithName(String name) {
+    return 'Definiëren: $name';
+  }
+
+  @override
+  String purchaseCustomMetricDefinePromptWithName(String name) {
+    return 'Voer de betekenis in van uw aangepaste meting: $name';
+  }
+
+  @override
+  String get purchaseCustomMetricMeaningHint =>
+      'Beschrijf wat deze meting betekent, welk gedrag het zoekt en hoe het van toepassing is op relatie-dynamiek...';
+
+  @override
+  String get purchaseCustomMetricReenter => 'Oeps — Opnieuw Invoeren';
+
+  @override
+  String get purchaseCustomMetricSaveMeaning => 'OK — Betekenis Opslaan';
+
+  @override
+  String get purchaseCustomMetricPreviewTitle =>
+      'Uw Aangepaste Meting Bekijken';
+
+  @override
+  String get purchaseCustomMetricPreviewSubtitle =>
+      'Zo zal uw tegel eruitzien:';
+
+  @override
+  String get purchaseCustomMetricLastChanceWarning =>
+      '⚠️  Dit is uw LAATSTE KANS om van gedachten te veranderen.\nEenmaal vastgelegd, zijn de naam en definitie permanent.';
+
+  @override
+  String get purchaseCustomMetricCancelEverything => 'Alles Annuleren';
+
+  @override
+  String get purchaseCustomMetricCommit => 'Toewijden aan Aangepaste Meting';
+
+  @override
+  String purchaseCustomMetricSuccess(String name) {
+    return '✓ 「$name」is toegevoegd aan uw metingen! U kunt het nu selecteren voor analyse.';
+  }
+
+  @override
+  String get purchaseCustomMetricProcessingTitle => 'Aankoop Verwerken...';
+
+  @override
+  String get purchaseCustomMetricProcessingBody =>
+      'Wachten op winkelbevestiging.\nSluit de app alstublieft niet af.';
+
+  @override
+  String get next => 'Volgende';
+
+  @override
+  String get cancelNotReady => 'Annuleren — Ik Was Niet Klaar';
 }
