@@ -1425,4 +1425,102 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get noMessagesInDateRange =>
       'No messages found in the selected date range. Please select different dates or clear the date filter.';
+
+  @override
+  String get purchaseCustomMetricTileTitle => 'Purchase Custom Metric';
+
+  @override
+  String get purchaseCustomMetricTileDescription =>
+      'For a one-time fee of \$4.99, enter a custom metric name and definition saved permanently alongside your other metrics for use in any future analysis. Purchase unlimited custom metrics.';
+
+  @override
+  String get purchaseCustomMetricConfirmTitle => 'Purchase Custom Metric';
+
+  @override
+  String get purchaseCustomMetricConfirmBody =>
+      'You will be charged \$4.99 (one-time) to unlock one custom metric slot.\n\nYour custom metric name and definition are permanent and cannot ever be changed once saved, so please choose carefully.';
+
+  @override
+  String get purchaseCustomMetricConfirmButton => 'Purchase — \$4.99';
+
+  @override
+  String get purchaseCustomMetricEnterNameTitle => 'Custom Metric Name';
+
+  @override
+  String get purchaseCustomMetricEnterNamePrompt =>
+      'Enter the name for your custom metric:';
+
+  @override
+  String get purchaseCustomMetricNameHint => 'Metric Name';
+
+  @override
+  String get purchaseCustomMetricConfirmNameTitle => 'Confirm Metric Name';
+
+  @override
+  String get purchaseCustomMetricConfirmNameYouEntered => 'You entered:\n\n';
+
+  @override
+  String get purchaseCustomMetricConfirmNameWarning =>
+      '\n\n⚠️  This is FINAL and can NEVER be changed.';
+
+  @override
+  String get purchaseCustomMetricReenterName => 'Oops — Re-Enter Name';
+
+  @override
+  String get purchaseCustomMetricSaveName => 'OK — Save Metric Name';
+
+  @override
+  String purchaseCustomMetricDefineTitleWithName(String name) {
+    return 'Define: $name';
+  }
+
+  @override
+  String purchaseCustomMetricDefinePromptWithName(String name) {
+    return 'Input the meaning of your Custom Metric: $name';
+  }
+
+  @override
+  String get purchaseCustomMetricMeaningHint =>
+      'Describe what this metric means, what behaviors it looks for, and how it applies to relationship dynamics...';
+
+  @override
+  String get purchaseCustomMetricReenter => 'Oops — Re-Enter';
+
+  @override
+  String get purchaseCustomMetricSaveMeaning => 'OK — Save Meaning';
+
+  @override
+  String get purchaseCustomMetricPreviewTitle => 'Preview Your Custom Metric';
+
+  @override
+  String get purchaseCustomMetricPreviewSubtitle =>
+      'This is how your tile will look:';
+
+  @override
+  String get purchaseCustomMetricLastChanceWarning =>
+      '⚠️  This is your LAST CHANCE to change your mind.\nOnce committed, the name and definition are permanent.';
+
+  @override
+  String get purchaseCustomMetricCancelEverything => 'Cancel Everything';
+
+  @override
+  String get purchaseCustomMetricCommit => 'Commit to Custom Metric';
+
+  @override
+  String purchaseCustomMetricSuccess(String name) {
+    return '✓ \"$name\" added to your metrics! You can now select it for analysis.';
+  }
+
+  @override
+  String get purchaseCustomMetricProcessingTitle => 'Processing Purchase...';
+
+  @override
+  String get purchaseCustomMetricProcessingBody =>
+      'Waiting for store confirmation.\nPlease do not close the app.';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get cancelNotReady => 'Cancel — I Wasn\'t Ready';
 }

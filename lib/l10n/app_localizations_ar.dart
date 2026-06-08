@@ -1423,4 +1423,100 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get noMessagesInDateRange =>
       'لم يتم العثور على رسائل في نطاق التاريخ المحدد. يرجى تحديد تواريخ مختلفة أو مسح مرشح التاريخ.';
+
+  @override
+  String get purchaseCustomMetricTileTitle => 'شراء مقياس مخصص';
+
+  @override
+  String get purchaseCustomMetricTileDescription =>
+      'مقابل رسوم لمرة واحدة قدرها 4.99 دولار، أدخل اسم مقياس مخصص وتعريف يتم حفظه بشكل دائم إلى جانب مقاييسك الأخرى للاستخدام في أي تحليل مستقبلي. اشترِ مقاييس مخصصة غير محدودة.';
+
+  @override
+  String get purchaseCustomMetricConfirmTitle => 'شراء مقياس مخصص';
+
+  @override
+  String get purchaseCustomMetricConfirmBody =>
+      'سيتم خصم 4.99 دولار من حسابك (لمرة واحدة) لفتح خانة مقياس مخصص واحدة.\n\nاسم المقياس المخصص وتعريفه دائمان ولا يمكن تغييرهما أبدًا بمجرد الحفظ، لذا يرجى الاختيار بعناية.';
+
+  @override
+  String get purchaseCustomMetricConfirmButton => 'شراء — 4.99 دولار';
+
+  @override
+  String get purchaseCustomMetricEnterNameTitle => 'اسم المقياس المخصص';
+
+  @override
+  String get purchaseCustomMetricEnterNamePrompt => 'أدخل اسم المقياس المخصص:';
+
+  @override
+  String get purchaseCustomMetricNameHint => 'اسم المقياس';
+
+  @override
+  String get purchaseCustomMetricConfirmNameTitle => 'تأكيد اسم المقياس';
+
+  @override
+  String get purchaseCustomMetricConfirmNameYouEntered => 'لقد أدخلت:\n\n';
+
+  @override
+  String get purchaseCustomMetricConfirmNameWarning =>
+      '\n\n⚠️  هذا نهائي ولا يمكن تغييره أبدًا.';
+
+  @override
+  String get purchaseCustomMetricReenterName => 'عذرًا — إعادة إدخال الاسم';
+
+  @override
+  String get purchaseCustomMetricSaveName => 'موافق — حفظ اسم المقياس';
+
+  @override
+  String purchaseCustomMetricDefineTitleWithName(String name) {
+    return 'تعريف: $name';
+  }
+
+  @override
+  String purchaseCustomMetricDefinePromptWithName(String name) {
+    return 'أدخل معنى المقياس المخصص: $name';
+  }
+
+  @override
+  String get purchaseCustomMetricMeaningHint =>
+      'صف ما يعنيه هذا المقياس، والسلوكيات التي يبحث عنها، وكيفية تطبيقه على ديناميكيات العلاقة...';
+
+  @override
+  String get purchaseCustomMetricReenter => 'عذرًا — إعادة الإدخال';
+
+  @override
+  String get purchaseCustomMetricSaveMeaning => 'موافق — حفظ المعنى';
+
+  @override
+  String get purchaseCustomMetricPreviewTitle => 'معاينة المقياس المخصص';
+
+  @override
+  String get purchaseCustomMetricPreviewSubtitle => 'هكذا ستبدو لوحتك:';
+
+  @override
+  String get purchaseCustomMetricLastChanceWarning =>
+      '⚠️  هذه فرصتك الأخيرة للتراجع.\nبمجرد الالتزام، يصبح الاسم والتعريف دائمين.';
+
+  @override
+  String get purchaseCustomMetricCancelEverything => 'إلغاء كل شيء';
+
+  @override
+  String get purchaseCustomMetricCommit => 'الالتزام بالمقياس المخصص';
+
+  @override
+  String purchaseCustomMetricSuccess(String name) {
+    return '✓ تمت إضافة \"$name\" إلى مقاييسك! يمكنك الآن اختياره للتحليل.';
+  }
+
+  @override
+  String get purchaseCustomMetricProcessingTitle => 'جاري معالجة الشراء...';
+
+  @override
+  String get purchaseCustomMetricProcessingBody =>
+      'في انتظار تأكيد المتجر.\nيرجى عدم إغلاق التطبيق.';
+
+  @override
+  String get next => 'التالي';
+
+  @override
+  String get cancelNotReady => 'إلغاء — لم أكن مستعدًا';
 }

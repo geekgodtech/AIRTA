@@ -1417,4 +1417,100 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get noMessagesInDateRange =>
       '선택된 날짜 범위에서 메시지를 찾을 수 없습니다. 다른 날짜를 선택하거나 날짜 필터를 지우세요.';
+
+  @override
+  String get purchaseCustomMetricTileTitle => '커스텀 지표 구매';
+
+  @override
+  String get purchaseCustomMetricTileDescription =>
+      '일회성 요금 \$4.99로 커스텀 지표 이름과 정의를 입력하여 다른 지표와 함께 영구 저장하고 향후 분석에 사용할 수 있습니다. 무제한 커스텀 지표를 구매하세요.';
+
+  @override
+  String get purchaseCustomMetricConfirmTitle => '커스텀 지표 구매';
+
+  @override
+  String get purchaseCustomMetricConfirmBody =>
+      '커스텀 지표 슬롯 1개를 잠금 해제하기 위해 \$4.99(일회성)가 청구됩니다.\n\n커스텀 지표 이름과 정의는 저장 후 영원히 변경할 수 없으므로 신중하게 선택하세요.';
+
+  @override
+  String get purchaseCustomMetricConfirmButton => '구매 — \$4.99';
+
+  @override
+  String get purchaseCustomMetricEnterNameTitle => '커스텀 지표 이름';
+
+  @override
+  String get purchaseCustomMetricEnterNamePrompt => '커스텀 지표의 이름을 입력하세요:';
+
+  @override
+  String get purchaseCustomMetricNameHint => '지표 이름';
+
+  @override
+  String get purchaseCustomMetricConfirmNameTitle => '지표 이름 확인';
+
+  @override
+  String get purchaseCustomMetricConfirmNameYouEntered => '입력한 내용:\n\n';
+
+  @override
+  String get purchaseCustomMetricConfirmNameWarning =>
+      '\n\n⚠️  이것은 최종적이며 절대 변경할 수 없습니다.';
+
+  @override
+  String get purchaseCustomMetricReenterName => '다시 — 이름 재입력';
+
+  @override
+  String get purchaseCustomMetricSaveName => '확인 — 지표 이름 저장';
+
+  @override
+  String purchaseCustomMetricDefineTitleWithName(String name) {
+    return '정의: $name';
+  }
+
+  @override
+  String purchaseCustomMetricDefinePromptWithName(String name) {
+    return '커스텀 지표 $name의 의미를 입력하세요';
+  }
+
+  @override
+  String get purchaseCustomMetricMeaningHint =>
+      '이 지표가 무엇을 의미하는지, 어떤 행동을 찾는지, 관계 역학에 어떻게 적용되는지 설명하세요...';
+
+  @override
+  String get purchaseCustomMetricReenter => '다시 — 재입력';
+
+  @override
+  String get purchaseCustomMetricSaveMeaning => '확인 — 의미 저장';
+
+  @override
+  String get purchaseCustomMetricPreviewTitle => '커스텀 지표 미리보기';
+
+  @override
+  String get purchaseCustomMetricPreviewSubtitle => '타일은 이렇게 표시됩니다:';
+
+  @override
+  String get purchaseCustomMetricLastChanceWarning =>
+      '⚠️  마지막으로 마음을 바꿀 수 있는 기회입니다.\n한번 확정되면 이름과 정의는 영구적입니다.';
+
+  @override
+  String get purchaseCustomMetricCancelEverything => '모두 취소';
+
+  @override
+  String get purchaseCustomMetricCommit => '커스텀 지표 확정';
+
+  @override
+  String purchaseCustomMetricSuccess(String name) {
+    return '✓ 「$name」이(가) 지표에 추가되었습니다! 이제 분석에 선택할 수 있습니다.';
+  }
+
+  @override
+  String get purchaseCustomMetricProcessingTitle => '구매 처리 중...';
+
+  @override
+  String get purchaseCustomMetricProcessingBody =>
+      '스토어 확인을 기다리는 중입니다.\n앱을 닫지 마세요.';
+
+  @override
+  String get next => '다음';
+
+  @override
+  String get cancelNotReady => '취소 — 준비되지 않았습니다';
 }

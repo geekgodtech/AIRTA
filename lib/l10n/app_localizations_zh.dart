@@ -1294,4 +1294,98 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get noMessagesInDateRange => '在所选日期范围内未找到消息。请选择其他日期或清除日期筛选器。';
+
+  @override
+  String get purchaseCustomMetricTileTitle => '购买自定义指标';
+
+  @override
+  String get purchaseCustomMetricTileDescription =>
+      '一次性支付 \$4.99，输入自定义指标名称和定义，永久保存在其他指标旁边，供将来任何分析使用。购买无限自定义指标。';
+
+  @override
+  String get purchaseCustomMetricConfirmTitle => '购买自定义指标';
+
+  @override
+  String get purchaseCustomMetricConfirmBody =>
+      '您将被收取 \$4.99（一次性费用）以解锁一个自定义指标槽位。\n\n您的自定义指标名称和定义一旦保存即为永久，永远无法更改，因此请谨慎选择。';
+
+  @override
+  String get purchaseCustomMetricConfirmButton => '购买 — \$4.99';
+
+  @override
+  String get purchaseCustomMetricEnterNameTitle => '自定义指标名称';
+
+  @override
+  String get purchaseCustomMetricEnterNamePrompt => '输入自定义指标的名称:';
+
+  @override
+  String get purchaseCustomMetricNameHint => '指标名称';
+
+  @override
+  String get purchaseCustomMetricConfirmNameTitle => '确认指标名称';
+
+  @override
+  String get purchaseCustomMetricConfirmNameYouEntered => '您输入了:\n\n';
+
+  @override
+  String get purchaseCustomMetricConfirmNameWarning => '\n\n⚠️  这是最终的，永远无法更改。';
+
+  @override
+  String get purchaseCustomMetricReenterName => '哎呀 — 重新输入名称';
+
+  @override
+  String get purchaseCustomMetricSaveName => '确定 — 保存指标名称';
+
+  @override
+  String purchaseCustomMetricDefineTitleWithName(String name) {
+    return '定义: $name';
+  }
+
+  @override
+  String purchaseCustomMetricDefinePromptWithName(String name) {
+    return '输入自定义指标的含义: $name';
+  }
+
+  @override
+  String get purchaseCustomMetricMeaningHint =>
+      '描述此指标的含义、它寻找的行为以及它如何应用于关系动态...';
+
+  @override
+  String get purchaseCustomMetricReenter => '哎呀 — 重新输入';
+
+  @override
+  String get purchaseCustomMetricSaveMeaning => '确定 — 保存含义';
+
+  @override
+  String get purchaseCustomMetricPreviewTitle => '预览您的自定义指标';
+
+  @override
+  String get purchaseCustomMetricPreviewSubtitle => '您的磁贴将如下所示:';
+
+  @override
+  String get purchaseCustomMetricLastChanceWarning =>
+      '⚠️  这是您改变主意的最后机会。\n一旦确认，名称和定义即为永久。';
+
+  @override
+  String get purchaseCustomMetricCancelEverything => '全部取消';
+
+  @override
+  String get purchaseCustomMetricCommit => '确认自定义指标';
+
+  @override
+  String purchaseCustomMetricSuccess(String name) {
+    return '✓ \"$name\" 已添加到您的指标！现在您可以选择它进行分析。';
+  }
+
+  @override
+  String get purchaseCustomMetricProcessingTitle => '正在处理购买...';
+
+  @override
+  String get purchaseCustomMetricProcessingBody => '等待商店确认。\n请不要关闭应用。';
+
+  @override
+  String get next => '下一步';
+
+  @override
+  String get cancelNotReady => '取消 — 我还没准备好';
 }

@@ -1077,6 +1077,7 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final l10n = AppLocalizations.of(context)!;
     return AnimatedScale(
       scale: 0.94,
       duration: const Duration(milliseconds: 160),
@@ -1103,7 +1104,7 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
                           const SizedBox(width: 4),
                           Flexible(
                             child: Text(
-                              'Purchase Custom Metric',
+                              l10n.purchaseCustomMetricTileTitle,
                               style: TextStyle(
                                 color: colorScheme.onSecondaryContainer,
                                 fontWeight: FontWeight.w700,
@@ -1118,9 +1119,7 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        'For a one-time fee of \$4.99, enter a custom metric name '
-                        'and definition saved permanently alongside your other metrics '
-                        'for use in any future analysis. Purchase unlimited custom metrics.',
+                        l10n.purchaseCustomMetricTileDescription,
                         style: TextStyle(
                           color: colorScheme.onSecondaryContainer.withOpacity(0.78),
                           fontSize: 11,
@@ -1141,7 +1140,7 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      '\$4.99',
+                      r'$4.99',
                       style: TextStyle(
                         color: colorScheme.onSecondary,
                         fontWeight: FontWeight.w800,
@@ -1161,29 +1160,29 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
   Future<void> _startPurchaseFlow(BuildContext context) async {
     // In demo mode, skip the real payment and go straight to the metric entry flow
     const isDemoMode = bool.fromEnvironment('DEMO_MODE', defaultValue: false);
+    final l10n = AppLocalizations.of(context)!;
 
     if (!isDemoMode) {
       // Show a purchase confirmation dialog before sending to store
       final confirmed = await showDialog<bool>(
         context: context,
-        builder: (ctx) => AlertDialog(
-          title: const Text('Purchase Custom Metric'),
-          content: const Text(
-            'You will be charged \$4.99 (one-time) to unlock one custom metric slot.\n\n'
-            'Your custom metric name and definition are permanent and cannot ever be changed '
-            'once saved, so please choose carefully.',
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx, false),
-              child: const Text('Cancel'),
-            ),
-            FilledButton(
-              onPressed: () => Navigator.pop(ctx, true),
-              child: const Text('Purchase — \$4.99'),
-            ),
-          ],
-        ),
+        builder: (ctx) {
+          final ctxL10n = AppLocalizations.of(ctx)!;
+          return AlertDialog(
+            title: Text(ctxL10n.purchaseCustomMetricConfirmTitle),
+            content: Text(ctxL10n.purchaseCustomMetricConfirmBody),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, false),
+                child: Text(ctxL10n.cancel),
+              ),
+              FilledButton(
+                onPressed: () => Navigator.pop(ctx, true),
+                child: Text(ctxL10n.purchaseCustomMetricConfirmButton),
+              ),
+            ],
+          );
+        },
       );
       if (confirmed != true || !context.mounted) return;
 
@@ -1219,46 +1218,49 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
     await showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (ctx) => StatefulBuilder(
-        builder: (ctx, setState) => AlertDialog(
-          title: const Text('Custom Metric Name'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Enter the name for your custom metric:',
-                style: TextStyle(fontSize: 14),
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: nameController,
-                autofocus: true,
-                maxLength: 60,
-                textCapitalization: TextCapitalization.words,
-                decoration: const InputDecoration(
-                  hintText: 'Metric Name',
-                  border: OutlineInputBorder(),
+      builder: (ctx) {
+        final ctxL10n = AppLocalizations.of(ctx)!;
+        return StatefulBuilder(
+          builder: (ctx, setState) => AlertDialog(
+            title: Text(ctxL10n.purchaseCustomMetricEnterNameTitle),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  ctxL10n.purchaseCustomMetricEnterNamePrompt,
+                  style: const TextStyle(fontSize: 14),
                 ),
+                const SizedBox(height: 12),
+                TextField(
+                  controller: nameController,
+                  autofocus: true,
+                  maxLength: 60,
+                  textCapitalization: TextCapitalization.words,
+                  decoration: InputDecoration(
+                    hintText: ctxL10n.purchaseCustomMetricNameHint,
+                    border: const OutlineInputBorder(),
+                  ),
+                ),
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx),
+                child: Text(ctxL10n.cancelNotReady),
+              ),
+              FilledButton(
+                onPressed: () {
+                  final name = nameController.text.trim();
+                  if (name.isEmpty) return;
+                  Navigator.pop(ctx, name);
+                },
+                child: Text(ctxL10n.next),
               ),
             ],
           ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(ctx),
-              child: const Text('Cancel — I Wasn\'t Ready'),
-            ),
-            FilledButton(
-              onPressed: () {
-                final name = nameController.text.trim();
-                if (name.isEmpty) return;
-                Navigator.pop(ctx, name);
-              },
-              child: const Text('Next'),
-            ),
-          ],
-        ),
-      ),
+        );
+      },
     ).then((name) async {
       if (name == null || name.toString().isEmpty || !context.mounted) return;
       await _showConfirmNameDialog(context, name.toString());
@@ -1269,41 +1271,44 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
     await showDialog<String>(
       context: context,
       barrierDismissible: false,
-      builder: (ctx) => AlertDialog(
-        title: const Text('Confirm Metric Name'),
-        content: RichText(
-          text: TextSpan(
-            style: DefaultTextStyle.of(ctx).style.copyWith(fontSize: 15),
-            children: [
-              const TextSpan(text: 'You entered:\n\n'),
-              TextSpan(
-                text: '"$name"',
-                style: const TextStyle(
-                    fontWeight: FontWeight.w800, fontSize: 17),
-              ),
-              const TextSpan(
-                text: '\n\n⚠️  This is FINAL and can NEVER be changed.',
-                style: TextStyle(
-                    color: Colors.red, fontWeight: FontWeight.w600),
-              ),
-            ],
+      builder: (ctx) {
+        final ctxL10n = AppLocalizations.of(ctx)!;
+        return AlertDialog(
+          title: Text(ctxL10n.purchaseCustomMetricConfirmNameTitle),
+          content: RichText(
+            text: TextSpan(
+              style: DefaultTextStyle.of(ctx).style.copyWith(fontSize: 15),
+              children: [
+                TextSpan(text: ctxL10n.purchaseCustomMetricConfirmNameYouEntered),
+                TextSpan(
+                  text: '"$name"',
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w800, fontSize: 17),
+                ),
+                TextSpan(
+                  text: ctxL10n.purchaseCustomMetricConfirmNameWarning,
+                  style: const TextStyle(
+                      color: Colors.red, fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
           ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, 'cancel'),
-            child: const Text('Cancel — I Wasn\'t Ready'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, 're-enter'),
-            child: const Text('Oops — Re-Enter Name'),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(ctx, 'save'),
-            child: const Text('OK — Save Metric Name'),
-          ),
-        ],
-      ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, 'cancel'),
+              child: Text(ctxL10n.cancelNotReady),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, 're-enter'),
+              child: Text(ctxL10n.purchaseCustomMetricReenterName),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.pop(ctx, 'save'),
+              child: Text(ctxL10n.purchaseCustomMetricSaveName),
+            ),
+          ],
+        );
+      },
     ).then((result) async {
       if (!context.mounted) return;
       if (result == 're-enter') {
@@ -1322,53 +1327,54 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
     await showDialog<String>(
       context: context,
       barrierDismissible: false,
-      builder: (ctx) => AlertDialog(
-        title: Text('Define: $name'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Input the meaning of your Custom Metric: $name',
-              style: const TextStyle(fontSize: 14),
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: meaningController,
-              autofocus: true,
-              maxLength: 300,
-              maxLines: 5,
-              minLines: 3,
-              textCapitalization: TextCapitalization.sentences,
-              decoration: const InputDecoration(
-                hintText:
-                    'Describe what this metric means, what behaviors it looks for, '
-                    'and how it applies to relationship dynamics...',
-                border: OutlineInputBorder(),
-                alignLabelWithHint: true,
+      builder: (ctx) {
+        final ctxL10n = AppLocalizations.of(ctx)!;
+        return AlertDialog(
+          title: Text(ctxL10n.purchaseCustomMetricDefineTitleWithName(name)),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                ctxL10n.purchaseCustomMetricDefinePromptWithName(name),
+                style: const TextStyle(fontSize: 14),
               ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: meaningController,
+                autofocus: true,
+                maxLength: 300,
+                maxLines: 5,
+                minLines: 3,
+                textCapitalization: TextCapitalization.sentences,
+                decoration: InputDecoration(
+                  hintText: ctxL10n.purchaseCustomMetricMeaningHint,
+                  border: const OutlineInputBorder(),
+                  alignLabelWithHint: true,
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, 'cancel'),
+              child: Text(ctxL10n.cancelNotReady),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, 're-enter'),
+              child: Text(ctxL10n.purchaseCustomMetricReenter),
+            ),
+            FilledButton(
+              onPressed: () {
+                final meaning = meaningController.text.trim();
+                if (meaning.isEmpty) return;
+                Navigator.pop(ctx, meaning);
+              },
+              child: Text(ctxL10n.purchaseCustomMetricSaveMeaning),
             ),
           ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, 'cancel'),
-            child: const Text('Cancel — I Wasn\'t Ready'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, 're-enter'),
-            child: const Text('Oops — Re-Enter'),
-          ),
-          FilledButton(
-            onPressed: () {
-              final meaning = meaningController.text.trim();
-              if (meaning.isEmpty) return;
-              Navigator.pop(ctx, meaning);
-            },
-            child: const Text('OK — Save Meaning'),
-          ),
-        ],
-      ),
+        );
+      },
     ).then((result) async {
       if (!context.mounted) return;
       if (result == 're-enter') {
@@ -1388,72 +1394,74 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
     await showDialog<String>(
       context: context,
       barrierDismissible: false,
-      builder: (ctx) => AlertDialog(
-        title: const Text('Preview Your Custom Metric'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'This is how your tile will look:',
-              style: TextStyle(fontSize: 13, fontStyle: FontStyle.italic),
-            ),
-            const SizedBox(height: 12),
-            // Mini preview tile
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(14),
-              decoration: BoxDecoration(
-                color: colorScheme.primaryContainer,
-                borderRadius: BorderRadius.circular(14),
-                border: Border.all(
-                    color: colorScheme.primary.withOpacity(0.5), width: 1.5),
+      builder: (ctx) {
+        final ctxL10n = AppLocalizations.of(ctx)!;
+        return AlertDialog(
+          title: Text(ctxL10n.purchaseCustomMetricPreviewTitle),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                ctxL10n.purchaseCustomMetricPreviewSubtitle,
+                style: const TextStyle(fontSize: 13, fontStyle: FontStyle.italic),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    name,
-                    style: TextStyle(
-                      color: colorScheme.onPrimaryContainer,
-                      fontWeight: FontWeight.w800,
-                      fontSize: 18,
+              const SizedBox(height: 12),
+              // Mini preview tile
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(14),
+                decoration: BoxDecoration(
+                  color: colorScheme.primaryContainer,
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(
+                      color: colorScheme.primary.withOpacity(0.5), width: 1.5),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      name,
+                      style: TextStyle(
+                        color: colorScheme.onPrimaryContainer,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 18,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 6),
-                  Text(
-                    meaning,
-                    style: TextStyle(
-                      color:
-                          colorScheme.onPrimaryContainer.withOpacity(0.75),
-                      fontSize: 13,
+                    const SizedBox(height: 6),
+                    Text(
+                      meaning,
+                      style: TextStyle(
+                        color:
+                            colorScheme.onPrimaryContainer.withOpacity(0.75),
+                        fontSize: 13,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
+              const SizedBox(height: 16),
+              Text(
+                ctxL10n.purchaseCustomMetricLastChanceWarning,
+                style: const TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, 'cancel'),
+              child: Text(ctxL10n.purchaseCustomMetricCancelEverything),
             ),
-            const SizedBox(height: 16),
-            const Text(
-              '⚠️  This is your LAST CHANCE to change your mind.\n'
-              'Once committed, the name and definition are permanent.',
-              style: TextStyle(
-                  color: Colors.red,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 13),
+            FilledButton(
+              onPressed: () => Navigator.pop(ctx, 'commit'),
+              child: Text(ctxL10n.purchaseCustomMetricCommit),
             ),
           ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, 'cancel'),
-            child: const Text('Cancel Everything'),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(ctx, 'commit'),
-            child: const Text('Commit to Custom Metric'),
-          ),
-        ],
-      ),
+        );
+      },
     ).then((result) async {
       if (!context.mounted) return;
       if (result == 'commit') {
@@ -1461,8 +1469,8 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
         if (!context.mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(
-                '✓ "$name" added to your metrics! You can now select it for analysis.'),
+            content: Text(AppLocalizations.of(context)!
+                .purchaseCustomMetricSuccess(name)),
             backgroundColor: Colors.green.shade700,
             duration: const Duration(seconds: 4),
           ),
@@ -1504,14 +1512,15 @@ class _PurchasePendingDialogState extends State<_PurchasePendingDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return const AlertDialog(
-      title: Text('Processing Purchase...'),
+    final l10n = AppLocalizations.of(context)!;
+    return AlertDialog(
+      title: Text(l10n.purchaseCustomMetricProcessingTitle),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          CircularProgressIndicator(),
-          SizedBox(height: 16),
-          Text('Waiting for store confirmation.\nPlease do not close the app.'),
+          const CircularProgressIndicator(),
+          const SizedBox(height: 16),
+          Text(l10n.purchaseCustomMetricProcessingBody),
         ],
       ),
     );

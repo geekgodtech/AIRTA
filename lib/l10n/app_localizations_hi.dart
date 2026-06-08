@@ -1433,4 +1433,103 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get noMessagesInDateRange =>
       'चयनित दिनांक सीमा में कोई संदेश नहीं मिला। कृपया अलग-अलग तारीख चुनें या दिनांक फ़िल्टर साफ़ करें।';
+
+  @override
+  String get purchaseCustomMetricTileTitle => 'कस्टम मेट्रिक खरीदें';
+
+  @override
+  String get purchaseCustomMetricTileDescription =>
+      '\$4.99 की एकमुश्त फीस के लिए, एक कस्टम मेट्रिक नाम और परिभाषा दर्ज करें जो स्थायी रूप से आपके अन्य मेट्रिक्स के साथ सहेजी जाएगी और किसी भी भविष्य विश्लेषण के लिए उपयोग की जा सके। अनलिमिटेड कस्टम मेट्रिक्स खरीदें।';
+
+  @override
+  String get purchaseCustomMetricConfirmTitle => 'कस्टम मेट्रिक खरीदें';
+
+  @override
+  String get purchaseCustomMetricConfirmBody =>
+      'आपसे \$4.99 (एकमुश्त) चार्ज किया जाएगा एक कस्टम मेट्रिक स्लॉट अनलॉक करने के लिए।\n\nआपका कस्टम मेट्रिक नाम और परिभाषा स्थायी हैं और एक बार सहेजे जाने के बाद कभी नहीं बदली जा सकती, इसलिए कृपया सावधानी से चुनें।';
+
+  @override
+  String get purchaseCustomMetricConfirmButton => 'खरीदें — \$4.99';
+
+  @override
+  String get purchaseCustomMetricEnterNameTitle => 'कस्टम मेट्रिक नाम';
+
+  @override
+  String get purchaseCustomMetricEnterNamePrompt =>
+      'अपने कस्टम मेट्रिक के लिए नाम दर्ज करें:';
+
+  @override
+  String get purchaseCustomMetricNameHint => 'मेट्रिक नाम';
+
+  @override
+  String get purchaseCustomMetricConfirmNameTitle =>
+      'मेट्रिक नाम की पुष्टि करें';
+
+  @override
+  String get purchaseCustomMetricConfirmNameYouEntered => 'आपने दर्ज किया:\n\n';
+
+  @override
+  String get purchaseCustomMetricConfirmNameWarning =>
+      '\n\n⚠️  यह अंतिम है और कभी नहीं बदला जा सकता।';
+
+  @override
+  String get purchaseCustomMetricReenterName => 'ओहो — नाम फिर से दर्ज करें';
+
+  @override
+  String get purchaseCustomMetricSaveName => 'ठीक है — मेट्रिक नाम सहेजें';
+
+  @override
+  String purchaseCustomMetricDefineTitleWithName(String name) {
+    return 'परिभाषित करें: $name';
+  }
+
+  @override
+  String purchaseCustomMetricDefinePromptWithName(String name) {
+    return 'अपने कस्टम मेट्रिक का अर्थ दर्ज करें: $name';
+  }
+
+  @override
+  String get purchaseCustomMetricMeaningHint =>
+      'वर्णन करें कि यह मेट्रिक क्या मतलब रखता है, किन व्यवहारों की तलाश करता है, और यह रिश्ते की गतिशीलता में कैसे लागू होता है...';
+
+  @override
+  String get purchaseCustomMetricReenter => 'ओहो — फिर से दर्ज करें';
+
+  @override
+  String get purchaseCustomMetricSaveMeaning => 'ठीक है — अर्थ सहेजें';
+
+  @override
+  String get purchaseCustomMetricPreviewTitle =>
+      'अपने कस्टम मेट्रिक का पूर्वावलोकन करें';
+
+  @override
+  String get purchaseCustomMetricPreviewSubtitle => 'आपकी टाइल इस तरह दिखेगी:';
+
+  @override
+  String get purchaseCustomMetricLastChanceWarning =>
+      '⚠️  अपना मन बदलने का यह आपका आखिरी मौका है।\nएक बार प्रतिबद्ध होने के बाद, नाम और परिभाषा स्थायी हैं।';
+
+  @override
+  String get purchaseCustomMetricCancelEverything => 'सब कुछ रद्द करें';
+
+  @override
+  String get purchaseCustomMetricCommit => 'कस्टम मेट्रिक के लिए प्रतिबद्ध हों';
+
+  @override
+  String purchaseCustomMetricSuccess(String name) {
+    return '✓ \"$name\" आपके मेट्रिक्स में जोड़ दिया गया! अब आप इसे विश्लेषण के लिए चुन सकते हैं।';
+  }
+
+  @override
+  String get purchaseCustomMetricProcessingTitle => 'खरीदारी प्रसंस्करण...';
+
+  @override
+  String get purchaseCustomMetricProcessingBody =>
+      'स्टोर पुष्टि की प्रतीक्षा की जा रही है।\nकृपया ऐप बंद न करें।';
+
+  @override
+  String get next => 'अगला';
+
+  @override
+  String get cancelNotReady => 'रद्द करें — मैं तैयार नहीं था';
 }

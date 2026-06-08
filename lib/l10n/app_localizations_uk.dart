@@ -1432,4 +1432,104 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get noMessagesInDateRange =>
       'Повідомлень не знайдено у вибраному діапазоні дат. Виберіть інші дати або очистіть фільтр дати.';
+
+  @override
+  String get purchaseCustomMetricTileTitle => 'Придбати кастомну метрику';
+
+  @override
+  String get purchaseCustomMetricTileDescription =>
+      'За разову плату \$4.99 введіть назву та визначення кастомної метрики, які назавжди збережуться поряд з іншими вашими метриками для використання в будь-якому майбутньому аналізі. Придбайте необмежену кількість кастомних метрик.';
+
+  @override
+  String get purchaseCustomMetricConfirmTitle => 'Придбати кастомну метрику';
+
+  @override
+  String get purchaseCustomMetricConfirmBody =>
+      'З вас буде стягнуто \$4.99 (разово) для розблокування одного слота кастомної метрики.\n\nНазва та визначення вашої кастомної метрики є постійними і не можуть бути змінені після збереження, тому будь ласка, обирайте уважно.';
+
+  @override
+  String get purchaseCustomMetricConfirmButton => 'Придбати — \$4.99';
+
+  @override
+  String get purchaseCustomMetricEnterNameTitle => 'Назва кастомної метрики';
+
+  @override
+  String get purchaseCustomMetricEnterNamePrompt =>
+      'Введіть назву для вашої кастомної метрики:';
+
+  @override
+  String get purchaseCustomMetricNameHint => 'Назва метрики';
+
+  @override
+  String get purchaseCustomMetricConfirmNameTitle =>
+      'Підтвердити назву метрики';
+
+  @override
+  String get purchaseCustomMetricConfirmNameYouEntered => 'Ви ввели:\n\n';
+
+  @override
+  String get purchaseCustomMetricConfirmNameWarning =>
+      '\n\n⚠️  Це ФІНАЛЬНО і НІКОЛИ не може бути змінено.';
+
+  @override
+  String get purchaseCustomMetricReenterName => 'Ой — Ввести назву знову';
+
+  @override
+  String get purchaseCustomMetricSaveName => 'OK — Зберегти назву метрики';
+
+  @override
+  String purchaseCustomMetricDefineTitleWithName(String name) {
+    return 'Визначити: $name';
+  }
+
+  @override
+  String purchaseCustomMetricDefinePromptWithName(String name) {
+    return 'Введіть значення вашої кастомної метрики: $name';
+  }
+
+  @override
+  String get purchaseCustomMetricMeaningHint =>
+      'Опишіть, що означає ця метрика, які поведінки вона шукає та як застосовується до динаміки стосунків...';
+
+  @override
+  String get purchaseCustomMetricReenter => 'Ой — Ввести знову';
+
+  @override
+  String get purchaseCustomMetricSaveMeaning => 'OK — Зберегти значення';
+
+  @override
+  String get purchaseCustomMetricPreviewTitle =>
+      'Попередній перегляд вашої кастомної метрики';
+
+  @override
+  String get purchaseCustomMetricPreviewSubtitle =>
+      'Так виглядатиме ваша плитка:';
+
+  @override
+  String get purchaseCustomMetricLastChanceWarning =>
+      '⚠️  Це ваш ОСТАННІЙ ШАНС передумати.\nПісля підтвердження назва та визначення є постійними.';
+
+  @override
+  String get purchaseCustomMetricCancelEverything => 'Скасувати все';
+
+  @override
+  String get purchaseCustomMetricCommit => 'Підтвердити кастомну метрику';
+
+  @override
+  String purchaseCustomMetricSuccess(String name) {
+    return '✓ \"$name\" додано до ваших метрик! Тепер ви можете вибрати її для аналізу.';
+  }
+
+  @override
+  String get purchaseCustomMetricProcessingTitle => 'Обробка покупки...';
+
+  @override
+  String get purchaseCustomMetricProcessingBody =>
+      'Очікується підтвердження від магазину.\nБудь ласка, не закривайте додаток.';
+
+  @override
+  String get next => 'Далі';
+
+  @override
+  String get cancelNotReady => 'Скасувати — Я не готовий';
 }

@@ -1439,4 +1439,106 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get noMessagesInDateRange =>
       'Nenhuma mensagem encontrada no intervalo de datas selecionado. Selecione datas diferentes ou limpe o filtro de data.';
+
+  @override
+  String get purchaseCustomMetricTileTitle => 'Comprar Métrica Personalizada';
+
+  @override
+  String get purchaseCustomMetricTileDescription =>
+      'Por uma taxa única de \$4.99, insira um nome e definição de métrica personalizada salvos permanentemente junto com suas outras métricas para uso em qualquer análise futura. Compre métricas personalizadas ilimitadas.';
+
+  @override
+  String get purchaseCustomMetricConfirmTitle =>
+      'Comprar Métrica Personalizada';
+
+  @override
+  String get purchaseCustomMetricConfirmBody =>
+      'Será cobrado \$4.99 (uma única vez) para desbloquear um slot de métrica personalizada.\n\nO nome e a definição da sua métrica personalizada são permanentes e nunca poderão ser alterados após salvos, portanto escolha com cuidado.';
+
+  @override
+  String get purchaseCustomMetricConfirmButton => 'Comprar — \$4.99';
+
+  @override
+  String get purchaseCustomMetricEnterNameTitle =>
+      'Nome da Métrica Personalizada';
+
+  @override
+  String get purchaseCustomMetricEnterNamePrompt =>
+      'Digite o nome da sua métrica personalizada:';
+
+  @override
+  String get purchaseCustomMetricNameHint => 'Nome da Métrica';
+
+  @override
+  String get purchaseCustomMetricConfirmNameTitle =>
+      'Confirmar Nome da Métrica';
+
+  @override
+  String get purchaseCustomMetricConfirmNameYouEntered => 'Você digitou:\n\n';
+
+  @override
+  String get purchaseCustomMetricConfirmNameWarning =>
+      '\n\n⚠️  Isso é DEFINITIVO e NUNCA poderá ser alterado.';
+
+  @override
+  String get purchaseCustomMetricReenterName => 'Ops — Redigitar Nome';
+
+  @override
+  String get purchaseCustomMetricSaveName => 'OK — Salvar Nome da Métrica';
+
+  @override
+  String purchaseCustomMetricDefineTitleWithName(String name) {
+    return 'Definir: $name';
+  }
+
+  @override
+  String purchaseCustomMetricDefinePromptWithName(String name) {
+    return 'Insira o significado da sua Métrica Personalizada: $name';
+  }
+
+  @override
+  String get purchaseCustomMetricMeaningHint =>
+      'Descreva o que esta métrica significa, quais comportamentos ela observa e como se aplica à dinâmica dos relacionamentos...';
+
+  @override
+  String get purchaseCustomMetricReenter => 'Ops — Redigitar';
+
+  @override
+  String get purchaseCustomMetricSaveMeaning => 'OK — Salvar Significado';
+
+  @override
+  String get purchaseCustomMetricPreviewTitle =>
+      'Pré-visualizar Sua Métrica Personalizada';
+
+  @override
+  String get purchaseCustomMetricPreviewSubtitle =>
+      'É assim que seu card ficará:';
+
+  @override
+  String get purchaseCustomMetricLastChanceWarning =>
+      '⚠️  Esta é sua ÚLTIMA CHANCE de mudar de ideia.\nApós confirmar, o nome e a definição são permanentes.';
+
+  @override
+  String get purchaseCustomMetricCancelEverything => 'Cancelar Tudo';
+
+  @override
+  String get purchaseCustomMetricCommit => 'Confirmar Métrica Personalizada';
+
+  @override
+  String purchaseCustomMetricSuccess(String name) {
+    return '✓ \"$name\" adicionado(a) às suas métricas! Agora você pode selecioná-la para análise.';
+  }
+
+  @override
+  String get purchaseCustomMetricProcessingTitle => 'Processando Compra...';
+
+  @override
+  String get purchaseCustomMetricProcessingBody =>
+      'Aguardando confirmação da loja.\nPor favor, não feche o aplicativo.';
+
+  @override
+  String get next => 'Próximo';
+
+  @override
+  String get cancelNotReady => 'Cancelar — Não Estava Pronto(a)';
 }
