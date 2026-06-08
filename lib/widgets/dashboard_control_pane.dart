@@ -45,14 +45,23 @@ class _DashboardControlPaneState extends State<DashboardControlPane> {
   
   void _onControllerChanged() {
     final controller = context.read<ToxicityAnalyzerController>();
+    final l10n = AppLocalizations.of(context)!;
     if (controller.errorMessage != null && mounted) {
+      // Check if this is the no messages in date range error
+      final String errorText;
+      if (controller.errorMessage!.contains('No messages found in the selected date range')) {
+        errorText = l10n.noMessagesInDateRange;
+      } else {
+        errorText = controller.errorMessage!;
+      }
+      
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(controller.errorMessage!),
+          content: Text(errorText),
           backgroundColor: Theme.of(context).colorScheme.error,
           duration: const Duration(seconds: 5),
           action: SnackBarAction(
-            label: 'Clear Date Range',
+            label: l10n.clearSelectedDateRange,
             onPressed: () => controller.clearDateRange(),
           ),
         ),
@@ -1212,12 +1221,15 @@ class _DateRangeFilterSectionState extends State<_DateRangeFilterSection> {
                         : null,
                   ),
                   const SizedBox(width: 4),
-                  Text(
-                    l10n.enableDateRangeFiltering,
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: hasLoadedConversation && !isFreeTier
-                          ? null
-                          : Theme.of(context).colorScheme.onSurface.withOpacity(0.38),
+                  Flexible(
+                    child: Text(
+                      l10n.enableDateRangeFiltering,
+                      softWrap: true,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: hasLoadedConversation && !isFreeTier
+                            ? null
+                            : Theme.of(context).colorScheme.onSurface.withOpacity(0.38),
+                      ),
                     ),
                   ),
                 ],
