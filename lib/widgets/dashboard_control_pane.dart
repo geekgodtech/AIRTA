@@ -1108,21 +1108,30 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisSize: MainAxisSize.min,
                             children: [
+                              // Row is bounded by the SizedBox width so the title
+                              // text wraps rather than overflowing on small tiles.
                               Row(
-                                mainAxisSize: MainAxisSize.min,
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Icon(Icons.add_circle_outline,
-                                      color: colorScheme.secondary, size: 20),
+                                  Padding(
+                                    padding: EdgeInsets.only(top: 3),
+                                    child: Icon(Icons.add_circle_outline,
+                                        color: colorScheme.secondary, size: 20),
+                                  ),
                                   const SizedBox(width: 5),
-                                  Text(
-                                    l10n.purchaseCustomMetricTileTitle,
-                                    style: TextStyle(
-                                      color: colorScheme.onSecondaryContainer,
-                                      fontWeight: FontWeight.w700,
-                                      // Same baseline size as the metric name text;
-                                      // FittedBox will scale this down on small tiles.
-                                      fontSize: 24,
-                                      height: 1.12,
+                                  Expanded(
+                                    child: Text(
+                                      l10n.purchaseCustomMetricTileTitle,
+                                      style: TextStyle(
+                                        color: colorScheme.onSecondaryContainer,
+                                        fontWeight: FontWeight.w700,
+                                        // Same baseline size as the metric name text;
+                                        // FittedBox will scale this down on small tiles.
+                                        fontSize: 24,
+                                        height: 1.12,
+                                      ),
+                                      softWrap: true,
                                     ),
                                   ),
                                 ],
