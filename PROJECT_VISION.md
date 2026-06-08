@@ -12,14 +12,17 @@
 
 ## PRODUCT IDs (Must match exactly in Play Console / App Store Connect)
 
-| Product ID                | Type          | Price    | Status     |
-|---------------------------|---------------|----------|------------|
-| `standard_monthly`        | Subscription  | $9.99/mo | Planned    |
-| `pro_monthly`             | Subscription  | $19.99/mo| Future     |
-| `pro_plus_monthly`        | Subscription  | $24.99/mo| Future     |
-| `one_time_unlock`         | Non-consumable| $19.99   | Planned    |
-| `discord_addon_monthly`   | Subscription  | $9.99/mo | Planned    |
-| `custom_metric_4_99`      | Consumable    | $4.99    | IN DEV NOW |
+| Product ID                | Type          | Price    | Code Status       | Store Status         |
+|---------------------------|---------------|----------|-------------------|----------------------|
+| `standard_monthly`        | Subscription  | $9.99/mo | CODED ✅          | NOT YET CREATED ⏳   |
+| `pro_monthly`             | Subscription  | $19.99/mo| CODED (disabled)  | NOT YET CREATED ⏳   |
+| `pro_plus_monthly`        | Subscription  | $24.99/mo| CODED (disabled)  | NOT YET CREATED ⏳   |
+| `one_time_unlock`         | Non-consumable| $19.99   | CODED ✅          | NOT YET CREATED ⏳   |
+| `discord_addon_monthly`   | Subscription  | $9.99/mo | CODED ✅          | NOT YET CREATED ⏳   |
+| `custom_metric_4_99`      | Consumable    | $4.99    | CODED ✅          | NOT YET CREATED ⏳   |
+
+ALL product IDs must be created identically in Google Play Console and Apple App Store Connect
+before any real purchases can process. See PAYMENT SETUP section below.
 
 ---
 
@@ -258,12 +261,117 @@ Plus one-time unlocks ($19.99) and custom metrics ($4.99) on top.
 
 ---
 
-## LAUNCH CHECKLIST (Outstanding)
+## LAUNCH CHECKLIST — VERIFIED STATE AS OF 2026-06-08
 
-- [ ] Create Google Play Developer account ($25 one-time)
-- [ ] Create Apple Developer account ($99/year)  
-- [ ] Create Firebase project + download google-services.json & GoogleService-Info.plist
-- [ ] Create Discord app at discord.com/developers/applications
-- [ ] Add all product IDs to Play Console and App Store Connect
-- [ ] Submit v1.0.0 to both stores
-- [ ] Set up Firebase Remote Config with v1.0.0 values
+### DONE — Code-verified complete ✅
+- [x] Firebase project created (project ID: airta-6e049)
+- [x] google-services.json in android/app/ ✅
+- [x] GoogleService-Info.plist in ios/Runner/ ✅
+- [x] Firebase initialized in main.dart ✅
+- [x] Firebase Remote Config service — all keys wired up ✅
+- [x] Force update / version check system — fully live ✅
+- [x] SubscriptionService — real IAP code, initialized in main.dart ✅
+- [x] Membership landing page — real purchaseSubscription() calls ✅
+- [x] Discord UI button in dashboard ✅
+- [x] Discord API service — full OAuth2 implementation ✅
+- [x] iOS SMS capture (OCR via ML Kit) ✅
+- [x] Custom Metric purchase flow — fully built ✅
+- [x] 16-language localization ✅
+- [x] Unipile code — fully built (commented out pending negotiation) ✅
+- [x] PDF export — fully built (disabled extension, re-enable before launch) ✅
+
+### OUTSTANDING — Must do before app stores ⏳
+- [ ] **Create Google Play Developer account** ($25 one-time) — https://play.google.com/console
+- [ ] **Create Apple Developer account** ($99/year) — https://developer.apple.com
+- [ ] **Create all product IDs in Google Play Console** (see product ID table above)
+- [ ] **Create all product IDs in Apple App Store Connect** (same IDs, exact match)
+- [ ] **Add Discord credentials to Firebase Remote Config** (Bot Token, Client ID, Client Secret)
+      — Go to Firebase Console → Remote Config → add discord_bot_token, discord_client_id, discord_client_secret
+- [ ] **Re-enable PDF export** — rename lib/services/pdf_synthesis_service.dart.disabled → .dart
+- [ ] **Submit v1.0.0 to Google Play Store**
+- [ ] **Submit v1.0.0 to Apple App Store**
+- [ ] **Set Firebase Remote Config v1.0.0 launch values** (see LAUNCH ROADMAP above)
+
+### PAYMENT SETUP — What you need to do (see detail below) 💳
+- [ ] Create product IDs in Play Console
+- [ ] Create product IDs in App Store Connect
+- [ ] Test purchases with sandbox accounts before going live
+
+
+---
+
+## PAYMENT SETUP — Step-by-Step Instructions
+
+The IAP code is 100% complete. The ONLY thing missing is creating the products in the store consoles.
+This is a manual admin task — no code changes needed.
+
+### Products to create for v1.0.0 launch:
+
+| Product ID              | Store Type              | Price  | Notes                         |
+|-------------------------|-------------------------|--------|-------------------------------|
+| `standard_monthly`      | Auto-renewable sub      | $9.99  | Create in SUBSCRIPTIONS tab   |
+| `one_time_unlock`       | Non-consumable          | $19.99 | Create in IN-APP PRODUCTS tab |
+| `discord_addon_monthly` | Auto-renewable sub      | $9.99  | Create in SUBSCRIPTIONS tab   |
+| `custom_metric_4_99`    | Consumable              | $4.99  | Create in IN-APP PRODUCTS tab |
+
+(Pro and Pro Plus come later — don't create those yet)
+
+---
+
+### GOOGLE PLAY CONSOLE (Android)
+
+1. Go to https://play.google.com/console
+2. Open your app → **Monetize** in left sidebar
+
+#### Subscriptions (standard_monthly, discord_addon_monthly):
+- Click **Products → Subscriptions → Create subscription**
+- Product ID: enter EXACTLY as shown in the table (e.g. `standard_monthly`)
+- Name, description, price, billing period: 1 month
+- Save and click **Activate**
+- Repeat for `discord_addon_monthly`
+
+#### In-App Products (one_time_unlock, custom_metric_4_99):
+- Click **Products → In-app products → Create product**
+- Product ID: enter EXACTLY as shown
+- `one_time_unlock` → Type: **Non-consumable** (user buys once, keeps forever)
+- `custom_metric_4_99` → Type: **Consumable** (user can buy repeatedly, one per metric)
+- Set price, Save, Activate
+
+#### Testing:
+- Go to **Setup → License testing** → add your Gmail as a test account
+- Test accounts can make purchases without being charged
+
+---
+
+### APPLE APP STORE CONNECT (iOS)
+
+1. Go to https://appstoreconnect.apple.com
+2. Open your app → **Features** → **In-App Purchases**
+
+#### Subscriptions (standard_monthly, discord_addon_monthly):
+- Click **+** → **Auto-Renewable Subscription**
+- Put both in the same Subscription Group (create one called "Memberships")
+- Product ID: enter EXACTLY as shown
+- Duration: 1 month
+- Price: set accordingly
+- Submit for review
+
+#### In-App Products (one_time_unlock, custom_metric_4_99):
+- Click **+** → **Non-Consumable** for `one_time_unlock`
+- Click **+** → **Consumable** for `custom_metric_4_99`
+- Product ID: enter EXACTLY as shown
+- Submit for review
+
+#### Testing:
+- Go to **Users and Access → Sandbox Testers** → create a test Apple ID
+- On device: sign out of App Store, run app, sign in with sandbox account
+- Purchases using sandbox accounts are free
+
+---
+
+### IMPORTANT RULES
+- Product IDs are CASE SENSITIVE and must match the code EXACTLY
+- Once activated, product IDs cannot be changed or deleted
+- Both stores require the app to be uploaded before products can be fully activated
+- Google Play review: ~1-3 days; Apple: ~1-2 days
+- Pro/Pro Plus products (`pro_monthly`, `pro_plus_monthly`) — do NOT create yet, wait for v1.1.0
