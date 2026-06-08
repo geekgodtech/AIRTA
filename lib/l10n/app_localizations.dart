@@ -156,6 +156,18 @@ abstract class AppLocalizations {
   /// **'Select Discord Channel'**
   String get selectDiscordChannel;
 
+  /// Light mode label
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get lightMode;
+
+  /// Dark mode label
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get darkMode;
+
   /// Button to select a file
   ///
   /// In en, this message translates to:

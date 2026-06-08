@@ -25,6 +25,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get selectDiscordChannel => 'Discord Kanalı Seç';
 
   @override
+  String get lightMode => 'Açık';
+
+  @override
+  String get darkMode => 'Koyu';
+
+  @override
   String get selectFile => 'Dosya Seç';
 
   @override

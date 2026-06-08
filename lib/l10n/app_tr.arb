@@ -6,6 +6,8 @@
   "metricsDescription": "Daha az seçilen metrik, bu davranışların daha derin ve yoğun bir analizini sağlar. Daha fazla seçilen metrik, metrik başına daha az ayrıntıyla daha geniş bir rapor sağlar.",
   "selectSMS": "SMS / RCS Sohbet Seç",
   "selectDiscordChannel": "Discord Kanalı Seç",
+  "lightMode": "Açık",
+  "darkMode": "Koyu",
   "selectFile": "Dosya Seç",
   "analyzeSelectedMetrics": "Seçili metrikleri analiz et",
   "analyze20RandomMetrics": "20 rastgele metriği analiz et",

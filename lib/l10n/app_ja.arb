@@ -6,6 +6,8 @@
   "metricsDescription": "選択する指標が少ないほど、それらの行動についてより深く集中的な分析が得られます。選択する指標が多いほど、指標ごとの詳細は少なくなりますが、より広範なレポートが得られます。",
   "selectSMS": "SMS / RCSチャットを選択",
   "selectDiscordChannel": "Discordチャンネルを選択",
+  "lightMode": "ライト",
+  "darkMode": "ダーク",
   "selectFile": "ファイルを選択",
   "analyzeSelectedMetrics": "選択した指標を分析",
   "analyze20RandomMetrics": "20のランダムな指標を分析",

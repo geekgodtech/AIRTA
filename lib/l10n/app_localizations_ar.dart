@@ -25,6 +25,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get selectDiscordChannel => 'اختر قناة Discord';
 
   @override
+  String get lightMode => 'فاتح';
+
+  @override
+  String get darkMode => 'داكن';
+
+  @override
   String get selectFile => 'اختر ملفًا';
 
   @override

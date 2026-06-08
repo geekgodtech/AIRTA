@@ -27,6 +27,16 @@
     "description": "Button to select Discord channel"
   },
 
+  "lightMode": "Light",
+  "@lightMode": {
+    "description": "Light mode label"
+  },
+
+  "darkMode": "Dark",
+  "@darkMode": {
+    "description": "Dark mode label"
+  },
+
   "selectFile": "Select file",
   "@selectFile": {
     "description": "Button to select a file"

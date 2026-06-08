@@ -25,6 +25,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get selectDiscordChannel => 'Discord 채널 선택';
 
   @override
+  String get lightMode => '라이트';
+
+  @override
+  String get darkMode => '다크';
+
+  @override
   String get selectFile => 'Select file';
 
   @override

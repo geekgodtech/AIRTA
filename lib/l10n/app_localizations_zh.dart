@@ -25,6 +25,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get selectDiscordChannel => '选择 Discord 频道';
 
   @override
+  String get lightMode => '浅色';
+
+  @override
+  String get darkMode => '深色';
+
+  @override
   String get selectFile => '选择文件';
 
   @override

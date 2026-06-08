@@ -6,6 +6,8 @@
   "metricsDescription": "Moins de métriques sélectionnées produisent une analyse plus profonde et concentrée de ces comportements. Plus de métriques sélectionnées produisent un rapport plus large avec moins de détails par métrique.",
   "selectSMS": "Sélectionner SMS / RCS Chat",
   "selectDiscordChannel": "Sélectionner Canal Discord",
+  "lightMode": "Clair",
+  "darkMode": "Sombre",
   "selectFile": "Sélectionner fichier",
   "analyzeSelectedMetrics": "Analyser les métriques sélectionnées",
   "analyze20RandomMetrics": "Analyser 20 métriques aléatoires",

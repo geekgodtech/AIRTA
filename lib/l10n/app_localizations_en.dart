@@ -25,6 +25,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get selectDiscordChannel => 'Select Discord Channel';
 
   @override
+  String get lightMode => 'Light';
+
+  @override
+  String get darkMode => 'Dark';
+
+  @override
   String get selectFile => 'Select file';
 
   @override

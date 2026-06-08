@@ -6,6 +6,8 @@
   "metricsDescription": "يؤدي اختيار عدد أقل من المقاييس إلى تحليل أعمق وأكثر تركيزًا لتلك السلوكيات. يؤدي اختيار عدد أكبر من المقاييس إلى تقرير أوسع مع تفاصيل أقل لكل مقياس.",
   "selectSMS": "اختر الرسائل القصيرة / RCS Chat",
   "selectDiscordChannel": "اختر قناة Discord",
+  "lightMode": "فاتح",
+  "darkMode": "داكن",
   "selectFile": "اختر ملفًا",
   "analyzeSelectedMetrics": "تحليل المقاييس المحددة",
   "analyze20RandomMetrics": "تحليل 20 مقياسًا عشوائيًا",

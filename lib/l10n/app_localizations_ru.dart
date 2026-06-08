@@ -25,6 +25,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get selectDiscordChannel => 'Выбрать канал Discord';
 
   @override
+  String get lightMode => 'Светлая';
+
+  @override
+  String get darkMode => 'Тёмная';
+
+  @override
   String get selectFile => 'Выбрать файл';
 
   @override

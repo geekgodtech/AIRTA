@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/theme_service.dart';
+import '../l10n/app_localizations.dart';
 
 class DarkModeSwitch extends StatelessWidget {
   const DarkModeSwitch({super.key});
@@ -7,20 +8,21 @@ class DarkModeSwitch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeService = ThemeService();
-    
+    final l10n = AppLocalizations.of(context)!;
+
     return ListenableBuilder(
       listenable: themeService,
       builder: (context, child) {
         final isDarkMode = themeService.isDarkMode;
-        
+
         return GestureDetector(
           onTap: () => themeService.toggleDarkMode(),
           child: Container(
-            width: 80,
+            width: 100,
             height: 44,
             decoration: BoxDecoration(
-              color: isDarkMode 
-                  ? Colors.black87 
+              color: isDarkMode
+                  ? Colors.black87
                   : Colors.grey[300],
               borderRadius: BorderRadius.circular(22),
               boxShadow: [
@@ -33,29 +35,57 @@ class DarkModeSwitch extends StatelessWidget {
             ),
             child: Stack(
               children: [
-                // Light mode icon
+                // Light mode label
                 Positioned(
-                  left: 8,
+                  left: 12,
                   top: 0,
                   bottom: 0,
                   child: Center(
-                    child: Icon(
-                      Icons.light_mode,
-                      color: isDarkMode ? Colors.grey[600] : Colors.orange,
-                      size: 20,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.light_mode,
+                          color: isDarkMode ? Colors.grey[600] : Colors.orange,
+                          size: 16,
+                        ),
+                        const SizedBox(width: 4),
+                        Text(
+                          l10n.lightMode,
+                          style: TextStyle(
+                            color: isDarkMode ? Colors.grey[600] : Colors.black87,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                // Dark mode icon
+                // Dark mode label
                 Positioned(
-                  right: 8,
+                  right: 12,
                   top: 0,
                   bottom: 0,
                   child: Center(
-                    child: Icon(
-                      Icons.dark_mode,
-                      color: isDarkMode ? Colors.blue[300] : Colors.grey[600],
-                      size: 20,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          l10n.darkMode,
+                          style: TextStyle(
+                            color: isDarkMode ? Colors.blue[300] : Colors.grey[600],
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        const SizedBox(width: 4),
+                        Icon(
+                          Icons.dark_mode,
+                          color: isDarkMode ? Colors.blue[300] : Colors.grey[600],
+                          size: 16,
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -63,7 +93,7 @@ class DarkModeSwitch extends StatelessWidget {
                 AnimatedPositioned(
                   duration: const Duration(milliseconds: 200),
                   curve: Curves.easeInOut,
-                  left: isDarkMode ? 38 : 4,
+                  left: isDarkMode ? 56 : 4,
                   top: 4,
                   bottom: 4,
                   child: Container(
