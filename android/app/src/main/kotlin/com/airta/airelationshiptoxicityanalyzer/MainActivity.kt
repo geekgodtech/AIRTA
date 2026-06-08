@@ -668,26 +668,12 @@ class MainActivity : FlutterActivity() {
                                 }
                             }
                             
-                            // Query MMS threads
-                            val mmsUri = Uri.parse("content://mms")
-                            val mmsProjection = arrayOf("_id", "thread_id")
-                            val mmsCursor: Cursor? = contentResolver.query(mmsUri, mmsProjection, null, null, null)
-                            mmsCursor?.use { mms ->
-                                while (mms.moveToNext()) {
-                                    val mmsThreadId = mms.getLong(mms.getColumnIndexOrThrow("thread_id"))
-                                    val mmsId = mms.getLong(mms.getColumnIndexOrThrow("_id"))
-                                    
-                                    // Check if this MMS message is from/to this address
-                                    val mmsAddr = getMmsAddress(mmsId, mmsUri)
-                                    if (mmsAddr != null) {
-                                        val mmsAddrContact = getContactName(mmsAddr)
-                                        if (mmsAddrContact == contactName) {
-                                            threadIds.add(mmsThreadId)
-                                            android.util.Log.d("SMS_DEBUG", "Found MMS thread_id $mmsThreadId for address: $mmsAddr")
-                                        }
-                                    }
-                                }
-                            }
+                            // NOTE: We intentionally do NOT scan every MMS message here.
+                            // MMS/RCS messages share the same thread_id as the SMS conversation,
+                            // so the SMS-by-address lookup above already discovers the thread_ids
+                            // that contain the MMS/RCS messages. getMmsMessages() then fetches the
+                            // RCS messages within those threads. Scanning all MMS + resolving each
+                            // address per-message previously caused a multi-minute timeout.
                         }
                     }
                 }
