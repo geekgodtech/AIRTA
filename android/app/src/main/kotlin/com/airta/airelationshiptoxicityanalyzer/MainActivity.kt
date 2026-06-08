@@ -391,18 +391,20 @@ class MainActivity : FlutterActivity() {
             val threadIdsString = threadIds.joinToString(",")
             val selection = "thread_id IN ($threadIdsString)"
             
+            // Limit to 5000 most recent MMS messages to balance performance and coverage
             val mmsCursor: Cursor? = contentResolver.query(
                 mmsUri,
                 mmsProjection,
                 selection,
                 null,
-                Telephony.Mms.DATE + " ASC"
+                Telephony.Mms.DATE + " DESC LIMIT 5000"
             )
             
             android.util.Log.d("SMS_DEBUG", "MMS cursor: ${mmsCursor?.count ?: 0} messages")
             
             mmsCursor?.use { cursor ->
-                while (cursor.moveToNext()) {
+                var count = 0
+                while (cursor.moveToNext() && count < 5000) {
                     val mmsId = cursor.getLong(cursor.getColumnIndexOrThrow(Telephony.Mms._ID))
                     val dateRaw = cursor.getLong(cursor.getColumnIndexOrThrow(Telephony.Mms.DATE))
                     val msgBox = cursor.getInt(cursor.getColumnIndexOrThrow("msg_box"))
@@ -424,6 +426,7 @@ class MainActivity : FlutterActivity() {
                     messageObj.put("type", type)
                     messageObj.put("messageType", "MMS")
                     messages.put(messageObj)
+                    count++
                 }
             }
         } catch (e: Exception) {
@@ -525,7 +528,7 @@ class MainActivity : FlutterActivity() {
                 }
             }
             
-            // Query MMS messages in thread
+            // Query MMS messages in thread - limit to 5000 most recent
             val mmsUri = Telephony.Mms.CONTENT_URI
             android.util.Log.d("SMS_DEBUG", "Querying MMS for thread $threadId")
             
@@ -537,13 +540,14 @@ class MainActivity : FlutterActivity() {
                 ),
                 "thread_id = ?",
                 arrayOf(threadId.toString()),
-                Telephony.Mms.DATE + " ASC"
+                Telephony.Mms.DATE + " DESC LIMIT 5000"
             )
             
             android.util.Log.d("SMS_DEBUG", "MMS cursor: ${mmsCursor?.count ?: 0} messages")
             
             mmsCursor?.use {
-                while (it.moveToNext()) {
+                var count = 0
+                while (it.moveToNext() && count < 5000) {
                     val mmsId = it.getLong(it.getColumnIndexOrThrow(Telephony.Mms._ID))
                     val dateRaw = it.getLong(it.getColumnIndexOrThrow(Telephony.Mms.DATE))
                     // MMS DATE is stored in seconds, convert to milliseconds
@@ -560,6 +564,7 @@ class MainActivity : FlutterActivity() {
                     msg.put("type", "inbox") // Simplified for now
                     msg.put("messageType", "MMS")
                     messages.add(msg)
+                    count++
                 }
             }
         } catch (e: Exception) {
