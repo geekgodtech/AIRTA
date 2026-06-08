@@ -169,15 +169,25 @@ class ToxicityAnalyzerController extends ChangeNotifier {
 
     int messagesWithTimestamp = 0;
     int messagesInRange = 0;
+    int messagesWithNullTimestamp = 0;
 
     debugPrint('=== DATE RANGE FILTER DEBUG ===');
     debugPrint('Date range start: $dateRangeStart');
     debugPrint('Date range end: $dateRangeEnd');
     debugPrint('Total messages to filter: ${messages.length}');
+    
+    // Log first 5 message dates for debugging
+    for (int i = 0; i < messages.length && i < 5; i++) {
+      final msg = messages[i];
+      debugPrint('Message $i: type=${msg.messageType}, date=${msg.timestamp}');
+    }
 
     final filtered = messages.where((message) {
       final messageDate = message.timestamp;
-      if (messageDate == null) return false;
+      if (messageDate == null) {
+        messagesWithNullTimestamp++;
+        return false;
+      }
 
       messagesWithTimestamp++;
 
@@ -190,12 +200,16 @@ class ToxicityAnalyzerController extends ChangeNotifier {
       final isInRange = !messageDateNormalized.isBefore(startDateNormalized) &&
                         !messageDateNormalized.isAfter(endDateNormalized);
       
-      if (isInRange) messagesInRange++;
+      if (isInRange) {
+        messagesInRange++;
+        debugPrint('Message IN RANGE: $messageDateNormalized (type: ${message.messageType})');
+      }
       
       return isInRange;
     }).toList();
 
     debugPrint('Messages with timestamp: $messagesWithTimestamp');
+    debugPrint('Messages with NULL timestamp: $messagesWithNullTimestamp');
     debugPrint('Messages in date range: $messagesInRange');
     debugPrint('=== END DATE RANGE FILTER DEBUG ===');
 
