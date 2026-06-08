@@ -55,6 +55,20 @@ if (Test-Path $sessionLog) {
     $output += "[INFO] No previous session log found."
 }
 
+# ── 5. Project Vision (feature ideas and roadmap) ─────────────────────────────
+$visionFile = "$projectDir\PROJECT_VISION.md"
+if (Test-Path $visionFile) {
+    $output += ""
+    $output += "=== PROJECT VISION & FEATURE IDEAS ==="
+    $output += "(Full file at: $visionFile — read it for complete roadmap and all inspired ideas)"
+    # Print the feature ideas section only (to keep context tight)
+    $visionContent = Get-Content $visionFile -Raw
+    $ideasSection = ($visionContent -split "## FEATURE IDEAS")[1] -split "## PLATFORM SUPPORT" | Select-Object -First 1
+    if ($ideasSection) { $output += "## FEATURE IDEAS$ideasSection" }
+} else {
+    $output += "[INFO] PROJECT_VISION.md not found - create it to preserve feature ideas."
+}
+
 $output += ""
 $output += "=== DEPLOY WORKFLOW REMINDER ==="
 $output += "To build + install on phone: powershell -ExecutionPolicy Bypass -File '$projectDir\deploy.ps1'"

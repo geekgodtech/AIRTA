@@ -1,5 +1,12 @@
 # AIRTA Project — Agent Rules & Memory
 
+## MANDATORY READING — START OF EVERY SESSION
+1. Read `C:\My Projects\AIRTA\.devin\SESSION_LOG.md` — last session summary
+2. Read `C:\My Projects\AIRTA\PROJECT_VISION.md` — ALL feature ideas, roadmap, and future plans
+3. Run session start check (confirms git/ADB/project dir are live)
+
+**Nothing lives in anyone's head. Everything is in those two files.**
+
 ## Project Overview
 AIRTA (AI Relationship Toxicity Analyzer) is a Flutter app for Android and iOS.
 - **Package:** `com.airta.airelationshiptoxicityanalyzer`
