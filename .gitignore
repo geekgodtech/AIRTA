@@ -34,6 +34,7 @@ migrate_working_dir/
 /coverage/
 .env
 run_with_secrets.ps1
+build_demo.ps1
 
 # Symbolication related
 app.*.symbols
