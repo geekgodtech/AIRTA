@@ -55,3 +55,6 @@ android/app/keystore-base64.txt
 Build Logs/
 Builds/
 job-logs.txt
+
+# Generated screenshots for store submission
+Screenshots/

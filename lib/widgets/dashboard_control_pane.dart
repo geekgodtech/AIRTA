@@ -11,6 +11,7 @@ import 'package:airta/l10n/app_localizations.dart';
 import 'package:airta/l10n/app_localizations_extension.dart';
 import 'package:airta/models.dart';
 import 'package:airta/services/subscription_service.dart';
+import 'package:airta/services/screenshot_automation.dart';
 import 'package:airta/widgets/membership_landing_page.dart';
 import 'package:airta/widgets/sms_conversation_picker.dart';
 import 'package:airta/widgets/ios_sms_capture_screen.dart';
@@ -104,71 +105,41 @@ class _DashboardControlPaneState extends State<DashboardControlPane> {
 
   @override
   Widget build(BuildContext context) {
+    final mq = MediaQuery.of(context);
+    // In screenshot mode, use the automation's windowSize if set; otherwise use MediaQuery
+    final ssWidth = ScreenshotAutomation.instance.windowSize.value.width;
+    final screenWidth = (kScreenshotMode && ssWidth > 0) ? ssWidth : mq.size.width;
+    final actionColumnCount = _responsiveColumnCount(screenWidth).clamp(1, 2);
+    final isWide = screenWidth >= 520;
+    final isNarrow = screenWidth < 400;
+
     return SafeArea(
       child: Stack(
         children: [
           Consumer<ToxicityAnalyzerController>(
             builder: (context, controller, child) {
-              return LayoutBuilder(
-                builder: (context, constraints) {
-                  final actionColumnCount = _responsiveColumnCount(
-                    constraints.maxWidth,
-                  ).clamp(1, 2);
-
-                  return SingleChildScrollView(
-                    controller: _scrollController,
-                    padding: const EdgeInsets.all(16),
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(minWidth: 0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          LayoutBuilder(
-                            builder: (context, constraints) {
-                              // Use smaller font on narrow screens
-                              final isNarrow = constraints.maxWidth < 400;
-                              final fontSize = isNarrow ? 18.0 : null;
-                              final textStyle = Theme.of(context)
-                                  .textTheme
-                                  .titleLarge
-                                  ?.copyWith(
-                                    fontSize: fontSize,
-                                  );
-
-                              return const SizedBox.shrink();
-                            },
-                          ),
-                          const SizedBox(height: 12),
-                          // Responsive button layout - 2x2 on wide, 1x4 on narrow
-                          // Order: Select SMS, Select file, Analyze, Random
-                          LayoutBuilder(
-                            builder: (context, constraints) {
-                              final isWide = constraints.maxWidth >= 520;
-
-                              if (isWide) {
-                                // 2x2 grid - side by side
-                                return _ConversationSelectionSection(
-                                  controller: controller,
-                                  isWide: true,
-                                );
-                              } else {
-                                // 1x4 vertical stack
-                                return _ConversationSelectionSection(
-                                  controller: controller,
-                                  isWide: false,
-                                );
-                              }
-                            },
-                          ),
-                          const SizedBox(height: 20),
-                          _DateRangeFilterSection(controller: controller),
-                          const SizedBox(height: 16),
-                          _MetricSelectorSection(controller: controller),
-                        ],
+              return SingleChildScrollView(
+                controller: _scrollController,
+                padding: const EdgeInsets.all(16),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(minWidth: 0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const SizedBox(height: 12),
+                      // Responsive button layout - 2x2 on wide, 1x4 on narrow
+                      // Order: Select SMS, Select file, Analyze, Random
+                      _ConversationSelectionSection(
+                        controller: controller,
+                        isWide: isWide,
                       ),
-                    ),
-                  );
-                },
+                      const SizedBox(height: 20),
+                      _DateRangeFilterSection(controller: controller),
+                      const SizedBox(height: 16),
+                      _MetricSelectorSection(controller: controller),
+                    ],
+                  ),
+                ),
               );
             },
           ),
@@ -232,22 +203,22 @@ class _ResponsiveButtonGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Wrap(
-          spacing: 12,
-          runSpacing: 12,
-          children: children
-              .map(
-                (child) => SizedBox(
-                  width: (constraints.maxWidth - (12 * (columnCount - 1))) /
-                      columnCount,
-                  child: child,
-                ),
-              )
-              .toList(),
-        );
-      },
+    final mq = MediaQuery.of(context);
+    // In screenshot mode, use the automation's windowSize if set; otherwise use MediaQuery
+    final ssWidth = ScreenshotAutomation.instance.windowSize.value.width;
+    final maxWidth = (kScreenshotMode && ssWidth > 0) ? ssWidth : mq.size.width;
+    return Wrap(
+      spacing: 12,
+      runSpacing: 12,
+      children: children
+          .map(
+            (child) => SizedBox(
+              width: (maxWidth - (12 * (columnCount - 1))) /
+                  columnCount,
+              child: child,
+            ),
+          )
+          .toList(),
     );
   }
 }
@@ -422,28 +393,39 @@ class _TextingApplicationButton extends StatelessWidget {
   }
 }
 
-class _DiscordButton extends StatelessWidget {
+class _DiscordButton extends StatefulWidget {
   final ToxicityAnalyzerController controller;
 
   const _DiscordButton({required this.controller});
 
   @override
-  Widget build(BuildContext context) {
-    final remoteConfig = RemoteConfigService();
-    final subscriptionService = SubscriptionService();
-    final discordEnabled = remoteConfig.discordAddonEnabled;
-    final isStandardOrHigher = subscriptionService.hasTier(MembershipTier.standard);
-    final hasDiscordAddon = subscriptionService.hasDiscordAddon;
+  State<_DiscordButton> createState() => _DiscordButtonState();
+}
 
-    if (!discordEnabled || !isStandardOrHigher || !hasDiscordAddon) {
-      return const SizedBox.shrink();
-    }
+class _DiscordButtonState extends State<_DiscordButton> {
+  bool _discordEnabled = false;
+
+  ToxicityAnalyzerController get controller => widget.controller;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final canUse = _discordEnabled;
 
     return Row(
       children: [
-        Expanded(
+        Checkbox(
+          value: _discordEnabled,
+          onChanged: (val) {
+            setState(() {
+              _discordEnabled = val ?? false;
+            });
+          },
+        ),
+        const SizedBox(width: 8),
+        Flexible(
           child: ElevatedButton.icon(
-            onPressed: controller.isIngesting
+            onPressed: controller.isIngesting || !canUse
                 ? null
                 : () => _openDiscordPicker(context),
             icon: controller.isIngesting
@@ -875,63 +857,63 @@ class _MetricSelectorSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final columnCount = _metricColumnCount(constraints.maxWidth);
+    final mq = MediaQuery.of(context);
+    // In screenshot mode, use the automation's windowSize if set; otherwise use MediaQuery
+    final ssWidth = ScreenshotAutomation.instance.windowSize.value.width;
+    final screenWidth = (kScreenshotMode && ssWidth > 0) ? ssWidth : mq.size.width;
+    final columnCount = _metricColumnCount(screenWidth);
 
-        return Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            l10n.psychologicalMetrics,
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          const SizedBox(height: 8),
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                l10n.psychologicalMetrics,
-                style: Theme.of(context).textTheme.titleLarge,
+                l10n.selectUpToCount(ToxicityAnalyzerController.requiredMetricSelectionCount, controller.selectedMetricCount),
               ),
-              const SizedBox(height: 8),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              const SizedBox(height: 4),
+              Wrap(
+                spacing: 0,
+                runSpacing: 0,
                 children: [
-                  Text(
-                    l10n.selectUpToCount(ToxicityAnalyzerController.requiredMetricSelectionCount, controller.selectedMetricCount),
+                  TextButton.icon(
+                    onPressed: controller.selectedMetricCount > 0
+                        ? () => _showSaveMetricListDialog(context, controller)
+                        : null,
+                    icon: const Icon(Icons.save, size: 16),
+                    label: Text(l10n.saveSelections),
+                    style: TextButton.styleFrom(
+                      visualDensity: VisualDensity.compact,
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                    ),
                   ),
-                  const SizedBox(height: 4),
-                  Wrap(
-                    spacing: 0,
-                    runSpacing: 0,
-                    children: [
-                      TextButton.icon(
-                        onPressed: controller.selectedMetricCount > 0
-                            ? () => _showSaveMetricListDialog(context, controller)
-                            : null,
-                        icon: const Icon(Icons.save, size: 16),
-                        label: Text(l10n.saveSelections),
-                        style: TextButton.styleFrom(
-                          visualDensity: VisualDensity.compact,
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
-                        ),
-                      ),
-                      TextButton.icon(
-                        onPressed: () => _showLoadMetricListDialog(context, controller),
-                        icon: const Icon(Icons.folder_open, size: 16),
-                        label: Text(l10n.loadSelections),
-                        style: TextButton.styleFrom(
-                          visualDensity: VisualDensity.compact,
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
-                        ),
-                      ),
-                      TextButton.icon(
-                        onPressed: controller.selectedMetricCount > 0
-                            ? controller.clearMetricSelection
-                            : null,
-                        icon: const Icon(Icons.clear_all, size: 16),
-                        label: Text(l10n.clearSelections),
-                        style: TextButton.styleFrom(
-                          visualDensity: VisualDensity.compact,
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
-                        ),
-                      ),
-                    ],
+                  TextButton.icon(
+                    onPressed: () => _showLoadMetricListDialog(context, controller),
+                    icon: const Icon(Icons.folder_open, size: 16),
+                    label: Text(l10n.loadSelections),
+                    style: TextButton.styleFrom(
+                      visualDensity: VisualDensity.compact,
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                    ),
+                  ),
+                  TextButton.icon(
+                    onPressed: controller.selectedMetricCount > 0
+                        ? controller.clearMetricSelection
+                        : null,
+                    icon: const Icon(Icons.clear_all, size: 16),
+                    label: Text(l10n.clearSelections),
+                    style: TextButton.styleFrom(
+                      visualDensity: VisualDensity.compact,
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                    ),
                   ),
                 ],
               ),
@@ -962,8 +944,8 @@ class _MetricSelectorSection extends StatelessWidget {
               ),
             ],
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }
@@ -1179,6 +1161,8 @@ class _ConversationSelectionSection extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 12),
+                  _DiscordButton(controller: controller),
+                  const SizedBox(height: 12),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -1205,9 +1189,9 @@ class _ConversationSelectionSection extends StatelessWidget {
                 children: [
                   _TextingApplicationButton(controller: controller),
                   const SizedBox(height: 12),
-                  _DiscordButton(controller: controller),
-                  const SizedBox(height: 12),
                   _FromFileButton(controller: controller),
+                  const SizedBox(height: 12),
+                  _DiscordButton(controller: controller),
                   const SizedBox(height: 12),
                   _AnalysisActionSection(controller: controller),
                   const SizedBox(height: 12),

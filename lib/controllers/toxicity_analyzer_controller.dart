@@ -10,7 +10,8 @@ import 'package:airta/data_parser.dart';
 import 'package:airta/models.dart';
 import 'package:airta/services/deepseek_api_service.dart';
 import 'package:airta/services/language_service.dart';
-import 'package:airta/services/pdf_synthesis_service.dart';
+// PDF features disabled for screenshot automation build
+// import 'package:airta/services/pdf_synthesis_service.dart';
 import 'package:airta/services/unipile_integration_service.dart';
 import 'package:airta/services/android_sms_service.dart' if (dart.library.io) 'package:airta/services/android_sms_service.dart';
 
@@ -35,7 +36,8 @@ class ToxicityAnalyzerController extends ChangeNotifier {
         : 'placeholder',
   );
   String? _runtimeApiKey;
-  final PdfSynthesisService _pdfSynthesisService = PdfSynthesisService();
+  // PDF features disabled for screenshot automation build
+  // final PdfSynthesisService _pdfSynthesisService = PdfSynthesisService();
   final UnipileIntegrationService _unipileIntegrationService =
       UnipileIntegrationService();
   final Set<String> _selectedMetricIds = <String>{};
@@ -608,8 +610,10 @@ class ToxicityAnalyzerController extends ChangeNotifier {
       if (!hasCompletedFirstReport) {
         await markFirstReportCompleted();
       }
-      statusMessage = 'AI analysis completed. Generating PDF document.';
+      statusMessage = 'AI analysis completed. PDF generation disabled in this build.';
       notifyListeners();
+      // PDF features disabled for screenshot automation build
+      /*
       try {
         activePdfBytes = await _pdfSynthesisService.constructForensicDocument(
           thread: thread,
@@ -624,6 +628,7 @@ class ToxicityAnalyzerController extends ChangeNotifier {
         statusMessage = 'AI analysis completed, but PDF generation failed.';
         errorMessage = 'PDF generation failed: $pdfError';
       }
+      */
     } catch (error) {
       errorMessage = error.toString();
     } finally {
