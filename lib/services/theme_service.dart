@@ -18,18 +18,18 @@ class ThemeService extends ChangeNotifier {
 
     try {
       final prefs = await SharedPreferences.getInstance();
-      
+
       // First check if user has a saved preference
       final savedDarkMode = prefs.getBool('dark_mode');
-      
+
       if (savedDarkMode != null) {
         _isDarkMode = savedDarkMode;
       } else {
         // If no saved preference, use device theme
-        final brightness = PlatformDispatcher.platformBrightness;
+        final brightness = WidgetsBinding.instance.platformDispatcher.platformBrightness;
         _isDarkMode = brightness == Brightness.dark;
       }
-      
+
       _isInitialized = true;
       notifyListeners();
     } catch (e) {
