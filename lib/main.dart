@@ -1,9 +1,12 @@
+import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:window_manager/window_manager.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:airta/controllers/toxicity_analyzer_controller.dart';
 import 'package:airta/widgets/toxicity_analyzer_master_view.dart';
 import 'package:airta/services/subscription_service.dart';
@@ -14,10 +17,16 @@ import 'package:airta/services/theme_service.dart';
 import 'package:airta/l10n/app_localizations.dart';
 import 'package:airta/screens/force_update_screen.dart';
 import 'package:airta/screens/disclaimer_screen.dart';
+import 'package:airta/services/screenshot_automation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize window_manager for desktop window resizing
+  if (!kIsWeb && (Platform.isWindows || Platform.isMacOS || Platform.isLinux)) {
+    await windowManager.ensureInitialized();
+  }
 
   // Initialize Firebase (optional - won't hang if not configured)
   try {
@@ -61,14 +70,26 @@ class _ToxicityAnalyzerAppState extends State<ToxicityAnalyzerApp> {
   }
 
   Future<void> _initializeApp() async {
-    // Skip disclaimer and permissions on web
-    if (kIsWeb) {
+    // Skip disclaimer and permissions on web, desktop (Windows/Mac/Linux), or when
+    // running the automated screenshot capture build (--dart-define=SCREENSHOT_MODE=true).
+    final isDesktop = Platform.isWindows || Platform.isMacOS || Platform.isLinux;
+    if (kIsWeb || isDesktop || kScreenshotMode) {
       setState(() {
         _disclaimerAccepted = true;
         _permissionsGranted = true;
         _showPermissionDialog = false;
         _checkingVersion = false;
       });
+
+      if (kScreenshotMode) {
+        // Give the UI a moment to render the first frame, then start the
+        // automated capture sequence across all languages and sizes.
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          Future<void>.delayed(const Duration(seconds: 2), () {
+            ScreenshotAutomation.instance.run();
+          });
+        });
+      }
       return;
     }
 
@@ -150,7 +171,7 @@ class _ToxicityAnalyzerAppState extends State<ToxicityAnalyzerApp> {
             child: Consumer<ThemeService>(
               builder: (context, themeService, child) {
                 return MaterialApp(
-                  title: 'Which partner is at fault?',
+                  title: 'AIRTA',
                   theme: _lightTheme,
                   darkTheme: _darkTheme,
                   themeMode: themeService.isDarkMode ? ThemeMode.dark : ThemeMode.light,
@@ -187,7 +208,18 @@ class _ToxicityAnalyzerAppState extends State<ToxicityAnalyzerApp> {
                                       value: SubscriptionService(),
                                     ),
                                   ],
-                                    child: const ToxicityAnalyzerMasterView(),
+                                    child: kScreenshotMode
+                                        ? const Stack(
+                                            children: [
+                                              Positioned.fill(
+                                                child: ScreenshotStage(
+                                                  child: ToxicityAnalyzerMasterView(),
+                                                ),
+                                              ),
+                                              ScreenshotStatusOverlay(),
+                                            ],
+                                          )
+                                        : const ToxicityAnalyzerMasterView(),
                                   ),
                 );
               },
@@ -204,6 +236,7 @@ class _ToxicityAnalyzerAppState extends State<ToxicityAnalyzerApp> {
       brightness: Brightness.light,
     ),
     useMaterial3: true,
+    textTheme: GoogleFonts.getTextTheme('Noto Sans KR'),
   );
 
   static final ThemeData _darkTheme = ThemeData(
@@ -212,6 +245,7 @@ class _ToxicityAnalyzerAppState extends State<ToxicityAnalyzerApp> {
       brightness: Brightness.dark,
     ),
     useMaterial3: true,
+    textTheme: GoogleFonts.getTextTheme('Noto Sans KR', ThemeData.dark().textTheme),
   );
 }
 

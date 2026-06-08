@@ -8,7 +8,8 @@ import 'package:flutter/services.dart';
 import 'package:open_filex/open_filex.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:printing/printing.dart';
+// PDF features disabled for screenshot automation build
+// import 'package:printing/printing.dart';
 import 'package:airta/controllers/toxicity_analyzer_controller.dart';
 import 'package:airta/l10n/app_localizations.dart';
 import 'package:airta/models.dart';
@@ -181,13 +182,23 @@ class _AnalysisReportViewState extends State<_AnalysisReportView> {
                           height: 620,
                           child: Card(
                             clipBehavior: Clip.antiAlias,
-                            child: PdfPreview(
-                              build: (format) async => pdfBytes,
-                              canChangeOrientation: false,
-                              canChangePageFormat: false,
-                              allowSharing: true,
-                              allowPrinting: true,
-                              pdfFileName: 'relationship_analysis_report.pdf',
+                            child: Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Icon(Icons.picture_as_pdf, size: 64, color: Colors.grey),
+                                  const SizedBox(height: 16),
+                                  Text(
+                                    'PDF Preview Disabled',
+                                    style: Theme.of(context).textTheme.titleMedium,
+                                  ),
+                                  const SizedBox(height: 8),
+                                  const Text(
+                                    'PDF features are disabled in this build',
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -435,9 +446,9 @@ class _PdfActionCard extends StatelessWidget {
                   return;
                 }
 
-                Printing.sharePdf(
-                  bytes: pdfBytes,
-                  filename: 'relationship_analysis_report.pdf',
+                // PDF sharing disabled in this build
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('PDF sharing is disabled in this build')),
                 );
               },
               icon: const Icon(Icons.ios_share),
@@ -450,9 +461,9 @@ class _PdfActionCard extends StatelessWidget {
                   return;
                 }
 
-                Printing.layoutPdf(
-                  name: 'relationship_analysis_report.pdf',
-                  onLayout: (format) async => pdfBytes,
+                // PDF printing disabled in this build
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('PDF printing is disabled in this build')),
                 );
               },
               icon: const Icon(Icons.print),

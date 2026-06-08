@@ -2,6 +2,13 @@
 cmake_minimum_required(VERSION 3.14)
 project(airta LANGUAGES CXX)
 
+# Allow older third-party dependencies (e.g. Firebase C++ SDK) that still
+# declare cmake_minimum_required(VERSION < 3.5) to configure with modern CMake.
+set(CMAKE_POLICY_VERSION_MINIMUM 3.5 CACHE STRING "" FORCE)
+
+# Suppress C++ coroutine deprecation warnings from permission_handler plugin
+add_compile_options(/D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS)
+
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
 set(BINARY_NAME "airta")

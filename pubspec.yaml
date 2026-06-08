@@ -42,8 +42,6 @@ dependencies:
   http: ^1.2.2
   provider: ^6.1.5
   receive_sharing_intent: ^1.8.1
-  pdf: ^3.11.1
-  printing: ^5.13.4
   path_provider: ^2.1.5
   open_filex: ^4.6.0
   webview_flutter: ^4.10.0
@@ -60,6 +58,8 @@ dependencies:
   package_info_plus: ^8.1.2
   url_launcher: ^6.3.1
   screenshot: ^3.0.0
+  window_manager: ^0.4.3
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:

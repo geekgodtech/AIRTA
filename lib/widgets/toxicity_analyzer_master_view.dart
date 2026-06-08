@@ -9,22 +9,19 @@ class ToxicityAnalyzerMasterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mq = MediaQuery.of(context);
+    final isNarrow = mq.size.width < 400;
     return Scaffold(
       appBar: AppBar(
-        title: LayoutBuilder(
-          builder: (context, constraints) {
-            final isNarrow = constraints.maxWidth < 400;
-            return Text(
-              AppLocalizations.of(context)!.appTitle,
-              style: TextStyle(
-                fontSize: isNarrow ? 18 : 20,
-                height: 1.0,
-                letterSpacing: isNarrow ? -0.5 : 0,
-              ),
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            );
-          },
+        title: Text(
+          AppLocalizations.of(context)!.appTitle,
+          style: TextStyle(
+            fontSize: isNarrow ? 18 : 20,
+            height: 1.0,
+            letterSpacing: isNarrow ? -0.5 : 0,
+          ),
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
         ),
         actions: const [
           DarkModeSwitch(),
