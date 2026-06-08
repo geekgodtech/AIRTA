@@ -122,14 +122,6 @@ class _DashboardControlPaneState extends State<DashboardControlPane> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          // Dark mode toggle in header
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              const DarkModeSwitch(),
-                            ],
-                          ),
-                          const SizedBox(height: 12),
                           LayoutBuilder(
                             builder: (context, constraints) {
                               // Use smaller font on narrow screens

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:airta/l10n/app_localizations.dart';
 import 'package:airta/widgets/analyzer_workspace.dart';
 import 'package:airta/widgets/language_selector.dart';
+import 'package:airta/widgets/dark_mode_switch.dart';
 
 class ToxicityAnalyzerMasterView extends StatelessWidget {
   const ToxicityAnalyzerMasterView({super.key});
@@ -26,6 +27,8 @@ class ToxicityAnalyzerMasterView extends StatelessWidget {
           },
         ),
         actions: const [
+          DarkModeSwitch(),
+          SizedBox(width: 8),
           LanguageSelector(),
           SizedBox(width: 8),
         ],
