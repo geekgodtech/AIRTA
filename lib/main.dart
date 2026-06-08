@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -60,6 +61,17 @@ class _ToxicityAnalyzerAppState extends State<ToxicityAnalyzerApp> {
   }
 
   Future<void> _initializeApp() async {
+    // Skip disclaimer and permissions on web
+    if (kIsWeb) {
+      setState(() {
+        _disclaimerAccepted = true;
+        _permissionsGranted = true;
+        _showPermissionDialog = false;
+        _checkingVersion = false;
+      });
+      return;
+    }
+
     // Check disclaimer acceptance first
     final prefs = await SharedPreferences.getInstance();
     final disclaimerAccepted = prefs.getBool('disclaimer_accepted') ?? false;
