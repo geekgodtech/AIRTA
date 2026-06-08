@@ -1,4 +1,4 @@
-import 'dart:async';
+﻿import 'dart:async';
 
 import 'dart:io';
 import 'dart:ui';
@@ -160,55 +160,53 @@ class _AnalysisReportViewState extends State<_AnalysisReportView> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  if (pdfBytes != null) ...[
-                    _PdfActionCard(pdfBytes: pdfBytes, controller: controller),
-                    const SizedBox(height: 16),
-                    _PdfPreviewToggleCard(
-                      isOpen: _isPdfPreviewOpen,
-                      canAccessFullReport: canAccessFullReport,
-                      onPressed: () {
-                        if (!canAccessFullReport) {
-                          _openMembershipLandingPage(context);
-                          return;
-                        }
-                        setState(() => _isPdfPreviewOpen = !_isPdfPreviewOpen);
-                      },
-                    ),
-                    const SizedBox(height: 8),
-                    if (canAccessFullReport)
-                      AnimatedCrossFade(
-                        firstChild: const SizedBox.shrink(),
-                        secondChild: SizedBox(
-                          height: 620,
-                          child: Card(
-                            clipBehavior: Clip.antiAlias,
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(Icons.picture_as_pdf, size: 64, color: Colors.grey),
-                                  const SizedBox(height: 16),
-                                  Text(
-                                    'PDF Preview Disabled',
-                                    style: Theme.of(context).textTheme.titleMedium,
-                                  ),
-                                  const SizedBox(height: 8),
-                                  const Text(
-                                    'PDF features are disabled in this build',
-                                    style: TextStyle(color: Colors.grey),
-                                  ),
-                                ],
+                  _PdfActionCard(pdfBytes: pdfBytes, controller: controller),
+                  const SizedBox(height: 16),
+                  _PdfPreviewToggleCard(
+                    isOpen: _isPdfPreviewOpen,
+                    canAccessFullReport: canAccessFullReport,
+                    onPressed: () {
+                      if (!canAccessFullReport) {
+                        _openMembershipLandingPage(context);
+                        return;
+                      }
+                      if (pdfBytes == null) return;
+                      setState(() => _isPdfPreviewOpen = !_isPdfPreviewOpen);
+                    },
+                  ),
+                  const SizedBox(height: 8),
+                  AnimatedCrossFade(
+                    firstChild: const SizedBox.shrink(),
+                    secondChild: SizedBox(
+                      height: 620,
+                      child: Card(
+                        clipBehavior: Clip.antiAlias,
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(Icons.picture_as_pdf, size: 64, color: Colors.grey),
+                              const SizedBox(height: 16),
+                              Text(
+                                'PDF Preview Disabled',
+                                style: Theme.of(context).textTheme.titleMedium,
                               ),
-                            ),
+                              const SizedBox(height: 8),
+                              const Text(
+                                'PDF features are disabled in this build',
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                            ],
                           ),
                         ),
-                        crossFadeState: _isPdfPreviewOpen
-                            ? CrossFadeState.showSecond
-                            : CrossFadeState.showFirst,
-                        duration: const Duration(milliseconds: 260),
                       ),
-                    const SizedBox(height: 16),
-                  ],
+                    ),
+                    crossFadeState: _isPdfPreviewOpen && pdfBytes != null
+                        ? CrossFadeState.showSecond
+                        : CrossFadeState.showFirst,
+                    duration: const Duration(milliseconds: 260),
+                  ),
+                  const SizedBox(height: 16),
                   _ReportSectionCard(
                     title: l10n.executiveSummary,
                     obscureContent: !canAccessFullReport,
@@ -405,7 +403,7 @@ class _PdfPreviewToggleCard extends StatelessWidget {
 }
 
 class _PdfActionCard extends StatelessWidget {
-  final Uint8List pdfBytes;
+  final Uint8List? pdfBytes;
   final ToxicityAnalyzerController controller;
 
   const _PdfActionCard({required this.pdfBytes, required this.controller});
@@ -413,6 +411,8 @@ class _PdfActionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final canAccessFullReport = controller.canAccessFullCurrentReport;
+
+    final hasPdf = pdfBytes != null;
 
     return Card(
       child: Padding(
@@ -423,49 +423,50 @@ class _PdfActionCard extends StatelessWidget {
           alignment: WrapAlignment.center,
           children: [
             FilledButton.icon(
-              onPressed: () async {
-                if (!canAccessFullReport) {
-                  _openMembershipLandingPage(context);
-                  return;
-                }
-
-                final temporaryDirectory = await getTemporaryDirectory();
-                final pdfFile = File(
-                  '${temporaryDirectory.path}/relationship_analysis_report.pdf',
-                );
-                await pdfFile.writeAsBytes(pdfBytes, flush: true);
-                await OpenFilex.open(pdfFile.path);
-              },
-              icon: const Icon(Icons.open_in_new),
+              onPressed: hasPdf
+                  ? () async {
+                      if (!canAccessFullReport) {
+                        _openMembershipLandingPage(context);
+                        return;
+                      }
+                      final temporaryDirectory = await getTemporaryDirectory();
+                      final pdfFile = File(
+                        '${temporaryDirectory.path}/relationship_analysis_report.pdf',
+                      );
+                      await pdfFile.writeAsBytes(pdfBytes!, flush: true);
+                      await OpenFilex.open(pdfFile.path);
+                    }
+                  : null,
+              icon: const Icon(Icons.save_alt),
               label: Text(AppLocalizations.of(context)!.openPdf),
             ),
             OutlinedButton.icon(
-              onPressed: () {
-                if (!canAccessFullReport) {
-                  _openMembershipLandingPage(context);
-                  return;
-                }
-
-                // PDF sharing disabled in this build
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('PDF sharing is disabled in this build')),
-                );
-              },
+              onPressed: hasPdf
+                  ? () {
+                      if (!canAccessFullReport) {
+                        _openMembershipLandingPage(context);
+                        return;
+                      }
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('PDF sharing is disabled in this build')),
+                      );
+                    }
+                  : null,
               icon: const Icon(Icons.ios_share),
               label: Text(AppLocalizations.of(context)!.sharePdf),
             ),
             OutlinedButton.icon(
-              onPressed: () {
-                if (!canAccessFullReport) {
-                  _openMembershipLandingPage(context);
-                  return;
-                }
-
-                // PDF printing disabled in this build
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('PDF printing is disabled in this build')),
-                );
-              },
+              onPressed: hasPdf
+                  ? () {
+                      if (!canAccessFullReport) {
+                        _openMembershipLandingPage(context);
+                        return;
+                      }
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('PDF printing is disabled in this build')),
+                      );
+                    }
+                  : null,
               icon: const Icon(Icons.print),
               label: Text(AppLocalizations.of(context)!.printPdf),
             ),
