@@ -5,6 +5,7 @@
   "psychologicalMetrics": "Metriche Psicologiche",
   "metricsDescription": "Meno metriche selezionate producono un'analisi più approfondita e concentrata di tali comportamenti. Più metriche selezionate producono un rapporto più ampio con meno dettagli per metrica.",
   "selectSMS": "Seleziona SMS / RCS Chat",
+  "selectDiscordChannel": "Seleziona Canale Discord",
   "selectFile": "Seleziona file",
   "analyzeSelectedMetrics": "Analizza metriche selezionate",
   "analyze20RandomMetrics": "Analizza 20 metriche casuali",

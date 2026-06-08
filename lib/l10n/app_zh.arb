@@ -5,6 +5,7 @@
   "psychologicalMetrics": "心理指标",
   "metricsDescription": "选择较少的指标会对这些行为产生更深入、更集中的分析。选择较多的指标会生成更广泛的报告，但每个指标的细节较少。",
   "selectSMS": "选择短信 / RCS 聊天",
+  "selectDiscordChannel": "选择 Discord 频道",
   "selectFile": "选择文件",
   "analyzeSelectedMetrics": "分析所选指标",
   "analyze20RandomMetrics": "分析 20 个随机指标",

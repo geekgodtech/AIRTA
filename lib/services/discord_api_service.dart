@@ -32,6 +32,25 @@ class DiscordApiService {
     return guildsJson.map((json) => DiscordGuild.fromJson(json)).toList();
   }
 
+  Future<List<DiscordGuild>> getBotGuilds() async {
+    final response = await httpClient.get(
+      Uri.parse('$API_BASE_URL/users/@me/guilds'),
+      headers: {
+        'Authorization': 'Bot $botToken',
+      },
+    );
+
+    if (response.statusCode != 200) {
+      throw DiscordApiException(
+        statusCode: response.statusCode,
+        message: 'Failed to fetch bot guilds: ${response.body}',
+      );
+    }
+
+    final List<dynamic> guildsJson = jsonDecode(response.body);
+    return guildsJson.map((json) => DiscordGuild.fromJson(json)).toList();
+  }
+
   Future<List<DiscordChannel>> getGuildChannels(String guildId) async {
     final response = await httpClient.get(
       Uri.parse('$API_BASE_URL/guilds/$guildId/channels'),

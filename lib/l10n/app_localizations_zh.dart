@@ -22,6 +22,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get selectSMS => '选择短信 / RCS 聊天';
 
   @override
+  String get selectDiscordChannel => '选择 Discord 频道';
+
+  @override
   String get selectFile => '选择文件';
 
   @override

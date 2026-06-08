@@ -22,6 +22,9 @@ class AppLocalizationsDe extends AppLocalizations {
   String get selectSMS => 'SMS / RCS Chat auswählen';
 
   @override
+  String get selectDiscordChannel => 'Discord-Kanal auswählen';
+
+  @override
   String get selectFile => 'Datei auswählen';
 
   @override

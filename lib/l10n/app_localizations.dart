@@ -150,6 +150,12 @@ abstract class AppLocalizations {
   /// **'Select SMS / RCS Chat'**
   String get selectSMS;
 
+  /// Button to select Discord channel
+  ///
+  /// In en, this message translates to:
+  /// **'Select Discord Channel'**
+  String get selectDiscordChannel;
+
   /// Button to select a file
   ///
   /// In en, this message translates to:

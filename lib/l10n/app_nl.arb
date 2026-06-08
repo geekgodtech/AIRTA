@@ -5,6 +5,7 @@
   "psychologicalMetrics": "Psychologische Metingen",
   "metricsDescription": "Minder geselecteerde metingen leveren een diepere, meer geconcentreerde analyse van dat gedrag op. Meer geselecteerde metingen leveren een breder rapport op met minder detail per meting.",
   "selectSMS": "SMS / RCS Chat selecteren",
+  "selectDiscordChannel": "Discord-kanaal selecteren",
   "selectFile": "Bestand selecteren",
   "analyzeSelectedMetrics": "Geselecteerde metingen analyseren",
   "analyze20RandomMetrics": "20 willekeurige metingen analyseren",

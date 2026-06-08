@@ -27,6 +27,9 @@ class RemoteConfigService {
         'standard_tier_price': '9.99',
         'discord_addon_price': '9.99',
         'discord_addon_enabled': false,
+        'discord_bot_token': '',
+        'discord_client_id': '',
+        'discord_client_secret': '',
         'one_time_unlock_price': '19.99',
         'standard_tier_features':
             'Unlimited SMS analysis,Advanced AI insights,PDF report export,Priority support',
@@ -63,6 +66,13 @@ class RemoteConfigService {
 
   bool get discordAddonEnabled =>
       _remoteConfig.getBool('discord_addon_enabled');
+
+  String get discordBotToken =>
+      _remoteConfig.getString('discord_bot_token');
+  String get discordClientId =>
+      _remoteConfig.getString('discord_client_id');
+  String get discordClientSecret =>
+      _remoteConfig.getString('discord_client_secret');
 
   // Pro and Pro Plus tiers - COMMENTED OUT FOR FUTURE IMPLEMENTATION
   // String get proTierPrice => _remoteConfig.getString('pro_tier_price');

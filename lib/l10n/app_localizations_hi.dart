@@ -22,6 +22,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get selectSMS => 'एसएमएस / आरसीएस चैट चुनें';
 
   @override
+  String get selectDiscordChannel => 'Discord चैनल चुनें';
+
+  @override
   String get selectFile => 'फ़ाइल चुनें';
 
   @override

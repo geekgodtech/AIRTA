@@ -22,6 +22,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get selectSMS => 'SMS / RCS ?? ??';
 
   @override
+  String get selectDiscordChannel => 'Discord 채널 선택';
+
+  @override
   String get selectFile => 'Select file';
 
   @override

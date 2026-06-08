@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/discord_api_service.dart';
+import '../services/remote_config_service.dart';
 import '../controllers/toxicity_analyzer_controller.dart';
 
 class DiscordChannelPicker extends StatefulWidget {
@@ -17,9 +18,8 @@ class DiscordChannelPicker extends StatefulWidget {
 }
 
 class _DiscordChannelPickerState extends State<DiscordChannelPicker> {
-  final DiscordApiService _discordService = DiscordApiService(
-    botToken: 'YOUR_BOT_TOKEN_HERE',
-  );
+  late DiscordApiService _discordService;
+  final RemoteConfigService _remoteConfig = RemoteConfigService();
 
   List<DiscordChannel>? _channels;
   bool _loading = true;
@@ -30,6 +30,9 @@ class _DiscordChannelPickerState extends State<DiscordChannelPicker> {
   @override
   void initState() {
     super.initState();
+    _discordService = DiscordApiService(
+      botToken: _remoteConfig.discordBotToken,
+    );
     _loadChannels();
   }
 

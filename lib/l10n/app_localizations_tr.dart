@@ -22,6 +22,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get selectSMS => 'SMS / RCS Sohbet Seç';
 
   @override
+  String get selectDiscordChannel => 'Discord Kanalı Seç';
+
+  @override
   String get selectFile => 'Dosya Seç';
 
   @override

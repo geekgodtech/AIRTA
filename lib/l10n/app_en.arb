@@ -21,7 +21,12 @@
   "@selectSMS": {
     "description": "Button to select SMS messages"
   },
-  
+
+  "selectDiscordChannel": "Select Discord Channel",
+  "@selectDiscordChannel": {
+    "description": "Button to select Discord channel"
+  },
+
   "selectFile": "Select file",
   "@selectFile": {
     "description": "Button to select a file"

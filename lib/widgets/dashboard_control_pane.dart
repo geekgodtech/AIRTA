@@ -14,6 +14,8 @@ import 'package:airta/services/subscription_service.dart';
 import 'package:airta/widgets/membership_landing_page.dart';
 import 'package:airta/widgets/sms_conversation_picker.dart';
 import 'package:airta/widgets/ios_sms_capture_screen.dart';
+import 'package:airta/widgets/discord_server_picker.dart';
+import 'package:airta/services/remote_config_service.dart';
 // UNIPILE INTEGRATION - COMMENTED OUT PENDING BUSINESS NEGOTIATION
 // Uncomment these imports if Unipile deal is finalized:
 // import 'package:airta/widgets/unipile_auth_view.dart';
@@ -412,6 +414,65 @@ class _TextingApplicationButton extends StatelessWidget {
               ],
             );
           },
+        );
+      }
+    }
+  }
+}
+
+class _DiscordButton extends StatelessWidget {
+  final ToxicityAnalyzerController controller;
+
+  const _DiscordButton({required this.controller});
+
+  @override
+  Widget build(BuildContext context) {
+    final remoteConfig = RemoteConfigService();
+    final discordEnabled = remoteConfig.discordAddonEnabled;
+
+    if (!discordEnabled) {
+      return const SizedBox.shrink();
+    }
+
+    return ElevatedButton.icon(
+      onPressed: controller.isIngesting
+          ? null
+          : () => _openDiscordPicker(context),
+      icon: controller.isIngesting
+          ? const SizedBox.square(
+              dimension: 18,
+              child: CircularProgressIndicator(strokeWidth: 2),
+            )
+          : const Icon(Icons.discord, color: Color(0xFF5865F2)),
+      label: Text(AppLocalizations.of(context)!.selectDiscordChannel,
+          textAlign: TextAlign.center),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color(0xFF5865F2),
+        foregroundColor: Colors.white,
+        minimumSize: const Size.fromHeight(56),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _openDiscordPicker(BuildContext context) async {
+    try {
+      await Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => DiscordServerPicker(
+            controller: controller,
+          ),
+        ),
+      );
+    } catch (e) {
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to open Discord picker: $e'),
+            backgroundColor: Colors.red,
+          ),
         );
       }
     }
@@ -1116,6 +1177,8 @@ class _ConversationSelectionSection extends StatelessWidget {
               Column(
                 children: [
                   _TextingApplicationButton(controller: controller),
+                  const SizedBox(height: 12),
+                  _DiscordButton(controller: controller),
                   const SizedBox(height: 12),
                   _FromFileButton(controller: controller),
                   const SizedBox(height: 12),

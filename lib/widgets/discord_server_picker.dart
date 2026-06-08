@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import '../services/discord_api_service.dart';
+import '../services/remote_config_service.dart';
 import '../controllers/toxicity_analyzer_controller.dart';
 import 'discord_channel_picker.dart';
 
 class DiscordServerPicker extends StatefulWidget {
   final ToxicityAnalyzerController controller;
-  final String userAccessToken;
 
   const DiscordServerPicker({
     super.key,
     required this.controller,
-    required this.userAccessToken,
   });
 
   @override
@@ -18,9 +17,8 @@ class DiscordServerPicker extends StatefulWidget {
 }
 
 class _DiscordServerPickerState extends State<DiscordServerPicker> {
-  final DiscordApiService _discordService = DiscordApiService(
-    botToken: 'YOUR_BOT_TOKEN_HERE',
-  );
+  late DiscordApiService _discordService;
+  final RemoteConfigService _remoteConfig = RemoteConfigService();
 
   List<DiscordGuild>? _guilds;
   bool _loading = true;
@@ -29,12 +27,15 @@ class _DiscordServerPickerState extends State<DiscordServerPicker> {
   @override
   void initState() {
     super.initState();
+    _discordService = DiscordApiService(
+      botToken: _remoteConfig.discordBotToken,
+    );
     _loadGuilds();
   }
 
   Future<void> _loadGuilds() async {
     try {
-      final guilds = await _discordService.getUserGuilds(widget.userAccessToken);
+      final guilds = await _discordService.getBotGuilds();
       setState(() {
         _guilds = guilds;
         _loading = false;

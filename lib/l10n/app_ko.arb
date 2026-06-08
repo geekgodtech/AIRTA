@@ -13,6 +13,7 @@
   },
 
   "metricsDescription": "Fewer selected metrics produce a deeper, more concentrated analysis of those behaviors. More selected metrics produce a broader report with less detail per metric.",
+  "selectDiscordChannel": "Discord 채널 선택",
   "@metricsDescription": {
     "description": "Explanation of how metric selection affects analysis"
   },

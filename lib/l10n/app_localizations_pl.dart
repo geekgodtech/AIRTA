@@ -22,6 +22,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get selectSMS => 'Wybierz SMS / RCS Czat';
 
   @override
+  String get selectDiscordChannel => 'Wybierz kanał Discord';
+
+  @override
   String get selectFile => 'Wybierz plik';
 
   @override
