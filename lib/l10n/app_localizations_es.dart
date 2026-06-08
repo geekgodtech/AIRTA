@@ -31,6 +31,51 @@ class AppLocalizationsEs extends AppLocalizations {
   String get darkMode => 'Oscuro';
 
   @override
+  String get discordSetupTitle => 'Cómo Configurar Discord';
+
+  @override
+  String get discordSetupDescription =>
+      'Sigue estos pasos para habilitar el análisis de canales de Discord en la aplicación:';
+
+  @override
+  String get discordStep1Title => 'Crear un Bot de Discord';
+
+  @override
+  String get discordStep1Description =>
+      'Ve a discord.com/developers, crea una nueva aplicación y añade un bot. Copia el token del bot.';
+
+  @override
+  String get discordStep2Title => 'Habilitar Privilegios del Bot';
+
+  @override
+  String get discordStep2Description =>
+      'En la configuración del bot, habilita \'Message Content Intent\' y \'Server Members Intent\'.';
+
+  @override
+  String get discordStep3Title => 'Invitar Bot al Servidor';
+
+  @override
+  String get discordStep3Description =>
+      'Usa el generador de URL OAuth2 para invitar el bot a tu servidor de Discord con los permisos necesarios.';
+
+  @override
+  String get discordStep4Title => 'Configurar en la Aplicación';
+
+  @override
+  String get discordStep4Description =>
+      'Ingresa tu token del bot en la configuración de la aplicación (contacta soporte si necesitas ayuda).';
+
+  @override
+  String get discordStep5Title => 'Seleccionar Canal';
+
+  @override
+  String get discordStep5Description =>
+      'Toca \'Seleccionar Canal de Discord\', elige tu servidor, luego selecciona el canal para analizar.';
+
+  @override
+  String get gotIt => 'Entendido';
+
+  @override
   String get selectFile => 'Seleccionar archivo';
 
   @override
@@ -1259,9 +1304,6 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       'Cambie a la aplicación de Mensajes ahora y comience a tomar capturas de pantalla.\n\nRegrese a esta aplicación cuando haya terminado y toque \"Finalizar y procesar\".';
-
-  @override
-  String get gotIt => 'Entendido';
 
   @override
   String get noScreenshotsToProcess =>

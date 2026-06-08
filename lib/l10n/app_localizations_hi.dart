@@ -31,6 +31,51 @@ class AppLocalizationsHi extends AppLocalizations {
   String get darkMode => 'गहरा';
 
   @override
+  String get discordSetupTitle => 'Discord कैसे सेट करें';
+
+  @override
+  String get discordSetupDescription =>
+      'ऐप में Discord चैनल विश्लेषण सक्षम करने के लिए इन चरणों का पालन करें:';
+
+  @override
+  String get discordStep1Title => 'Discord बॉट बनाएं';
+
+  @override
+  String get discordStep1Description =>
+      'discord.com/developers पर जाएं, एक नया एप्लिकेशन बनाएं और एक बॉट जोड़ें। बॉट टोकन कॉपी करें।';
+
+  @override
+  String get discordStep2Title => 'बॉट विशेषाधिकार सक्षम करें';
+
+  @override
+  String get discordStep2Description =>
+      'बॉट सेटिंग्स में \'Message Content Intent\' और \'Server Members Intent\' सक्षम करें।';
+
+  @override
+  String get discordStep3Title => 'बॉट को सर्वर पर आमंत्रित करें';
+
+  @override
+  String get discordStep3Description =>
+      'आवश्यक अनुमतियों के साथ बॉट को अपने Discord सर्वर पर आमंत्रित करने के लिए OAuth2 URL जनरेटर का उपयोग करें।';
+
+  @override
+  String get discordStep4Title => 'ऐप में कॉन्फ़िगर करें';
+
+  @override
+  String get discordStep4Description =>
+      'ऐप सेटिंग्स में अपना बॉट टोकन दर्ज करें (सहायता की आवश्यकता हो तो सहायता से संपर्क करें)।';
+
+  @override
+  String get discordStep5Title => 'चैनल चुनें';
+
+  @override
+  String get discordStep5Description =>
+      '\'Discord चैनल चुनें\' टैप करें, अपना सर्वर चुनें, फिर विश्लेषण के लिए चैनल चुनें।';
+
+  @override
+  String get gotIt => 'समझ गया';
+
+  @override
   String get selectFile => 'फ़ाइल चुनें';
 
   @override
@@ -1254,9 +1299,6 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       'अभी संदेश ऐप पर जाएं और स्क्रीनशॉट लेना शुरू करें।\n\nजब आप समाप्त हो जाएं तो इस ऐप पर वापस आएं और \"समाप्त और प्रसंस्करण\" दबाएं।';
-
-  @override
-  String get gotIt => 'समझ गया';
 
   @override
   String get noScreenshotsToProcess => 'प्रसंस्करण के लिए कोई स्क्रीनशॉट नहीं।';

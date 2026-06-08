@@ -31,6 +31,49 @@ class AppLocalizationsZh extends AppLocalizations {
   String get darkMode => '深色';
 
   @override
+  String get discordSetupTitle => '如何设置 Discord';
+
+  @override
+  String get discordSetupDescription => '按照以下步骤在应用中启用 Discord 频道分析:';
+
+  @override
+  String get discordStep1Title => '创建 Discord 机器人';
+
+  @override
+  String get discordStep1Description =>
+      '前往 discord.com/developers，创建新应用程序并添加机器人。复制机器人令牌。';
+
+  @override
+  String get discordStep2Title => '启用机器人权限';
+
+  @override
+  String get discordStep2Description =>
+      '在机器人设置中，启用 \'Message Content Intent\' 和 \'Server Members Intent\'。';
+
+  @override
+  String get discordStep3Title => '将机器人邀请到服务器';
+
+  @override
+  String get discordStep3Description =>
+      '使用 OAuth2 URL 生成器将机器人邀请到您的 Discord 服务器，并授予所需权限。';
+
+  @override
+  String get discordStep4Title => '在应用中配置';
+
+  @override
+  String get discordStep4Description => '在应用设置中输入您的机器人令牌（如需帮助请联系支持）。';
+
+  @override
+  String get discordStep5Title => '选择频道';
+
+  @override
+  String get discordStep5Description =>
+      '点击 \'选择 Discord 频道\'，选择您的服务器，然后选择要分析的频道。';
+
+  @override
+  String get gotIt => '明白了';
+
+  @override
   String get selectFile => '选择文件';
 
   @override
@@ -1125,9 +1168,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get readyToCaptureBody => '现在转到消息应用并开始截屏。\n\n完成后返回此应用并点击\"完成并处理\"。';
-
-  @override
-  String get gotIt => '明白了';
 
   @override
   String get noScreenshotsToProcess => '没有要处理的截图。';

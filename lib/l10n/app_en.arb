@@ -37,6 +37,71 @@
     "description": "Dark mode label"
   },
 
+  "discordSetupTitle": "How to Set Up Discord",
+  "@discordSetupTitle": {
+    "description": "Title for Discord setup help dialog"
+  },
+
+  "discordSetupDescription": "Follow these steps to enable Discord channel analysis in the app:",
+  "@discordSetupDescription": {
+    "description": "Description for Discord setup help"
+  },
+
+  "discordStep1Title": "Create a Discord Bot",
+  "@discordStep1Title": {
+    "description": "Step 1 title for Discord setup"
+  },
+
+  "discordStep1Description": "Go to discord.com/developers, create a new application, and add a bot to it. Copy the bot token.",
+  "@discordStep1Description": {
+    "description": "Step 1 description for Discord setup"
+  },
+
+  "discordStep2Title": "Enable Bot Privileges",
+  "@discordStep2Title": {
+    "description": "Step 2 title for Discord setup"
+  },
+
+  "discordStep2Description": "In the bot settings, enable 'Message Content Intent' and 'Server Members Intent'.",
+  "@discordStep2Description": {
+    "description": "Step 2 description for Discord setup"
+  },
+
+  "discordStep3Title": "Invite Bot to Server",
+  "@discordStep3Title": {
+    "description": "Step 3 title for Discord setup"
+  },
+
+  "discordStep3Description": "Use OAuth2 URL generator to invite the bot to your Discord server with required permissions.",
+  "@discordStep3Description": {
+    "description": "Step 3 description for Discord setup"
+  },
+
+  "discordStep4Title": "Configure in App",
+  "@discordStep4Title": {
+    "description": "Step 4 title for Discord setup"
+  },
+
+  "discordStep4Description": "Enter your bot token in the app settings (contact support if you need help).",
+  "@discordStep4Description": {
+    "description": "Step 4 description for Discord setup"
+  },
+
+  "discordStep5Title": "Select Channel",
+  "@discordStep5Title": {
+    "description": "Step 5 title for Discord setup"
+  },
+
+  "discordStep5Description": "Tap 'Select Discord Channel', choose your server, then select the channel to analyze.",
+  "@discordStep5Description": {
+    "description": "Step 5 description for Discord setup"
+  },
+
+  "gotIt": "Got It",
+  "@gotIt": {
+    "description": "Button to dismiss help dialog"
+  },
+
   "selectFile": "Select file",
   "@selectFile": {
     "description": "Button to select a file"

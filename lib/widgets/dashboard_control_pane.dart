@@ -16,6 +16,7 @@ import 'package:airta/widgets/sms_conversation_picker.dart';
 import 'package:airta/widgets/ios_sms_capture_screen.dart';
 import 'package:airta/widgets/discord_server_picker.dart';
 import 'package:airta/widgets/dark_mode_switch.dart';
+import 'package:airta/widgets/discord_setup_help.dart';
 import 'package:airta/services/remote_config_service.dart';
 // UNIPILE INTEGRATION - COMMENTED OUT PENDING BUSINESS NEGOTIATION
 // Uncomment these imports if Unipile deal is finalized:
@@ -438,26 +439,41 @@ class _DiscordButton extends StatelessWidget {
       return const SizedBox.shrink();
     }
 
-    return ElevatedButton.icon(
-      onPressed: controller.isIngesting
-          ? null
-          : () => _openDiscordPicker(context),
-      icon: controller.isIngesting
-          ? const SizedBox.square(
-              dimension: 18,
-              child: CircularProgressIndicator(strokeWidth: 2),
-            )
-          : const Icon(Icons.discord, color: Color(0xFF5865F2)),
-      label: Text(AppLocalizations.of(context)!.selectDiscordChannel,
-          textAlign: TextAlign.center),
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color(0xFF5865F2),
-        foregroundColor: Colors.white,
-        minimumSize: const Size.fromHeight(56),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+    return Row(
+      children: [
+        Expanded(
+          child: ElevatedButton.icon(
+            onPressed: controller.isIngesting
+                ? null
+                : () => _openDiscordPicker(context),
+            icon: controller.isIngesting
+                ? const SizedBox.square(
+                    dimension: 18,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : const Icon(Icons.discord, color: Color(0xFF5865F2)),
+            label: Text(AppLocalizations.of(context)!.selectDiscordChannel,
+                textAlign: TextAlign.center),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF5865F2),
+              foregroundColor: Colors.white,
+              minimumSize: const Size.fromHeight(56),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+            ),
+          ),
         ),
-      ),
+        const SizedBox(width: 8),
+        IconButton(
+          onPressed: () => _showDiscordHelp(context),
+          icon: const Icon(Icons.help_outline),
+          tooltip: 'Setup Help',
+          style: IconButton.styleFrom(
+            backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+          ),
+        ),
+      ],
     );
   }
 
@@ -480,6 +496,13 @@ class _DiscordButton extends StatelessWidget {
         );
       }
     }
+  }
+
+  void _showDiscordHelp(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => const DiscordSetupHelp(),
+    );
   }
 }
 

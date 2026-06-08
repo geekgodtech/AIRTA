@@ -31,6 +31,51 @@ class AppLocalizationsUk extends AppLocalizations {
   String get darkMode => 'Темна';
 
   @override
+  String get discordSetupTitle => 'Як Налаштувати Discord';
+
+  @override
+  String get discordSetupDescription =>
+      'Дотримуйтесь цих кроків, щоб увімкнути аналіз каналів Discord у додатку:';
+
+  @override
+  String get discordStep1Title => 'Створити Бот Discord';
+
+  @override
+  String get discordStep1Description =>
+      'Перейдіть на discord.com/developers, створіть новий додаток і додайте бота. Скопіюйте токен бота.';
+
+  @override
+  String get discordStep2Title => 'Увімкнути Привілеї Бота';
+
+  @override
+  String get discordStep2Description =>
+      'У налаштуваннях бота увімкніть \'Message Content Intent\' та \'Server Members Intent\'.';
+
+  @override
+  String get discordStep3Title => 'Запросити Бота на Сервер';
+
+  @override
+  String get discordStep3Description =>
+      'Використовуйте генератор URL OAuth2, щоб запросити бота на свій сервер Discord з необхідними дозволами.';
+
+  @override
+  String get discordStep4Title => 'Налаштувати в Додатку';
+
+  @override
+  String get discordStep4Description =>
+      'Введіть свій токен бота в налаштуваннях додатку (зв\'яжіться з підтримкою, якщо потрібна допомога).';
+
+  @override
+  String get discordStep5Title => 'Вибрати Канал';
+
+  @override
+  String get discordStep5Description =>
+      'Натисніть \'Вибрати Канал Discord\', виберіть свій сервер, потім виберіть канал для аналізу.';
+
+  @override
+  String get gotIt => 'Зрозумів';
+
+  @override
   String get selectFile => 'Вибрати файл';
 
   @override
@@ -1253,9 +1298,6 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       'Перейдіть зараз до програми повідомлень і почніть робити знімки екрана.\n\nПоверніться до цієї програми, коли закінчите, і натисніть \"Завершити та обробити\".';
-
-  @override
-  String get gotIt => 'Зрозумів';
 
   @override
   String get noScreenshotsToProcess => 'Немає знімків екрана для обробки.';

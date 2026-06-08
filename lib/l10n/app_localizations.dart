@@ -168,6 +168,84 @@ abstract class AppLocalizations {
   /// **'Dark'**
   String get darkMode;
 
+  /// Title for Discord setup help dialog
+  ///
+  /// In en, this message translates to:
+  /// **'How to Set Up Discord'**
+  String get discordSetupTitle;
+
+  /// Description for Discord setup help
+  ///
+  /// In en, this message translates to:
+  /// **'Follow these steps to enable Discord channel analysis in the app:'**
+  String get discordSetupDescription;
+
+  /// Step 1 title for Discord setup
+  ///
+  /// In en, this message translates to:
+  /// **'Create a Discord Bot'**
+  String get discordStep1Title;
+
+  /// Step 1 description for Discord setup
+  ///
+  /// In en, this message translates to:
+  /// **'Go to discord.com/developers, create a new application, and add a bot to it. Copy the bot token.'**
+  String get discordStep1Description;
+
+  /// Step 2 title for Discord setup
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Bot Privileges'**
+  String get discordStep2Title;
+
+  /// Step 2 description for Discord setup
+  ///
+  /// In en, this message translates to:
+  /// **'In the bot settings, enable \'Message Content Intent\' and \'Server Members Intent\'.'**
+  String get discordStep2Description;
+
+  /// Step 3 title for Discord setup
+  ///
+  /// In en, this message translates to:
+  /// **'Invite Bot to Server'**
+  String get discordStep3Title;
+
+  /// Step 3 description for Discord setup
+  ///
+  /// In en, this message translates to:
+  /// **'Use OAuth2 URL generator to invite the bot to your Discord server with required permissions.'**
+  String get discordStep3Description;
+
+  /// Step 4 title for Discord setup
+  ///
+  /// In en, this message translates to:
+  /// **'Configure in App'**
+  String get discordStep4Title;
+
+  /// Step 4 description for Discord setup
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your bot token in the app settings (contact support if you need help).'**
+  String get discordStep4Description;
+
+  /// Step 5 title for Discord setup
+  ///
+  /// In en, this message translates to:
+  /// **'Select Channel'**
+  String get discordStep5Title;
+
+  /// Step 5 description for Discord setup
+  ///
+  /// In en, this message translates to:
+  /// **'Tap \'Select Discord Channel\', choose your server, then select the channel to analyze.'**
+  String get discordStep5Description;
+
+  /// Button to dismiss help dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Got it'**
+  String get gotIt;
+
   /// Button to select a file
   ///
   /// In en, this message translates to:
@@ -2333,12 +2411,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you\'re done and tap \"Finish & Process\".'**
   String get readyToCaptureBody;
-
-  /// No description provided for @gotIt.
-  ///
-  /// In en, this message translates to:
-  /// **'Got it'**
-  String get gotIt;
 
   /// No description provided for @noScreenshotsToProcess.
   ///

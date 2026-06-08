@@ -31,6 +31,51 @@ class AppLocalizationsNl extends AppLocalizations {
   String get darkMode => 'Donker';
 
   @override
+  String get discordSetupTitle => 'Discord Instellen';
+
+  @override
+  String get discordSetupDescription =>
+      'Volg deze stappen om Discord-kanaalanalyse in de app in te schakelen:';
+
+  @override
+  String get discordStep1Title => 'Maak een Discord Bot';
+
+  @override
+  String get discordStep1Description =>
+      'Ga naar discord.com/developers, maak een nieuwe applicatie en voeg een bot toe. Kopieer de bot-token.';
+
+  @override
+  String get discordStep2Title => 'Bot-rechten Inschakelen';
+
+  @override
+  String get discordStep2Description =>
+      'Schakel in de bot-instellingen \'Message Content Intent\' en \'Server Members Intent\' in.';
+
+  @override
+  String get discordStep3Title => 'Nodig Bot uit naar Server';
+
+  @override
+  String get discordStep3Description =>
+      'Gebruik de OAuth2-URL-generator om de bot met de benodigde rechten naar uw Discord-server uit te nodigen.';
+
+  @override
+  String get discordStep4Title => 'Configureren in App';
+
+  @override
+  String get discordStep4Description =>
+      'Voer uw bot-token in de app-instellingen in (neem contact op met support als u hulp nodig heeft).';
+
+  @override
+  String get discordStep5Title => 'Kanaal Selecteren';
+
+  @override
+  String get discordStep5Description =>
+      'Tik op \'Discord-kanaal Selecteren\', kies uw server en selecteer vervolgens het kanaal om te analyseren.';
+
+  @override
+  String get gotIt => 'Begrepen';
+
+  @override
   String get selectFile => 'Bestand selecteren';
 
   @override
@@ -1255,9 +1300,6 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       'Ga nu naar de Berichten-app en begin met het maken van screenshots.\n\nKeer terug naar deze app wanneer u klaar bent en tik op \"Voltooien & Verwerken\".';
-
-  @override
-  String get gotIt => 'Begrepen';
 
   @override
   String get noScreenshotsToProcess => 'Geen screenshots om te verwerken.';

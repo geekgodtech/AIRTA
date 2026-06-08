@@ -31,6 +31,51 @@ class AppLocalizationsJa extends AppLocalizations {
   String get darkMode => 'ダーク';
 
   @override
+  String get discordSetupTitle => 'Discordの設定方法';
+
+  @override
+  String get discordSetupDescription =>
+      'アプリでDiscordチャンネル分析を有効にするには、次の手順に従ってください:';
+
+  @override
+  String get discordStep1Title => 'Discordボットを作成';
+
+  @override
+  String get discordStep1Description =>
+      'discord.com/developersに移動し、新しいアプリケーションを作成してボットを追加します。ボットトークンをコピーします。';
+
+  @override
+  String get discordStep2Title => 'ボット権限を有効にする';
+
+  @override
+  String get discordStep2Description =>
+      'ボット設定で「Message Content Intent」と「Server Members Intent」を有効にします。';
+
+  @override
+  String get discordStep3Title => 'ボットをサーバーに招待';
+
+  @override
+  String get discordStep3Description =>
+      'OAuth2 URLジェネレーターを使用して、必要な権限でボットをDiscordサーバーに招待します。';
+
+  @override
+  String get discordStep4Title => 'アプリで設定';
+
+  @override
+  String get discordStep4Description =>
+      'アプリ設定にボットトークンを入力します（ヘルプが必要な場合はサポートにお問い合わせください）。';
+
+  @override
+  String get discordStep5Title => 'チャンネルを選択';
+
+  @override
+  String get discordStep5Description =>
+      '「Discordチャンネルを選択」をタップし、サーバーを選択してから、分析するチャンネルを選択します。';
+
+  @override
+  String get gotIt => '了解';
+
+  @override
   String get selectFile => 'ファイルを選択';
 
   @override
@@ -1187,9 +1232,6 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       '今すぐメッセージアプリに移動してスクリーンショットの撮影を開始してください。\n\n完了したらこのアプリに戻り、「完了して処理」をタップしてください。';
-
-  @override
-  String get gotIt => '了解';
 
   @override
   String get noScreenshotsToProcess => '処理するスクリーンショットがありません。';

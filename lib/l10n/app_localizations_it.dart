@@ -31,6 +31,51 @@ class AppLocalizationsIt extends AppLocalizations {
   String get darkMode => 'Scuro';
 
   @override
+  String get discordSetupTitle => 'Come Configurare Discord';
+
+  @override
+  String get discordSetupDescription =>
+      'Segui questi passaggi per abilitare l\'analisi dei canali Discord nell\'app:';
+
+  @override
+  String get discordStep1Title => 'Crea un Bot Discord';
+
+  @override
+  String get discordStep1Description =>
+      'Vai su discord.com/developers, crea una nuova applicazione e aggiungi un bot. Copia il token del bot.';
+
+  @override
+  String get discordStep2Title => 'Abilita i Privilegi del Bot';
+
+  @override
+  String get discordStep2Description =>
+      'Nelle impostazioni del bot, abilita \'Message Content Intent\' e \'Server Members Intent\'.';
+
+  @override
+  String get discordStep3Title => 'Invita il Bot al Server';
+
+  @override
+  String get discordStep3Description =>
+      'Usa il generatore di URL OAuth2 per invitare il bot al tuo server Discord con i permessi necessari.';
+
+  @override
+  String get discordStep4Title => 'Configura nell\'App';
+
+  @override
+  String get discordStep4Description =>
+      'Inserisci il tuo token del bot nelle impostazioni dell\'app (contatta il supporto se hai bisogno di aiuto).';
+
+  @override
+  String get discordStep5Title => 'Seleziona il Canale';
+
+  @override
+  String get discordStep5Description =>
+      'Tocca \'Seleziona Canale Discord\', scegli il tuo server, quindi seleziona il canale da analizzare.';
+
+  @override
+  String get gotIt => 'Capito';
+
+  @override
   String get selectFile => 'Seleziona file';
 
   @override
@@ -1259,9 +1304,6 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       'Passa all\'app Messaggi ora e inizia a fare screenshot.\n\nTorna a questa app quando hai finito e tocca \"Fine e Elabora\".';
-
-  @override
-  String get gotIt => 'Capito';
 
   @override
   String get noScreenshotsToProcess => 'Nessuno screenshot da elaborare.';

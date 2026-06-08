@@ -31,6 +31,51 @@ class AppLocalizationsKo extends AppLocalizations {
   String get darkMode => '다크';
 
   @override
+  String get discordSetupTitle => 'Discord 설정 방법';
+
+  @override
+  String get discordSetupDescription =>
+      '앱에서 Discord 채널 분석을 활성화하려면 다음 단계를 따르십시오:';
+
+  @override
+  String get discordStep1Title => 'Discord 봇 만들기';
+
+  @override
+  String get discordStep1Description =>
+      'discord.com/developers로 이동하여 새 애플리케이션을 만들고 봇을 추가합니다. 봇 토큰을 복사합니다.';
+
+  @override
+  String get discordStep2Title => '봇 권한 활성화';
+
+  @override
+  String get discordStep2Description =>
+      '봇 설정에서 \'Message Content Intent\' 및 \'Server Members Intent\'를 활성화합니다.';
+
+  @override
+  String get discordStep3Title => '봇을 서버에 초대';
+
+  @override
+  String get discordStep3Description =>
+      'OAuth2 URL 생성기를 사용하여 필요한 권한으로 봇을 Discord 서버에 초대합니다.';
+
+  @override
+  String get discordStep4Title => '앱에서 구성';
+
+  @override
+  String get discordStep4Description =>
+      '앱 설정에 봇 토큰을 입력합니다 (도움이 필요하면 지원팀에 문의하세요).';
+
+  @override
+  String get discordStep5Title => '채널 선택';
+
+  @override
+  String get discordStep5Description =>
+      '\'Discord 채널 선택\'을 탭하고 서버를 선택한 다음 분석할 채널을 선택합니다.';
+
+  @override
+  String get gotIt => '알겠습니다';
+
+  @override
   String get selectFile => 'Select file';
 
   @override
@@ -1243,9 +1288,6 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       '지금 메시지 앱으로 이동하여 스크린샷을 찍기 시작하세요.\n\n완료되면 이 앱으로 돌아와 \"완료 및 처리\"를 탭하세요.';
-
-  @override
-  String get gotIt => '알겠습니다';
 
   @override
   String get noScreenshotsToProcess => '처리할 스크린샷이 없습니다.';

@@ -31,6 +31,51 @@ class AppLocalizationsFr extends AppLocalizations {
   String get darkMode => 'Sombre';
 
   @override
+  String get discordSetupTitle => 'Comment Configurer Discord';
+
+  @override
+  String get discordSetupDescription =>
+      'Suivez ces étapes pour activer l\'analyse des canaux Discord dans l\'application:';
+
+  @override
+  String get discordStep1Title => 'Créer un Bot Discord';
+
+  @override
+  String get discordStep1Description =>
+      'Allez sur discord.com/developers, créez une nouvelle application et ajoutez un bot. Copiez le token du bot.';
+
+  @override
+  String get discordStep2Title => 'Activer les Privilèges du Bot';
+
+  @override
+  String get discordStep2Description =>
+      'Dans les paramètres du bot, activez \'Message Content Intent\' et \'Server Members Intent\'.';
+
+  @override
+  String get discordStep3Title => 'Inviter le Bot au Serveur';
+
+  @override
+  String get discordStep3Description =>
+      'Utilisez le générateur d\'URL OAuth2 pour inviter le bot à votre serveur Discord avec les permissions nécessaires.';
+
+  @override
+  String get discordStep4Title => 'Configurer dans l\'Application';
+
+  @override
+  String get discordStep4Description =>
+      'Entrez votre token de bot dans les paramètres de l\'application (contactez le support si vous avez besoin d\'aide).';
+
+  @override
+  String get discordStep5Title => 'Sélectionner un Canal';
+
+  @override
+  String get discordStep5Description =>
+      'Appuyez sur \'Sélectionner Canal Discord\', choisissez votre serveur, puis sélectionnez le canal à analyser.';
+
+  @override
+  String get gotIt => 'Compris';
+
+  @override
   String get selectFile => 'Sélectionner fichier';
 
   @override
@@ -1263,9 +1308,6 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       'Passez maintenant à l\'application Messages et commencez à prendre des captures d\'écran.\n\nRevenez à cette application lorsque vous avez terminé et appuyez sur \"Terminer et traiter\".';
-
-  @override
-  String get gotIt => 'Compris';
 
   @override
   String get noScreenshotsToProcess => 'Aucune capture d\'écran à traiter.';

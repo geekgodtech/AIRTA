@@ -31,6 +31,51 @@ class AppLocalizationsRu extends AppLocalizations {
   String get darkMode => 'Тёмная';
 
   @override
+  String get discordSetupTitle => 'Как Настроить Discord';
+
+  @override
+  String get discordSetupDescription =>
+      'Следуйте этим шагам, чтобы включить анализ каналов Discord в приложении:';
+
+  @override
+  String get discordStep1Title => 'Создать Бот Discord';
+
+  @override
+  String get discordStep1Description =>
+      'Перейдите на discord.com/developers, создайте новое приложение и добавьте бота. Скопируйте токен бота.';
+
+  @override
+  String get discordStep2Title => 'Включить Привилегии Бота';
+
+  @override
+  String get discordStep2Description =>
+      'В настройках бота включите \'Message Content Intent\' и \'Server Members Intent\'.';
+
+  @override
+  String get discordStep3Title => 'Пригласить Бота на Сервер';
+
+  @override
+  String get discordStep3Description =>
+      'Используйте генератор URL OAuth2, чтобы пригласить бота на свой сервер Discord с необходимыми разрешениями.';
+
+  @override
+  String get discordStep4Title => 'Настроить в Приложении';
+
+  @override
+  String get discordStep4Description =>
+      'Введите свой токен бота в настройках приложения (обратитесь в поддержку, если нужна помощь).';
+
+  @override
+  String get discordStep5Title => 'Выбрать Канал';
+
+  @override
+  String get discordStep5Description =>
+      'Нажмите \'Выбрать Канал Discord\', выберите свой сервер, затем выберите канал для анализа.';
+
+  @override
+  String get gotIt => 'Понятно';
+
+  @override
   String get selectFile => 'Выбрать файл';
 
   @override
@@ -1254,9 +1299,6 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       'Перейдите в приложение сообщений сейчас и начните делать скриншоты.\n\nВернитесь в это приложение, когда закончите, и нажмите \"Завершить и обработать\".';
-
-  @override
-  String get gotIt => 'Понятно';
 
   @override
   String get noScreenshotsToProcess => 'Нет скриншотов для обработки.';

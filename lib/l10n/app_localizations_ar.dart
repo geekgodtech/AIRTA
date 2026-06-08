@@ -31,6 +31,51 @@ class AppLocalizationsAr extends AppLocalizations {
   String get darkMode => 'داكن';
 
   @override
+  String get discordSetupTitle => 'كيفية إعداد Discord';
+
+  @override
+  String get discordSetupDescription =>
+      'اتبع هذه الخطوات لتمكين تحليل قنوات Discord في التطبيق:';
+
+  @override
+  String get discordStep1Title => 'إنشاء بوت Discord';
+
+  @override
+  String get discordStep1Description =>
+      'اذهب إلى discord.com/developers، أنشئ تطبيقًا جديدًا وأضف بوتًا إليه. انسخ رمز البوت.';
+
+  @override
+  String get discordStep2Title => 'تمكين امتيازات البوت';
+
+  @override
+  String get discordStep2Description =>
+      'في إعدادات البوت، قم بتمكين \'Message Content Intent\' و \'Server Members Intent\'.';
+
+  @override
+  String get discordStep3Title => 'دعوة البوت إلى الخادم';
+
+  @override
+  String get discordStep3Description =>
+      'استخدم مولد عنوان URL OAuth2 لدعوة البوت إلى خادم Discord الخاص بك بالأذونات المطلوبة.';
+
+  @override
+  String get discordStep4Title => 'التكوين في التطبيق';
+
+  @override
+  String get discordStep4Description =>
+      'أدخل رمز البوت الخاص بك في إعدادات التطبيق (اتصل بالدعم إذا كنت بحاجة إلى مساعدة).';
+
+  @override
+  String get discordStep5Title => 'اختيار القناة';
+
+  @override
+  String get discordStep5Description =>
+      'اضغط على \'اختيار قناة Discord\'، اختر الخادم الخاص بك، ثم حدد القناة للتحليل.';
+
+  @override
+  String get gotIt => 'فهمت';
+
+  @override
   String get selectFile => 'اختر ملفًا';
 
   @override
@@ -1245,9 +1290,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       'انتقل الآن إلى تطبيق الرسائل وابدأ في أخذ لقطات الشاشة.\n\nعد إلى هذا التطبيق عند الانتهاء واضغط على \"إنهاء ومعالجة\".';
-
-  @override
-  String get gotIt => 'فهمت';
 
   @override
   String get noScreenshotsToProcess => 'لا توجد لقطات شاشة للمعالجة.';

@@ -31,6 +31,51 @@ class AppLocalizationsPt extends AppLocalizations {
   String get darkMode => 'Escuro';
 
   @override
+  String get discordSetupTitle => 'Como Configurar Discord';
+
+  @override
+  String get discordSetupDescription =>
+      'Siga estes passos para ativar a análise de canais Discord no aplicativo:';
+
+  @override
+  String get discordStep1Title => 'Criar um Bot Discord';
+
+  @override
+  String get discordStep1Description =>
+      'Vá para discord.com/developers, crie um novo aplicativo e adicione um bot. Copie o token do bot.';
+
+  @override
+  String get discordStep2Title => 'Habilitar Privilégios do Bot';
+
+  @override
+  String get discordStep2Description =>
+      'Nas configurações do bot, habilite \'Message Content Intent\' e \'Server Members Intent\'.';
+
+  @override
+  String get discordStep3Title => 'Convidar Bot ao Servidor';
+
+  @override
+  String get discordStep3Description =>
+      'Use o gerador de URL OAuth2 para convidar o bot ao seu servidor Discord com as permissões necessárias.';
+
+  @override
+  String get discordStep4Title => 'Configurar no Aplicativo';
+
+  @override
+  String get discordStep4Description =>
+      'Insira seu token do bot nas configurações do aplicativo (contate o suporte se precisar de ajuda).';
+
+  @override
+  String get discordStep5Title => 'Selecionar Canal';
+
+  @override
+  String get discordStep5Description =>
+      'Toque em \'Selecionar Canal Discord\', escolha seu servidor, então selecione o canal para analisar.';
+
+  @override
+  String get gotIt => 'Entendi';
+
+  @override
   String get selectFile => 'Selecionar arquivo';
 
   @override
@@ -1259,9 +1304,6 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       'Mude para o aplicativo Mensagens agora e comece a tirar capturas de tela.\n\nVolte a este aplicativo quando terminar e toque em \"Concluir e Processar\".';
-
-  @override
-  String get gotIt => 'Entendi';
 
   @override
   String get noScreenshotsToProcess =>

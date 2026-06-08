@@ -31,6 +31,51 @@ class AppLocalizationsTr extends AppLocalizations {
   String get darkMode => 'Koyu';
 
   @override
+  String get discordSetupTitle => 'Discord Nasıl Ayarlanır';
+
+  @override
+  String get discordSetupDescription =>
+      'Uygulamada Discord kanal analizini etkinleştirmek için şu adımları izleyin:';
+
+  @override
+  String get discordStep1Title => 'Discord Bot Oluştur';
+
+  @override
+  String get discordStep1Description =>
+      'discord.com/developers adresine gidin, yeni bir uygulama oluşturun ve bir bot ekleyin. Bot token\'ını kopyalayın.';
+
+  @override
+  String get discordStep2Title => 'Bot Ayrıcalıklarını Etkinleştir';
+
+  @override
+  String get discordStep2Description =>
+      'Bot ayarlarında \'Message Content Intent\' ve \'Server Members Intent\' özelliklerini etkinleştirin.';
+
+  @override
+  String get discordStep3Title => 'Botu Sunucuya Davet Et';
+
+  @override
+  String get discordStep3Description =>
+      'Gerekli izinlerle botu Discord sunucunuza davet etmek için OAuth2 URL oluşturucuyu kullanın.';
+
+  @override
+  String get discordStep4Title => 'Uygulamada Yapılandır';
+
+  @override
+  String get discordStep4Description =>
+      'Bot token\'ınızı uygulama ayarlarına girin (yardıma ihtiyacınız varsa desteğe başvurun).';
+
+  @override
+  String get discordStep5Title => 'Kanal Seç';
+
+  @override
+  String get discordStep5Description =>
+      '\'Discord Kanalı Seç\'e dokunun, sunucunuzu seçin, ardından analiz edilecek kanalı seçin.';
+
+  @override
+  String get gotIt => 'Anladım';
+
+  @override
   String get selectFile => 'Dosya Seç';
 
   @override
@@ -1249,9 +1294,6 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       'Şimdi Mesajlar uygulamasına gidin ve ekran görüntüsü almaya başlayın.\n\nBittiğinde bu uygulamaya geri dönün ve \"Bitir ve İşle\" düğmesine basın.';
-
-  @override
-  String get gotIt => 'Anladım';
 
   @override
   String get noScreenshotsToProcess => 'İşlenecek ekran görüntüsü yok.';

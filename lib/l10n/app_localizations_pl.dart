@@ -31,6 +31,51 @@ class AppLocalizationsPl extends AppLocalizations {
   String get darkMode => 'Ciemny';
 
   @override
+  String get discordSetupTitle => 'Jak Skonfigurować Discord';
+
+  @override
+  String get discordSetupDescription =>
+      'Postępuj zgodnie z instrukcją, aby włączyć analizę kanałów Discord w aplikacji:';
+
+  @override
+  String get discordStep1Title => 'Utwórz Bota Discord';
+
+  @override
+  String get discordStep1Description =>
+      'Przejdź do discord.com/developers, utwórz nową aplikację i dodaj bota. Skopiuj token bota.';
+
+  @override
+  String get discordStep2Title => 'Włącz Uprawnienia Bota';
+
+  @override
+  String get discordStep2Description =>
+      'W ustawieniach bota włącz \'Message Content Intent\' i \'Server Members Intent\'.';
+
+  @override
+  String get discordStep3Title => 'Zaproś Bota na Serwer';
+
+  @override
+  String get discordStep3Description =>
+      'Użyj generatora URL OAuth2, aby zaprosić bota na swój serwer Discord z niezbędnymi uprawnieniami.';
+
+  @override
+  String get discordStep4Title => 'Skonfiguruj w Aplikacji';
+
+  @override
+  String get discordStep4Description =>
+      'Wprowadź swój token bota w ustawieniach aplikacji (skontaktuj się z pomocą techniczną, jeśli potrzebujesz pomocy).';
+
+  @override
+  String get discordStep5Title => 'Wybierz Kanał';
+
+  @override
+  String get discordStep5Description =>
+      'Dotknij \'Wybierz Kanał Discord\', wybierz swój serwer, a następnie wybierz kanał do analizy.';
+
+  @override
+  String get gotIt => 'Rozumiem';
+
+  @override
   String get selectFile => 'Wybierz plik';
 
   @override
@@ -1250,9 +1295,6 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       'Przejdź teraz do aplikacji Wiadomości i zacznij robić zrzuty ekranu.\n\nWróć do tej aplikacji po zakończeniu i naciśnij \"Zakończ i przetwórz\".';
-
-  @override
-  String get gotIt => 'Rozumiem';
 
   @override
   String get noScreenshotsToProcess => 'Brak zrzutów ekranu do przetworzenia.';

@@ -31,6 +31,51 @@ class AppLocalizationsEn extends AppLocalizations {
   String get darkMode => 'Dark';
 
   @override
+  String get discordSetupTitle => 'How to Set Up Discord';
+
+  @override
+  String get discordSetupDescription =>
+      'Follow these steps to enable Discord channel analysis in the app:';
+
+  @override
+  String get discordStep1Title => 'Create a Discord Bot';
+
+  @override
+  String get discordStep1Description =>
+      'Go to discord.com/developers, create a new application, and add a bot to it. Copy the bot token.';
+
+  @override
+  String get discordStep2Title => 'Enable Bot Privileges';
+
+  @override
+  String get discordStep2Description =>
+      'In the bot settings, enable \'Message Content Intent\' and \'Server Members Intent\'.';
+
+  @override
+  String get discordStep3Title => 'Invite Bot to Server';
+
+  @override
+  String get discordStep3Description =>
+      'Use OAuth2 URL generator to invite the bot to your Discord server with required permissions.';
+
+  @override
+  String get discordStep4Title => 'Configure in App';
+
+  @override
+  String get discordStep4Description =>
+      'Enter your bot token in the app settings (contact support if you need help).';
+
+  @override
+  String get discordStep5Title => 'Select Channel';
+
+  @override
+  String get discordStep5Description =>
+      'Tap \'Select Discord Channel\', choose your server, then select the channel to analyze.';
+
+  @override
+  String get gotIt => 'Got it';
+
+  @override
   String get selectFile => 'Select file';
 
   @override
@@ -1246,9 +1291,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get readyToCaptureBody =>
       'Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you\'re done and tap \"Finish & Process\".';
-
-  @override
-  String get gotIt => 'Got it';
 
   @override
   String get noScreenshotsToProcess => 'No screenshots to process.';
