@@ -28,6 +28,10 @@ class SubscriptionService extends ChangeNotifier {
   MembershipTier _activeTier = MembershipTier.free;
   MembershipTier get activeTier => _activeTier;
 
+  // Add-ons
+  bool _hasDiscordAddon = false;
+  bool get hasDiscordAddon => _hasDiscordAddon;
+
   bool _isInitialized = false;
   bool get isInitialized => _isInitialized;
 
@@ -79,6 +83,7 @@ class SubscriptionService extends ChangeNotifier {
       proMonthlyId,
       proPlusMonthlyId,
       oneTimeUnlockId,
+      discordAddonMonthlyId,
     };
 
     try {
@@ -146,6 +151,10 @@ class SubscriptionService extends ChangeNotifier {
       case oneTimeUnlockId:
         tier = MembershipTier.oneTimeUnlock;
         break;
+      case discordAddonMonthlyId:
+        await _activateDiscordAddon();
+        debugPrint('Activated Discord add-on');
+        return;
     }
 
     await _activateTier(tier);
@@ -159,6 +168,17 @@ class SubscriptionService extends ChangeNotifier {
     // Save to local storage
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('membership_tier', tier.name);
+
+    notifyListeners();
+  }
+
+  /// Activate Discord add-on
+  Future<void> _activateDiscordAddon() async {
+    _hasDiscordAddon = true;
+
+    // Save to local storage
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('discord_addon', true);
 
     notifyListeners();
   }
@@ -195,8 +215,13 @@ class SubscriptionService extends ChangeNotifier {
           (t) => t.name == savedTier,
           orElse: () => MembershipTier.free,
         );
-        notifyListeners();
       }
+
+      // Load saved Discord add-on status
+      final hasDiscord = prefs.getBool('discord_addon') ?? false;
+      _hasDiscordAddon = hasDiscord;
+
+      notifyListeners();
     } catch (e) {
       debugPrint('Restore purchases error: $e');
     }

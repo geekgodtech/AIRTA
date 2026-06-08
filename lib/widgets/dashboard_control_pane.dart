@@ -428,9 +428,12 @@ class _DiscordButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final remoteConfig = RemoteConfigService();
+    final subscriptionService = SubscriptionService();
     final discordEnabled = remoteConfig.discordAddonEnabled;
+    final isStandardOrHigher = subscriptionService.hasTier(MembershipTier.standard);
+    final hasDiscordAddon = subscriptionService.hasDiscordAddon;
 
-    if (!discordEnabled) {
+    if (!discordEnabled || !isStandardOrHigher || !hasDiscordAddon) {
       return const SizedBox.shrink();
     }
 
