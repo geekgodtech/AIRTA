@@ -19,6 +19,7 @@ class SubscriptionService extends ChangeNotifier {
   static const String proPlusMonthlyId = 'pro_plus_monthly';
   static const String oneTimeUnlockId = 'one_time_unlock';
   static const String discordAddonMonthlyId = 'discord_addon_monthly';
+  static const String customMetricOneTimeId = 'custom_metric_4_99';
 
   // Available products
   List<ProductDetails> _products = [];
@@ -34,6 +35,16 @@ class SubscriptionService extends ChangeNotifier {
 
   bool _isInitialized = false;
   bool get isInitialized => _isInitialized;
+
+  // Custom metric purchase flag - set true when store confirms payment
+  bool _pendingCustomMetricPurchase = false;
+  bool get pendingCustomMetricPurchase => _pendingCustomMetricPurchase;
+
+  /// Clear the pending custom metric flag once the UI has handled it.
+  void clearPendingCustomMetricPurchase() {
+    _pendingCustomMetricPurchase = false;
+    notifyListeners();
+  }
 
   /// Initialize the subscription service
   Future<void> initialize() async {
@@ -85,6 +96,7 @@ class SubscriptionService extends ChangeNotifier {
       proPlusMonthlyId,
       oneTimeUnlockId,
       discordAddonMonthlyId,
+      customMetricOneTimeId,
     };
 
     try {
@@ -156,6 +168,12 @@ class SubscriptionService extends ChangeNotifier {
         await _activateDiscordAddon();
         debugPrint('Activated Discord add-on');
         return;
+      case customMetricOneTimeId:
+        // Signal that a custom metric purchase is ready; the UI handles the metric creation flow
+        _pendingCustomMetricPurchase = true;
+        notifyListeners();
+        debugPrint('Custom metric purchase confirmed');
+        return;
     }
 
     await _activateTier(tier);
@@ -198,6 +216,30 @@ class SubscriptionService extends ChangeNotifier {
       return success;
     } catch (e) {
       debugPrint('Purchase error: $e');
+      return false;
+    }
+  }
+
+  /// Purchase a custom metric slot ($4.99 one-time consumable).
+  Future<bool> purchaseCustomMetric() async {
+    // In demo mode, simulate a successful purchase immediately
+    const isDemoMode = bool.fromEnvironment('DEMO_MODE', defaultValue: false);
+    if (isDemoMode) {
+      _pendingCustomMetricPurchase = true;
+      notifyListeners();
+      return true;
+    }
+    try {
+      final product = _products.firstWhere(
+        (p) => p.id == customMetricOneTimeId,
+        orElse: () => throw Exception('custom_metric_4_99 not found in store'),
+      );
+      final purchaseParam = PurchaseParam(productDetails: product);
+      // Use buyConsumable so users can buy multiple custom metrics
+      final success = await _iap.buyConsumable(purchaseParam: purchaseParam);
+      return success;
+    } catch (e) {
+      debugPrint('purchaseCustomMetric error: $e');
       return false;
     }
   }

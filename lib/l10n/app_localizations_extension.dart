@@ -4,14 +4,16 @@ import 'app_localizations.dart';
 extension AppLocalizationsExtension on AppLocalizations {
   /// Returns the localized name for a metric by its ID.
   /// Metric IDs are in the format "metric_1", "metric_2", etc.
-  String getMetricName(String metricId) {
+  String getMetricName(String metricId, {String? fallbackName}) {
+    if (metricId.startsWith('custom_metric_')) return fallbackName ?? metricId;
     final key = '${metricId}_name';
     return _getStringByKey(key);
   }
 
   /// Returns the localized description for a metric by its ID.
   /// Metric IDs are in the format "metric_1", "metric_2", etc.
-  String getMetricDescription(String metricId) {
+  String getMetricDescription(String metricId, {String? fallbackDescription}) {
+    if (metricId.startsWith('custom_metric_')) return fallbackDescription ?? '';
     final key = '${metricId}_description';
     return _getStringByKey(key);
   }

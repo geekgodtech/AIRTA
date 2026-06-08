@@ -19,6 +19,7 @@ import 'package:airta/widgets/discord_server_picker.dart';
 import 'package:airta/widgets/dark_mode_switch.dart';
 import 'package:airta/widgets/discord_setup_help.dart';
 import 'package:airta/services/remote_config_service.dart';
+import 'package:airta/services/custom_metric_service.dart';
 // UNIPILE INTEGRATION - COMMENTED OUT PENDING BUSINESS NEGOTIATION
 // Uncomment these imports if Unipile deal is finalized:
 // import 'package:airta/widgets/unipile_auth_view.dart';
@@ -931,8 +932,13 @@ class _MetricSelectorSection extends StatelessWidget {
                   mainAxisSpacing: 12,
                   childAspectRatio: 1,
                 ),
-                itemCount: controller.availableMetrics.length,
+                // +1 for the always-visible Purchase Custom Metric tile
+                itemCount: controller.availableMetrics.length + 1,
                 itemBuilder: (context, index) {
+                  // Last tile is always the Purchase Custom Metric CTA
+                  if (index == controller.availableMetrics.length) {
+                    return _PurchaseCustomMetricTile(controller: controller);
+                  }
                   final metric = controller.availableMetrics[index];
                   return _MetricButtonTile(
                     metric: metric,
@@ -1011,7 +1017,7 @@ class _MetricButtonTile extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                l10n.getMetricName(metric.id),
+                                l10n.getMetricName(metric.id, fallbackName: metric.name),
                                 style: TextStyle(
                                   color: foregroundColor,
                                   fontWeight: FontWeight.w700,
@@ -1021,7 +1027,7 @@ class _MetricButtonTile extends StatelessWidget {
                               ),
                               const SizedBox(height: 8),
                               Text(
-                                l10n.getMetricDescription(metric.id),
+                                l10n.getMetricDescription(metric.id, fallbackDescription: metric.description),
                                 style: TextStyle(
                                   color: foregroundColor.withOpacity(
                                     isSelected ? 0.96 : 0.72,
@@ -1054,6 +1060,459 @@ class _MetricButtonTile extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+// PURCHASE CUSTOM METRIC TILE + FULL DIALOG FLOW
+// ═══════════════════════════════════════════════════════════════════════════
+
+class _PurchaseCustomMetricTile extends StatelessWidget {
+  final ToxicityAnalyzerController controller;
+
+  const _PurchaseCustomMetricTile({required this.controller});
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return AnimatedScale(
+      scale: 0.94,
+      duration: const Duration(milliseconds: 160),
+      child: Material(
+        color: colorScheme.secondaryContainer.withOpacity(0.72),
+        borderRadius: BorderRadius.circular(14),
+        elevation: 1,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(14),
+          onTap: () => _startPurchaseFlow(context),
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.add_circle_outline,
+                              color: colorScheme.secondary, size: 18),
+                          const SizedBox(width: 4),
+                          Flexible(
+                            child: Text(
+                              'Purchase Custom Metric',
+                              style: TextStyle(
+                                color: colorScheme.onSecondaryContainer,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 14,
+                                height: 1.12,
+                              ),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 6),
+                      Text(
+                        'For a one-time fee of \$4.99, enter a custom metric name '
+                        'and definition saved permanently alongside your other metrics '
+                        'for use in any future analysis. Purchase unlimited custom metrics.',
+                        style: TextStyle(
+                          color: colorScheme.onSecondaryContainer.withOpacity(0.78),
+                          fontSize: 11,
+                          height: 1.3,
+                        ),
+                        maxLines: 6,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: colorScheme.secondary,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      '\$4.99',
+                      style: TextStyle(
+                        color: colorScheme.onSecondary,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _startPurchaseFlow(BuildContext context) async {
+    // In demo mode, skip the real payment and go straight to the metric entry flow
+    const isDemoMode = bool.fromEnvironment('DEMO_MODE', defaultValue: false);
+
+    if (!isDemoMode) {
+      // Show a purchase confirmation dialog before sending to store
+      final confirmed = await showDialog<bool>(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('Purchase Custom Metric'),
+          content: const Text(
+            'You will be charged \$4.99 (one-time) to unlock one custom metric slot.\n\n'
+            'Your custom metric name and definition are permanent and cannot ever be changed '
+            'once saved, so please choose carefully.',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: const Text('Cancel'),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: const Text('Purchase — \$4.99'),
+            ),
+          ],
+        ),
+      );
+      if (confirmed != true || !context.mounted) return;
+
+      // Trigger real store purchase
+      final subService = context.read<SubscriptionService>();
+      final success = await subService.purchaseCustomMetric();
+      if (!success || !context.mounted) return;
+
+      // Wait for the store to confirm (pendingCustomMetricPurchase becomes true)
+      // Show a waiting dialog while the store processes
+      if (!subService.pendingCustomMetricPurchase) {
+        if (!context.mounted) return;
+        await showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (ctx) => _PurchasePendingDialog(subService: subService),
+        );
+        if (!context.mounted) return;
+      }
+
+      // Clear the flag — we're handling it now
+      subService.clearPendingCustomMetricPurchase();
+    }
+
+    if (!context.mounted) return;
+    // Step 1: Enter metric name
+    await _showEnterNameDialog(context);
+  }
+
+  Future<void> _showEnterNameDialog(BuildContext context) async {
+    final nameController = TextEditingController();
+
+    await showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => StatefulBuilder(
+        builder: (ctx, setState) => AlertDialog(
+          title: const Text('Custom Metric Name'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'Enter the name for your custom metric:',
+                style: TextStyle(fontSize: 14),
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: nameController,
+                autofocus: true,
+                maxLength: 60,
+                textCapitalization: TextCapitalization.words,
+                decoration: const InputDecoration(
+                  hintText: 'Metric Name',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('Cancel — I Wasn\'t Ready'),
+            ),
+            FilledButton(
+              onPressed: () {
+                final name = nameController.text.trim();
+                if (name.isEmpty) return;
+                Navigator.pop(ctx, name);
+              },
+              child: const Text('Next'),
+            ),
+          ],
+        ),
+      ),
+    ).then((name) async {
+      if (name == null || name.toString().isEmpty || !context.mounted) return;
+      await _showConfirmNameDialog(context, name.toString());
+    });
+  }
+
+  Future<void> _showConfirmNameDialog(BuildContext context, String name) async {
+    await showDialog<String>(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Confirm Metric Name'),
+        content: RichText(
+          text: TextSpan(
+            style: DefaultTextStyle.of(ctx).style.copyWith(fontSize: 15),
+            children: [
+              const TextSpan(text: 'You entered:\n\n'),
+              TextSpan(
+                text: '"$name"',
+                style: const TextStyle(
+                    fontWeight: FontWeight.w800, fontSize: 17),
+              ),
+              const TextSpan(
+                text: '\n\n⚠️  This is FINAL and can NEVER be changed.',
+                style: TextStyle(
+                    color: Colors.red, fontWeight: FontWeight.w600),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, 'cancel'),
+            child: const Text('Cancel — I Wasn\'t Ready'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, 're-enter'),
+            child: const Text('Oops — Re-Enter Name'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, 'save'),
+            child: const Text('OK — Save Metric Name'),
+          ),
+        ],
+      ),
+    ).then((result) async {
+      if (!context.mounted) return;
+      if (result == 're-enter') {
+        await _showEnterNameDialog(context);
+      } else if (result == 'save') {
+        await _showEnterMeaningDialog(context, name);
+      }
+      // 'cancel' or null = user cancelled, flow ends
+    });
+  }
+
+  Future<void> _showEnterMeaningDialog(
+      BuildContext context, String name) async {
+    final meaningController = TextEditingController();
+
+    await showDialog<String>(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => AlertDialog(
+        title: Text('Define: $name'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Input the meaning of your Custom Metric: $name',
+              style: const TextStyle(fontSize: 14),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: meaningController,
+              autofocus: true,
+              maxLength: 300,
+              maxLines: 5,
+              minLines: 3,
+              textCapitalization: TextCapitalization.sentences,
+              decoration: const InputDecoration(
+                hintText:
+                    'Describe what this metric means, what behaviors it looks for, '
+                    'and how it applies to relationship dynamics...',
+                border: OutlineInputBorder(),
+                alignLabelWithHint: true,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, 'cancel'),
+            child: const Text('Cancel — I Wasn\'t Ready'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, 're-enter'),
+            child: const Text('Oops — Re-Enter'),
+          ),
+          FilledButton(
+            onPressed: () {
+              final meaning = meaningController.text.trim();
+              if (meaning.isEmpty) return;
+              Navigator.pop(ctx, meaning);
+            },
+            child: const Text('OK — Save Meaning'),
+          ),
+        ],
+      ),
+    ).then((result) async {
+      if (!context.mounted) return;
+      if (result == 're-enter') {
+        await _showEnterMeaningDialog(context, name);
+      } else if (result != null &&
+          result != 'cancel' &&
+          result != 're-enter') {
+        await _showFinalPreviewDialog(context, name, result);
+      }
+    });
+  }
+
+  Future<void> _showFinalPreviewDialog(
+      BuildContext context, String name, String meaning) async {
+    final colorScheme = Theme.of(context).colorScheme;
+
+    await showDialog<String>(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Preview Your Custom Metric'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'This is how your tile will look:',
+              style: TextStyle(fontSize: 13, fontStyle: FontStyle.italic),
+            ),
+            const SizedBox(height: 12),
+            // Mini preview tile
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                color: colorScheme.primaryContainer,
+                borderRadius: BorderRadius.circular(14),
+                border: Border.all(
+                    color: colorScheme.primary.withOpacity(0.5), width: 1.5),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    name,
+                    style: TextStyle(
+                      color: colorScheme.onPrimaryContainer,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 18,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    meaning,
+                    style: TextStyle(
+                      color:
+                          colorScheme.onPrimaryContainer.withOpacity(0.75),
+                      fontSize: 13,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              '⚠️  This is your LAST CHANCE to change your mind.\n'
+              'Once committed, the name and definition are permanent.',
+              style: TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 13),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, 'cancel'),
+            child: const Text('Cancel Everything'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, 'commit'),
+            child: const Text('Commit to Custom Metric'),
+          ),
+        ],
+      ),
+    ).then((result) async {
+      if (!context.mounted) return;
+      if (result == 'commit') {
+        await controller.addCustomMetric(name: name, description: meaning);
+        if (!context.mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+                '✓ "$name" added to your metrics! You can now select it for analysis.'),
+            backgroundColor: Colors.green.shade700,
+            duration: const Duration(seconds: 4),
+          ),
+        );
+      }
+      // 'cancel' = user cancelled everything, flow ends (no metric saved)
+    });
+  }
+}
+
+/// Shown while waiting for the store to confirm a custom metric purchase.
+class _PurchasePendingDialog extends StatefulWidget {
+  final SubscriptionService subService;
+
+  const _PurchasePendingDialog({required this.subService});
+
+  @override
+  State<_PurchasePendingDialog> createState() => _PurchasePendingDialogState();
+}
+
+class _PurchasePendingDialogState extends State<_PurchasePendingDialog> {
+  @override
+  void initState() {
+    super.initState();
+    widget.subService.addListener(_onServiceChanged);
+  }
+
+  void _onServiceChanged() {
+    if (widget.subService.pendingCustomMetricPurchase && mounted) {
+      Navigator.of(context).pop();
+    }
+  }
+
+  @override
+  void dispose() {
+    widget.subService.removeListener(_onServiceChanged);
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const AlertDialog(
+      title: Text('Processing Purchase...'),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          CircularProgressIndicator(),
+          SizedBox(height: 16),
+          Text('Waiting for store confirmation.\nPlease do not close the app.'),
+        ],
       ),
     );
   }

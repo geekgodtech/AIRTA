@@ -14,6 +14,7 @@ import 'package:airta/services/language_service.dart';
 // import 'package:airta/services/pdf_synthesis_service.dart';
 import 'package:airta/services/unipile_integration_service.dart';
 import 'package:airta/services/android_sms_service.dart' if (dart.library.io) 'package:airta/services/android_sms_service.dart';
+import 'package:airta/services/custom_metric_service.dart';
 
 class ToxicityAnalyzerController extends ChangeNotifier {
   static const int requiredMetricSelectionCount =
@@ -29,7 +30,8 @@ class ToxicityAnalyzerController extends ChangeNotifier {
   static const String _deepSeekApiKeyPreferenceKey = 'deepseek_api_key';
   static const int requiredReferralDownloads = 5;
 
-  final List<PsychologicalMetric> availableMetrics = _buildMetricCatalog();
+  final List<PsychologicalMetric> availableMetrics = _buildMetricCatalog()
+      ..addAll(CustomMetricService().customMetrics);
   DeepSeekApiService _deepSeekApiService = DeepSeekApiService(
     apiKey: AppSecrets.deepSeekApiKey.isNotEmpty
         ? AppSecrets.deepSeekApiKey
@@ -134,6 +136,20 @@ class ToxicityAnalyzerController extends ChangeNotifier {
 
   void unlockDiscordAddon() {
     isDiscordAddonUnlocked = true;
+    notifyListeners();
+  }
+
+  /// Called after a successful custom metric purchase + user confirmed name & meaning.
+  /// Persists the metric and adds it to the live catalog immediately.
+  Future<void> addCustomMetric({
+    required String name,
+    required String description,
+  }) async {
+    final metric = await CustomMetricService().commitCustomMetric(
+      name: name,
+      description: description,
+    );
+    availableMetrics.add(metric);
     notifyListeners();
   }
 
@@ -1320,5 +1336,5 @@ List<PsychologicalMetric> _buildMetricCatalog() {
               ? 3
               : 2,
     );
-  }, growable: false);
+  }, growable: true);
 }
