@@ -6413,6 +6413,1218 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Detects sustained language that strips the partner of personhood, dignity, or their right to basic humanity.'**
   String get metric_ugly_100_description;
+
+  /// No description provided for @metric_narcissist_1_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Grandiose Self-Importance'**
+  String get metric_narcissist_1_name;
+
+  /// No description provided for @metric_narcissist_1_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Exaggerated claims of achievements, talents, or status beyond realistic evidence, often with a sense of uniqueness.'**
+  String get metric_narcissist_1_description;
+
+  /// No description provided for @metric_narcissist_2_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Entitlement Demands'**
+  String get metric_narcissist_2_name;
+
+  /// No description provided for @metric_narcissist_2_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Unreasonable expectations of special treatment or automatic compliance with their wishes without reciprocity.'**
+  String get metric_narcissist_2_description;
+
+  /// No description provided for @metric_narcissist_3_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathy Deficit'**
+  String get metric_narcissist_3_name;
+
+  /// No description provided for @metric_narcissist_3_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Inability or unwillingness to recognize or validate others\' feelings, dismissing emotional needs as irrelevant.'**
+  String get metric_narcissist_3_description;
+
+  /// No description provided for @metric_narcissist_4_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Supply-Seeking Praise'**
+  String get metric_narcissist_4_name;
+
+  /// No description provided for @metric_narcissist_4_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Excessive fishing for admiration, compliments, or validation to bolster fragile self-esteem.'**
+  String get metric_narcissist_4_description;
+
+  /// No description provided for @metric_narcissist_5_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Triangulation Tactics'**
+  String get metric_narcissist_5_name;
+
+  /// No description provided for @metric_narcissist_5_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Introducing a third party into conflicts to create jealousy, competition, or manipulate perceptions.'**
+  String get metric_narcissist_5_description;
+
+  /// No description provided for @metric_narcissist_6_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Love Bombing Intensity'**
+  String get metric_narcissist_6_name;
+
+  /// No description provided for @metric_narcissist_6_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Overwhelming flattery, gifts, or attention early in a relationship to gain control and idealize the target.'**
+  String get metric_narcissist_6_description;
+
+  /// No description provided for @metric_narcissist_7_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Devaluation Criticism'**
+  String get metric_narcissist_7_name;
+
+  /// No description provided for @metric_narcissist_7_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Sudden shift to harsh criticism, belittling, or contempt after idealization, eroding the target\'s self-worth.'**
+  String get metric_narcissist_7_description;
+
+  /// No description provided for @metric_narcissist_8_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Silent Treatment Punishment'**
+  String get metric_narcissist_8_name;
+
+  /// No description provided for @metric_narcissist_8_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Withholding communication or affection as a deliberate punishment to induce anxiety and compliance.'**
+  String get metric_narcissist_8_description;
+
+  /// No description provided for @metric_narcissist_9_name.
+  ///
+  /// In en, this message translates to:
+  /// **'DARVO Blame Shift'**
+  String get metric_narcissist_9_name;
+
+  /// No description provided for @metric_narcissist_9_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Denying responsibility, attacking the accuser, and reversing victim-offender roles to evade accountability.'**
+  String get metric_narcissist_9_description;
+
+  /// No description provided for @metric_narcissist_10_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Gaslighting Reality Distortion'**
+  String get metric_narcissist_10_name;
+
+  /// No description provided for @metric_narcissist_10_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Denying or twisting facts, events, or feelings to make the target doubt their own memory or sanity.'**
+  String get metric_narcissist_10_description;
+
+  /// No description provided for @metric_narcissist_11_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Rage at Criticism'**
+  String get metric_narcissist_11_name;
+
+  /// No description provided for @metric_narcissist_11_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Intense anger, contempt, or retaliation in response to any perceived slight or feedback, even if constructive.'**
+  String get metric_narcissist_11_description;
+
+  /// No description provided for @metric_narcissist_12_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Boundary Violation'**
+  String get metric_narcissist_12_name;
+
+  /// No description provided for @metric_narcissist_12_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Ignoring or overriding stated limits, privacy, or personal space without remorse or negotiation.'**
+  String get metric_narcissist_12_description;
+
+  /// No description provided for @metric_narcissist_13_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Envy Expression'**
+  String get metric_narcissist_13_name;
+
+  /// No description provided for @metric_narcissist_13_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Resentment of others\' successes or possessions, often accompanied by devaluation or attempts to undermine.'**
+  String get metric_narcissist_13_description;
+
+  /// No description provided for @metric_narcissist_14_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Exploitative Behavior'**
+  String get metric_narcissist_14_name;
+
+  /// No description provided for @metric_narcissist_14_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Using others for personal gain, status, or resources without regard for their well-being or consent.'**
+  String get metric_narcissist_14_description;
+
+  /// No description provided for @metric_narcissist_15_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Mirroring Manipulation'**
+  String get metric_narcissist_15_name;
+
+  /// No description provided for @metric_narcissist_15_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Imitating the target\'s interests, values, or traits to create false rapport and gain trust.'**
+  String get metric_narcissist_15_description;
+
+  /// No description provided for @metric_narcissist_16_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Superiority Claims'**
+  String get metric_narcissist_16_name;
+
+  /// No description provided for @metric_narcissist_16_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Asserting inherent superiority over others, often with condescending or dismissive language.'**
+  String get metric_narcissist_16_description;
+
+  /// No description provided for @metric_narcissist_17_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Fantasy Preoccupation'**
+  String get metric_narcissist_17_name;
+
+  /// No description provided for @metric_narcissist_17_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Obsessive talk about unlimited success, power, brilliance, or ideal love that is unrealistic.'**
+  String get metric_narcissist_17_description;
+
+  /// No description provided for @metric_narcissist_18_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Special Status Assertion'**
+  String get metric_narcissist_18_name;
+
+  /// No description provided for @metric_narcissist_18_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Belief that they can only be understood by or associate with high-status people or institutions.'**
+  String get metric_narcissist_18_description;
+
+  /// No description provided for @metric_narcissist_19_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Interpersonal Exploitation'**
+  String get metric_narcissist_19_name;
+
+  /// No description provided for @metric_narcissist_19_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Taking advantage of others\' resources, time, or emotions without reciprocation or gratitude.'**
+  String get metric_narcissist_19_description;
+
+  /// No description provided for @metric_narcissist_20_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Lack of Remorse'**
+  String get metric_narcissist_20_name;
+
+  /// No description provided for @metric_narcissist_20_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Absence of guilt or apology after causing harm, often justifying actions as deserved by the target.'**
+  String get metric_narcissist_20_description;
+
+  /// No description provided for @metric_narcissist_21_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Competitive Undermining'**
+  String get metric_narcissist_21_name;
+
+  /// No description provided for @metric_narcissist_21_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Sabotaging others\' achievements or relationships to maintain a superior position.'**
+  String get metric_narcissist_21_description;
+
+  /// No description provided for @metric_narcissist_22_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Idealization Phase'**
+  String get metric_narcissist_22_name;
+
+  /// No description provided for @metric_narcissist_22_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Excessive praise and adoration early in a relationship, setting unrealistic expectations for the target.'**
+  String get metric_narcissist_22_description;
+
+  /// No description provided for @metric_narcissist_23_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Devaluation Phase'**
+  String get metric_narcissist_23_name;
+
+  /// No description provided for @metric_narcissist_23_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Gradual or sudden criticism and contempt after idealization, creating confusion and self-doubt.'**
+  String get metric_narcissist_23_description;
+
+  /// No description provided for @metric_narcissist_24_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard Impulse'**
+  String get metric_narcissist_24_name;
+
+  /// No description provided for @metric_narcissist_24_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Abruptly ending relationships when the target no longer provides narcissistic supply or challenges them.'**
+  String get metric_narcissist_24_description;
+
+  /// No description provided for @metric_narcissist_25_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Hoovering Attempts'**
+  String get metric_narcissist_25_name;
+
+  /// No description provided for @metric_narcissist_25_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-engaging a discarded target with promises, guilt, or manipulation to regain supply.'**
+  String get metric_narcissist_25_description;
+
+  /// No description provided for @metric_narcissist_26_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Projection of Flaws'**
+  String get metric_narcissist_26_name;
+
+  /// No description provided for @metric_narcissist_26_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Accusing others of their own negative traits or behaviors to avoid self-awareness.'**
+  String get metric_narcissist_26_description;
+
+  /// No description provided for @metric_narcissist_27_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Control Through Guilt'**
+  String get metric_narcissist_27_name;
+
+  /// No description provided for @metric_narcissist_27_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Using guilt-inducing statements to manipulate others into compliance or caretaking.'**
+  String get metric_narcissist_27_description;
+
+  /// No description provided for @metric_narcissist_28_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Emotional Volatility'**
+  String get metric_narcissist_28_name;
+
+  /// No description provided for @metric_narcissist_28_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Rapid mood swings from charm to rage, often triggered by perceived narcissistic injury.'**
+  String get metric_narcissist_28_description;
+
+  /// No description provided for @metric_narcissist_29_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalidation of Feelings'**
+  String get metric_narcissist_29_name;
+
+  /// No description provided for @metric_narcissist_29_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismissing or minimizing others\' emotions as overreactions or irrational.'**
+  String get metric_narcissist_29_description;
+
+  /// No description provided for @metric_narcissist_30_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Monopolizing Conversations'**
+  String get metric_narcissist_30_name;
+
+  /// No description provided for @metric_narcissist_30_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Dominating dialogue with self-focused topics, interrupting, or ignoring others\' input.'**
+  String get metric_narcissist_30_description;
+
+  /// No description provided for @metric_narcissist_31_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name-Calling Derogation'**
+  String get metric_narcissist_31_name;
+
+  /// No description provided for @metric_narcissist_31_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Using insults, labels, or demeaning terms to devalue and control the target.'**
+  String get metric_narcissist_31_description;
+
+  /// No description provided for @metric_narcissist_32_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Threats of Abandonment'**
+  String get metric_narcissist_32_name;
+
+  /// No description provided for @metric_narcissist_32_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Using fear of loss or rejection to coerce compliance or attention.'**
+  String get metric_narcissist_32_description;
+
+  /// No description provided for @metric_narcissist_33_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Playing the Victim'**
+  String get metric_narcissist_33_name;
+
+  /// No description provided for @metric_narcissist_33_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Portraying themselves as unfairly treated to elicit sympathy and deflect accountability.'**
+  String get metric_narcissist_33_description;
+
+  /// No description provided for @metric_narcissist_34_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Martyr Complex'**
+  String get metric_narcissist_34_name;
+
+  /// No description provided for @metric_narcissist_34_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Claiming excessive sacrifice or suffering to induce guilt and obligation in others.'**
+  String get metric_narcissist_34_description;
+
+  /// No description provided for @metric_narcissist_35_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Selective Memory'**
+  String get metric_narcissist_35_name;
+
+  /// No description provided for @metric_narcissist_35_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Conveniently forgetting promises, agreements, or harmful actions to avoid responsibility.'**
+  String get metric_narcissist_35_description;
+
+  /// No description provided for @metric_narcissist_36_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Stonewalling Communication'**
+  String get metric_narcissist_36_name;
+
+  /// No description provided for @metric_narcissist_36_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Refusing to engage in dialogue, ignoring questions, or shutting down discussions to maintain control.'**
+  String get metric_narcissist_36_description;
+
+  /// No description provided for @metric_narcissist_37_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Future Faking'**
+  String get metric_narcissist_37_name;
+
+  /// No description provided for @metric_narcissist_37_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Making grandiose promises about shared future plans to create false hope and dependency.'**
+  String get metric_narcissist_37_description;
+
+  /// No description provided for @metric_narcissist_38_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Smear Campaign'**
+  String get metric_narcissist_38_name;
+
+  /// No description provided for @metric_narcissist_38_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Spreading malicious rumors or lies about the target to isolate them and damage reputation.'**
+  String get metric_narcissist_38_description;
+
+  /// No description provided for @metric_narcissist_39_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Isolation Tactics'**
+  String get metric_narcissist_39_name;
+
+  /// No description provided for @metric_narcissist_39_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Discouraging or preventing contact with friends, family, or support systems to increase dependence.'**
+  String get metric_narcissist_39_description;
+
+  /// No description provided for @metric_narcissist_40_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Financial Exploitation'**
+  String get metric_narcissist_40_name;
+
+  /// No description provided for @metric_narcissist_40_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Manipulating or controlling financial resources for personal gain or to create dependency.'**
+  String get metric_narcissist_40_description;
+
+  /// No description provided for @metric_narcissist_41_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Sexual Coercion'**
+  String get metric_narcissist_41_name;
+
+  /// No description provided for @metric_narcissist_41_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Using pressure, guilt, or manipulation to obtain sexual compliance without genuine consent.'**
+  String get metric_narcissist_41_description;
+
+  /// No description provided for @metric_narcissist_42_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Boundary Testing'**
+  String get metric_narcissist_42_name;
+
+  /// No description provided for @metric_narcissist_42_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeatedly pushing limits to see what behavior is tolerated, then escalating violations.'**
+  String get metric_narcissist_42_description;
+
+  /// No description provided for @metric_narcissist_43_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Gaslighting Denial'**
+  String get metric_narcissist_43_name;
+
+  /// No description provided for @metric_narcissist_43_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flatly denying events or statements that occurred, causing the target to question reality.'**
+  String get metric_narcissist_43_description;
+
+  /// No description provided for @metric_narcissist_44_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Trivializing Concerns'**
+  String get metric_narcissist_44_name;
+
+  /// No description provided for @metric_narcissist_44_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Dismissing legitimate complaints as unimportant or overly sensitive.'**
+  String get metric_narcissist_44_description;
+
+  /// No description provided for @metric_narcissist_45_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Blame Externalization'**
+  String get metric_narcissist_45_name;
+
+  /// No description provided for @metric_narcissist_45_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Attributing all problems and conflicts to others, never accepting personal fault.'**
+  String get metric_narcissist_45_description;
+
+  /// No description provided for @metric_narcissist_46_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Jealousy Provocation'**
+  String get metric_narcissist_46_name;
+
+  /// No description provided for @metric_narcissist_46_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flirting with or praising others to incite jealousy and maintain emotional control.'**
+  String get metric_narcissist_46_description;
+
+  /// No description provided for @metric_narcissist_47_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Emotional Blackmail'**
+  String get metric_narcissist_47_name;
+
+  /// No description provided for @metric_narcissist_47_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Using fear, obligation, or guilt to manipulate decisions and behavior.'**
+  String get metric_narcissist_47_description;
+
+  /// No description provided for @metric_narcissist_48_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Pseudo-Insight'**
+  String get metric_narcissist_48_name;
+
+  /// No description provided for @metric_narcissist_48_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Feigning self-awareness or empathy to appear reformed, then reverting to toxic patterns.'**
+  String get metric_narcissist_48_description;
+
+  /// No description provided for @metric_narcissist_49_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Contemptuous Tone'**
+  String get metric_narcissist_49_name;
+
+  /// No description provided for @metric_narcissist_49_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Using sarcasm, mockery, or disdainful language to degrade and dismiss others.'**
+  String get metric_narcissist_49_description;
+
+  /// No description provided for @metric_narcissist_50_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Revenge Fantasies'**
+  String get metric_narcissist_50_name;
+
+  /// No description provided for @metric_narcissist_50_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Expressing desires for retaliation or punishment against those who have slighted them.'**
+  String get metric_narcissist_50_description;
+
+  /// No description provided for @metric_serial_killer_1_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Predatory Framing'**
+  String get metric_serial_killer_1_name;
+
+  /// No description provided for @metric_serial_killer_1_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects language that positions the speaker as a hunter and the target as prey, indicating predatory intent.'**
+  String get metric_serial_killer_1_description;
+
+  /// No description provided for @metric_serial_killer_2_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Empathy Deficit'**
+  String get metric_serial_killer_2_name;
+
+  /// No description provided for @metric_serial_killer_2_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies statements lacking emotional resonance or concern for others\' suffering, suggesting callousness.'**
+  String get metric_serial_killer_2_description;
+
+  /// No description provided for @metric_serial_killer_3_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Dehumanizing Labels'**
+  String get metric_serial_killer_3_name;
+
+  /// No description provided for @metric_serial_killer_3_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flags use of derogatory terms or objectifying labels that strip victims of humanity.'**
+  String get metric_serial_killer_3_description;
+
+  /// No description provided for @metric_serial_killer_4_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Objectification Cues'**
+  String get metric_serial_killer_4_name;
+
+  /// No description provided for @metric_serial_killer_4_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognizes language treating individuals as tools or objects for gratification.'**
+  String get metric_serial_killer_4_description;
+
+  /// No description provided for @metric_serial_killer_5_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Control Fixation'**
+  String get metric_serial_killer_5_name;
+
+  /// No description provided for @metric_serial_killer_5_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects obsessive references to dominance, manipulation, or enforcing compliance.'**
+  String get metric_serial_killer_5_description;
+
+  /// No description provided for @metric_serial_killer_6_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Thrill-Seeking Tone'**
+  String get metric_serial_killer_6_name;
+
+  /// No description provided for @metric_serial_killer_6_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies excitement or arousal in describing risky, violent, or predatory acts.'**
+  String get metric_serial_killer_6_description;
+
+  /// No description provided for @metric_serial_killer_7_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Compartmentalization Markers'**
+  String get metric_serial_killer_7_name;
+
+  /// No description provided for @metric_serial_killer_7_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flags abrupt shifts between normal and violent topics, indicating psychological separation.'**
+  String get metric_serial_killer_7_description;
+
+  /// No description provided for @metric_serial_killer_8_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Victim Selection Signals'**
+  String get metric_serial_killer_8_name;
+
+  /// No description provided for @metric_serial_killer_8_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects criteria or preferences for targeting specific vulnerable groups.'**
+  String get metric_serial_killer_8_description;
+
+  /// No description provided for @metric_serial_killer_9_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Sadistic Enjoyment'**
+  String get metric_serial_killer_9_name;
+
+  /// No description provided for @metric_serial_killer_9_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognizes pleasure derived from others\' pain, fear, or suffering.'**
+  String get metric_serial_killer_9_description;
+
+  /// No description provided for @metric_serial_killer_10_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Manipulative Harm'**
+  String get metric_serial_killer_10_name;
+
+  /// No description provided for @metric_serial_killer_10_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies language used to deceive or coerce others into harmful situations.'**
+  String get metric_serial_killer_10_description;
+
+  /// No description provided for @metric_serial_killer_11_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Stalking Indicators'**
+  String get metric_serial_killer_11_name;
+
+  /// No description provided for @metric_serial_killer_11_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flags detailed tracking, surveillance, or obsessive monitoring of a target.'**
+  String get metric_serial_killer_11_description;
+
+  /// No description provided for @metric_serial_killer_12_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Grooming Language'**
+  String get metric_serial_killer_12_name;
+
+  /// No description provided for @metric_serial_killer_12_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects gradual trust-building tactics to exploit or abuse victims.'**
+  String get metric_serial_killer_12_description;
+
+  /// No description provided for @metric_serial_killer_13_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Violent Fantasizing'**
+  String get metric_serial_killer_13_name;
+
+  /// No description provided for @metric_serial_killer_13_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies vivid descriptions of harming or killing others as a mental rehearsal.'**
+  String get metric_serial_killer_13_description;
+
+  /// No description provided for @metric_serial_killer_14_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Power Assertion'**
+  String get metric_serial_killer_14_name;
+
+  /// No description provided for @metric_serial_killer_14_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognizes statements emphasizing superiority or control over others.'**
+  String get metric_serial_killer_14_description;
+
+  /// No description provided for @metric_serial_killer_15_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Lack of Remorse'**
+  String get metric_serial_killer_15_name;
+
+  /// No description provided for @metric_serial_killer_15_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flags absence of guilt or regret after discussing harmful actions.'**
+  String get metric_serial_killer_15_description;
+
+  /// No description provided for @metric_serial_killer_16_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Blame Externalization'**
+  String get metric_serial_killer_16_name;
+
+  /// No description provided for @metric_serial_killer_16_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects shifting responsibility for violent urges onto victims or society.'**
+  String get metric_serial_killer_16_description;
+
+  /// No description provided for @metric_serial_killer_17_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Sexualized Violence'**
+  String get metric_serial_killer_17_name;
+
+  /// No description provided for @metric_serial_killer_17_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies merging of sexual and violent themes in language.'**
+  String get metric_serial_killer_17_description;
+
+  /// No description provided for @metric_serial_killer_18_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Isolation Tactics'**
+  String get metric_serial_killer_18_name;
+
+  /// No description provided for @metric_serial_killer_18_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognizes efforts to separate a target from support networks.'**
+  String get metric_serial_killer_18_description;
+
+  /// No description provided for @metric_serial_killer_19_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Gaslighting Patterns'**
+  String get metric_serial_killer_19_name;
+
+  /// No description provided for @metric_serial_killer_19_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flags language designed to distort reality and undermine a victim\'s sanity.'**
+  String get metric_serial_killer_19_description;
+
+  /// No description provided for @metric_serial_killer_20_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Threat Veiling'**
+  String get metric_serial_killer_20_name;
+
+  /// No description provided for @metric_serial_killer_20_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects implied threats or warnings masked as casual statements.'**
+  String get metric_serial_killer_20_description;
+
+  /// No description provided for @metric_serial_killer_21_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Possessive Language'**
+  String get metric_serial_killer_21_name;
+
+  /// No description provided for @metric_serial_killer_21_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies claims of ownership or entitlement over another person.'**
+  String get metric_serial_killer_21_description;
+
+  /// No description provided for @metric_serial_killer_22_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Revenge Themes'**
+  String get metric_serial_killer_22_name;
+
+  /// No description provided for @metric_serial_killer_22_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognizes fixation on retaliation or punishing perceived wrongs.'**
+  String get metric_serial_killer_22_description;
+
+  /// No description provided for @metric_serial_killer_23_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Narcissistic Grandeur'**
+  String get metric_serial_killer_23_name;
+
+  /// No description provided for @metric_serial_killer_23_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flags exaggerated self-importance and disregard for others\' worth.'**
+  String get metric_serial_killer_23_description;
+
+  /// No description provided for @metric_serial_killer_24_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Emotional Detachment'**
+  String get metric_serial_killer_24_name;
+
+  /// No description provided for @metric_serial_killer_24_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects clinical or distant tone when discussing trauma or harm.'**
+  String get metric_serial_killer_24_description;
+
+  /// No description provided for @metric_serial_killer_25_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Predatory Patience'**
+  String get metric_serial_killer_25_name;
+
+  /// No description provided for @metric_serial_killer_25_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies long-term planning language for future victimization.'**
+  String get metric_serial_killer_25_description;
+
+  /// No description provided for @metric_serial_killer_26_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Boundary Testing'**
+  String get metric_serial_killer_26_name;
+
+  /// No description provided for @metric_serial_killer_26_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognizes probing for limits or resistance in potential victims.'**
+  String get metric_serial_killer_26_description;
+
+  /// No description provided for @metric_serial_killer_27_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Minimization of Harm'**
+  String get metric_serial_killer_27_name;
+
+  /// No description provided for @metric_serial_killer_27_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flags downplaying the severity of violent or abusive acts.'**
+  String get metric_serial_killer_27_description;
+
+  /// No description provided for @metric_serial_killer_28_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Justification of Violence'**
+  String get metric_serial_killer_28_name;
+
+  /// No description provided for @metric_serial_killer_28_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects rationalizations for harming others as necessary or deserved.'**
+  String get metric_serial_killer_28_description;
+
+  /// No description provided for @metric_serial_killer_29_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Obsessive Focus'**
+  String get metric_serial_killer_29_name;
+
+  /// No description provided for @metric_serial_killer_29_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies repetitive, fixated thoughts on a specific person or act.'**
+  String get metric_serial_killer_29_description;
+
+  /// No description provided for @metric_serial_killer_30_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Cold Calculation'**
+  String get metric_serial_killer_30_name;
+
+  /// No description provided for @metric_serial_killer_30_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognizes strategic, emotionless planning of harmful actions.'**
+  String get metric_serial_killer_30_description;
+
+  /// No description provided for @metric_serial_killer_31_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Deceptive Charm'**
+  String get metric_serial_killer_31_name;
+
+  /// No description provided for @metric_serial_killer_31_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flags overly flattering or ingratiating language to manipulate.'**
+  String get metric_serial_killer_31_description;
+
+  /// No description provided for @metric_serial_killer_32_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Victim Blaming'**
+  String get metric_serial_killer_32_name;
+
+  /// No description provided for @metric_serial_killer_32_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects attributing fault to the target for their own victimization.'**
+  String get metric_serial_killer_32_description;
+
+  /// No description provided for @metric_serial_killer_33_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Escalation Signals'**
+  String get metric_serial_killer_33_name;
+
+  /// No description provided for @metric_serial_killer_33_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies progression from fantasy to intent in violent language.'**
+  String get metric_serial_killer_33_description;
+
+  /// No description provided for @metric_serial_killer_34_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Parasitic Orientation'**
+  String get metric_serial_killer_34_name;
+
+  /// No description provided for @metric_serial_killer_34_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognizes language treating others as resources to exploit.'**
+  String get metric_serial_killer_34_description;
+
+  /// No description provided for @metric_serial_killer_35_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Arousal Cues'**
+  String get metric_serial_killer_35_name;
+
+  /// No description provided for @metric_serial_killer_35_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flags physiological excitement indicators linked to violent themes.'**
+  String get metric_serial_killer_35_description;
+
+  /// No description provided for @metric_serial_killer_36_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Testing Loyalty'**
+  String get metric_serial_killer_36_name;
+
+  /// No description provided for @metric_serial_killer_36_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects demands for proof of allegiance or secrecy from accomplices.'**
+  String get metric_serial_killer_36_description;
+
+  /// No description provided for @metric_serial_killer_37_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Ritualistic Language'**
+  String get metric_serial_killer_37_name;
+
+  /// No description provided for @metric_serial_killer_37_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies patterned, ceremonial phrasing around violent acts.'**
+  String get metric_serial_killer_37_description;
+
+  /// No description provided for @metric_serial_killer_38_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Superiority Claims'**
+  String get metric_serial_killer_38_name;
+
+  /// No description provided for @metric_serial_killer_38_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognizes assertions of being above moral or legal constraints.'**
+  String get metric_serial_killer_38_description;
+
+  /// No description provided for @metric_serial_killer_39_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Emotional Vacuum'**
+  String get metric_serial_killer_39_name;
+
+  /// No description provided for @metric_serial_killer_39_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flags absence of emotional words in contexts requiring empathy.'**
+  String get metric_serial_killer_39_description;
+
+  /// No description provided for @metric_serial_killer_40_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Predatory Curiosity'**
+  String get metric_serial_killer_40_name;
+
+  /// No description provided for @metric_serial_killer_40_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects probing questions about a target\'s fears or vulnerabilities.'**
+  String get metric_serial_killer_40_description;
+
+  /// No description provided for @metric_serial_killer_41_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Silencing Threats'**
+  String get metric_serial_killer_41_name;
+
+  /// No description provided for @metric_serial_killer_41_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies warnings to prevent disclosure or reporting.'**
+  String get metric_serial_killer_41_description;
+
+  /// No description provided for @metric_serial_killer_42_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Dehumanizing Comparisons'**
+  String get metric_serial_killer_42_name;
+
+  /// No description provided for @metric_serial_killer_42_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognizes equating people to animals, objects, or subhuman entities.'**
+  String get metric_serial_killer_42_description;
+
+  /// No description provided for @metric_serial_killer_43_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Control Language'**
+  String get metric_serial_killer_43_name;
+
+  /// No description provided for @metric_serial_killer_43_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flags imperative or commanding tones aimed at dominating others.'**
+  String get metric_serial_killer_43_description;
+
+  /// No description provided for @metric_serial_killer_44_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Sadistic Detail'**
+  String get metric_serial_killer_44_name;
+
+  /// No description provided for @metric_serial_killer_44_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects excessive focus on graphic pain or suffering in narratives.'**
+  String get metric_serial_killer_44_description;
+
+  /// No description provided for @metric_serial_killer_45_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Manipulative Empathy'**
+  String get metric_serial_killer_45_name;
+
+  /// No description provided for @metric_serial_killer_45_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies feigned concern to lower a target\'s defenses.'**
+  String get metric_serial_killer_45_description;
+
+  /// No description provided for @metric_serial_killer_46_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Predatory Gaze'**
+  String get metric_serial_killer_46_name;
+
+  /// No description provided for @metric_serial_killer_46_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognizes language describing intense, invasive observation of targets.'**
+  String get metric_serial_killer_46_description;
+
+  /// No description provided for @metric_serial_killer_47_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Violent Identity'**
+  String get metric_serial_killer_47_name;
+
+  /// No description provided for @metric_serial_killer_47_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Flags self-identification as a predator, killer, or monster.'**
+  String get metric_serial_killer_47_description;
+
+  /// No description provided for @metric_serial_killer_48_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Thrill of the Hunt'**
+  String get metric_serial_killer_48_name;
+
+  /// No description provided for @metric_serial_killer_48_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Detects excitement in the process of stalking or pursuing victims.'**
+  String get metric_serial_killer_48_description;
+
+  /// No description provided for @metric_serial_killer_49_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Compulsive Confession'**
+  String get metric_serial_killer_49_name;
+
+  /// No description provided for @metric_serial_killer_49_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Identifies urges to disclose violent acts for psychological relief.'**
+  String get metric_serial_killer_49_description;
+
+  /// No description provided for @metric_serial_killer_50_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Finality Language'**
+  String get metric_serial_killer_50_name;
+
+  /// No description provided for @metric_serial_killer_50_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Recognizes references to ending, killing, or permanent silencing of targets.'**
+  String get metric_serial_killer_50_description;
+
+  /// No description provided for @packNarcissistLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'The Narcissist'**
+  String get packNarcissistLabel;
+
+  /// No description provided for @packSerialKillerLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'The Serial Killer'**
+  String get packSerialKillerLabel;
 }
 
 class _AppLocalizationsDelegate

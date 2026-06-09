@@ -3636,4 +3636,711 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get metric_ugly_100_description =>
       'Sürekli olarak partnerin kişiliğini, onurunu veya temel insanlık hakkını elinden alan dili tespit eder.';
+
+  @override
+  String get metric_narcissist_1_name => 'Büyüklenmeci Öz-Önem';
+
+  @override
+  String get metric_narcissist_1_description =>
+      'Gerçekçi kanıtların ötesinde, başarı, yetenek veya statüyle ilgili abartılı iddialar; genellikle bir benzersizlik duygusuyla birlikte.';
+
+  @override
+  String get metric_narcissist_2_name => 'Hak Talep Etme';
+
+  @override
+  String get metric_narcissist_2_description =>
+      'Karşılıklılık olmaksızın özel muamele veya isteklerine otomatik uyum konusunda mantıksız beklentiler.';
+
+  @override
+  String get metric_narcissist_3_name => 'Empati Eksikliği';
+
+  @override
+  String get metric_narcissist_3_description =>
+      'Başkalarının duygularını tanıma veya onaylama konusunda yetersizlik veya isteksizlik; duygusal ihtiyaçları önemsiz olarak reddetme.';
+
+  @override
+  String get metric_narcissist_4_name => 'Hayranlık Arayışı';
+
+  @override
+  String get metric_narcissist_4_description =>
+      'Kırılgan öz saygıyı güçlendirmek için aşırı derecede hayranlık, iltifat veya onay arayışı.';
+
+  @override
+  String get metric_narcissist_5_name => 'Üçgenleme Taktikleri';
+
+  @override
+  String get metric_narcissist_5_description =>
+      'Kıskançlık, rekabet yaratmak veya algıları manipüle etmek için çatışmalara üçüncü bir tarafı dahil etme.';
+
+  @override
+  String get metric_narcissist_6_name => 'Yoğun Sevgi Bombardımanı';
+
+  @override
+  String get metric_narcissist_6_description =>
+      'Kontrolü ele geçirmek ve hedefi idealize etmek için bir ilişkinin başlarında aşırı iltifat, hediye veya ilgi gösterme.';
+
+  @override
+  String get metric_narcissist_7_name => 'Değersizleştirici Eleştiri';
+
+  @override
+  String get metric_narcissist_7_description =>
+      'İdealizasyonun ardından sert eleştiri, küçümseme veya hor görmeye ani geçiş; hedefin öz değerini aşındırma.';
+
+  @override
+  String get metric_narcissist_8_name => 'Sessiz Muamele Cezası';
+
+  @override
+  String get metric_narcissist_8_description =>
+      'Kaygı ve uyum sağlamak için kasıtlı bir ceza olarak iletişimi veya sevgiyi kesme.';
+
+  @override
+  String get metric_narcissist_9_name => 'DARVO Suçlama Kaydırması';
+
+  @override
+  String get metric_narcissist_9_description =>
+      'Sorumluluğu reddetme, suçlayana saldırma ve mağdur-fail rollerini tersine çevirerek hesap vermekten kaçınma.';
+
+  @override
+  String get metric_narcissist_10_name => 'Gaz Lambası Gerçeklik Çarpıtması';
+
+  @override
+  String get metric_narcissist_10_description =>
+      'Hedefin kendi hafızasından veya akıl sağlığından şüphe etmesini sağlamak için gerçekleri, olayları veya duyguları inkar etme veya çarpıtma.';
+
+  @override
+  String get metric_narcissist_11_name => 'Eleştiriye Öfke';
+
+  @override
+  String get metric_narcissist_11_description =>
+      'Yapıcı olsa bile, algılanan herhangi bir hakaret veya geri bildirime karşı yoğun öfke, küçümseme veya misilleme.';
+
+  @override
+  String get metric_narcissist_12_name => 'Sınır İhlali';
+
+  @override
+  String get metric_narcissist_12_description =>
+      'Belirtilen sınırları, mahremiyeti veya kişisel alanı pişmanlık duymadan veya müzakere etmeden görmezden gelme veya ihlal etme.';
+
+  @override
+  String get metric_narcissist_13_name => 'Kıskançlık İfadesi';
+
+  @override
+  String get metric_narcissist_13_description =>
+      'Başkalarının başarılarına veya sahip olduklarına duyulan kıskançlık, genellikle değersizleştirme veya baltalama girişimleriyle birlikte.';
+
+  @override
+  String get metric_narcissist_14_name => 'Sömürücü Davranış';
+
+  @override
+  String get metric_narcissist_14_description =>
+      'Kişisel kazanç, statü veya kaynaklar için başkalarını, onların refahını veya rızasını umursamadan kullanma.';
+
+  @override
+  String get metric_narcissist_15_name => 'Ayna Manipülasyonu';
+
+  @override
+  String get metric_narcissist_15_description =>
+      'Sahte bir uyum oluşturmak ve güven kazanmak için hedefin ilgi alanlarını, değerlerini veya özelliklerini taklit etme.';
+
+  @override
+  String get metric_narcissist_16_name => 'Üstünlük İddiaları';
+
+  @override
+  String get metric_narcissist_16_description =>
+      'Başkalarına karşı doğuştan gelen bir üstünlük olduğunu, genellikle küçümseyici veya aşağılayıcı bir dille ifade etme.';
+
+  @override
+  String get metric_narcissist_17_name => 'Fantezi Takıntısı';
+
+  @override
+  String get metric_narcissist_17_description =>
+      'Gerçekçi olmayan sınırsız başarı, güç, zeka veya ideal aşk hakkında takıntılı konuşma.';
+
+  @override
+  String get metric_narcissist_18_name => 'Özel Statü İddiası';
+
+  @override
+  String get metric_narcissist_18_description =>
+      'Yalnızca yüksek statülü kişiler veya kurumlar tarafından anlaşılabilecekleri veya onlarla ilişki kurabilecekleri inancı.';
+
+  @override
+  String get metric_narcissist_19_name => 'Kişilerarası Sömürü';
+
+  @override
+  String get metric_narcissist_19_description =>
+      'Başkalarının kaynaklarından, zamanından veya duygularından karşılık vermeden veya minnettarlık duymadan faydalanma.';
+
+  @override
+  String get metric_narcissist_20_name => 'Pişmanlık Eksikliği';
+
+  @override
+  String get metric_narcissist_20_description =>
+      'Zarar verdikten sonra suçluluk duymama veya özür dilememe, genellikle eylemlerini hedefin bunu hak ettiği gerekçesiyle haklı çıkarma.';
+
+  @override
+  String get metric_narcissist_21_name => 'Rekabetçi Baltalama';
+
+  @override
+  String get metric_narcissist_21_description =>
+      'Üstün bir konumu korumak için başkalarının başarılarını veya ilişkilerini sabote etme.';
+
+  @override
+  String get metric_narcissist_22_name => 'İdealleştirme Aşaması';
+
+  @override
+  String get metric_narcissist_22_description =>
+      'Bir ilişkinin başlarında aşırı övgü ve hayranlık göstererek hedef kişide gerçekçi olmayan beklentiler oluşturma.';
+
+  @override
+  String get metric_narcissist_23_name => 'Değersizleştirme Aşaması';
+
+  @override
+  String get metric_narcissist_23_description =>
+      'İdealleştirmeden sonra kademeli veya ani eleştiri ve küçümseme ile kafa karışıklığı ve kendinden şüphe duyma yaratma.';
+
+  @override
+  String get metric_narcissist_24_name => 'Terk Etme Dürtüsü';
+
+  @override
+  String get metric_narcissist_24_description =>
+      'Hedef kişi artık narsisistik besin sağlamadığında veya onlara meydan okuduğunda ilişkiyi aniden sonlandırma.';
+
+  @override
+  String get metric_narcissist_25_name => 'Geri Çekme Girişimleri';
+
+  @override
+  String get metric_narcissist_25_description =>
+      'Terk edilmiş hedef kişiyi vaatler, suçluluk veya manipülasyonla yeniden kazanarak narsisistik besin elde etme.';
+
+  @override
+  String get metric_narcissist_26_name => 'Kusur Yansıtma';
+
+  @override
+  String get metric_narcissist_26_description =>
+      'Kendi olumsuz özelliklerini veya davranışlarını başkalarına atfederek öz farkındalıktan kaçınma.';
+
+  @override
+  String get metric_narcissist_27_name => 'Suçlulukla Kontrol';
+
+  @override
+  String get metric_narcissist_27_description =>
+      'Suçluluk uyandıran ifadeler kullanarak başkalarını itaat veya bakım vermeye yönlendirme.';
+
+  @override
+  String get metric_narcissist_28_name => 'Duygusal Değişkenlik';
+
+  @override
+  String get metric_narcissist_28_description =>
+      'Algılanan narsisistik yaralanma ile tetiklenen, çekicilikten öfkeye hızlı ruh hali değişimleri.';
+
+  @override
+  String get metric_narcissist_29_name => 'Duyguları Geçersiz Kılma';
+
+  @override
+  String get metric_narcissist_29_description =>
+      'Başkalarının duygularını aşırı tepki veya mantıksız olarak reddetme veya küçümseme.';
+
+  @override
+  String get metric_narcissist_30_name => 'Konuşmaları Tekelleştirme';
+
+  @override
+  String get metric_narcissist_30_description =>
+      'Kendine odaklı konularla diyaloğa hakim olma, başkalarının sözünü kesme veya katkılarını görmezden gelme.';
+
+  @override
+  String get metric_narcissist_31_name => 'İsim Takma ve Aşağılama';
+
+  @override
+  String get metric_narcissist_31_description =>
+      'Hedefi değersizleştirmek ve kontrol etmek için hakaret, etiket veya küçük düşürücü ifadeler kullanmak.';
+
+  @override
+  String get metric_narcissist_32_name => 'Terk Etme Tehditleri';
+
+  @override
+  String get metric_narcissist_32_description =>
+      'Uyum veya ilgi sağlamak için kaybetme veya reddedilme korkusunu kullanmak.';
+
+  @override
+  String get metric_narcissist_33_name => 'Mağdur Rolü Oynama';
+
+  @override
+  String get metric_narcissist_33_description =>
+      'Sempati uyandırmak ve sorumluluktan kaçmak için kendilerini haksız yere muamele görmüş gibi göstermek.';
+
+  @override
+  String get metric_narcissist_34_name => 'Şehitlik Kompleksi';
+
+  @override
+  String get metric_narcissist_34_description =>
+      'Başkalarında suçluluk ve yükümlülük duygusu yaratmak için aşırı fedakarlık veya acı çekme iddiasında bulunmak.';
+
+  @override
+  String get metric_narcissist_35_name => 'Seçici Hafıza';
+
+  @override
+  String get metric_narcissist_35_description =>
+      'Sorumluluktan kaçmak için sözleri, anlaşmaları veya zararlı eylemleri uygun bir şekilde unutmak.';
+
+  @override
+  String get metric_narcissist_36_name => 'İletişim Engelleme';
+
+  @override
+  String get metric_narcissist_36_description =>
+      'Kontrolü sürdürmek için diyaloğa girmeyi reddetmek, soruları görmezden gelmek veya tartışmaları durdurmak.';
+
+  @override
+  String get metric_narcissist_37_name => 'Gelecek Sahtekarlığı';
+
+  @override
+  String get metric_narcissist_37_description =>
+      'Sahte umut ve bağımlılık yaratmak için ortak gelecek planları hakkında büyük vaatlerde bulunmak.';
+
+  @override
+  String get metric_narcissist_38_name => 'Kara Propaganda';
+
+  @override
+  String get metric_narcissist_38_description =>
+      'Hedefi izole etmek ve itibarını zedelemek için onlar hakkında kötü niyetli söylentiler veya yalanlar yaymak.';
+
+  @override
+  String get metric_narcissist_39_name => 'İzolasyon Taktikleri';
+
+  @override
+  String get metric_narcissist_39_description =>
+      'Bağımlılığı artırmak için arkadaşlar, aile veya destek sistemleriyle teması caydırmak veya engellemek.';
+
+  @override
+  String get metric_narcissist_40_name => 'Finansal Sömürü';
+
+  @override
+  String get metric_narcissist_40_description =>
+      'Kişisel kazanç veya bağımlılık yaratmak için finansal kaynakları manipüle etmek veya kontrol etmek.';
+
+  @override
+  String get metric_narcissist_41_name => 'Cinsel Zorlama';
+
+  @override
+  String get metric_narcissist_41_description =>
+      'Gerçek rıza olmadan cinsel uyum sağlamak için baskı, suçluluk veya manipülasyon kullanma.';
+
+  @override
+  String get metric_narcissist_42_name => 'Sınır Testi';
+
+  @override
+  String get metric_narcissist_42_description =>
+      'Hangi davranışın tolere edildiğini görmek için sürekli sınırları zorlama ve ardından ihlalleri tırmandırma.';
+
+  @override
+  String get metric_narcissist_43_name => 'Gaz Lambası İnkârı';
+
+  @override
+  String get metric_narcissist_43_description =>
+      'Meydana gelen olayları veya ifadeleri düpedüz inkâr ederek hedefin gerçekliği sorgulamasına neden olma.';
+
+  @override
+  String get metric_narcissist_44_name => 'Endişeleri Önemsizleştirme';
+
+  @override
+  String get metric_narcissist_44_description =>
+      'Meşru şikayetleri önemsiz veya aşırı hassas olarak reddetme.';
+
+  @override
+  String get metric_narcissist_45_name => 'Suçu Dışsallaştırma';
+
+  @override
+  String get metric_narcissist_45_description =>
+      'Tüm sorunları ve çatışmaları başkalarına atfetme, asla kişisel hata kabul etmeme.';
+
+  @override
+  String get metric_narcissist_46_name => 'Kıskançlık Provokasyonu';
+
+  @override
+  String get metric_narcissist_46_description =>
+      'Kıskançlık uyandırmak ve duygusal kontrolü sürdürmek için başkalarıyla flört etme veya onları övme.';
+
+  @override
+  String get metric_narcissist_47_name => 'Duygusal Şantaj';
+
+  @override
+  String get metric_narcissist_47_description =>
+      'Kararları ve davranışları manipüle etmek için korku, yükümlülük veya suçluluk kullanma.';
+
+  @override
+  String get metric_narcissist_48_name => 'Sahte İçgörü';
+
+  @override
+  String get metric_narcissist_48_description =>
+      'Reforme olmuş görünmek için öz-farkındalık veya empati taklidi yapma, ardından toksik kalıplara geri dönme.';
+
+  @override
+  String get metric_narcissist_49_name => 'Küçümseyici Ton';
+
+  @override
+  String get metric_narcissist_49_description =>
+      'Başkalarını aşağılamak ve reddetmek için alay, hiciv veya hor gören dil kullanma.';
+
+  @override
+  String get metric_narcissist_50_name => 'İntikam Fantezileri';
+
+  @override
+  String get metric_narcissist_50_description =>
+      'Kendilerine haksızlık edenlere karşı misilleme veya cezalandırma arzularını ifade etme.';
+
+  @override
+  String get metric_serial_killer_1_name => 'Yırtıcı Çerçeveleme';
+
+  @override
+  String get metric_serial_killer_1_description =>
+      'Konuşmacıyı avcı, hedefi ise av olarak konumlandıran dili tespit eder; yırtıcı niyeti gösterir.';
+
+  @override
+  String get metric_serial_killer_2_name => 'Empati Eksikliği';
+
+  @override
+  String get metric_serial_killer_2_description =>
+      'Duygusal rezonans veya başkalarının acısına yönelik ilgi eksikliği gösteren ifadeleri tanımlar; duygusuzluğu işaret eder.';
+
+  @override
+  String get metric_serial_killer_3_name => 'İnsanlıktan Çıkarıcı Etiketler';
+
+  @override
+  String get metric_serial_killer_3_description =>
+      'Kurbanların insanlığını soyutlayan aşağılayıcı terimler veya nesneleştirici etiketlerin kullanımını işaretler.';
+
+  @override
+  String get metric_serial_killer_4_name => 'Nesneleştirme İpuçları';
+
+  @override
+  String get metric_serial_killer_4_description =>
+      'Bireyleri tatmin için araç veya nesne olarak ele alan dili tanır.';
+
+  @override
+  String get metric_serial_killer_5_name => 'Kontrol Takıntısı';
+
+  @override
+  String get metric_serial_killer_5_description =>
+      'Baskınlık, manipülasyon veya uyumu zorlama konusunda takıntılı referansları tespit eder.';
+
+  @override
+  String get metric_serial_killer_6_name => 'Heyecan Arayışı Tonu';
+
+  @override
+  String get metric_serial_killer_6_description =>
+      'Riskli, şiddet içeren veya yırtıcı eylemleri tanımlarken heyecan veya uyarılmayı belirler.';
+
+  @override
+  String get metric_serial_killer_7_name => 'Bölümlendirme İşaretleri';
+
+  @override
+  String get metric_serial_killer_7_description =>
+      'Normal ve şiddet içeren konular arasında ani geçişleri işaretler; psikolojik ayrışmayı gösterir.';
+
+  @override
+  String get metric_serial_killer_8_name => 'Kurban Seçimi Sinyalleri';
+
+  @override
+  String get metric_serial_killer_8_description =>
+      'Belirli savunmasız grupları hedeflemek için kriterler veya tercihleri tespit eder.';
+
+  @override
+  String get metric_serial_killer_9_name => 'Sadist Zevk';
+
+  @override
+  String get metric_serial_killer_9_description =>
+      'Başkalarının acı, korku veya ıstırabından alınan zevki tanır.';
+
+  @override
+  String get metric_serial_killer_10_name => 'Manipülatif Zarar';
+
+  @override
+  String get metric_serial_killer_10_description =>
+      'Başkalarını aldatmak veya zararlı durumlara zorlamak için kullanılan dili tanımlar.';
+
+  @override
+  String get metric_serial_killer_11_name => 'Takip Göstergeleri';
+
+  @override
+  String get metric_serial_killer_11_description =>
+      'Bir hedefin ayrıntılı takibi, gözetlenmesi veya takıntılı izlenmesini işaretler.';
+
+  @override
+  String get metric_serial_killer_12_name => 'Hazırlık Dili';
+
+  @override
+  String get metric_serial_killer_12_description =>
+      'Mağdurları sömürmek veya istismar etmek için kademeli güven inşa etme taktiklerini tespit eder.';
+
+  @override
+  String get metric_serial_killer_13_name => 'Şiddet Fantezileri';
+
+  @override
+  String get metric_serial_killer_13_description =>
+      'Zihinsel bir prova olarak başkalarına zarar verme veya öldürmeye dair canlı betimlemeleri tanımlar.';
+
+  @override
+  String get metric_serial_killer_14_name => 'Güç İddiası';
+
+  @override
+  String get metric_serial_killer_14_description =>
+      'Başkaları üzerinde üstünlük veya kontrol vurgulayan ifadeleri tanır.';
+
+  @override
+  String get metric_serial_killer_15_name => 'Pişmanlık Eksikliği';
+
+  @override
+  String get metric_serial_killer_15_description =>
+      'Zararlı eylemleri tartıştıktan sonra suçluluk veya pişmanlık yokluğunu işaretler.';
+
+  @override
+  String get metric_serial_killer_16_name => 'Dışsallaştırma';
+
+  @override
+  String get metric_serial_killer_16_description =>
+      'Şiddet dürtülerinin sorumluluğunu mağdurlara veya topluma yükleme eğilimini tespit eder.';
+
+  @override
+  String get metric_serial_killer_17_name => 'Cinselleştirilmiş Şiddet';
+
+  @override
+  String get metric_serial_killer_17_description =>
+      'Dilde cinsel ve şiddet temalarının birleşimini tanımlar.';
+
+  @override
+  String get metric_serial_killer_18_name => 'İzolasyon Taktikleri';
+
+  @override
+  String get metric_serial_killer_18_description =>
+      'Bir hedefi destek ağlarından ayırma çabalarını tanır.';
+
+  @override
+  String get metric_serial_killer_19_name => 'Gaz Lambası Desenleri';
+
+  @override
+  String get metric_serial_killer_19_description =>
+      'Gerçekliği çarpıtmak ve mağdurun akıl sağlığını zayıflatmak için tasarlanmış dili işaretler.';
+
+  @override
+  String get metric_serial_killer_20_name => 'Tehdit Gizleme';
+
+  @override
+  String get metric_serial_killer_20_description =>
+      'Gündelik ifadelerin arkasına gizlenmiş ima edilen tehditler veya uyarıları tespit eder.';
+
+  @override
+  String get metric_serial_killer_21_name => 'Sahiplenici Dil';
+
+  @override
+  String get metric_serial_killer_21_description =>
+      'Bir kişi üzerinde sahiplik veya hak iddialarını tanımlar.';
+
+  @override
+  String get metric_serial_killer_22_name => 'İntikam Temaları';
+
+  @override
+  String get metric_serial_killer_22_description =>
+      'Misilleme veya algılanan haksızlıkları cezalandırma takıntısını tanır.';
+
+  @override
+  String get metric_serial_killer_23_name => 'Narsistik Büyüklenme';
+
+  @override
+  String get metric_serial_killer_23_description =>
+      'Abartılı öz-önem ve başkalarının değerini göz ardı etmeyi işaretler.';
+
+  @override
+  String get metric_serial_killer_24_name => 'Duygusal Kopukluk';
+
+  @override
+  String get metric_serial_killer_24_description =>
+      'Travma veya zarar tartışılırken klinik veya mesafeli tonu tespit eder.';
+
+  @override
+  String get metric_serial_killer_25_name => 'Yırtıcı Sabır';
+
+  @override
+  String get metric_serial_killer_25_description =>
+      'Gelecekteki mağduriyet için uzun vadeli planlama dilini tanımlar.';
+
+  @override
+  String get metric_serial_killer_26_name => 'Sınır Testi';
+
+  @override
+  String get metric_serial_killer_26_description =>
+      'Potansiyel kurbanlarda sınırları veya direnci yoklamayı tanır.';
+
+  @override
+  String get metric_serial_killer_27_name => 'Zararı Küçümseme';
+
+  @override
+  String get metric_serial_killer_27_description =>
+      'Şiddetli veya taciz edici eylemlerin ciddiyetini hafife almayı işaretler.';
+
+  @override
+  String get metric_serial_killer_28_name => 'Şiddeti Meşrulaştırma';
+
+  @override
+  String get metric_serial_killer_28_description =>
+      'Başkalarına zarar vermeyi gerekli veya hak edilmiş olarak rasyonalize etmeyi tespit eder.';
+
+  @override
+  String get metric_serial_killer_29_name => 'Takıntılı Odaklanma';
+
+  @override
+  String get metric_serial_killer_29_description =>
+      'Belirli bir kişi veya eylem üzerinde tekrarlayan, sabitlenmiş düşünceleri tanımlar.';
+
+  @override
+  String get metric_serial_killer_30_name => 'Soğuk Hesaplama';
+
+  @override
+  String get metric_serial_killer_30_description =>
+      'Zararlı eylemlerin stratejik, duygusuz planlamasını tanır.';
+
+  @override
+  String get metric_serial_killer_31_name => 'Aldatıcı Cazibe';
+
+  @override
+  String get metric_serial_killer_31_description =>
+      'Manipülasyon amacıyla aşırı övücü veya yaltaklanan dili işaretler.';
+
+  @override
+  String get metric_serial_killer_32_name => 'Kurbanı Suçlama';
+
+  @override
+  String get metric_serial_killer_32_description =>
+      'Hedefe, kendi mağduriyetinin sorumluluğunu yükleme eğilimini tespit eder.';
+
+  @override
+  String get metric_serial_killer_33_name => 'Tırmanma Sinyalleri';
+
+  @override
+  String get metric_serial_killer_33_description =>
+      'Şiddet içeren dilde fanteziden niyete geçişi tanımlar.';
+
+  @override
+  String get metric_serial_killer_34_name => 'Parazitik Yönelim';
+
+  @override
+  String get metric_serial_killer_34_description =>
+      'Başkalarını sömürülecek kaynaklar olarak gören dili tanır.';
+
+  @override
+  String get metric_serial_killer_35_name => 'Uyarılma İpuçları';
+
+  @override
+  String get metric_serial_killer_35_description =>
+      'Şiddet temalarıyla bağlantılı fizyolojik heyecan göstergelerini işaretler.';
+
+  @override
+  String get metric_serial_killer_36_name => 'Sadakat Testi';
+
+  @override
+  String get metric_serial_killer_36_description =>
+      'Suç ortaklarından bağlılık veya gizlilik kanıtı talep eden ifadeleri tespit eder.';
+
+  @override
+  String get metric_serial_killer_37_name => 'Ritüelistik Dil';
+
+  @override
+  String get metric_serial_killer_37_description =>
+      'Şiddet eylemleri etrafında kalıplaşmış, törensel ifadeleri tanımlar.';
+
+  @override
+  String get metric_serial_killer_38_name => 'Üstünlük İddiaları';
+
+  @override
+  String get metric_serial_killer_38_description =>
+      'Ahlaki veya yasal kısıtlamaların üzerinde olduğunu öne süren ifadeleri tanır.';
+
+  @override
+  String get metric_serial_killer_39_name => 'Duygusal Boşluk';
+
+  @override
+  String get metric_serial_killer_39_description =>
+      'Empati gerektiren bağlamlarda duygusal kelimelerin yokluğunu işaretler.';
+
+  @override
+  String get metric_serial_killer_40_name => 'Yırtıcı Merak';
+
+  @override
+  String get metric_serial_killer_40_description =>
+      'Hedefin korkuları veya zayıflıkları hakkında sorgulayıcı soruları tespit eder.';
+
+  @override
+  String get metric_serial_killer_41_name => 'Sessizleştirme Tehditleri';
+
+  @override
+  String get metric_serial_killer_41_description =>
+      'İfşa veya raporlamayı önlemek için yapılan uyarıları tanımlar.';
+
+  @override
+  String get metric_serial_killer_42_name =>
+      'İnsanlıktan Çıkarıcı Karşılaştırmalar';
+
+  @override
+  String get metric_serial_killer_42_description =>
+      'İnsanları hayvanlara, nesnelere veya insan altı varlıklara eşitlemeyi tanır.';
+
+  @override
+  String get metric_serial_killer_43_name => 'Kontrol Dili';
+
+  @override
+  String get metric_serial_killer_43_description =>
+      'Başkalarına hükmetmeyi amaçlayan emir veya buyurgan tonları işaretler.';
+
+  @override
+  String get metric_serial_killer_44_name => 'Sadist Detay';
+
+  @override
+  String get metric_serial_killer_44_description =>
+      'Anlatılarda grafik acı veya ıstıraba aşırı odaklanmayı tespit eder.';
+
+  @override
+  String get metric_serial_killer_45_name => 'Manipülatif Empati';
+
+  @override
+  String get metric_serial_killer_45_description =>
+      'Hedefin savunmasını düşürmek için taklit edilen ilgiyi tanımlar.';
+
+  @override
+  String get metric_serial_killer_46_name => 'Yırtıcı Bakış';
+
+  @override
+  String get metric_serial_killer_46_description =>
+      'Hedeflerin yoğun, müdahaleci gözlemini tanımlayan dili tanır.';
+
+  @override
+  String get metric_serial_killer_47_name => 'Şiddet Kimliği';
+
+  @override
+  String get metric_serial_killer_47_description =>
+      'Kendini yırtıcı, katil veya canavar olarak tanımlamayı işaretler.';
+
+  @override
+  String get metric_serial_killer_48_name => 'Avın Heyecanı';
+
+  @override
+  String get metric_serial_killer_48_description =>
+      'Kurbanları takip etme veya izleme sürecindeki heyecanı tespit eder.';
+
+  @override
+  String get metric_serial_killer_49_name => 'Zorlayıcı İtiraf';
+
+  @override
+  String get metric_serial_killer_49_description =>
+      'Psikolojik rahatlama için şiddet eylemlerini ifşa etme dürtülerini tanımlar.';
+
+  @override
+  String get metric_serial_killer_50_name => 'Sonluluk Dili';
+
+  @override
+  String get metric_serial_killer_50_description =>
+      'Hedeflerin sonlandırılması, öldürülmesi veya kalıcı olarak sessizleştirilmesine yapılan atıfları tanır.';
+
+  @override
+  String get packNarcissistLabel => 'Narsist';
+
+  @override
+  String get packSerialKillerLabel => 'Seri Katil';
 }

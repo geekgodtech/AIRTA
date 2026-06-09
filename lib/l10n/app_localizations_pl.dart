@@ -3637,4 +3637,711 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get metric_ugly_100_description =>
       'Wykrywa ciągłe używanie języka, który pozbawia partnera osobowości, godności lub prawa do podstawowego człowieczeństwa.';
+
+  @override
+  String get metric_narcissist_1_name => 'Wielka samoocena';
+
+  @override
+  String get metric_narcissist_1_description =>
+      'Przesadne twierdzenia o osiągnięciach, talentach lub statusie, wykraczające poza realistyczne dowody, często z poczuciem wyjątkowości.';
+
+  @override
+  String get metric_narcissist_2_name => 'Żądania uprzywilejowania';
+
+  @override
+  String get metric_narcissist_2_description =>
+      'Nierealistyczne oczekiwania specjalnego traktowania lub automatycznego spełniania ich życzeń bez wzajemności.';
+
+  @override
+  String get metric_narcissist_3_name => 'Deficyt empatii';
+
+  @override
+  String get metric_narcissist_3_description =>
+      'Niezdolność lub niechęć do rozpoznawania lub potwierdzania uczuć innych, odrzucanie potrzeb emocjonalnych jako nieistotnych.';
+
+  @override
+  String get metric_narcissist_4_name => 'Poszukiwanie podziwu';
+
+  @override
+  String get metric_narcissist_4_description =>
+      'Nadmierne zabieganie o podziw, komplementy lub walidację w celu wzmocnienia kruchej samooceny.';
+
+  @override
+  String get metric_narcissist_5_name => 'Taktyki triangulacji';
+
+  @override
+  String get metric_narcissist_5_description =>
+      'Wprowadzanie osoby trzeciej w konflikty w celu wywołania zazdrości, rywalizacji lub manipulowania percepcją.';
+
+  @override
+  String get metric_narcissist_6_name => 'Intensywność bombardowania miłością';
+
+  @override
+  String get metric_narcissist_6_description =>
+      'Przytłaczające pochlebstwa, prezenty lub uwaga na początku związku w celu uzyskania kontroli i idealizacji celu.';
+
+  @override
+  String get metric_narcissist_7_name => 'Krytyka dewaluacyjna';
+
+  @override
+  String get metric_narcissist_7_description =>
+      'Nagłe przejście do ostrej krytyki, poniżania lub pogardy po idealizacji, niszczące poczucie własnej wartości celu.';
+
+  @override
+  String get metric_narcissist_8_name => 'Kara milczeniem';
+
+  @override
+  String get metric_narcissist_8_description =>
+      'Wstrzymanie komunikacji lub uczuć jako celowa kara w celu wywołania lęku i uległości.';
+
+  @override
+  String get metric_narcissist_9_name => 'Przerzucanie winy DARVO';
+
+  @override
+  String get metric_narcissist_9_description =>
+      'Zaprzeczanie odpowiedzialności, atakowanie oskarżyciela i odwracanie ról ofiary-sprawcy w celu uniknięcia odpowiedzialności.';
+
+  @override
+  String get metric_narcissist_10_name =>
+      'Zniekształcanie rzeczywistości gaslightingiem';
+
+  @override
+  String get metric_narcissist_10_description =>
+      'Zaprzeczanie lub zniekształcanie faktów, wydarzeń lub uczuć, aby cel zwątpił we własną pamięć lub zdrowie psychiczne.';
+
+  @override
+  String get metric_narcissist_11_name => 'Gniew na krytykę';
+
+  @override
+  String get metric_narcissist_11_description =>
+      'Intensywny gniew, pogarda lub odwet w odpowiedzi na jakiekolwiek postrzegane uchybienie lub informację zwrotną, nawet konstruktywną.';
+
+  @override
+  String get metric_narcissist_12_name => 'Naruszenie granic';
+
+  @override
+  String get metric_narcissist_12_description =>
+      'Ignorowanie lub przekraczanie ustalonych granic, prywatności lub przestrzeni osobistej bez skruchy lub negocjacji.';
+
+  @override
+  String get metric_narcissist_13_name => 'Wyrażanie zazdrości';
+
+  @override
+  String get metric_narcissist_13_description =>
+      'Uraza wobec sukcesów lub posiadania innych, często połączona z dewaluacją lub próbami podważania.';
+
+  @override
+  String get metric_narcissist_14_name => 'Zachowanie eksploatacyjne';
+
+  @override
+  String get metric_narcissist_14_description =>
+      'Wykorzystywanie innych dla osobistych korzyści, statusu lub zasobów bez względu na ich dobro lub zgodę.';
+
+  @override
+  String get metric_narcissist_15_name => 'Manipulacja lustrzana';
+
+  @override
+  String get metric_narcissist_15_description =>
+      'Naśladowanie zainteresowań, wartości lub cech celu w celu stworzenia fałszywego porozumienia i zdobycia zaufania.';
+
+  @override
+  String get metric_narcissist_16_name => 'Twierdzenia o wyższości';
+
+  @override
+  String get metric_narcissist_16_description =>
+      'Twierdzenie o wrodzonej wyższości nad innymi, często z protekcjonalnym lub lekceważącym językiem.';
+
+  @override
+  String get metric_narcissist_17_name => 'Zajęcie fantazjami';
+
+  @override
+  String get metric_narcissist_17_description =>
+      'Obsesyjne mówienie o nieograniczonym sukcesie, władzy, błyskotliwości lub idealnej miłości, które jest nierealistyczne.';
+
+  @override
+  String get metric_narcissist_18_name => 'Twierdzenie o specjalnym statusie';
+
+  @override
+  String get metric_narcissist_18_description =>
+      'Przekonanie, że mogą być zrozumiani tylko przez osoby lub instytucje o wysokim statusie lub się z nimi wiązać.';
+
+  @override
+  String get metric_narcissist_19_name => 'Eksploatacja interpersonalna';
+
+  @override
+  String get metric_narcissist_19_description =>
+      'Wykorzystywanie zasobów, czasu lub emocji innych bez wzajemności lub wdzięczności.';
+
+  @override
+  String get metric_narcissist_20_name => 'Brak skruchy';
+
+  @override
+  String get metric_narcissist_20_description =>
+      'Brak poczucia winy lub przeprosin po wyrządzeniu szkody, często usprawiedliwianie działań jako zasłużonych przez cel.';
+
+  @override
+  String get metric_narcissist_21_name => 'Podważanie konkurencyjne';
+
+  @override
+  String get metric_narcissist_21_description =>
+      'Sabotowanie osiągnięć lub relacji innych w celu utrzymania pozycji wyższości.';
+
+  @override
+  String get metric_narcissist_22_name => 'Faza idealizacji';
+
+  @override
+  String get metric_narcissist_22_description =>
+      'Nadmierne pochwały i uwielbienie na początku związku, stawiające nierealistyczne oczekiwania wobec celu.';
+
+  @override
+  String get metric_narcissist_23_name => 'Faza dewaluacji';
+
+  @override
+  String get metric_narcissist_23_description =>
+      'Stopniowa lub nagła krytyka i pogarda po idealizacji, wywołująca zamęt i zwątpienie w siebie.';
+
+  @override
+  String get metric_narcissist_24_name => 'Impuls odrzucenia';
+
+  @override
+  String get metric_narcissist_24_description =>
+      'Nagłe zakończenie związku, gdy cel przestaje dostarczać narcystycznego zaopatrzenia lub stawia opór.';
+
+  @override
+  String get metric_narcissist_25_name => 'Próby hooveringu';
+
+  @override
+  String get metric_narcissist_25_description =>
+      'Ponowne angażowanie odrzuconego celu obietnicami, poczuciem winy lub manipulacją w celu odzyskania zaopatrzenia.';
+
+  @override
+  String get metric_narcissist_26_name => 'Projekcja wad';
+
+  @override
+  String get metric_narcissist_26_description =>
+      'Oskarżanie innych o własne negatywne cechy lub zachowania, aby uniknąć samoświadomości.';
+
+  @override
+  String get metric_narcissist_27_name => 'Kontrola przez poczucie winy';
+
+  @override
+  String get metric_narcissist_27_description =>
+      'Używanie stwierdzeń wywołujących poczucie winy w celu manipulowania innymi do uległości lub opieki.';
+
+  @override
+  String get metric_narcissist_28_name => 'Emocjonalna zmienność';
+
+  @override
+  String get metric_narcissist_28_description =>
+      'Gwałtowne wahania nastroju od uroku do gniewu, często wywołane postrzeganym narcystycznym urazem.';
+
+  @override
+  String get metric_narcissist_29_name => 'Unieważnianie uczuć';
+
+  @override
+  String get metric_narcissist_29_description =>
+      'Odrzucanie lub bagatelizowanie emocji innych jako nadmiernych reakcji lub irracjonalnych.';
+
+  @override
+  String get metric_narcissist_30_name => 'Monopolizowanie rozmów';
+
+  @override
+  String get metric_narcissist_30_description =>
+      'Dominowanie w dialogu tematami dotyczącymi siebie, przerywanie lub ignorowanie wkładu innych.';
+
+  @override
+  String get metric_narcissist_31_name => 'Obraźliwe etykietowanie';
+
+  @override
+  String get metric_narcissist_31_description =>
+      'Używanie obelg, etykiet lub poniżających określeń w celu dewaluacji i kontroli ofiary.';
+
+  @override
+  String get metric_narcissist_32_name => 'Groźby porzucenia';
+
+  @override
+  String get metric_narcissist_32_description =>
+      'Wykorzystywanie strachu przed stratą lub odrzuceniem w celu wymuszenia posłuszeństwa lub uwagi.';
+
+  @override
+  String get metric_narcissist_33_name => 'Granie roli ofiary';
+
+  @override
+  String get metric_narcissist_33_description =>
+      'Przedstawianie siebie jako niesprawiedliwie traktowanego, aby wzbudzić współczucie i uniknąć odpowiedzialności.';
+
+  @override
+  String get metric_narcissist_34_name => 'Kompleks męczennika';
+
+  @override
+  String get metric_narcissist_34_description =>
+      'Twierdzenie o nadmiernym poświęceniu lub cierpieniu w celu wywołania poczucia winy i zobowiązania u innych.';
+
+  @override
+  String get metric_narcissist_35_name => 'Selektywna pamięć';
+
+  @override
+  String get metric_narcissist_35_description =>
+      'Wygodne zapominanie o obietnicach, umowach lub szkodliwych działaniach, aby uniknąć odpowiedzialności.';
+
+  @override
+  String get metric_narcissist_36_name => 'Blokowanie komunikacji';
+
+  @override
+  String get metric_narcissist_36_description =>
+      'Odmowa udziału w dialogu, ignorowanie pytań lub zamykanie dyskusji w celu utrzymania kontroli.';
+
+  @override
+  String get metric_narcissist_37_name => 'Fałszywe obietnice przyszłości';
+
+  @override
+  String get metric_narcissist_37_description =>
+      'Składanie wielkich obietnic dotyczących wspólnych planów na przyszłość w celu stworzenia fałszywej nadziei i uzależnienia.';
+
+  @override
+  String get metric_narcissist_38_name => 'Kampania oszczerstw';
+
+  @override
+  String get metric_narcissist_38_description =>
+      'Rozpowszechnianie złośliwych plotek lub kłamstw na temat ofiary w celu jej izolacji i zniszczenia reputacji.';
+
+  @override
+  String get metric_narcissist_39_name => 'Taktyki izolacji';
+
+  @override
+  String get metric_narcissist_39_description =>
+      'Zniechęcanie lub uniemożliwianie kontaktu z przyjaciółmi, rodziną lub systemami wsparcia w celu zwiększenia zależności.';
+
+  @override
+  String get metric_narcissist_40_name => 'Wykorzystanie finansowe';
+
+  @override
+  String get metric_narcissist_40_description =>
+      'Manipulowanie lub kontrolowanie zasobów finansowych dla osobistej korzyści lub w celu stworzenia zależności.';
+
+  @override
+  String get metric_narcissist_41_name => 'Przymus seksualny';
+
+  @override
+  String get metric_narcissist_41_description =>
+      'Stosowanie presji, poczucia winy lub manipulacji w celu uzyskania zgody seksualnej bez autentycznej dobrowolności.';
+
+  @override
+  String get metric_narcissist_42_name => 'Testowanie granic';
+
+  @override
+  String get metric_narcissist_42_description =>
+      'Wielokrotne przekraczanie granic, aby sprawdzić, jakie zachowania są tolerowane, a następnie eskalowanie naruszeń.';
+
+  @override
+  String get metric_narcissist_43_name => 'Zaprzeczanie przez gaslighting';
+
+  @override
+  String get metric_narcissist_43_description =>
+      'Kategoryczne zaprzeczanie wydarzeniom lub wypowiedziom, które miały miejsce, co powoduje, że ofiara kwestionuje rzeczywistość.';
+
+  @override
+  String get metric_narcissist_44_name => 'Bagatelizowanie obaw';
+
+  @override
+  String get metric_narcissist_44_description =>
+      'Odrzucanie uzasadnionych skarg jako nieistotnych lub przesadnie wrażliwych.';
+
+  @override
+  String get metric_narcissist_45_name => 'Eksternalizacja winy';
+
+  @override
+  String get metric_narcissist_45_description =>
+      'Przypisywanie wszystkich problemów i konfliktów innym, bez przyjmowania osobistej odpowiedzialności.';
+
+  @override
+  String get metric_narcissist_46_name => 'Prowokowanie zazdrości';
+
+  @override
+  String get metric_narcissist_46_description =>
+      'Flirtowanie lub chwalenie innych w celu wzbudzenia zazdrości i utrzymania kontroli emocjonalnej.';
+
+  @override
+  String get metric_narcissist_47_name => 'Szantaż emocjonalny';
+
+  @override
+  String get metric_narcissist_47_description =>
+      'Wykorzystywanie strachu, obowiązku lub poczucia winy do manipulowania decyzjami i zachowaniem.';
+
+  @override
+  String get metric_narcissist_48_name => 'Pozorny wgląd';
+
+  @override
+  String get metric_narcissist_48_description =>
+      'Udawanie samoświadomości lub empatii, aby sprawiać wrażenie zmiany, a następnie powracanie do toksycznych wzorców.';
+
+  @override
+  String get metric_narcissist_49_name => 'Pogardliwy ton';
+
+  @override
+  String get metric_narcissist_49_description =>
+      'Używanie sarkazmu, drwin lub lekceważącego języka w celu poniżania i odrzucania innych.';
+
+  @override
+  String get metric_narcissist_50_name => 'Fantazje o zemście';
+
+  @override
+  String get metric_narcissist_50_description =>
+      'Wyrażanie pragnienia odwetu lub kary wobec tych, którzy ich obrazili.';
+
+  @override
+  String get metric_serial_killer_1_name => 'Drapieżne Ramowanie';
+
+  @override
+  String get metric_serial_killer_1_description =>
+      'Wykrywa język, który pozycjonuje mówcę jako myśliwego, a cel jako ofiarę, wskazując na drapieżne zamiary.';
+
+  @override
+  String get metric_serial_killer_2_name => 'Deficyt Empatii';
+
+  @override
+  String get metric_serial_killer_2_description =>
+      'Identyfikuje wypowiedzi pozbawione emocjonalnego rezonansu lub troski o cierpienie innych, sugerujące bezduszność.';
+
+  @override
+  String get metric_serial_killer_3_name => 'Odczłowieczające Etykiety';
+
+  @override
+  String get metric_serial_killer_3_description =>
+      'Wskazuje na użycie obraźliwych terminów lub uprzedmiotawiających etykiet, które pozbawiają ofiary człowieczeństwa.';
+
+  @override
+  String get metric_serial_killer_4_name => 'Sygnały Uprzedmiotowienia';
+
+  @override
+  String get metric_serial_killer_4_description =>
+      'Rozpoznaje język traktujący jednostki jako narzędzia lub przedmioty do zaspokojenia potrzeb.';
+
+  @override
+  String get metric_serial_killer_5_name => 'Fiksacja na Kontroli';
+
+  @override
+  String get metric_serial_killer_5_description =>
+      'Wykrywa obsesyjne odniesienia do dominacji, manipulacji lub wymuszania posłuszeństwa.';
+
+  @override
+  String get metric_serial_killer_6_name => 'Ton Poszukiwania Podniecenia';
+
+  @override
+  String get metric_serial_killer_6_description =>
+      'Identyfikuje podekscytowanie lub pobudzenie w opisywaniu ryzykownych, brutalnych lub drapieżnych czynów.';
+
+  @override
+  String get metric_serial_killer_7_name => 'Markery Kompartmentalizacji';
+
+  @override
+  String get metric_serial_killer_7_description =>
+      'Wskazuje na nagłe przejścia między normalnymi a brutalnymi tematami, sugerujące psychologiczne oddzielenie.';
+
+  @override
+  String get metric_serial_killer_8_name => 'Sygnały Wyboru Ofiary';
+
+  @override
+  String get metric_serial_killer_8_description =>
+      'Wykrywa kryteria lub preferencje dotyczące celowania w konkretne wrażliwe grupy.';
+
+  @override
+  String get metric_serial_killer_9_name => 'Sadystyczna Przyjemność';
+
+  @override
+  String get metric_serial_killer_9_description =>
+      'Rozpoznaje czerpanie przyjemności z bólu, strachu lub cierpienia innych.';
+
+  @override
+  String get metric_serial_killer_10_name => 'Manipulacyjna Krzywda';
+
+  @override
+  String get metric_serial_killer_10_description =>
+      'Identyfikuje język używany do oszukiwania lub zmuszania innych do szkodliwych sytuacji.';
+
+  @override
+  String get metric_serial_killer_11_name => 'Wskaźniki Stalkingu';
+
+  @override
+  String get metric_serial_killer_11_description =>
+      'Wykrywa szczegółowe śledzenie, inwigilację lub obsesyjne monitorowanie celu.';
+
+  @override
+  String get metric_serial_killer_12_name => 'Język Groomingu';
+
+  @override
+  String get metric_serial_killer_12_description =>
+      'Wykrywa stopniowe taktyki budowania zaufania w celu wykorzystania lub znęcania się nad ofiarami.';
+
+  @override
+  String get metric_serial_killer_13_name => 'Przemocowe Fantazjowanie';
+
+  @override
+  String get metric_serial_killer_13_description =>
+      'Identyfikuje żywe opisy krzywdzenia lub zabijania innych jako mentalną próbę.';
+
+  @override
+  String get metric_serial_killer_14_name => 'Asertywność Władzy';
+
+  @override
+  String get metric_serial_killer_14_description =>
+      'Rozpoznaje wypowiedzi podkreślające wyższość lub kontrolę nad innymi.';
+
+  @override
+  String get metric_serial_killer_15_name => 'Brak Skruchy';
+
+  @override
+  String get metric_serial_killer_15_description =>
+      'Wykrywa brak winy lub żalu po omówieniu szkodliwych działań.';
+
+  @override
+  String get metric_serial_killer_16_name => 'Eksternalizacja Win';
+
+  @override
+  String get metric_serial_killer_16_description =>
+      'Wykrywa przerzucanie odpowiedzialności za przemocowe popędy na ofiary lub społeczeństwo.';
+
+  @override
+  String get metric_serial_killer_17_name => 'Seksualizowana Przemoc';
+
+  @override
+  String get metric_serial_killer_17_description =>
+      'Identyfikuje łączenie tematów seksualnych i przemocy w języku.';
+
+  @override
+  String get metric_serial_killer_18_name => 'Taktyki Izolacji';
+
+  @override
+  String get metric_serial_killer_18_description =>
+      'Rozpoznaje wysiłki mające na celu oddzielenie celu od sieci wsparcia.';
+
+  @override
+  String get metric_serial_killer_19_name => 'Wzorce Gaslightingu';
+
+  @override
+  String get metric_serial_killer_19_description =>
+      'Wykrywa język zaprojektowany do zniekształcania rzeczywistości i podważania zdrowia psychicznego ofiary.';
+
+  @override
+  String get metric_serial_killer_20_name => 'Maskowanie Gróźb';
+
+  @override
+  String get metric_serial_killer_20_description =>
+      'Wykrywa ukryte groźby lub ostrzeżenia zamaskowane jako swobodne wypowiedzi.';
+
+  @override
+  String get metric_serial_killer_21_name => 'Język Zaborczy';
+
+  @override
+  String get metric_serial_killer_21_description =>
+      'Identyfikuje twierdzenia o własności lub uprawnieniach wobec innej osoby.';
+
+  @override
+  String get metric_serial_killer_22_name => 'Motywy Zemsty';
+
+  @override
+  String get metric_serial_killer_22_description =>
+      'Rozpoznaje fiksację na odwetu lub karaniu postrzeganych krzywd.';
+
+  @override
+  String get metric_serial_killer_23_name => 'Narcystyczna Wielkość';
+
+  @override
+  String get metric_serial_killer_23_description =>
+      'Wskazuje na przesadne poczucie własnej ważności i lekceważenie wartości innych.';
+
+  @override
+  String get metric_serial_killer_24_name => 'Emocjonalne Odłączenie';
+
+  @override
+  String get metric_serial_killer_24_description =>
+      'Wykrywa kliniczny lub zdystansowany ton podczas omawiania traumy lub krzywdy.';
+
+  @override
+  String get metric_serial_killer_25_name => 'Drapieżna Cierpliwość';
+
+  @override
+  String get metric_serial_killer_25_description =>
+      'Identyfikuje język długoterminowego planowania przyszłej wiktymizacji.';
+
+  @override
+  String get metric_serial_killer_26_name => 'Testowanie Granic';
+
+  @override
+  String get metric_serial_killer_26_description =>
+      'Rozpoznaje sondowanie granic lub oporu u potencjalnych ofiar.';
+
+  @override
+  String get metric_serial_killer_27_name => 'Minimalizacja Szkody';
+
+  @override
+  String get metric_serial_killer_27_description =>
+      'Wskazuje na bagatelizowanie powagi aktów przemocy lub nadużyć.';
+
+  @override
+  String get metric_serial_killer_28_name => 'Usprawiedliwianie Przemocy';
+
+  @override
+  String get metric_serial_killer_28_description =>
+      'Wykrywa racjonalizacje krzywdzenia innych jako konieczne lub zasłużone.';
+
+  @override
+  String get metric_serial_killer_29_name => 'Obsesyjne Skupienie';
+
+  @override
+  String get metric_serial_killer_29_description =>
+      'Identyfikuje powtarzające się, utrwalone myśli na temat konkretnej osoby lub czynu.';
+
+  @override
+  String get metric_serial_killer_30_name => 'Zimna Kalkulacja';
+
+  @override
+  String get metric_serial_killer_30_description =>
+      'Rozpoznaje strategiczne, pozbawione emocji planowanie szkodliwych działań.';
+
+  @override
+  String get metric_serial_killer_31_name => 'Zwodniczy Urok';
+
+  @override
+  String get metric_serial_killer_31_description =>
+      'Wskazuje na nadmiernie pochlebny lub przypochlebny język używany do manipulacji.';
+
+  @override
+  String get metric_serial_killer_32_name => 'Obwinianie Ofiary';
+
+  @override
+  String get metric_serial_killer_32_description =>
+      'Wykrywa przypisywanie winy ofierze za jej własną wiktymizację.';
+
+  @override
+  String get metric_serial_killer_33_name => 'Sygnały Eskalacji';
+
+  @override
+  String get metric_serial_killer_33_description =>
+      'Identyfikuje przejście od fantazji do zamiaru w agresywnym języku.';
+
+  @override
+  String get metric_serial_killer_34_name => 'Orientacja Pasożytnicza';
+
+  @override
+  String get metric_serial_killer_34_description =>
+      'Rozpoznaje język traktujący innych jako zasoby do wykorzystania.';
+
+  @override
+  String get metric_serial_killer_35_name => 'Sygnały Pobudzenia';
+
+  @override
+  String get metric_serial_killer_35_description =>
+      'Wskazuje na fizjologiczne oznaki podniecenia związane z przemocą.';
+
+  @override
+  String get metric_serial_killer_36_name => 'Testowanie Lojalności';
+
+  @override
+  String get metric_serial_killer_36_description =>
+      'Wykrywa żądania dowodów lojalności lub tajemnicy od wspólników.';
+
+  @override
+  String get metric_serial_killer_37_name => 'Język Rytualny';
+
+  @override
+  String get metric_serial_killer_37_description =>
+      'Identyfikuje wzorcowe, ceremonialne sformułowania wokół aktów przemocy.';
+
+  @override
+  String get metric_serial_killer_38_name => 'Twierdzenia o Wyższości';
+
+  @override
+  String get metric_serial_killer_38_description =>
+      'Rozpoznaje stwierdzenia o byciu ponad normami moralnymi lub prawnymi.';
+
+  @override
+  String get metric_serial_killer_39_name => 'Pustka Emocjonalna';
+
+  @override
+  String get metric_serial_killer_39_description =>
+      'Wskazuje na brak słów emocjonalnych w kontekstach wymagających empatii.';
+
+  @override
+  String get metric_serial_killer_40_name => 'Drapieżna Ciekawość';
+
+  @override
+  String get metric_serial_killer_40_description =>
+      'Wykrywa dociekliwe pytania o lęki lub słabości ofiary.';
+
+  @override
+  String get metric_serial_killer_41_name => 'Uciszanie zagrożeń';
+
+  @override
+  String get metric_serial_killer_41_description =>
+      'Identyfikuje ostrzeżenia mające zapobiec ujawnieniu lub zgłoszeniu.';
+
+  @override
+  String get metric_serial_killer_42_name => 'Odczłowieczające porównania';
+
+  @override
+  String get metric_serial_killer_42_description =>
+      'Rozpoznaje porównywanie ludzi do zwierząt, przedmiotów lub istot podludzkich.';
+
+  @override
+  String get metric_serial_killer_43_name => 'Język kontroli';
+
+  @override
+  String get metric_serial_killer_43_description =>
+      'Wykrywa rozkazujący lub dominujący ton mający na celu podporządkowanie innych.';
+
+  @override
+  String get metric_serial_killer_44_name => 'Sadystyczne szczegóły';
+
+  @override
+  String get metric_serial_killer_44_description =>
+      'Wykrywa nadmierne skupienie na graficznym bólu lub cierpieniu w narracjach.';
+
+  @override
+  String get metric_serial_killer_45_name => 'Manipulacyjna empatia';
+
+  @override
+  String get metric_serial_killer_45_description =>
+      'Identyfikuje udawaną troskę mającą na celu obniżenie czujności ofiary.';
+
+  @override
+  String get metric_serial_killer_46_name => 'Drapieżne spojrzenie';
+
+  @override
+  String get metric_serial_killer_46_description =>
+      'Rozpoznaje język opisujący intensywną, inwazyjną obserwację celów.';
+
+  @override
+  String get metric_serial_killer_47_name => 'Przemocowa tożsamość';
+
+  @override
+  String get metric_serial_killer_47_description =>
+      'Wykrywa samoidentyfikację jako drapieżnika, zabójcy lub potwora.';
+
+  @override
+  String get metric_serial_killer_48_name => 'Dreszcz polowania';
+
+  @override
+  String get metric_serial_killer_48_description =>
+      'Wykrywa podekscytowanie w procesie tropienia lub ścigania ofiar.';
+
+  @override
+  String get metric_serial_killer_49_name => 'Kom pulsywne wyznanie';
+
+  @override
+  String get metric_serial_killer_49_description =>
+      'Identyfikuje pragnienie ujawnienia aktów przemocy w celu uzyskania ulgi psychicznej.';
+
+  @override
+  String get metric_serial_killer_50_name => 'Język ostateczności';
+
+  @override
+  String get metric_serial_killer_50_description =>
+      'Rozpoznaje odniesienia do zakończenia, zabijania lub trwałego uciszenia celów.';
+
+  @override
+  String get packNarcissistLabel => 'Narcysta';
+
+  @override
+  String get packSerialKillerLabel => 'Seryjny Morderca';
 }

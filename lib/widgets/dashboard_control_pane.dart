@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
@@ -854,10 +855,24 @@ class _FromFileButton extends StatelessWidget {
 // METRIC SELECTOR SECTION
 // ---------------------------------------------------------------------------
 
-class _MetricSelectorSection extends StatelessWidget {
+class _MetricSelectorSection extends StatefulWidget {
   final ToxicityAnalyzerController controller;
 
   const _MetricSelectorSection({required this.controller});
+
+  @override
+  State<_MetricSelectorSection> createState() => _MetricSelectorSectionState();
+}
+
+class _MetricSelectorSectionState extends State<_MetricSelectorSection> {
+  // Track which accordion sections are expanded
+  bool _standardExpanded   = true;
+  bool _goodExpanded       = true;
+  bool _badExpanded        = true;
+  bool _uglyExpanded       = true;
+  bool _narcissistExpanded = true;
+  bool _serialKillerExpanded = true;
+  bool _customExpanded     = true;
 
   @override
   Widget build(BuildContext context) {
@@ -866,21 +881,23 @@ class _MetricSelectorSection extends StatelessWidget {
     final ssWidth = ScreenshotAutomation.instance.windowSize.value.width;
     final screenWidth = (kScreenshotMode && ssWidth > 0) ? ssWidth : mq.size.width;
     final columnCount = _metricColumnCount(screenWidth);
-    // Ordered tiles: controller.availableMetrics returns
-    // [initial 100] -> [purchased pack metrics] -> [custom metrics]
-    final allMetricTiles = controller.availableMetrics;
-    final goodUnlocked = controller.isPackGoodUnlocked;
-    final badUnlocked  = controller.isPackBadUnlocked;
-    final uglyUnlocked = controller.isPackUglyUnlocked;
+    final controller = widget.controller;
 
-    // Sales tiles appear after all metric tiles.
-    // Custom-purchase tile is always visible.
-    // Each pack sales tile disappears once that pack is purchased.
+    final goodUnlocked         = controller.isPackGoodUnlocked;
+    final badUnlocked          = controller.isPackBadUnlocked;
+    final uglyUnlocked         = controller.isPackUglyUnlocked;
+    final narcissistUnlocked   = controller.isPackNarcissistUnlocked;
+    final serialKillerUnlocked = controller.isPackSerialKillerUnlocked;
+    final customMetrics        = controller.customMetrics;
+
+    // Sales tiles — below all accordion sections, always visible until purchased
     final salesTiles = <Widget>[
       _PurchaseCustomMetricTile(controller: controller),
-      if (!goodUnlocked) _MetricPackTile.good(controller: controller),
-      if (!badUnlocked)  _MetricPackTile.bad(controller: controller),
-      if (!uglyUnlocked) _MetricPackTile.ugly(controller: controller),
+      if (!goodUnlocked)         _MetricPackTile.good(controller: controller),
+      if (!badUnlocked)          _MetricPackTile.bad(controller: controller),
+      if (!uglyUnlocked)         _MetricPackTile.ugly(controller: controller),
+      if (!narcissistUnlocked)   _MetricPackTile.narcissist(controller: controller),
+      if (!serialKillerUnlocked) _MetricPackTile.serialKiller(controller: controller),
     ];
 
     return Padding(
@@ -888,6 +905,7 @@ class _MetricSelectorSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // ── Header ──────────────────────────────────────────────────────
           Text(
             l10n.psychologicalMetrics,
             style: Theme.of(context).textTheme.titleLarge,
@@ -913,8 +931,7 @@ class _MetricSelectorSection extends StatelessWidget {
                 ),
               ),
               TextButton.icon(
-                onPressed: () =>
-                    _showLoadMetricListDialog(context, controller),
+                onPressed: () => _showLoadMetricListDialog(context, controller),
                 icon: const Icon(Icons.folder_open, size: 16),
                 label: Text(l10n.loadSelections),
                 style: TextButton.styleFrom(
@@ -938,31 +955,248 @@ class _MetricSelectorSection extends StatelessWidget {
           const SizedBox(height: 6),
           Text(l10n.metricsDescription),
           const SizedBox(height: 12),
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: columnCount,
-              crossAxisSpacing: 12,
-              mainAxisSpacing: 12,
-              childAspectRatio: 0.85,
-            ),
-            itemCount: allMetricTiles.length + salesTiles.length,
-            itemBuilder: (context, index) {
-              if (index < allMetricTiles.length) {
-                final metric = allMetricTiles[index];
-                return _MetricButtonTile(
-                  metric: metric,
-                  isSelected: controller.isMetricSelected(metric),
-                  color: _metricTileColor(index),
-                  onPressed: () => controller.toggleMetricSelection(metric),
-                );
-              }
-              return salesTiles[index - allMetricTiles.length];
-            },
+
+          // ── Accordion Sections ───────────────────────────────────────────
+          _MetricAccordionSection(
+            title: 'Standard Pack',
+            subtitle: '100 Metrics',
+            icon: Icons.psychology,
+            isExpanded: _standardExpanded,
+            onToggle: () => setState(() => _standardExpanded = !_standardExpanded),
+            metrics: controller.standardMetrics,
+            controller: controller,
+            columnCount: columnCount,
+            colorOffset: 0,
           ),
+          if (goodUnlocked)
+            _MetricAccordionSection(
+              title: 'The Good Pack',
+              subtitle: '100 Metrics Addon',
+              icon: Icons.sentiment_satisfied_alt,
+              isExpanded: _goodExpanded,
+              onToggle: () => setState(() => _goodExpanded = !_goodExpanded),
+              metrics: controller.packGoodMetrics,
+              controller: controller,
+              columnCount: columnCount,
+              colorOffset: 100,
+            ),
+          if (badUnlocked)
+            _MetricAccordionSection(
+              title: 'The Bad Pack',
+              subtitle: '100 Metrics Addon',
+              icon: Icons.warning_amber_rounded,
+              isExpanded: _badExpanded,
+              onToggle: () => setState(() => _badExpanded = !_badExpanded),
+              metrics: controller.packBadMetrics,
+              controller: controller,
+              columnCount: columnCount,
+              colorOffset: 200,
+            ),
+          if (uglyUnlocked)
+            _MetricAccordionSection(
+              title: 'The Ugly Pack',
+              subtitle: '100 Metrics Addon',
+              icon: Icons.dangerous_outlined,
+              isExpanded: _uglyExpanded,
+              onToggle: () => setState(() => _uglyExpanded = !_uglyExpanded),
+              metrics: controller.packUglyMetrics,
+              controller: controller,
+              columnCount: columnCount,
+              colorOffset: 300,
+            ),
+          if (narcissistUnlocked)
+            _MetricAccordionSection(
+              title: 'Narcissist Pack',
+              subtitle: '50 Metrics Addon',
+              icon: Icons.face_retouching_natural,
+              isExpanded: _narcissistExpanded,
+              onToggle: () => setState(() => _narcissistExpanded = !_narcissistExpanded),
+              metrics: controller.packNarcissistMetrics,
+              controller: controller,
+              columnCount: columnCount,
+              colorOffset: 400,
+            ),
+          if (serialKillerUnlocked)
+            _MetricAccordionSection(
+              title: 'Serial Killer Pack',
+              subtitle: '50 Metrics Addon',
+              icon: Icons.coronavirus_outlined,
+              isExpanded: _serialKillerExpanded,
+              onToggle: () => setState(() => _serialKillerExpanded = !_serialKillerExpanded),
+              metrics: controller.packSerialKillerMetrics,
+              controller: controller,
+              columnCount: columnCount,
+              colorOffset: 450,
+            ),
+          if (customMetrics.isNotEmpty)
+            _MetricAccordionSection(
+              title: 'Custom Metrics',
+              subtitle: '\${customMetrics.length} Metric\${customMetrics.length == 1 ? "" : "s"}',
+              icon: Icons.add_circle_outline,
+              isExpanded: _customExpanded,
+              onToggle: () => setState(() => _customExpanded = !_customExpanded),
+              metrics: customMetrics,
+              controller: controller,
+              columnCount: columnCount,
+              colorOffset: 500,
+            ),
+
+          // ── Sales Tiles (below accordion, always visible) ────────────────
+          if (salesTiles.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            LayoutBuilder(
+              builder: (context, constraints) {
+                const spacing = 12.0;
+                final cols = columnCount;
+                final tileWidth = (constraints.maxWidth - spacing * (cols - 1)) / cols;
+                final tileHeight = cols == 1
+                    ? (tileWidth * 0.90).clamp(260.0, 380.0)
+                    : cols == 2
+                        ? (tileWidth * 1.20).clamp(220.0, 340.0)
+                        : (tileWidth * 1.35).clamp(180.0, 280.0);
+                return GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: cols,
+                    crossAxisSpacing: spacing,
+                    mainAxisSpacing: spacing,
+                    mainAxisExtent: tileHeight,
+                  ),
+                  itemCount: salesTiles.length,
+                  itemBuilder: (context, index) => salesTiles[index],
+                );
+              },
+            ),
+          ],
         ],
       ),
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// ACCORDION SECTION WIDGET
+// ---------------------------------------------------------------------------
+
+class _MetricAccordionSection extends StatelessWidget {
+  final String title;
+  final String subtitle;
+  final IconData icon;
+  final bool isExpanded;
+  final VoidCallback onToggle;
+  final List<PsychologicalMetric> metrics;
+  final ToxicityAnalyzerController controller;
+  final int columnCount;
+  final int colorOffset;
+
+  const _MetricAccordionSection({
+    required this.title,
+    required this.subtitle,
+    required this.icon,
+    required this.isExpanded,
+    required this.onToggle,
+    required this.metrics,
+    required this.controller,
+    required this.columnCount,
+    required this.colorOffset,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Accordion header — tappable row
+        InkWell(
+          onTap: onToggle,
+          borderRadius: BorderRadius.circular(10),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+            decoration: BoxDecoration(
+              color: isDark
+                  ? theme.colorScheme.surfaceContainerHighest.withOpacity(0.55)
+                  : theme.colorScheme.surfaceContainerHighest.withOpacity(0.45),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Row(
+              children: [
+                Icon(icon, size: 20, color: theme.colorScheme.primary),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        title,
+                        style: theme.textTheme.titleSmall?.copyWith(
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      Text(
+                        subtitle,
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          color: theme.colorScheme.onSurface.withOpacity(0.6),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Icon(
+                  isExpanded ? Icons.expand_less : Icons.expand_more,
+                  color: theme.colorScheme.onSurface.withOpacity(0.6),
+                ),
+              ],
+            ),
+          ),
+        ),
+        // Collapsible grid
+        AnimatedCrossFade(
+          duration: const Duration(milliseconds: 220),
+          crossFadeState: isExpanded ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+          firstChild: LayoutBuilder(
+            builder: (context, constraints) {
+              const spacing = 12.0;
+              final cols = columnCount;
+              final tileWidth = (constraints.maxWidth - spacing * (cols - 1)) / cols;
+              final tileHeight = cols == 1
+                  ? (tileWidth * 0.90).clamp(260.0, 380.0)
+                  : cols == 2
+                      ? (tileWidth * 1.20).clamp(220.0, 340.0)
+                      : (tileWidth * 1.35).clamp(180.0, 280.0);
+              return Padding(
+                padding: const EdgeInsets.only(top: 10, bottom: 4),
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: cols,
+                    crossAxisSpacing: spacing,
+                    mainAxisSpacing: spacing,
+                    mainAxisExtent: tileHeight,
+                  ),
+                  itemCount: metrics.length,
+                  itemBuilder: (context, idx) {
+                    final metric = metrics[idx];
+                    return _MetricButtonTile(
+                      metric: metric,
+                      isSelected: controller.isMetricSelected(metric),
+                      color: _metricTileColor(colorOffset + idx),
+                      onPressed: () => controller.toggleMetricSelection(metric),
+                    );
+                  },
+                ),
+              );
+            },
+          ),
+          secondChild: const SizedBox.shrink(),
+        ),
+        const SizedBox(height: 8),
+      ],
     );
   }
 }
@@ -1017,38 +1251,39 @@ class _MetricButtonTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                      child: ClipRect(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              l10n.getMetricName(metric.id, fallbackName: metric.name),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          AutoSizeText(
+                            l10n.getMetricName(metric.id, fallbackName: metric.name),
+                            maxLines: 2,
+                            minFontSize: 10,
+                            wrapWords: false,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: foregroundColor,
+                              fontWeight: FontWeight.w700,
+                              fontSize: (constraints.maxWidth * 0.30).clamp(18.0, 34.0),
+                              height: 1.12,
+                            ),
+                          ),
+                          SizedBox(height: constraints.maxWidth * 0.025),
+                          Expanded(
+                            child: AutoSizeText(
+                              l10n.getMetricDescription(metric.id, fallbackDescription: metric.description),
+                              minFontSize: 9,
+                              overflow: TextOverflow.clip,
                               style: TextStyle(
-                                color: foregroundColor,
-                                fontWeight: FontWeight.w700,
-                                fontSize: (constraints.maxWidth * 0.165).clamp(12.0, 26.0),
-                                height: 1.12,
-                              ),
-                            ),
-                            SizedBox(height: constraints.maxWidth * 0.03),
-                            Flexible(
-                              child: Text(
-                                l10n.getMetricDescription(metric.id, fallbackDescription: metric.description),
-                                overflow: TextOverflow.fade,
-                                style: TextStyle(
-                                  color: foregroundColor.withOpacity(
-                                    isSelected ? 0.96 : 0.72,
-                                  ),
-                                  fontSize: (constraints.maxWidth * 0.115).clamp(9.5, 17.0),
-                                  height: 1.18,
+                                color: foregroundColor.withOpacity(
+                                  isSelected ? 0.96 : 0.75,
                                 ),
+                                fontSize: 32,
+                                height: 1.3,
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -1106,50 +1341,51 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                      child: ClipRect(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 3),
-                                  child: Icon(Icons.add_circle_outline,
-                                      color: colorScheme.secondary,
-                                      size: (constraints.maxWidth * 0.165).clamp(14.0, 26.0)),
-                                ),
-                                const SizedBox(width: 5),
-                                Expanded(
-                                  child: Text(
-                                    l10n.purchaseCustomMetricTileTitle,
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                      color: colorScheme.onSecondaryContainer,
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: (constraints.maxWidth * 0.165).clamp(12.0, 26.0),
-                                      height: 1.12,
-                                    ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 3),
+                                child: Icon(Icons.add_circle_outline,
+                                    color: colorScheme.secondary,
+                                    size: (constraints.maxWidth * 0.165).clamp(14.0, 26.0)),
+                              ),
+                              const SizedBox(width: 5),
+                              Expanded(
+                                child: AutoSizeText(
+                                  l10n.purchaseCustomMetricTileTitle,
+                                  maxLines: 2,
+                                  minFontSize: 10,
+                                  wrapWords: false,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    color: colorScheme.onSecondaryContainer,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: (constraints.maxWidth * 0.30).clamp(18.0, 34.0),
+                                    height: 1.12,
                                   ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(height: constraints.maxWidth * 0.03),
-                            Flexible(
-                              child: Text(
-                                l10n.purchaseCustomMetricTileDescription,
-                                overflow: TextOverflow.fade,
-                                style: TextStyle(
-                                  color: colorScheme.onSecondaryContainer.withOpacity(0.78),
-                                  fontSize: (constraints.maxWidth * 0.115).clamp(9.5, 17.0),
-                                  height: 1.18,
-                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: constraints.maxWidth * 0.03),
+                          Expanded(
+                            child: AutoSizeText(
+                              l10n.purchaseCustomMetricTileDescription,
+                              minFontSize: 9,
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                color: colorScheme.onSecondaryContainer.withOpacity(0.78),
+                                fontSize: 32,
+                                height: 1.3,
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -1252,7 +1488,7 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
           builder: (ctx, setState) => AlertDialog(
             title: Text(ctxL10n.purchaseCustomMetricEnterNameTitle),
             content: Column(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -1360,7 +1596,7 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
         return AlertDialog(
           title: Text(ctxL10n.purchaseCustomMetricDefineTitleWithName(name)),
           content: Column(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
@@ -1427,7 +1663,7 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
         return AlertDialog(
           title: Text(ctxL10n.purchaseCustomMetricPreviewTitle),
           content: Column(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
@@ -1514,7 +1750,7 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
 // METRIC EXPANSION PACK TILES  (Good / Bad / Ugly)
 // ---------------------------------------------------------------------------
 
-enum _PackId { good, bad, ugly }
+enum _PackId { good, bad, ugly, narcissist, serialKiller }
 
 class _MetricPackTile extends StatelessWidget {
   final _PackId packId;
@@ -1527,6 +1763,10 @@ class _MetricPackTile extends StatelessWidget {
       _MetricPackTile._(packId: _PackId.bad, controller: controller);
   factory _MetricPackTile.ugly({required ToxicityAnalyzerController controller}) =>
       _MetricPackTile._(packId: _PackId.ugly, controller: controller);
+  factory _MetricPackTile.narcissist({required ToxicityAnalyzerController controller}) =>
+      _MetricPackTile._(packId: _PackId.narcissist, controller: controller);
+  factory _MetricPackTile.serialKiller({required ToxicityAnalyzerController controller}) =>
+      _MetricPackTile._(packId: _PackId.serialKiller, controller: controller);
 
   // -- Tile data -------------------------------------------------------------
 
@@ -1564,7 +1804,7 @@ class _MetricPackTile extends StatelessWidget {
       subtitle: 'Metrics Expansion Pack',
       body:
           '100 new metrics that identify severe abuse indicators and crisis-level red '
-          'flags � physical violence threats, stalking obsession, reproductive coercion, '
+          'flags — physical violence threats, stalking obsession, reproductive coercion, '
           'identity erasure, lethality risk patterns, and more. The most important pack '
           'for safety-critical analysis.',
       price: r'$9.99',
@@ -1573,15 +1813,45 @@ class _MetricPackTile extends StatelessWidget {
       bgColor: Color(0xFFFFEBEE),
       darkColor: Color(0xFFB71C1C),
     ),
+    _PackId.narcissist: (
+      title: 'The Narcissist',
+      subtitle: 'Metrics Expansion Pack',
+      body:
+          '50 metrics that identify classic narcissistic personality patterns - '
+          'grandiosity, love bombing, devaluation, DARVO, supply-seeking, '
+          'triangulation, rage at criticism, and more. Essential for recognizing '
+          'narcissistic abuse cycles in text.',
+      price: r'$4.99',
+      icon: Icons.face_retouching_natural,
+      color: Color(0xFF4A148C),
+      bgColor: Color(0xFFF3E5F5),
+      darkColor: Color(0xFF6A1B9A),
+    ),
+    _PackId.serialKiller: (
+      title: 'Serial Killer Metrics',
+      subtitle: 'Metrics Expansion Pack',
+      body:
+          '50 metrics that surface the most dangerous predatory behavioral signals - '
+          'dehumanization, objectification, control fixation, sadistic language, '
+          'victim-selection patterns, compartmentalization, and more. Designed for '
+          'identifying extreme-risk psychological profiles.',
+      price: r'$4.99',
+      icon: Icons.coronavirus_outlined,
+      color: Color(0xFF1A237E),
+      bgColor: Color(0xFFE8EAF6),
+      darkColor: Color(0xFF283593),
+    ),
   };
 
   // -- Product IDs ------------------------------------------------------------
 
   String get _productId {
     switch (packId) {
-      case _PackId.good: return SubscriptionService.packGoodOneTimeId;
-      case _PackId.bad:  return SubscriptionService.packBadOneTimeId;
-      case _PackId.ugly: return SubscriptionService.packUglyOneTimeId;
+      case _PackId.good:         return SubscriptionService.packGoodOneTimeId;
+      case _PackId.bad:          return SubscriptionService.packBadOneTimeId;
+      case _PackId.ugly:         return SubscriptionService.packUglyOneTimeId;
+      case _PackId.narcissist:   return SubscriptionService.packNarcissistOneTimeId;
+      case _PackId.serialKiller: return SubscriptionService.packSerialKillerOneTimeId;
     }
   }
 
@@ -1609,44 +1879,46 @@ class _MetricPackTile extends StatelessWidget {
             child: LayoutBuilder(
               builder: (context, constraints) {
                 final titleSize = (constraints.maxWidth * 0.165).clamp(12.0, 28.0);
-                final bodySize  = (constraints.maxWidth * 0.118).clamp(9.0, 17.0);
+                final bodySize  = (constraints.maxWidth * 0.09).clamp(8.5, 13.0);
                 final iconSize  = (constraints.maxWidth * 0.165).clamp(14.0, 28.0);
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                      child: ClipRect(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 2),
-                                  child: Icon(d.icon, color: textColor, size: iconSize),
-                                ),
-                                const SizedBox(width: 4),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 2),
+                                child: Icon(d.icon, color: textColor, size: iconSize),
+                              ),
+                              const SizedBox(width: 4),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Text(
+                                      AutoSizeText(
                                         d.title,
                                         maxLines: 1,
+                                        minFontSize: 10,
+                                        wrapWords: false,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                           color: textColor,
                                           fontWeight: FontWeight.w900,
-                                          fontSize: titleSize,
+                                          fontSize: (constraints.maxWidth * 0.30).clamp(18.0, 36.0),
                                           height: 1.1,
                                         ),
                                       ),
-                                      Text(
+                                      AutoSizeText(
                                         d.subtitle,
                                         maxLines: 1,
+                                        minFontSize: 8,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                           color: textColor.withOpacity(0.72),
@@ -1661,19 +1933,19 @@ class _MetricPackTile extends StatelessWidget {
                               ],
                             ),
                             SizedBox(height: constraints.maxWidth * 0.02),
-                            Flexible(
-                              child: Text(
-                                d.body,
-                                overflow: TextOverflow.fade,
-                                style: TextStyle(
-                                  color: textColor.withOpacity(0.82),
-                                  fontSize: bodySize,
-                                  height: 1.18,
-                                ),
+                          Expanded(
+                            child: AutoSizeText(
+                              d.body,
+                              minFontSize: 9,
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                color: textColor.withOpacity(0.82),
+                                fontSize: 32,
+                                height: 1.3,
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                     const SizedBox(height: 4),
@@ -1743,9 +2015,11 @@ class _MetricPackTile extends StatelessWidget {
 
       // Wait for store confirmation if needed
       final pending = switch (packId) {
-        _PackId.good => subService.pendingPackGoodPurchase,
-        _PackId.bad  => subService.pendingPackBadPurchase,
-        _PackId.ugly => subService.pendingPackUglyPurchase,
+        _PackId.good         => subService.pendingPackGoodPurchase,
+        _PackId.bad          => subService.pendingPackBadPurchase,
+        _PackId.ugly         => subService.pendingPackUglyPurchase,
+        _PackId.narcissist   => subService.pendingPackNarcissistPurchase,
+        _PackId.serialKiller => subService.pendingPackSerialKillerPurchase,
       };
       if (!pending) {
         if (!context.mounted) return;
@@ -1756,7 +2030,7 @@ class _MetricPackTile extends StatelessWidget {
           builder: (ctx) => AlertDialog(
             title: const Text('Processing Purchase...'),
             content: const Column(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: MainAxisSize.max,
               children: [
                 CircularProgressIndicator(),
                 SizedBox(height: 16),
@@ -1770,9 +2044,11 @@ class _MetricPackTile extends StatelessWidget {
 
       // Clear the pending flag
       switch (packId) {
-        case _PackId.good: subService.clearPendingPackGoodPurchase(); break;
-        case _PackId.bad:  subService.clearPendingPackBadPurchase();  break;
-        case _PackId.ugly: subService.clearPendingPackUglyPurchase(); break;
+        case _PackId.good:         subService.clearPendingPackGoodPurchase(); break;
+        case _PackId.bad:          subService.clearPendingPackBadPurchase();  break;
+        case _PackId.ugly:         subService.clearPendingPackUglyPurchase(); break;
+        case _PackId.narcissist:   subService.clearPendingPackNarcissistPurchase(); break;
+        case _PackId.serialKiller: subService.clearPendingPackSerialKillerPurchase(); break;
       }
     }
 
@@ -1780,16 +2056,18 @@ class _MetricPackTile extends StatelessWidget {
 
     // Unlock the pack � injects metrics into main catalog and hides this tile
     switch (packId) {
-      case _PackId.good: controller.unlockPackGood(); break;
-      case _PackId.bad:  controller.unlockPackBad();  break;
-      case _PackId.ugly: controller.unlockPackUgly(); break;
+      case _PackId.good:         controller.unlockPackGood(); break;
+      case _PackId.bad:          controller.unlockPackBad();  break;
+      case _PackId.ugly:         controller.unlockPackUgly(); break;
+      case _PackId.narcissist:   controller.unlockPackNarcissist(); break;
+      case _PackId.serialKiller: controller.unlockPackSerialKiller(); break;
     }
 
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          '${d.title} pack unlocked! 100 new metrics added to your grid.',
+          '${d.title} pack unlocked! New metrics added to your grid.',
         ),
         duration: const Duration(seconds: 4),
         backgroundColor: Theme.of(context).brightness == Brightness.dark
@@ -1833,7 +2111,7 @@ class _PurchasePendingDialogState extends State<_PurchasePendingDialog> {
     return AlertDialog(
       title: Text(l10n.purchaseCustomMetricProcessingTitle),
       content: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
         children: [
           const CircularProgressIndicator(),
           const SizedBox(height: 16),
@@ -2242,7 +2520,7 @@ void _showSaveMetricListDialog(BuildContext context, ToxicityAnalyzerController 
     builder: (context) => AlertDialog(
       title: Text(l10n.saveMetricListName),
       content: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
         children: [
           Text(l10n.enterListName),
           const SizedBox(height: 8),

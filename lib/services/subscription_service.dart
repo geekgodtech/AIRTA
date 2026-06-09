@@ -24,6 +24,8 @@ class SubscriptionService extends ChangeNotifier {
   static const String packGoodOneTimeId = 'metrics_pack_good_9_99';
   static const String packBadOneTimeId = 'metrics_pack_bad_9_99';
   static const String packUglyOneTimeId = 'metrics_pack_ugly_9_99';
+  static const String packNarcissistOneTimeId = 'metrics_pack_narcissist_4_99';
+  static const String packSerialKillerOneTimeId = 'metrics_pack_serial_killer_4_99';
 
   // Available products
   List<ProductDetails> _products = [];
@@ -51,10 +53,16 @@ class SubscriptionService extends ChangeNotifier {
   bool get pendingPackBadPurchase => _pendingPackBadPurchase;
   bool _pendingPackUglyPurchase = false;
   bool get pendingPackUglyPurchase => _pendingPackUglyPurchase;
+  bool _pendingPackNarcissistPurchase = false;
+  bool get pendingPackNarcissistPurchase => _pendingPackNarcissistPurchase;
+  bool _pendingPackSerialKillerPurchase = false;
+  bool get pendingPackSerialKillerPurchase => _pendingPackSerialKillerPurchase;
 
   void clearPendingPackGoodPurchase() { _pendingPackGoodPurchase = false; notifyListeners(); }
   void clearPendingPackBadPurchase() { _pendingPackBadPurchase = false; notifyListeners(); }
   void clearPendingPackUglyPurchase() { _pendingPackUglyPurchase = false; notifyListeners(); }
+  void clearPendingPackNarcissistPurchase() { _pendingPackNarcissistPurchase = false; notifyListeners(); }
+  void clearPendingPackSerialKillerPurchase() { _pendingPackSerialKillerPurchase = false; notifyListeners(); }
 
   /// Clear the pending custom metric flag once the UI has handled it.
   void clearPendingCustomMetricPurchase() {
@@ -268,6 +276,8 @@ class SubscriptionService extends ChangeNotifier {
         case packGoodOneTimeId: _pendingPackGoodPurchase = true; break;
         case packBadOneTimeId:  _pendingPackBadPurchase = true;  break;
         case packUglyOneTimeId: _pendingPackUglyPurchase = true; break;
+        case packNarcissistOneTimeId: _pendingPackNarcissistPurchase = true; break;
+        case packSerialKillerOneTimeId: _pendingPackSerialKillerPurchase = true; break;
       }
       notifyListeners();
       return true;
@@ -309,6 +319,8 @@ class SubscriptionService extends ChangeNotifier {
     if (prefs.getBool('pack_good') == true) { _pendingPackGoodPurchase = true; }
     if (prefs.getBool('pack_bad') == true)  { _pendingPackBadPurchase  = true; }
     if (prefs.getBool('pack_ugly') == true) { _pendingPackUglyPurchase = true; }
+    if (prefs.getBool('pack_narcissist') == true) { _pendingPackNarcissistPurchase = true; }
+    if (prefs.getBool('pack_serial_killer') == true) { _pendingPackSerialKillerPurchase = true; }
 
       if (savedTier != null) {
         _activeTier = MembershipTier.values.firstWhere(

@@ -19,7 +19,7 @@ import 'package:airta/services/custom_metric_service.dart';
 part 'metric_pack_catalogs.dart';
 
 /// Which catalog the metrics grid is currently displaying.
-enum MetricPackView { main, good, bad, ugly }
+enum MetricPackView { main, good, bad, ugly, narcissist, serialKiller }
 class ToxicityAnalyzerController extends ChangeNotifier {
   static const int requiredMetricSelectionCount =
       SelectedMetrics.requiredMetricCount;
@@ -34,21 +34,31 @@ class ToxicityAnalyzerController extends ChangeNotifier {
   static const String _deepSeekApiKeyPreferenceKey = 'deepseek_api_key';
   static const int requiredReferralDownloads = 5;
 
+  /// The initial 100 standard core metrics.
+  List<PsychologicalMetric> get standardMetrics => _buildMetricCatalog();
+
+  /// Custom user-created metrics.
+  List<PsychologicalMetric> get customMetrics => CustomMetricService().customMetrics;
+
   List<PsychologicalMetric> get availableMetrics {
     final metrics = <PsychologicalMetric>[];
     // 1. Initial 100 core metrics
-    metrics.addAll(_buildMetricCatalog());
+    metrics.addAll(standardMetrics);
     // 2. Purchased expansion pack metrics (in purchase order)
     if (isPackGoodUnlocked) metrics.addAll(packGoodMetrics);
     if (isPackBadUnlocked)  metrics.addAll(packBadMetrics);
     if (isPackUglyUnlocked) metrics.addAll(packUglyMetrics);
+    if (isPackNarcissistUnlocked) metrics.addAll(packNarcissistMetrics);
+    if (isPackSerialKillerUnlocked) metrics.addAll(packSerialKillerMetrics);
     // 3. User-created custom metrics
-    metrics.addAll(CustomMetricService().customMetrics);
+    metrics.addAll(customMetrics);
     return metrics;
   }
   final List<PsychologicalMetric> packGoodMetrics = _buildPackGoodCatalog();
   final List<PsychologicalMetric> packBadMetrics = _buildPackBadCatalog();
   final List<PsychologicalMetric> packUglyMetrics = _buildPackUglyCatalog();
+  final List<PsychologicalMetric> packNarcissistMetrics = _buildPackNarcissistCatalog();
+  final List<PsychologicalMetric> packSerialKillerMetrics = _buildPackSerialKillerCatalog();
   DeepSeekApiService _deepSeekApiService = DeepSeekApiService(
     apiKey: AppSecrets.deepSeekApiKey.isNotEmpty
         ? AppSecrets.deepSeekApiKey
@@ -84,6 +94,8 @@ class ToxicityAnalyzerController extends ChangeNotifier {
   bool isPackGoodUnlocked = false;
   bool isPackBadUnlocked  = false;
   bool isPackUglyUnlocked = false;
+  bool isPackNarcissistUnlocked = false;
+  bool isPackSerialKillerUnlocked = false;
   bool isCurrentReportUnlocked = false;
   bool isConnectedAccountsUnlocked = false;
   bool isDiscordAddonUnlocked = false;
@@ -110,6 +122,10 @@ class ToxicityAnalyzerController extends ChangeNotifier {
         return packBadMetrics;
       case MetricPackView.ugly:
         return packUglyMetrics;
+      case MetricPackView.narcissist:
+        return packNarcissistMetrics;
+      case MetricPackView.serialKiller:
+        return packSerialKillerMetrics;
       case MetricPackView.main:
         return availableMetrics;
     }
@@ -199,6 +215,7 @@ class ToxicityAnalyzerController extends ChangeNotifier {
   void unlockPackGood() {
     if (isPackGoodUnlocked) return;
     isPackGoodUnlocked = true;
+    SharedPreferences.getInstance().then((p) => p.setBool('pack_good', true));
     notifyListeners();
   }
 
@@ -206,6 +223,7 @@ class ToxicityAnalyzerController extends ChangeNotifier {
   void unlockPackBad() {
     if (isPackBadUnlocked) return;
     isPackBadUnlocked = true;
+    SharedPreferences.getInstance().then((p) => p.setBool('pack_bad', true));
     notifyListeners();
   }
 
@@ -213,6 +231,23 @@ class ToxicityAnalyzerController extends ChangeNotifier {
   void unlockPackUgly() {
     if (isPackUglyUnlocked) return;
     isPackUglyUnlocked = true;
+    SharedPreferences.getInstance().then((p) => p.setBool('pack_ugly', true));
+    notifyListeners();
+  }
+
+  /// Unlock the Narcissist metrics expansion pack and inject all 50 metrics.
+  void unlockPackNarcissist() {
+    if (isPackNarcissistUnlocked) return;
+    isPackNarcissistUnlocked = true;
+    SharedPreferences.getInstance().then((p) => p.setBool('pack_narcissist', true));
+    notifyListeners();
+  }
+
+  /// Unlock the Serial Killer metrics expansion pack and inject all 50 metrics.
+  void unlockPackSerialKiller() {
+    if (isPackSerialKillerUnlocked) return;
+    isPackSerialKillerUnlocked = true;
+    SharedPreferences.getInstance().then((p) => p.setBool('pack_serial_killer', true));
     notifyListeners();
   }
 
@@ -399,13 +434,12 @@ class ToxicityAnalyzerController extends ChangeNotifier {
     hasCompletedFirstReport =
         preferences.getBool(_hasCompletedFirstReportPreferenceKey) ?? false;
 
-    // Restore purchased expansion packs
-    const _isDemoMode = bool.fromEnvironment('DEMO_MODE', defaultValue: false);
-    // In demo mode packs are intentionally NOT auto-unlocked on startup.
-    // The user must tap the sales tile to simulate the purchase experience.
-    if (!_isDemoMode && preferences.getBool('pack_good') == true) unlockPackGood();
-    if (!_isDemoMode && preferences.getBool('pack_bad')  == true) unlockPackBad();
-    if (!_isDemoMode && preferences.getBool('pack_ugly') == true) unlockPackUgly();
+    // Restore purchased expansion packs on startup (works in both demo and production).
+    if (preferences.getBool('pack_good') == true) unlockPackGood();
+    if (preferences.getBool('pack_bad')  == true) unlockPackBad();
+    if (preferences.getBool('pack_ugly') == true) unlockPackUgly();
+    if (preferences.getBool('pack_narcissist') == true) unlockPackNarcissist();
+    if (preferences.getBool('pack_serial_killer') == true) unlockPackSerialKiller();
 
     // Load API key
     _runtimeApiKey = preferences.getString(_deepSeekApiKeyPreferenceKey);

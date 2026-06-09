@@ -3647,4 +3647,710 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get metric_ugly_100_description =>
       'Detecteert aanhoudend taalgebruik dat de partner ontdoet van persoonlijkheid, waardigheid of het recht op basale menselijkheid.';
+
+  @override
+  String get metric_narcissist_1_name => 'Grootschalig Zelfbelang';
+
+  @override
+  String get metric_narcissist_1_description =>
+      'Overdreven beweringen over prestaties, talenten of status die verder gaan dan realistisch bewijs, vaak met een gevoel van uniciteit.';
+
+  @override
+  String get metric_narcissist_2_name => 'Rechtmatige Eisen';
+
+  @override
+  String get metric_narcissist_2_description =>
+      'Onredelijke verwachtingen van speciale behandeling of automatische naleving van hun wensen zonder wederkerigheid.';
+
+  @override
+  String get metric_narcissist_3_name => 'Empathietekort';
+
+  @override
+  String get metric_narcissist_3_description =>
+      'Onvermogen of onwil om de gevoelens van anderen te herkennen of te valideren, waarbij emotionele behoeften als irrelevant worden afgedaan.';
+
+  @override
+  String get metric_narcissist_4_name => 'Lofzoekend Gedrag';
+
+  @override
+  String get metric_narcissist_4_description =>
+      'Overmatig vissen naar bewondering, complimenten of validatie om het fragiele zelfbeeld te versterken.';
+
+  @override
+  String get metric_narcissist_5_name => 'Triangulatietactieken';
+
+  @override
+  String get metric_narcissist_5_description =>
+      'Het introduceren van een derde partij in conflicten om jaloezie, concurrentie of manipulatie van percepties te creëren.';
+
+  @override
+  String get metric_narcissist_6_name => 'Liefdesbombardement Intensiteit';
+
+  @override
+  String get metric_narcissist_6_description =>
+      'Overweldigende vleierij, geschenken of aandacht in het begin van een relatie om controle te krijgen en het doelwit te idealiseren.';
+
+  @override
+  String get metric_narcissist_7_name => 'Devaluatiekritiek';
+
+  @override
+  String get metric_narcissist_7_description =>
+      'Plotselinge verschuiving naar harde kritiek, kleineren of minachting na idealisering, waardoor het zelfbeeld van het doelwit wordt aangetast.';
+
+  @override
+  String get metric_narcissist_8_name => 'Stiltebehandeling Straf';
+
+  @override
+  String get metric_narcissist_8_description =>
+      'Het onthouden van communicatie of genegenheid als een opzettelijke straf om angst en gehoorzaamheid te induceren.';
+
+  @override
+  String get metric_narcissist_9_name => 'DARVO Schuldverschuiving';
+
+  @override
+  String get metric_narcissist_9_description =>
+      'Het ontkennen van verantwoordelijkheid, het aanvallen van de aanklager en het omkeren van slachtoffer-daderrollen om verantwoording te ontwijken.';
+
+  @override
+  String get metric_narcissist_10_name => 'Gaslighting Realiteitsvervorming';
+
+  @override
+  String get metric_narcissist_10_description =>
+      'Het ontkennen of verdraaien van feiten, gebeurtenissen of gevoelens om het doelwit te laten twijfelen aan hun eigen geheugen of gezond verstand.';
+
+  @override
+  String get metric_narcissist_11_name => 'Woede bij Kritiek';
+
+  @override
+  String get metric_narcissist_11_description =>
+      'Intense woede, minachting of vergelding als reactie op elke waargenomen belediging of feedback, zelfs als deze constructief is.';
+
+  @override
+  String get metric_narcissist_12_name => 'Grensschending';
+
+  @override
+  String get metric_narcissist_12_description =>
+      'Het negeren of overschrijden van gestelde grenzen, privacy of persoonlijke ruimte zonder spijt of overleg.';
+
+  @override
+  String get metric_narcissist_13_name => 'Afgunst Uiten';
+
+  @override
+  String get metric_narcissist_13_description =>
+      'Wrok over successen of bezittingen van anderen, vaak gepaard met devaluatie of pogingen om te ondermijnen.';
+
+  @override
+  String get metric_narcissist_14_name => 'Uitbuitend Gedrag';
+
+  @override
+  String get metric_narcissist_14_description =>
+      'Anderen gebruiken voor persoonlijk gewin, status of middelen zonder rekening te houden met hun welzijn of toestemming.';
+
+  @override
+  String get metric_narcissist_15_name => 'Spiegelmanipulatie';
+
+  @override
+  String get metric_narcissist_15_description =>
+      'Het imiteren van de interesses, waarden of eigenschappen van het doelwit om een valse verstandhouding te creëren en vertrouwen te winnen.';
+
+  @override
+  String get metric_narcissist_16_name => 'Superioriteitsclaims';
+
+  @override
+  String get metric_narcissist_16_description =>
+      'Het beweren van inherente superioriteit over anderen, vaak met neerbuigende of afwijzende taal.';
+
+  @override
+  String get metric_narcissist_17_name => 'Fantasiepreoccupatie';
+
+  @override
+  String get metric_narcissist_17_description =>
+      'Obsessief praten over onbeperkt succes, macht, briljantie of ideale liefde die onrealistisch is.';
+
+  @override
+  String get metric_narcissist_18_name => 'Bijzondere Statusclaim';
+
+  @override
+  String get metric_narcissist_18_description =>
+      'De overtuiging dat ze alleen begrepen kunnen worden door of omgaan met hooggeplaatste personen of instellingen.';
+
+  @override
+  String get metric_narcissist_19_name => 'Interpersoonlijke Uitbuiting';
+
+  @override
+  String get metric_narcissist_19_description =>
+      'Profiteren van de middelen, tijd of emoties van anderen zonder wederkerigheid of dankbaarheid.';
+
+  @override
+  String get metric_narcissist_20_name => 'Gebrek aan Berouw';
+
+  @override
+  String get metric_narcissist_20_description =>
+      'Afwezigheid van schuldgevoel of verontschuldiging na het veroorzaken van schade, waarbij acties vaak worden gerechtvaardigd als verdiend door het doelwit.';
+
+  @override
+  String get metric_narcissist_21_name => 'Concurrerende ondermijning';
+
+  @override
+  String get metric_narcissist_21_description =>
+      'Het saboteren van prestaties of relaties van anderen om een superieure positie te behouden.';
+
+  @override
+  String get metric_narcissist_22_name => 'Idealiseringsfase';
+
+  @override
+  String get metric_narcissist_22_description =>
+      'Overmatige lof en aanbidding in het begin van een relatie, waardoor onrealistische verwachtingen bij het doelwit worden gewekt.';
+
+  @override
+  String get metric_narcissist_23_name => 'Devaluatiefase';
+
+  @override
+  String get metric_narcissist_23_description =>
+      'Geleidelijke of plotselinge kritiek en minachting na idealisering, wat verwarring en zelftwijfel veroorzaakt.';
+
+  @override
+  String get metric_narcissist_24_name => 'Afstootimpuls';
+
+  @override
+  String get metric_narcissist_24_description =>
+      'Het abrupt beëindigen van relaties wanneer het doelwit geen narcistische voeding meer biedt of hen uitdaagt.';
+
+  @override
+  String get metric_narcissist_25_name => 'Hoovering-pogingen';
+
+  @override
+  String get metric_narcissist_25_description =>
+      'Het opnieuw betrekken van een afgestoten doelwit met beloften, schuldgevoel of manipulatie om voeding te herwinnen.';
+
+  @override
+  String get metric_narcissist_26_name => 'Projectie van gebreken';
+
+  @override
+  String get metric_narcissist_26_description =>
+      'Het beschuldigen van anderen van hun eigen negatieve eigenschappen of gedragingen om zelfbewustzijn te vermijden.';
+
+  @override
+  String get metric_narcissist_27_name => 'Controle door schuldgevoel';
+
+  @override
+  String get metric_narcissist_27_description =>
+      'Het gebruiken van schuldinducerende uitspraken om anderen te manipuleren tot naleving of zorg.';
+
+  @override
+  String get metric_narcissist_28_name => 'Emotionele volatiliteit';
+
+  @override
+  String get metric_narcissist_28_description =>
+      'Snelle stemmingswisselingen van charme naar woede, vaak getriggerd door waargenomen narcistische verwonding.';
+
+  @override
+  String get metric_narcissist_29_name => 'Ongeldigverklaring van gevoelens';
+
+  @override
+  String get metric_narcissist_29_description =>
+      'Het afwijzen of minimaliseren van emoties van anderen als overdreven reacties of irrationeel.';
+
+  @override
+  String get metric_narcissist_30_name => 'Gesprekken monopoliseren';
+
+  @override
+  String get metric_narcissist_30_description =>
+      'Het domineren van dialoog met zelfgerichte onderwerpen, onderbreken of negeren van inbreng van anderen.';
+
+  @override
+  String get metric_narcissist_31_name => 'Beledigende Benaming';
+
+  @override
+  String get metric_narcissist_31_description =>
+      'Het gebruik van beledigingen, labels of kleinerende termen om het doelwit te devalueren en te controleren.';
+
+  @override
+  String get metric_narcissist_32_name => 'Dreigementen van Verlating';
+
+  @override
+  String get metric_narcissist_32_description =>
+      'Het gebruik van angst voor verlies of afwijzing om gehoorzaamheid of aandacht af te dwingen.';
+
+  @override
+  String get metric_narcissist_33_name => 'Zich Voordoen als Slachtoffer';
+
+  @override
+  String get metric_narcissist_33_description =>
+      'Zichzelf voorstellen als onterecht behandeld om sympathie op te wekken en verantwoordelijkheid te ontwijken.';
+
+  @override
+  String get metric_narcissist_34_name => 'Martelaarscomplex';
+
+  @override
+  String get metric_narcissist_34_description =>
+      'Beweren van buitensporige opoffering of lijden om schuldgevoel en verplichting bij anderen op te wekken.';
+
+  @override
+  String get metric_narcissist_35_name => 'Selectief Geheugen';
+
+  @override
+  String get metric_narcissist_35_description =>
+      'Handig vergeten van beloften, afspraken of schadelijke acties om verantwoordelijkheid te vermijden.';
+
+  @override
+  String get metric_narcissist_36_name => 'Communicatie Blokkeren';
+
+  @override
+  String get metric_narcissist_36_description =>
+      'Weigeren om in dialoog te gaan, vragen negeren of discussies afkappen om controle te behouden.';
+
+  @override
+  String get metric_narcissist_37_name => 'Toekomstvervalsing';
+
+  @override
+  String get metric_narcissist_37_description =>
+      'Grootschalige beloften doen over gedeelde toekomstplannen om valse hoop en afhankelijkheid te creëren.';
+
+  @override
+  String get metric_narcissist_38_name => 'Lastercampagne';
+
+  @override
+  String get metric_narcissist_38_description =>
+      'Het verspreiden van kwaadaardige geruchten of leugens over het doelwit om hen te isoleren en reputatie te beschadigen.';
+
+  @override
+  String get metric_narcissist_39_name => 'Isolatietactieken';
+
+  @override
+  String get metric_narcissist_39_description =>
+      'Het ontmoedigen of voorkomen van contact met vrienden, familie of steunsystemen om afhankelijkheid te vergroten.';
+
+  @override
+  String get metric_narcissist_40_name => 'Financiële Uitbuiting';
+
+  @override
+  String get metric_narcissist_40_description =>
+      'Het manipuleren of controleren van financiële middelen voor persoonlijk gewin of om afhankelijkheid te creëren.';
+
+  @override
+  String get metric_narcissist_41_name => 'Seksuele dwang';
+
+  @override
+  String get metric_narcissist_41_description =>
+      'Het gebruiken van druk, schuldgevoel of manipulatie om seksuele instemming te verkrijgen zonder echte toestemming.';
+
+  @override
+  String get metric_narcissist_42_name => 'Grenzen testen';
+
+  @override
+  String get metric_narcissist_42_description =>
+      'Herhaaldelijk grenzen opzoeken om te zien welk gedrag getolereerd wordt, waarna de overtredingen worden opgevoerd.';
+
+  @override
+  String get metric_narcissist_43_name => 'Gaslighting-ontkenning';
+
+  @override
+  String get metric_narcissist_43_description =>
+      'Vlakweg ontkennen van gebeurtenissen of uitspraken die hebben plaatsgevonden, waardoor het doelwit aan de realiteit gaat twijfelen.';
+
+  @override
+  String get metric_narcissist_44_name => 'Bagatelliseren van zorgen';
+
+  @override
+  String get metric_narcissist_44_description =>
+      'Legitieme klachten afdoen als onbelangrijk of overdreven gevoelig.';
+
+  @override
+  String get metric_narcissist_45_name => 'Externalisatie van schuld';
+
+  @override
+  String get metric_narcissist_45_description =>
+      'Alle problemen en conflicten aan anderen toeschrijven, nooit eigen fouten accepteren.';
+
+  @override
+  String get metric_narcissist_46_name => 'Uitlokken van jaloezie';
+
+  @override
+  String get metric_narcissist_46_description =>
+      'Flirten met of anderen prijzen om jaloezie op te wekken en emotionele controle te behouden.';
+
+  @override
+  String get metric_narcissist_47_name => 'Emotionele chantage';
+
+  @override
+  String get metric_narcissist_47_description =>
+      'Gebruikmaken van angst, verplichting of schuldgevoel om beslissingen en gedrag te manipuleren.';
+
+  @override
+  String get metric_narcissist_48_name => 'Schijninzicht';
+
+  @override
+  String get metric_narcissist_48_description =>
+      'Voorwenden van zelfbewustzijn of empathie om hervormd te lijken, waarna terugval in toxische patronen.';
+
+  @override
+  String get metric_narcissist_49_name => 'Minachtende toon';
+
+  @override
+  String get metric_narcissist_49_description =>
+      'Gebruik van sarcasme, spot of minachtende taal om anderen te kleineren en af te wijzen.';
+
+  @override
+  String get metric_narcissist_50_name => 'Wraakfantasieën';
+
+  @override
+  String get metric_narcissist_50_description =>
+      'Uiten van verlangens naar vergelding of straf tegen degenen die hen hebben beledigd.';
+
+  @override
+  String get metric_serial_killer_1_name => 'Predatorische framing';
+
+  @override
+  String get metric_serial_killer_1_description =>
+      'Detecteert taal die de spreker positioneert als jager en het doelwit als prooi, wat wijst op roofzuchtige intentie.';
+
+  @override
+  String get metric_serial_killer_2_name => 'Empathietekort';
+
+  @override
+  String get metric_serial_killer_2_description =>
+      'Identificeert uitspraken zonder emotionele resonantie of bezorgdheid voor het lijden van anderen, wat duidt op ongevoeligheid.';
+
+  @override
+  String get metric_serial_killer_3_name => 'Ontmenselijkende labels';
+
+  @override
+  String get metric_serial_killer_3_description =>
+      'Markeert het gebruik van denigrerende termen of objectiverende labels die slachtoffers van hun menselijkheid ontdoen.';
+
+  @override
+  String get metric_serial_killer_4_name => 'Objectiveringssignalen';
+
+  @override
+  String get metric_serial_killer_4_description =>
+      'Herkent taal die individuen behandelt als gereedschap of objecten voor bevrediging.';
+
+  @override
+  String get metric_serial_killer_5_name => 'Controlefixatie';
+
+  @override
+  String get metric_serial_killer_5_description =>
+      'Detecteert obsessieve verwijzingen naar dominantie, manipulatie of het afdwingen van gehoorzaamheid.';
+
+  @override
+  String get metric_serial_killer_6_name => 'Sensatiezoekende toon';
+
+  @override
+  String get metric_serial_killer_6_description =>
+      'Identificeert opwinding of opwinding bij het beschrijven van risicovolle, gewelddadige of roofzuchtige handelingen.';
+
+  @override
+  String get metric_serial_killer_7_name => 'Compartimentalisatiemarkers';
+
+  @override
+  String get metric_serial_killer_7_description =>
+      'Markeert abrupte verschuivingen tussen normale en gewelddadige onderwerpen, wat wijst op psychologische scheiding.';
+
+  @override
+  String get metric_serial_killer_8_name => 'Slachtofferselectiesignalen';
+
+  @override
+  String get metric_serial_killer_8_description =>
+      'Detecteert criteria of voorkeuren voor het targeten van specifieke kwetsbare groepen.';
+
+  @override
+  String get metric_serial_killer_9_name => 'Sadistisch genot';
+
+  @override
+  String get metric_serial_killer_9_description =>
+      'Herkent plezier dat wordt ontleend aan de pijn, angst of het lijden van anderen.';
+
+  @override
+  String get metric_serial_killer_10_name => 'Manipulatieve schade';
+
+  @override
+  String get metric_serial_killer_10_description =>
+      'Identificeert taal die wordt gebruikt om anderen te misleiden of te dwingen tot schadelijke situaties.';
+
+  @override
+  String get metric_serial_killer_11_name => 'Stalkingindicatoren';
+
+  @override
+  String get metric_serial_killer_11_description =>
+      'Markeert gedetailleerd volgen, surveilleren of obsessief monitoren van een doelwit.';
+
+  @override
+  String get metric_serial_killer_12_name => 'Groomingtaal';
+
+  @override
+  String get metric_serial_killer_12_description =>
+      'Detecteert geleidelijke vertrouwenwekkende tactieken om slachtoffers te exploiteren of misbruiken.';
+
+  @override
+  String get metric_serial_killer_13_name => 'Gewelddadige Fantasieën';
+
+  @override
+  String get metric_serial_killer_13_description =>
+      'Identificeert levendige beschrijvingen van het schaden of doden van anderen als mentale repetitie.';
+
+  @override
+  String get metric_serial_killer_14_name => 'Machtsassertie';
+
+  @override
+  String get metric_serial_killer_14_description =>
+      'Herken uitspraken die superioriteit of controle over anderen benadrukken.';
+
+  @override
+  String get metric_serial_killer_15_name => 'Gebrek aan Berouw';
+
+  @override
+  String get metric_serial_killer_15_description =>
+      'Markeert afwezigheid van schuld of spijt na het bespreken van schadelijke acties.';
+
+  @override
+  String get metric_serial_killer_16_name => 'Externe Schuldtoewijzing';
+
+  @override
+  String get metric_serial_killer_16_description =>
+      'Detecteert het verschuiven van verantwoordelijkheid voor gewelddadige driften naar slachtoffers of de samenleving.';
+
+  @override
+  String get metric_serial_killer_17_name => 'Geseksualiseerd Geweld';
+
+  @override
+  String get metric_serial_killer_17_description =>
+      'Identificeert het samenvoegen van seksuele en gewelddadige thema\'s in taal.';
+
+  @override
+  String get metric_serial_killer_18_name => 'Isolatietactieken';
+
+  @override
+  String get metric_serial_killer_18_description =>
+      'Herken inspanningen om een doelwit te scheiden van ondersteuningsnetwerken.';
+
+  @override
+  String get metric_serial_killer_19_name => 'Gaslightingpatronen';
+
+  @override
+  String get metric_serial_killer_19_description =>
+      'Markeert taal die bedoeld is om de werkelijkheid te verdraaien en de geestelijke gezondheid van een slachtoffer te ondermijnen.';
+
+  @override
+  String get metric_serial_killer_20_name => 'Verhulde Dreigingen';
+
+  @override
+  String get metric_serial_killer_20_description =>
+      'Detecteert impliciete dreigingen of waarschuwingen vermomd als terloopse opmerkingen.';
+
+  @override
+  String get metric_serial_killer_21_name => 'Bezittelijk taalgebruik';
+
+  @override
+  String get metric_serial_killer_21_description =>
+      'Identificeert claims van eigendom of recht over een andere persoon.';
+
+  @override
+  String get metric_serial_killer_22_name => 'Wraakthema\'s';
+
+  @override
+  String get metric_serial_killer_22_description =>
+      'Herken fixatie op vergelding of het bestraffen van vermeende onrechtvaardigheden.';
+
+  @override
+  String get metric_serial_killer_23_name => 'Narcistische grootsheid';
+
+  @override
+  String get metric_serial_killer_23_description =>
+      'Markeert overdreven zelfbelang en minachting voor de waarde van anderen.';
+
+  @override
+  String get metric_serial_killer_24_name => 'Emotionele afstandelijkheid';
+
+  @override
+  String get metric_serial_killer_24_description =>
+      'Detecteert een klinische of afstandelijke toon bij het bespreken van trauma of schade.';
+
+  @override
+  String get metric_serial_killer_25_name => 'Predatorisch geduld';
+
+  @override
+  String get metric_serial_killer_25_description =>
+      'Identificeert taal van langetermijnplanning voor toekomstige victimisatie.';
+
+  @override
+  String get metric_serial_killer_26_name => 'Grenzen testen';
+
+  @override
+  String get metric_serial_killer_26_description =>
+      'Herken het aftasten van grenzen of weerstand bij potentiële slachtoffers.';
+
+  @override
+  String get metric_serial_killer_27_name => 'Minimalisatie van schade';
+
+  @override
+  String get metric_serial_killer_27_description =>
+      'Markeert het bagatelliseren van de ernst van gewelddadige of misbruikende handelingen.';
+
+  @override
+  String get metric_serial_killer_28_name => 'Rechtvaardiging van geweld';
+
+  @override
+  String get metric_serial_killer_28_description =>
+      'Detecteert rationalisaties om anderen te schaden als noodzakelijk of verdiend.';
+
+  @override
+  String get metric_serial_killer_29_name => 'Obsessieve focus';
+
+  @override
+  String get metric_serial_killer_29_description =>
+      'Identificeert repetitieve, gefixeerde gedachten over een specifiek persoon of handeling.';
+
+  @override
+  String get metric_serial_killer_30_name => 'Koude berekening';
+
+  @override
+  String get metric_serial_killer_30_description =>
+      'Herken strategische, emotieloze planning van schadelijke acties.';
+
+  @override
+  String get metric_serial_killer_31_name => 'Bedrieglijke charme';
+
+  @override
+  String get metric_serial_killer_31_description =>
+      'Markeert overdreven vleiende of vleierige taal om te manipuleren.';
+
+  @override
+  String get metric_serial_killer_32_name => 'Slachtoffer de schuld geven';
+
+  @override
+  String get metric_serial_killer_32_description =>
+      'Detecteert het toeschrijven van schuld aan het doelwit voor hun eigen victimisatie.';
+
+  @override
+  String get metric_serial_killer_33_name => 'Escalatiesignalen';
+
+  @override
+  String get metric_serial_killer_33_description =>
+      'Identificeert de overgang van fantasie naar intentie in gewelddadige taal.';
+
+  @override
+  String get metric_serial_killer_34_name => 'Parasitaire oriëntatie';
+
+  @override
+  String get metric_serial_killer_34_description =>
+      'Herken taal die anderen behandelt als hulpbronnen om te exploiteren.';
+
+  @override
+  String get metric_serial_killer_35_name => 'Opwindingssignalen';
+
+  @override
+  String get metric_serial_killer_35_description =>
+      'Markeert fysiologische opwindingsindicatoren die verband houden met gewelddadige thema\'s.';
+
+  @override
+  String get metric_serial_killer_36_name => 'Loyaliteit testen';
+
+  @override
+  String get metric_serial_killer_36_description =>
+      'Detecteert eisen voor bewijs van trouw of geheimhouding van medeplichtigen.';
+
+  @override
+  String get metric_serial_killer_37_name => 'Ritualistische taal';
+
+  @override
+  String get metric_serial_killer_37_description =>
+      'Identificeert gestructureerde, ceremoniële formuleringen rond gewelddadige handelingen.';
+
+  @override
+  String get metric_serial_killer_38_name => 'Superioriteitsclaims';
+
+  @override
+  String get metric_serial_killer_38_description =>
+      'Herken beweringen van boven morele of wettelijke beperkingen te staan.';
+
+  @override
+  String get metric_serial_killer_39_name => 'Emotioneel vacuüm';
+
+  @override
+  String get metric_serial_killer_39_description =>
+      'Markeert de afwezigheid van emotionele woorden in contexten die empathie vereisen.';
+
+  @override
+  String get metric_serial_killer_40_name => 'Predatorische nieuwsgierigheid';
+
+  @override
+  String get metric_serial_killer_40_description =>
+      'Detecteert onderzoekende vragen over de angsten of kwetsbaarheden van een doelwit.';
+
+  @override
+  String get metric_serial_killer_41_name => 'Stiltebedreigingen';
+
+  @override
+  String get metric_serial_killer_41_description =>
+      'Identificeert waarschuwingen om openbaarmaking of melding te voorkomen.';
+
+  @override
+  String get metric_serial_killer_42_name => 'Ontmenselijkende Vergelijkingen';
+
+  @override
+  String get metric_serial_killer_42_description =>
+      'Herken het gelijkstellen van mensen aan dieren, objecten of subhumane entiteiten.';
+
+  @override
+  String get metric_serial_killer_43_name => 'Controletaal';
+
+  @override
+  String get metric_serial_killer_43_description =>
+      'Markeert imperatieve of bevelende tonen gericht op het domineren van anderen.';
+
+  @override
+  String get metric_serial_killer_44_name => 'Sadistisch Detail';
+
+  @override
+  String get metric_serial_killer_44_description =>
+      'Detecteert overmatige focus op grafische pijn of lijden in verhalen.';
+
+  @override
+  String get metric_serial_killer_45_name => 'Manipulatief Medeleven';
+
+  @override
+  String get metric_serial_killer_45_description =>
+      'Identificeert geveinsde bezorgdheid om de verdediging van een doelwit te verlagen.';
+
+  @override
+  String get metric_serial_killer_46_name => 'Roofzuchtige Blik';
+
+  @override
+  String get metric_serial_killer_46_description =>
+      'Herken taal die intense, indringende observatie van doelwitten beschrijft.';
+
+  @override
+  String get metric_serial_killer_47_name => 'Gewelddadige Identiteit';
+
+  @override
+  String get metric_serial_killer_47_description =>
+      'Markeert zelfidentificatie als een roofdier, moordenaar of monster.';
+
+  @override
+  String get metric_serial_killer_48_name => 'Opwinding van de Jacht';
+
+  @override
+  String get metric_serial_killer_48_description =>
+      'Detecteert opwinding in het proces van het stalken of achtervolgen van slachtoffers.';
+
+  @override
+  String get metric_serial_killer_49_name => 'Dwangmatige Bekentenis';
+
+  @override
+  String get metric_serial_killer_49_description =>
+      'Identificeert drang om gewelddadige daden te onthullen voor psychologische verlichting.';
+
+  @override
+  String get metric_serial_killer_50_name => 'Finaliteitstaal';
+
+  @override
+  String get metric_serial_killer_50_description =>
+      'Herken verwijzingen naar het beëindigen, doden of permanent tot zwijgen brengen van doelwitten.';
+
+  @override
+  String get packNarcissistLabel => 'De Narcist';
+
+  @override
+  String get packSerialKillerLabel => 'De Seriemoordenaar';
 }

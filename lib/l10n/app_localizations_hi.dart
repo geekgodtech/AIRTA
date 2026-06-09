@@ -3641,4 +3641,710 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get metric_ugly_100_description =>
       'ऐसी स्थायी भाषा का पता लगाता है जो साथी को व्यक्तित्व, गरिमा या बुनियादी मानवता के अधिकार से वंचित करती है।';
+
+  @override
+  String get metric_narcissist_1_name => 'भव्य आत्म-महत्व';
+
+  @override
+  String get metric_narcissist_1_description =>
+      'यथार्थवादी साक्ष्य से परे उपलब्धियों, प्रतिभाओं या स्थिति का अतिरंजित दावा, अक्सर विशिष्टता की भावना के साथ।';
+
+  @override
+  String get metric_narcissist_2_name => 'अधिकार की मांग';
+
+  @override
+  String get metric_narcissist_2_description =>
+      'विशेष व्यवहार या उनकी इच्छाओं के स्वचालित अनुपालन की अनुचित अपेक्षाएं, बिना पारस्परिकता के।';
+
+  @override
+  String get metric_narcissist_3_name => 'सहानुभूति की कमी';
+
+  @override
+  String get metric_narcissist_3_description =>
+      'दूसरों की भावनाओं को पहचानने या मान्य करने में असमर्थता या अनिच्छा, भावनात्मक जरूरतों को अप्रासंगिक मानकर खारिज करना।';
+
+  @override
+  String get metric_narcissist_4_name => 'प्रशंसा की तलाश';
+
+  @override
+  String get metric_narcissist_4_description =>
+      'कमजोर आत्म-सम्मान को बढ़ाने के लिए प्रशंसा, तारीफ या मान्यता के लिए अत्यधिक प्रयास करना।';
+
+  @override
+  String get metric_narcissist_5_name => 'त्रिकोणीकरण रणनीति';
+
+  @override
+  String get metric_narcissist_5_description =>
+      'संघर्षों में तीसरे पक्ष को शामिल करना ताकि ईर्ष्या, प्रतिस्पर्धा पैदा हो या धारणाओं में हेरफेर हो।';
+
+  @override
+  String get metric_narcissist_6_name => 'प्रेम बमबारी की तीव्रता';
+
+  @override
+  String get metric_narcissist_6_description =>
+      'रिश्ते की शुरुआत में अत्यधिक चापलूसी, उपहार या ध्यान देना ताकि नियंत्रण प्राप्त किया जा सके और लक्ष्य को आदर्श बनाया जा सके।';
+
+  @override
+  String get metric_narcissist_7_name => 'अवमूल्यन आलोचना';
+
+  @override
+  String get metric_narcissist_7_description =>
+      'आदर्शीकरण के बाद कठोर आलोचना, अपमान या तिरस्कार की ओर अचानक बदलाव, लक्ष्य के आत्म-मूल्य को कम करना।';
+
+  @override
+  String get metric_narcissist_8_name => 'मौन उपचार दंड';
+
+  @override
+  String get metric_narcissist_8_description =>
+      'जानबूझकर सजा के रूप में संचार या स्नेह को रोकना ताकि चिंता और अनुपालन प्रेरित हो।';
+
+  @override
+  String get metric_narcissist_9_name => 'DARVO दोष स्थानांतरण';
+
+  @override
+  String get metric_narcissist_9_description =>
+      'जिम्मेदारी से इनकार करना, आरोप लगाने वाले पर हमला करना, और पीड़ित-अपराधी भूमिकाओं को उलटना ताकि जवाबदेही से बचा जा सके।';
+
+  @override
+  String get metric_narcissist_10_name => 'गैसलाइटिंग वास्तविकता विकृति';
+
+  @override
+  String get metric_narcissist_10_description =>
+      'तथ्यों, घटनाओं या भावनाओं को नकारना या विकृत करना ताकि लक्ष्य अपनी स्मृति या समझदारी पर संदेह करे।';
+
+  @override
+  String get metric_narcissist_11_name => 'आलोचना पर क्रोध';
+
+  @override
+  String get metric_narcissist_11_description =>
+      'किसी भी कथित तिरस्कार या प्रतिक्रिया पर तीव्र क्रोध, घृणा या प्रतिशोध, भले ही वह रचनात्मक हो।';
+
+  @override
+  String get metric_narcissist_12_name => 'सीमा उल्लंघन';
+
+  @override
+  String get metric_narcissist_12_description =>
+      'बिना पश्चाताप या बातचीत के बताई गई सीमाओं, गोपनीयता या व्यक्तिगत स्थान को अनदेखा करना या उल्लंघन करना।';
+
+  @override
+  String get metric_narcissist_13_name => 'ईर्ष्या अभिव्यक्ति';
+
+  @override
+  String get metric_narcissist_13_description =>
+      'दूसरों की सफलताओं या संपत्तियों के प्रति आक्रोश, अक्सर अवमूल्यन या कमजोर करने के प्रयासों के साथ।';
+
+  @override
+  String get metric_narcissist_14_name => 'शोषणकारी व्यवहार';
+
+  @override
+  String get metric_narcissist_14_description =>
+      'व्यक्तिगत लाभ, स्थिति या संसाधनों के लिए दूसरों का उपयोग करना, उनकी भलाई या सहमति की परवाह किए बिना।';
+
+  @override
+  String get metric_narcissist_15_name => 'प्रतिबिंबित हेरफेर';
+
+  @override
+  String get metric_narcissist_15_description =>
+      'लक्ष्य की रुचियों, मूल्यों या गुणों की नकल करके झूठा तालमेल बनाना और विश्वास प्राप्त करना।';
+
+  @override
+  String get metric_narcissist_16_name => 'श्रेष्ठता का दावा';
+
+  @override
+  String get metric_narcissist_16_description =>
+      'दूसरों पर अंतर्निहित श्रेष्ठता का दावा करना, अक्सर तिरस्कारपूर्ण या अपमानजनक भाषा के साथ।';
+
+  @override
+  String get metric_narcissist_17_name => 'कल्पना में डूबना';
+
+  @override
+  String get metric_narcissist_17_description =>
+      'असीमित सफलता, शक्ति, प्रतिभा या आदर्श प्रेम के बारे में अवास्तविक बातों में व्यस्त रहना।';
+
+  @override
+  String get metric_narcissist_18_name => 'विशेष स्थिति का दावा';
+
+  @override
+  String get metric_narcissist_18_description =>
+      'यह विश्वास कि वे केवल उच्च-स्थिति वाले लोगों या संस्थानों द्वारा समझे जा सकते हैं या उनसे जुड़ सकते हैं।';
+
+  @override
+  String get metric_narcissist_19_name => 'पारस्परिक शोषण';
+
+  @override
+  String get metric_narcissist_19_description =>
+      'बिना प्रतिदान या कृतज्ञता के दूसरों के संसाधनों, समय या भावनाओं का लाभ उठाना।';
+
+  @override
+  String get metric_narcissist_20_name => 'पश्चाताप की कमी';
+
+  @override
+  String get metric_narcissist_20_description =>
+      'नुकसान पहुंचाने के बाद अपराधबोध या माफी की अनुपस्थिति, अक्सर कार्यों को लक्ष्य द्वारा योग्य ठहराना।';
+
+  @override
+  String get metric_narcissist_21_name => 'प्रतिस्पर्धात्मक कमजोर करना';
+
+  @override
+  String get metric_narcissist_21_description =>
+      'श्रेष्ठ स्थिति बनाए रखने के लिए दूसरों की उपलब्धियों या संबंधों को तोड़-मरोड़ कर नुकसान पहुंचाना।';
+
+  @override
+  String get metric_narcissist_22_name => 'आदर्शीकरण चरण';
+
+  @override
+  String get metric_narcissist_22_description =>
+      'रिश्ते की शुरुआत में अत्यधिक प्रशंसा और आराधना, जो लक्ष्य के लिए अवास्तविक अपेक्षाएं स्थापित करती है।';
+
+  @override
+  String get metric_narcissist_23_name => 'अवमूल्यन चरण';
+
+  @override
+  String get metric_narcissist_23_description =>
+      'आदर्शीकरण के बाद धीरे-धीरे या अचानक आलोचना और तिरस्कार, जो भ्रम और आत्म-संदेह पैदा करता है।';
+
+  @override
+  String get metric_narcissist_24_name => 'त्याग आवेग';
+
+  @override
+  String get metric_narcissist_24_description =>
+      'जब लक्ष्य नार्सिसिस्टिक आपूर्ति प्रदान नहीं करता या उन्हें चुनौती देता है, तो रिश्ते को अचानक समाप्त करना।';
+
+  @override
+  String get metric_narcissist_25_name => 'हूवरिंग प्रयास';
+
+  @override
+  String get metric_narcissist_25_description =>
+      'त्याग किए गए लक्ष्य को वादों, अपराधबोध या हेरफेर के माध्यम से पुनः जोड़ने का प्रयास करना ताकि आपूर्ति प्राप्त की जा सके।';
+
+  @override
+  String get metric_narcissist_26_name => 'दोषों का प्रक्षेपण';
+
+  @override
+  String get metric_narcissist_26_description =>
+      'आत्म-जागरूकता से बचने के लिए दूसरों पर अपने नकारात्मक गुणों या व्यवहारों का आरोप लगाना।';
+
+  @override
+  String get metric_narcissist_27_name => 'अपराधबोध के माध्यम से नियंत्रण';
+
+  @override
+  String get metric_narcissist_27_description =>
+      'दूसरों को अनुपालन या देखभाल के लिए हेरफेर करने हेतु अपराध-उत्प्रेरक बयानों का उपयोग करना।';
+
+  @override
+  String get metric_narcissist_28_name => 'भावनात्मक अस्थिरता';
+
+  @override
+  String get metric_narcissist_28_description =>
+      'आकर्षण से क्रोध तक तेजी से मूड स्विंग, जो अक्सर कथित नार्सिसिस्टिक चोट से उत्पन्न होता है।';
+
+  @override
+  String get metric_narcissist_29_name => 'भावनाओं की अमान्यता';
+
+  @override
+  String get metric_narcissist_29_description =>
+      'दूसरों की भावनाओं को अतिप्रतिक्रिया या तर्कहीन बताकर खारिज करना या कम करना।';
+
+  @override
+  String get metric_narcissist_30_name => 'बातचीत पर एकाधिकार';
+
+  @override
+  String get metric_narcissist_30_description =>
+      'आत्म-केंद्रित विषयों के साथ संवाद पर हावी होना, बीच में टोकना या दूसरों के इनपुट को अनदेखा करना।';
+
+  @override
+  String get metric_narcissist_31_name => 'नाम-पुकार अपमान';
+
+  @override
+  String get metric_narcissist_31_description =>
+      'लक्ष्य को अवमूल्यन और नियंत्रित करने के लिए अपमान, लेबल या अपमानजनक शब्दों का उपयोग करना।';
+
+  @override
+  String get metric_narcissist_32_name => 'त्याग की धमकी';
+
+  @override
+  String get metric_narcissist_32_description =>
+      'अनुपालन या ध्यान प्राप्त करने के लिए हानि या अस्वीकृति के डर का उपयोग करना।';
+
+  @override
+  String get metric_narcissist_33_name => 'पीड़ित की भूमिका निभाना';
+
+  @override
+  String get metric_narcissist_33_description =>
+      'सहानुभूति प्राप्त करने और जवाबदेही से बचने के लिए खुद को अनुचित व्यवहार के रूप में चित्रित करना।';
+
+  @override
+  String get metric_narcissist_34_name => 'शहीद परिसर';
+
+  @override
+  String get metric_narcissist_34_description =>
+      'दूसरों में अपराधबोध और दायित्व प्रेरित करने के लिए अत्यधिक बलिदान या पीड़ा का दावा करना।';
+
+  @override
+  String get metric_narcissist_35_name => 'चयनात्मक स्मृति';
+
+  @override
+  String get metric_narcissist_35_description =>
+      'जिम्मेदारी से बचने के लिए वादों, समझौतों या हानिकारक कार्यों को सुविधाजनक रूप से भूलना।';
+
+  @override
+  String get metric_narcissist_36_name => 'संचार अवरोध';
+
+  @override
+  String get metric_narcissist_36_description =>
+      'नियंत्रण बनाए रखने के लिए संवाद में शामिल होने से इनकार करना, प्रश्नों को अनदेखा करना या चर्चा बंद करना।';
+
+  @override
+  String get metric_narcissist_37_name => 'भविष्य का झूठा वादा';
+
+  @override
+  String get metric_narcissist_37_description =>
+      'झूठी आशा और निर्भरता पैदा करने के लिए साझा भविष्य की योजनाओं के बारे में भव्य वादे करना।';
+
+  @override
+  String get metric_narcissist_38_name => 'बदनामी अभियान';
+
+  @override
+  String get metric_narcissist_38_description =>
+      'लक्ष्य को अलग-थलग करने और प्रतिष्ठा को नुकसान पहुंचाने के लिए उनके बारे में दुर्भावनापूर्ण अफवाहें या झूठ फैलाना।';
+
+  @override
+  String get metric_narcissist_39_name => 'अलगाव रणनीति';
+
+  @override
+  String get metric_narcissist_39_description =>
+      'निर्भरता बढ़ाने के लिए दोस्तों, परिवार या सहायता प्रणालियों से संपर्क को हतोत्साहित करना या रोकना।';
+
+  @override
+  String get metric_narcissist_40_name => 'वित्तीय शोषण';
+
+  @override
+  String get metric_narcissist_40_description =>
+      'व्यक्तिगत लाभ या निर्भरता पैदा करने के लिए वित्तीय संसाधनों में हेरफेर या नियंत्रण करना।';
+
+  @override
+  String get metric_narcissist_41_name => 'यौन जबरदस्ती';
+
+  @override
+  String get metric_narcissist_41_description =>
+      'सहमति के बिना यौन अनुपालन प्राप्त करने के लिए दबाव, अपराधबोध या हेरफेर का उपयोग करना।';
+
+  @override
+  String get metric_narcissist_42_name => 'सीमा परीक्षण';
+
+  @override
+  String get metric_narcissist_42_description =>
+      'यह देखने के लिए बार-बार सीमाओं को धकेलना कि क्या सहन किया जाता है, फिर उल्लंघनों को बढ़ाना।';
+
+  @override
+  String get metric_narcissist_43_name => 'गैसलाइटिंग इनकार';
+
+  @override
+  String get metric_narcissist_43_description =>
+      'घटनाओं या बयानों को सपाट रूप से नकारना जो हुए थे, जिससे लक्ष्य वास्तविकता पर सवाल उठाता है।';
+
+  @override
+  String get metric_narcissist_44_name => 'चिंताओं को तुच्छ बनाना';
+
+  @override
+  String get metric_narcissist_44_description =>
+      'वैध शिकायतों को महत्वहीन या अत्यधिक संवेदनशील बताकर खारिज करना।';
+
+  @override
+  String get metric_narcissist_45_name => 'दोष बाहरीकरण';
+
+  @override
+  String get metric_narcissist_45_description =>
+      'सभी समस्याओं और संघर्षों को दूसरों पर थोपना, कभी भी व्यक्तिगत दोष स्वीकार न करना।';
+
+  @override
+  String get metric_narcissist_46_name => 'ईर्ष्या उत्तेजना';
+
+  @override
+  String get metric_narcissist_46_description =>
+      'ईर्ष्या भड़काने और भावनात्मक नियंत्रण बनाए रखने के लिए दूसरों के साथ फ्लर्ट करना या उनकी प्रशंसा करना।';
+
+  @override
+  String get metric_narcissist_47_name => 'भावनात्मक ब्लैकमेल';
+
+  @override
+  String get metric_narcissist_47_description =>
+      'निर्णयों और व्यवहार में हेरफेर करने के लिए भय, दायित्व या अपराधबोध का उपयोग करना।';
+
+  @override
+  String get metric_narcissist_48_name => 'छद्म-अंतर्दृष्टि';
+
+  @override
+  String get metric_narcissist_48_description =>
+      'सुधार दिखाने के लिए आत्म-जागरूकता या सहानुभूति का दिखावा करना, फिर विषाक्त पैटर्न पर लौटना।';
+
+  @override
+  String get metric_narcissist_49_name => 'अवमाननापूर्ण स्वर';
+
+  @override
+  String get metric_narcissist_49_description =>
+      'दूसरों को अपमानित करने और खारिज करने के लिए व्यंग्य, उपहास या तिरस्कारपूर्ण भाषा का उपयोग करना।';
+
+  @override
+  String get metric_narcissist_50_name => 'बदले की कल्पनाएँ';
+
+  @override
+  String get metric_narcissist_50_description =>
+      'उन लोगों के खिलाफ प्रतिशोध या सजा की इच्छा व्यक्त करना जिन्होंने उनका अपमान किया है।';
+
+  @override
+  String get metric_serial_killer_1_name => 'शिकारी ढांचा';
+
+  @override
+  String get metric_serial_killer_1_description =>
+      'उन भाषाओं का पता लगाता है जो वक्ता को शिकारी और लक्ष्य को शिकार के रूप में स्थापित करती हैं, जो शिकारी इरादे को दर्शाता है।';
+
+  @override
+  String get metric_serial_killer_2_name => 'सहानुभूति की कमी';
+
+  @override
+  String get metric_serial_killer_2_description =>
+      'उन कथनों की पहचान करता है जिनमें भावनात्मक प्रतिध्वनि या दूसरों की पीड़ा के प्रति चिंता का अभाव होता है, जो निर्दयता का सुझाव देता है।';
+
+  @override
+  String get metric_serial_killer_3_name => 'अमानवीय लेबल';
+
+  @override
+  String get metric_serial_killer_3_description =>
+      'अपमानजनक शब्दों या वस्तुकरण लेबलों के उपयोग को चिह्नित करता है जो पीड़ितों की मानवता को छीन लेते हैं।';
+
+  @override
+  String get metric_serial_killer_4_name => 'वस्तुकरण संकेत';
+
+  @override
+  String get metric_serial_killer_4_description =>
+      'उन भाषाओं को पहचानता है जो व्यक्तियों को संतुष्टि के लिए उपकरण या वस्तु के रूप में मानती हैं।';
+
+  @override
+  String get metric_serial_killer_5_name => 'नियंत्रण की जिद';
+
+  @override
+  String get metric_serial_killer_5_description =>
+      'प्रभुत्व, हेरफेर या अनुपालन लागू करने के लिए जुनूनी संदर्भों का पता लगाता है।';
+
+  @override
+  String get metric_serial_killer_6_name => 'उत्तेजना-खोज स्वर';
+
+  @override
+  String get metric_serial_killer_6_description =>
+      'जोखिम भरे, हिंसक या शिकारी कृत्यों का वर्णन करने में उत्तेजना या उत्साह की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_7_name => 'विभाजन चिह्न';
+
+  @override
+  String get metric_serial_killer_7_description =>
+      'सामान्य और हिंसक विषयों के बीच अचानक बदलाव को चिह्नित करता है, जो मनोवैज्ञानिक पृथक्करण को दर्शाता है।';
+
+  @override
+  String get metric_serial_killer_8_name => 'पीड़ित चयन संकेत';
+
+  @override
+  String get metric_serial_killer_8_description =>
+      'विशिष्ट कमजोर समूहों को लक्षित करने के लिए मानदंड या प्राथमिकताओं का पता लगाता है।';
+
+  @override
+  String get metric_serial_killer_9_name => 'दुखद आनंद';
+
+  @override
+  String get metric_serial_killer_9_description =>
+      'दूसरों के दर्द, भय या पीड़ा से प्राप्त आनंद को पहचानता है।';
+
+  @override
+  String get metric_serial_killer_10_name => 'हेरफेरपूर्ण हानि';
+
+  @override
+  String get metric_serial_killer_10_description =>
+      'दूसरों को धोखा देने या हानिकारक स्थितियों में मजबूर करने के लिए उपयोग की जाने वाली भाषा की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_11_name => 'स्टॉकिंग संकेतक';
+
+  @override
+  String get metric_serial_killer_11_description =>
+      'लक्ष्य की विस्तृत ट्रैकिंग, निगरानी या जुनूनी निगरानी को चिह्नित करता है।';
+
+  @override
+  String get metric_serial_killer_12_name => 'ग्रूमिंग भाषा';
+
+  @override
+  String get metric_serial_killer_12_description =>
+      'पीड़ितों का शोषण या दुरुपयोग करने के लिए धीरे-धीरे विश्वास बनाने की रणनीतियों का पता लगाता है।';
+
+  @override
+  String get metric_serial_killer_13_name => 'हिंसक कल्पना';
+
+  @override
+  String get metric_serial_killer_13_description =>
+      'मानसिक अभ्यास के रूप में दूसरों को नुकसान पहुंचाने या मारने के स्पष्ट विवरणों की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_14_name => 'शक्ति दावा';
+
+  @override
+  String get metric_serial_killer_14_description =>
+      'दूसरों पर श्रेष्ठता या नियंत्रण पर जोर देने वाले बयानों को पहचानता है।';
+
+  @override
+  String get metric_serial_killer_15_name => 'पश्चाताप की कमी';
+
+  @override
+  String get metric_serial_killer_15_description =>
+      'हानिकारक कार्यों पर चर्चा करने के बाद अपराध या पछतावे की अनुपस्थिति को चिह्नित करता है।';
+
+  @override
+  String get metric_serial_killer_16_name => 'दोष बाहरीकरण';
+
+  @override
+  String get metric_serial_killer_16_description =>
+      'हिंसक आग्रहों के लिए जिम्मेदारी पीड़ितों या समाज पर डालने का पता लगाता है।';
+
+  @override
+  String get metric_serial_killer_17_name => 'यौनिकृत हिंसा';
+
+  @override
+  String get metric_serial_killer_17_description =>
+      'भाषा में यौन और हिंसक विषयों के विलय की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_18_name => 'अलगाव रणनीति';
+
+  @override
+  String get metric_serial_killer_18_description =>
+      'लक्ष्य को समर्थन नेटवर्क से अलग करने के प्रयासों को पहचानता है।';
+
+  @override
+  String get metric_serial_killer_19_name => 'गैसलाइटिंग पैटर्न';
+
+  @override
+  String get metric_serial_killer_19_description =>
+      'वास्तविकता को विकृत करने और पीड़ित की मानसिक स्थिति को कमजोर करने के लिए डिज़ाइन की गई भाषा को चिह्नित करता है।';
+
+  @override
+  String get metric_serial_killer_20_name => 'धमकी छिपाना';
+
+  @override
+  String get metric_serial_killer_20_description =>
+      'सामान्य बयानों के रूप में छिपी हुई निहित धमकियों या चेतावनियों का पता लगाता है।';
+
+  @override
+  String get metric_serial_killer_21_name => 'स्वामित्व भाषा';
+
+  @override
+  String get metric_serial_killer_21_description =>
+      'किसी अन्य व्यक्ति पर स्वामित्व या अधिकार के दावों की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_22_name => 'प्रतिशोध विषय';
+
+  @override
+  String get metric_serial_killer_22_description =>
+      'प्रतिशोध या कथित गलतियों को दंडित करने पर ध्यान केंद्रित करने को पहचानता है।';
+
+  @override
+  String get metric_serial_killer_23_name => 'नार्सिसिस्टिक भव्यता';
+
+  @override
+  String get metric_serial_killer_23_description =>
+      'अत्यधिक आत्म-महत्व और दूसरों के मूल्य की उपेक्षा को चिह्नित करता है।';
+
+  @override
+  String get metric_serial_killer_24_name => 'भावनात्मक अलगाव';
+
+  @override
+  String get metric_serial_killer_24_description =>
+      'आघात या हानि पर चर्चा करते समय नैदानिक या दूरस्थ स्वर का पता लगाता है।';
+
+  @override
+  String get metric_serial_killer_25_name => 'शिकारी धैर्य';
+
+  @override
+  String get metric_serial_killer_25_description =>
+      'भविष्य के शिकार के लिए दीर्घकालिक योजना भाषा की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_26_name => 'सीमा परीक्षण';
+
+  @override
+  String get metric_serial_killer_26_description =>
+      'संभावित पीड़ितों में सीमाओं या प्रतिरोध की जांच करने को पहचानता है।';
+
+  @override
+  String get metric_serial_killer_27_name => 'हानि का न्यूनीकरण';
+
+  @override
+  String get metric_serial_killer_27_description =>
+      'हिंसक या दुर्व्यवहारपूर्ण कृत्यों की गंभीरता को कम करके बताने को चिह्नित करता है।';
+
+  @override
+  String get metric_serial_killer_28_name => 'हिंसा का औचित्य';
+
+  @override
+  String get metric_serial_killer_28_description =>
+      'दूसरों को नुकसान पहुंचाने को आवश्यक या उचित ठहराने वाले तर्कों का पता लगाता है।';
+
+  @override
+  String get metric_serial_killer_29_name => 'जुनूनी ध्यान';
+
+  @override
+  String get metric_serial_killer_29_description =>
+      'किसी विशिष्ट व्यक्ति या कार्य पर दोहराए जाने वाले, स्थिर विचारों की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_30_name => 'ठंडी गणना';
+
+  @override
+  String get metric_serial_killer_30_description =>
+      'हानिकारक कार्यों की रणनीतिक, भावनाहीन योजना को पहचानता है।';
+
+  @override
+  String get metric_serial_killer_31_name => 'धोखेबाज आकर्षण';
+
+  @override
+  String get metric_serial_killer_31_description =>
+      'हेरफेर करने के लिए अत्यधिक चापलूसी या चिकनी-चुपड़ी भाषा को चिह्नित करता है।';
+
+  @override
+  String get metric_serial_killer_32_name => 'पीड़ित को दोष देना';
+
+  @override
+  String get metric_serial_killer_32_description =>
+      'लक्ष्य को उनके स्वयं के शिकार होने के लिए दोषी ठहराने का पता लगाता है।';
+
+  @override
+  String get metric_serial_killer_33_name => 'तीव्रता के संकेत';
+
+  @override
+  String get metric_serial_killer_33_description =>
+      'हिंसक भाषा में कल्पना से इरादे तक की प्रगति की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_34_name => 'परजीवी अभिविन्यास';
+
+  @override
+  String get metric_serial_killer_34_description =>
+      'दूसरों को शोषण के संसाधनों के रूप में मानने वाली भाषा को पहचानता है।';
+
+  @override
+  String get metric_serial_killer_35_name => 'उत्तेजना संकेत';
+
+  @override
+  String get metric_serial_killer_35_description =>
+      'हिंसक विषयों से जुड़े शारीरिक उत्तेजना संकेतकों को चिह्नित करता है।';
+
+  @override
+  String get metric_serial_killer_36_name => 'निष्ठा परीक्षण';
+
+  @override
+  String get metric_serial_killer_36_description =>
+      'सहयोगियों से निष्ठा या गोपनीयता के प्रमाण की मांग का पता लगाता है।';
+
+  @override
+  String get metric_serial_killer_37_name => 'अनुष्ठानिक भाषा';
+
+  @override
+  String get metric_serial_killer_37_description =>
+      'हिंसक कृत्यों के आसपास पैटर्नयुक्त, औपचारिक वाक्यांशों की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_38_name => 'श्रेष्ठता का दावा';
+
+  @override
+  String get metric_serial_killer_38_description =>
+      'नैतिक या कानूनी बाधाओं से ऊपर होने के दावों को पहचानता है।';
+
+  @override
+  String get metric_serial_killer_39_name => 'भावनात्मक शून्यता';
+
+  @override
+  String get metric_serial_killer_39_description =>
+      'सहानुभूति की आवश्यकता वाले संदर्भों में भावनात्मक शब्दों की अनुपस्थिति को चिह्नित करता है।';
+
+  @override
+  String get metric_serial_killer_40_name => 'शिकारी जिज्ञासा';
+
+  @override
+  String get metric_serial_killer_40_description =>
+      'लक्ष्य के डर या कमजोरियों के बारे में पूछताछ करने वाले प्रश्नों का पता लगाता है।';
+
+  @override
+  String get metric_serial_killer_41_name => 'धमकियों को शांत करना';
+
+  @override
+  String get metric_serial_killer_41_description =>
+      'खुलासा या रिपोर्टिंग को रोकने के लिए चेतावनियों की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_42_name => 'अमानवीय तुलना';
+
+  @override
+  String get metric_serial_killer_42_description =>
+      'लोगों को जानवरों, वस्तुओं या अमानवीय संस्थाओं के समान समझने की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_43_name => 'नियंत्रण भाषा';
+
+  @override
+  String get metric_serial_killer_43_description =>
+      'दूसरों पर हावी होने के उद्देश्य से अनिवार्य या आदेशात्मक स्वर को चिह्नित करता है।';
+
+  @override
+  String get metric_serial_killer_44_name => 'दुखद विवरण';
+
+  @override
+  String get metric_serial_killer_44_description =>
+      'कथाओं में ग्राफिक दर्द या पीड़ा पर अत्यधिक ध्यान का पता लगाता है।';
+
+  @override
+  String get metric_serial_killer_45_name => 'जोड़-तोड़ सहानुभूति';
+
+  @override
+  String get metric_serial_killer_45_description =>
+      'लक्ष्य की रक्षा को कम करने के लिए दिखावटी चिंता की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_46_name => 'शिकारी निगाह';
+
+  @override
+  String get metric_serial_killer_46_description =>
+      'लक्ष्यों के तीव्र, आक्रामक अवलोकन का वर्णन करने वाली भाषा को पहचानता है।';
+
+  @override
+  String get metric_serial_killer_47_name => 'हिंसक पहचान';
+
+  @override
+  String get metric_serial_killer_47_description =>
+      'शिकारी, हत्यारा या राक्षस के रूप में आत्म-पहचान को चिह्नित करता है।';
+
+  @override
+  String get metric_serial_killer_48_name => 'शिकार का रोमांच';
+
+  @override
+  String get metric_serial_killer_48_description =>
+      'पीड़ितों का पीछा करने या उनका शिकार करने की प्रक्रिया में उत्तेजना का पता लगाता है।';
+
+  @override
+  String get metric_serial_killer_49_name => 'बाध्यकारी स्वीकारोक्ति';
+
+  @override
+  String get metric_serial_killer_49_description =>
+      'मनोवैज्ञानिक राहत के लिए हिंसक कृत्यों को प्रकट करने की इच्छा की पहचान करता है।';
+
+  @override
+  String get metric_serial_killer_50_name => 'अंतिमता भाषा';
+
+  @override
+  String get metric_serial_killer_50_description =>
+      'लक्ष्यों को समाप्त करने, मारने या स्थायी रूप से चुप कराने के संदर्भों को पहचानता है।';
+
+  @override
+  String get packNarcissistLabel => 'नार्सिसिस्ट';
+
+  @override
+  String get packSerialKillerLabel => 'सीरियल किलर';
 }

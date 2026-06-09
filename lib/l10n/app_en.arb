@@ -1,472 +1,378 @@
 {
   "@@locale": "en",
   "@@author": "App Developer",
-  
   "appTitle": "AI Relationship Toxicity Analyzer",
   "@appTitle": {
     "description": "The app title displayed in the app bar"
   },
-
   "psychologicalMetrics": "Psychological Metrics",
   "@psychologicalMetrics": {
     "description": "Title for the metrics selection section"
   },
-
   "metricsDescription": "Fewer selected metrics produce a deeper, more concentrated analysis of those behaviors. More selected metrics produce a broader report with less detail per metric.",
   "@metricsDescription": {
     "description": "Explanation of how metric selection affects analysis"
   },
-  
   "selectSMS": "Select SMS / RCS Chat",
   "@selectSMS": {
     "description": "Button to select SMS messages"
   },
-
   "selectDiscordChannel": "Select Discord Channel",
   "@selectDiscordChannel": {
     "description": "Button to select Discord channel"
   },
-
   "lightMode": "Light",
   "@lightMode": {
     "description": "Light mode label"
   },
-
   "darkMode": "Dark",
   "@darkMode": {
     "description": "Dark mode label"
   },
-
   "discordSetupTitle": "How to Set Up Discord",
   "@discordSetupTitle": {
     "description": "Title for Discord setup help dialog"
   },
-
   "discordSetupDescription": "Follow these steps to enable Discord channel analysis in the app:",
   "@discordSetupDescription": {
     "description": "Description for Discord setup help"
   },
-
   "discordStep1Title": "Create a Discord Bot",
   "@discordStep1Title": {
     "description": "Step 1 title for Discord setup"
   },
-
   "discordStep1Description": "Go to discord.com/developers, create a new application, and add a bot to it. Copy the bot token.",
   "@discordStep1Description": {
     "description": "Step 1 description for Discord setup"
   },
-
   "discordStep2Title": "Enable Bot Privileges",
   "@discordStep2Title": {
     "description": "Step 2 title for Discord setup"
   },
-
   "discordStep2Description": "In the bot settings, enable 'Message Content Intent' and 'Server Members Intent'.",
   "@discordStep2Description": {
     "description": "Step 2 description for Discord setup"
   },
-
   "discordStep3Title": "Invite Bot to Server",
   "@discordStep3Title": {
     "description": "Step 3 title for Discord setup"
   },
-
   "discordStep3Description": "Use OAuth2 URL generator to invite the bot to your Discord server with required permissions.",
   "@discordStep3Description": {
     "description": "Step 3 description for Discord setup"
   },
-
   "discordStep4Title": "Configure in App",
   "@discordStep4Title": {
     "description": "Step 4 title for Discord setup"
   },
-
   "discordStep4Description": "Enter your bot token in the app settings (contact support if you need help).",
   "@discordStep4Description": {
     "description": "Step 4 description for Discord setup"
   },
-
   "discordStep5Title": "Select Channel",
   "@discordStep5Title": {
     "description": "Step 5 title for Discord setup"
   },
-
   "discordStep5Description": "Tap 'Select Discord Channel', choose your server, then select the channel to analyze.",
   "@discordStep5Description": {
     "description": "Step 5 description for Discord setup"
   },
-
-  "gotIt": "Got It",
+  "gotIt": "Got it",
   "@gotIt": {
     "description": "Button to dismiss help dialog"
   },
-
   "selectFile": "Select file",
   "@selectFile": {
     "description": "Button to select a file"
   },
-  
   "analyzeSelectedMetrics": "Analyze Selected metrics",
   "@analyzeSelectedMetrics": {
     "description": "Button to analyze selected metrics"
   },
-  
   "analyze20RandomMetrics": "Analyze 20 Random metrics",
   "@analyze20RandomMetrics": {
     "description": "Button to analyze 20 random metrics"
   },
-  
   "membershipOptions": "Membership Options",
   "@membershipOptions": {
     "description": "Title for membership landing page"
   },
-  
   "free": "Free",
   "@free": {
     "description": "Free tier label"
   },
-  
   "oneTimeUnlock": "One-Time Report Unlock",
   "@oneTimeUnlock": {
     "description": "One-time unlock tier label"
   },
-  
   "standard": "Standard",
   "@standard": {
     "description": "Standard tier label"
   },
-  
   "discordAddon": "Discord Addon",
   "@discordAddon": {
     "description": "Discord addon label"
   },
-  
   "analyze": "Analyze",
   "@analyze": {
     "description": "Analyze button/action"
   },
-  
   "report": "Report",
   "@report": {
     "description": "Report label"
   },
-  
   "pdfReport": "PDF Report",
   "@pdfReport": {
     "description": "PDF report label"
   },
-
   "openPdf": "Open PDF",
   "@openPdf": {
     "description": "Button to open PDF"
   },
-
   "sharePdf": "Share PDF",
   "@sharePdf": {
     "description": "Button to share PDF"
   },
-
   "printPdf": "Print PDF",
   "@printPdf": {
     "description": "Button to print PDF"
   },
-
   "closePdfPreview": "Close PDF Preview Window",
   "@closePdfPreview": {
     "description": "Button to close PDF preview"
   },
-
   "openPdfPreview": "Open PDF Preview Window",
   "@openPdfPreview": {
     "description": "Button to open PDF preview"
   },
-
   "pdfPreviewDescription": "The embedded PDF window starts closed to keep the report compact.",
   "@pdfPreviewDescription": {
     "description": "Explanation of PDF preview window"
   },
-
   "notNow": "Not now",
   "@notNow": {
     "description": "Button to dismiss dialog"
   },
-
   "unlockThisReport": "Unlock This Report - $20",
   "@unlockThisReport": {
     "description": "Button to unlock single report"
   },
-
   "joinStandard": "Join Standard - $9.99/mo",
   "@joinStandard": {
     "description": "Button to join Standard membership"
   },
-
   "instantUnlockTitle": "Instant Report Unlock - $20",
   "@instantUnlockTitle": {
     "description": "Title for instant unlock dialog"
   },
-
   "instantUnlockDescription": "This is a one-time purchase to unlock the current report only. No subscription required. Future reports will require separate unlocks or a membership.\n\nProceed with payment?",
   "@instantUnlockDescription": {
     "description": "Description for instant unlock purchase"
   },
-
   "purchaseFor20": "Purchase for $20",
   "@purchaseFor20": {
     "description": "Button to purchase for $20"
   },
-  
   "share": "Share",
   "@share": {
     "description": "Share action"
   },
-  
   "print": "Print",
   "@print": {
     "description": "Print action"
   },
-  
   "save": "Save",
   "@save": {
     "description": "Save action"
   },
-  
   "cancel": "Cancel",
   "@cancel": {
     "description": "Cancel action"
   },
-  
   "ok": "OK",
   "@ok": {
     "description": "OK button"
   },
-  
   "loading": "Loading...",
   "@loading": {
     "description": "Loading indicator text"
   },
-  
   "error": "Error",
   "@error": {
     "description": "Error label"
   },
-  
   "success": "Success",
   "@success": {
     "description": "Success label"
   },
-  
   "conversations": "Conversations",
   "@conversations": {
     "description": "Conversations label"
   },
-  
   "messages": "Messages",
   "@messages": {
     "description": "Messages label"
   },
-  
   "selectConversation": "Select Conversation",
   "@selectConversation": {
     "description": "Select conversation prompt"
   },
-
   "selectSmsConversation": "Select SMS / RCS Conversation",
   "@selectSmsConversation": {
     "description": "Title for SMS conversation picker screen"
   },
-
   "searchConversations": "Search conversations...",
   "@searchConversations": {
     "description": "Hint text for conversation search field"
   },
-
   "loadingConversations": "Loading conversations...",
   "@loadingConversations": {
     "description": "Loading indicator text for conversations"
   },
-
   "errorLoadingConversations": "Error Loading Conversations",
   "@errorLoadingConversations": {
     "description": "Error dialog title for conversation loading failure"
   },
-
-  "selectConversationToAnalyze": "Select Conversation to Analyze",
+  "selectConversationToAnalyze": "Select conversation to analyze",
   "@selectConversationToAnalyze": {
     "description": "Dashboard title prompt"
   },
-
   "analyzeWithSelectedMetrics": "Analyze with the selected metrics",
   "@analyzeWithSelectedMetrics": {
     "description": "Button to analyze with selected metrics"
   },
-
   "loadConversationAndSelectMetric": "Load a conversation and select at least one metric",
   "@loadConversationAndSelectMetric": {
     "description": "Hint to load conversation first"
   },
-
   "selectAtLeastOneMetric": "At least one metric needs to be selected to run the report.",
   "@selectAtLeastOneMetric": {
     "description": "Error message when no metrics selected"
   },
-
   "spinningMetricWheel": "Spinning the metric wheel...",
   "@spinningMetricWheel": {
     "description": "Text shown while randomizing metrics"
   },
-
   "loadConversationToAnalyze": "Load a conversation to analyze",
   "@loadConversationToAnalyze": {
     "description": "Hint to load conversation for random analysis"
   },
-  
   "noConversationsFound": "No conversations found",
   "@noConversationsFound": {
     "description": "Message when no conversations exist"
   },
-  
   "permissionsRequired": "Permissions Required",
   "@permissionsRequired": {
     "description": "Permissions dialog title"
   },
-  
   "smsPermission": "Text Messages",
   "@smsPermission": {
     "description": "SMS permission label"
   },
-  
   "contactsPermission": "Contacts",
   "@contactsPermission": {
     "description": "Contacts permission label"
   },
-  
   "smsPermissionDescription": "To analyze your SMS conversations for relationship patterns",
   "@smsPermissionDescription": {
     "description": "SMS permission description"
   },
-  
   "contactsPermissionDescription": "To display contact names instead of phone numbers",
   "@contactsPermissionDescription": {
     "description": "Contacts permission description"
   },
-  
   "analyzingMessage": "Stand by while your psychological analysis is generated by AI...",
   "@analyzingMessage": {
     "description": "Message shown while AI is analyzing"
   },
-
   "analyzingStatus": "Analyzing conversation...",
   "@analyzingStatus": {
     "description": "Short status message shown during analysis"
   },
-  
   "analyzingSubMessage": "Please be patient, this process could take up to a minute depending on your connection speed and the quantity of selected metrics",
   "@analyzingSubMessage": {
     "description": "Sub-message shown while AI is analyzing"
   },
-  
   "unlockFullReport": "Unlock and show this entire report",
   "@unlockFullReport": {
     "description": "Button to unlock full report"
   },
-  
   "fullReportLocked": "Full Report Locked",
   "@fullReportLocked": {
     "description": "Title when report is locked"
   },
-  
   "upgradeToUnlock": "Upgrade your membership to unlock the full psychological analysis report with all metrics and detailed insights.",
   "@upgradeToUnlock": {
     "description": "Message explaining why report is locked"
   },
-  
   "language": "Language",
   "@language": {
     "description": "Language selector label"
   },
-  
   "english": "English",
   "@english": {
     "description": "English language name"
   },
-  
   "spanish": "Spanish",
   "@spanish": {
     "description": "Spanish language name"
   },
-  
   "french": "French",
   "@french": {
     "description": "French language name"
   },
-  
   "german": "German",
   "@german": {
     "description": "German language name"
   },
-  
   "italian": "Italian",
   "@italian": {
     "description": "Italian language name"
   },
-  
   "portuguese": "Portuguese",
   "@portuguese": {
     "description": "Portuguese language name"
   },
-  
   "dutch": "Dutch",
   "@dutch": {
     "description": "Dutch language name"
   },
-  
   "russian": "Russian",
   "@russian": {
     "description": "Russian language name"
   },
-  
   "chinese": "Chinese",
   "@chinese": {
     "description": "Chinese language name"
   },
-  
   "japanese": "Japanese",
   "@japanese": {
     "description": "Japanese language name"
   },
-  
   "korean": "Korean",
   "@korean": {
     "description": "Korean language name"
   },
-  
   "arabic": "Arabic",
   "@arabic": {
     "description": "Arabic language name"
   },
-  
   "hindi": "Hindi",
   "@hindi": {
     "description": "Hindi language name"
   },
-  
   "turkish": "Turkish",
   "@turkish": {
     "description": "Turkish language name"
   },
-  
   "polish": "Polish",
   "@polish": {
     "description": "Polish language name"
   },
-  
   "ukrainian": "Ukrainian",
   "@ukrainian": {
     "description": "Ukrainian language name"
   },
-
   "runAnotherAnalysis": "Run another analysis?",
   "becomeMemberTitle": "Become a member to get the full analysis report",
   "becomeMemberSubtitle": "Choose the access level that matches the conversations and reports you need to analyze.",
@@ -511,14 +417,12 @@
   "clear": "Clear",
   "dateRangeRequiresMembership": "Requires Standard Membership or higher",
   "selectUpToCount": "Select up to {max}. Current: {current}",
-  "selectConversationToAnalyze": "Select conversation to analyze",
   "clearSelections": "Clear Selections",
   "analyzeRandomMetrics": "Analyze {count} random metrics",
   "saveSelections": "Save Selections",
   "loadSelections": "Load Selections",
   "saveMetricListName": "Save Metric List",
   "enterListName": "Enter a name for this metric list:",
-  "save": "Save",
   "chooseSavedMetrics": "Choose saved metrics list:",
   "noSavedLists": "No saved metric lists to load at this time.",
   "metricListSaved": "Metric list saved successfully.",
@@ -562,7 +466,6 @@
   "analysisOfSender": "Analysis of {sender} (Sender)",
   "analysisOfReceiver": "Analysis of {receiver} (Receiver)",
   "finalConclusion": "Final Conclusion",
-
   "metric_1_name": "Contempt",
   "metric_1_description": "Looks for superiority, disgust, mockery, eye-rolling language, or insults that place one partner beneath the other.",
   "metric_2_name": "Defensiveness",
@@ -763,7 +666,6 @@
   "metric_99_description": "Identifies language that invites honesty, lowers fear, protects dignity, and reassures safe expression.",
   "metric_100_name": "Relationship Ambivalence",
   "metric_100_description": "Detects uncertainty, mixed commitment, push-pull messaging, or unclear desire to continue.",
-
   "unableToOpenConversations": "Unable to Open Conversations",
   "unableToOpenConversationsBody": "Something went wrong loading your conversations. Please try again.",
   "unableToLoadConversationsBody": "Unable to load conversations. Please check your permissions and try again.",
@@ -779,7 +681,9 @@
   "selectedFile": "Selected: {filename}",
   "@selectedFile": {
     "placeholders": {
-      "filename": { "type": "String" }
+      "filename": {
+        "type": "String"
+      }
     }
   },
   "invalidFile": "Invalid File",
@@ -788,13 +692,16 @@
   "errorPickingFile": "Unable to open the file. Please try again.",
   "readyToCapture": "Ready to Capture",
   "readyToCaptureBody": "Switch to the Messages app now and start taking screenshots.\n\nReturn to this app when you're done and tap \"Finish & Process\".",
-  "gotIt": "Got it",
   "noScreenshotsToProcess": "No screenshots to process.",
   "processingScreenshot": "Processing screenshot {current} of {total}...",
   "@processingScreenshot": {
     "placeholders": {
-      "current": { "type": "int" },
-      "total": { "type": "int" }
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
     }
   },
   "noMessagesFound": "No Messages Found",
@@ -802,7 +709,9 @@
   "loadedMessages": "Loaded {count} messages from screenshots",
   "@loadedMessages": {
     "placeholders": {
-      "count": { "type": "int" }
+      "count": {
+        "type": "int"
+      }
     }
   },
   "processingError": "Processing Error",
@@ -810,20 +719,28 @@
   "metricListSavedAs": "Your selections have been saved as \"{name}\".",
   "@metricListSavedAs": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "metricListLoadedName": "Selections \"{name}\" have been retrieved and applied.",
   "@metricListLoadedName": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "conversationLoaded": "Loaded {count} messages from {name}",
   "@conversationLoaded": {
     "placeholders": {
-      "count": { "type": "int" },
-      "name": { "type": "String" }
+      "count": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
     }
   },
   "loadButton": "Load",
@@ -839,7 +756,9 @@
   "loadingConversationWith": "Loading conversation\nwith {name}…",
   "@loadingConversationWith": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "iosCaptureInstructions": "1. Open the Messages app and select the conversation\n2. Scroll to the oldest message you want to analyze\n3. Tap \"Start Capture\" below\n4. Take screenshots as you scroll through the conversation\n5. When done, tap \"Finish & Process\"",
@@ -852,20 +771,15 @@
   "yourApiKeyIsStoredSecurely": "Your API key is stored securely on your device and never shared.",
   "pleaseEnterApiKey": "Please enter an API key",
   "apiKeySavedSuccessfully": "API key saved successfully!",
-  "save": "Save",
-  "loadingConversationWith": "Loading conversation\nwith {name}…",
-  "@loadingConversationWith": {
-    "placeholders": {
-      "name": { "type": "String" }
-    }
-  },
   "pleaseBePatientLongerTextThreads": "Please be patient, Longer text thread datasets take quite a while to load",
   "almostThereBigOne": "Almost there, Wow this must have been a big one",
   "pleaseBePatientLargeDatasets": "Please be patient, large datasets could result in loading times greater than a minute and a half",
   "continuingToLoadMassiveThread": "Continuing to load the massive thread with {name}…",
   "@continuingToLoadMassiveThread": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "noMessagesInDateRange": "No messages found in the selected date range. Please select different dates or clear the date filter.",
@@ -873,166 +787,141 @@
   "@purchaseCustomMetricTileTitle": {
     "description": "Title label on the Purchase Custom Metric tile in the metrics grid"
   },
-
   "purchaseCustomMetricTileDescription": "For a one-time fee of $4.99, enter a custom metric name and definition saved permanently alongside your other metrics for use in any future analysis. Purchase unlimited custom metrics.",
   "@purchaseCustomMetricTileDescription": {
     "description": "Description on the Purchase Custom Metric tile explaining what the purchase does"
   },
-
   "purchaseCustomMetricConfirmTitle": "Purchase Custom Metric",
   "@purchaseCustomMetricConfirmTitle": {
     "description": "Title of the purchase confirmation dialog"
   },
-
   "purchaseCustomMetricConfirmBody": "You will be charged $4.99 (one-time) to unlock one custom metric slot.\n\nYour custom metric name and definition are permanent and cannot ever be changed once saved, so please choose carefully.",
   "@purchaseCustomMetricConfirmBody": {
     "description": "Body text of the purchase confirmation dialog"
   },
-
   "purchaseCustomMetricConfirmButton": "Purchase — $4.99",
   "@purchaseCustomMetricConfirmButton": {
     "description": "Confirm button label on the purchase dialog"
   },
-
   "purchaseCustomMetricEnterNameTitle": "Custom Metric Name",
   "@purchaseCustomMetricEnterNameTitle": {
     "description": "Title of the dialog where the user enters their custom metric name"
   },
-
   "purchaseCustomMetricEnterNamePrompt": "Enter the name for your custom metric:",
   "@purchaseCustomMetricEnterNamePrompt": {
     "description": "Prompt text above the name text field"
   },
-
   "purchaseCustomMetricNameHint": "Metric Name",
   "@purchaseCustomMetricNameHint": {
     "description": "Hint text inside the metric name text field"
   },
-
   "purchaseCustomMetricConfirmNameTitle": "Confirm Metric Name",
   "@purchaseCustomMetricConfirmNameTitle": {
     "description": "Title of the name confirmation dialog"
   },
-
   "purchaseCustomMetricConfirmNameYouEntered": "You entered:\n\n",
   "@purchaseCustomMetricConfirmNameYouEntered": {
     "description": "Label before showing the entered metric name back to the user"
   },
-
   "purchaseCustomMetricConfirmNameWarning": "\n\n⚠️  This is FINAL and can NEVER be changed.",
   "@purchaseCustomMetricConfirmNameWarning": {
     "description": "Warning shown after the metric name in the confirmation dialog"
   },
-
   "purchaseCustomMetricReenterName": "Oops — Re-Enter Name",
   "@purchaseCustomMetricReenterName": {
     "description": "Button to go back and re-enter the metric name"
   },
-
   "purchaseCustomMetricSaveName": "OK — Save Metric Name",
   "@purchaseCustomMetricSaveName": {
     "description": "Button to confirm and save the metric name"
   },
-
   "purchaseCustomMetricDefineTitleWithName": "Define: {name}",
   "@purchaseCustomMetricDefineTitleWithName": {
     "description": "Title of the dialog where the user defines the metric meaning. {name} is the metric name they entered.",
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
-
   "purchaseCustomMetricDefinePromptWithName": "Input the meaning of your Custom Metric: {name}",
   "@purchaseCustomMetricDefinePromptWithName": {
     "description": "Prompt text above the meaning text field. {name} is the metric name.",
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
-
   "purchaseCustomMetricMeaningHint": "Describe what this metric means, what behaviors it looks for, and how it applies to relationship dynamics...",
   "@purchaseCustomMetricMeaningHint": {
     "description": "Hint text inside the metric definition/meaning text field"
   },
-
   "purchaseCustomMetricReenter": "Oops — Re-Enter",
   "@purchaseCustomMetricReenter": {
     "description": "Generic re-enter button (used in meaning dialog)"
   },
-
   "purchaseCustomMetricSaveMeaning": "OK — Save Meaning",
   "@purchaseCustomMetricSaveMeaning": {
     "description": "Button to confirm and save the metric meaning/definition"
   },
-
   "purchaseCustomMetricPreviewTitle": "Preview Your Custom Metric",
   "@purchaseCustomMetricPreviewTitle": {
     "description": "Title of the final preview dialog before committing the custom metric"
   },
-
   "purchaseCustomMetricPreviewSubtitle": "This is how your tile will look:",
   "@purchaseCustomMetricPreviewSubtitle": {
     "description": "Subtitle text above the tile preview in the final preview dialog"
   },
-
   "purchaseCustomMetricLastChanceWarning": "⚠️  This is your LAST CHANCE to change your mind.\nOnce committed, the name and definition are permanent.",
   "@purchaseCustomMetricLastChanceWarning": {
     "description": "Final warning shown in the preview dialog before the user commits"
   },
-
   "purchaseCustomMetricCancelEverything": "Cancel Everything",
   "@purchaseCustomMetricCancelEverything": {
     "description": "Button to cancel the entire custom metric purchase and setup flow"
   },
-
   "purchaseCustomMetricCommit": "Commit to Custom Metric",
   "@purchaseCustomMetricCommit": {
     "description": "Final commit button that permanently saves the custom metric"
   },
-
   "purchaseCustomMetricSuccess": "✓ \"{name}\" added to your metrics! You can now select it for analysis.",
   "@purchaseCustomMetricSuccess": {
     "description": "Snackbar message shown after a custom metric is successfully created. {name} is the metric name.",
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
-
   "purchaseCustomMetricProcessingTitle": "Processing Purchase...",
   "@purchaseCustomMetricProcessingTitle": {
     "description": "Title of the dialog shown while waiting for the store to confirm a purchase"
   },
-
   "purchaseCustomMetricProcessingBody": "Waiting for store confirmation.\nPlease do not close the app.",
   "@purchaseCustomMetricProcessingBody": {
     "description": "Body text of the processing/pending purchase dialog"
   },
-
   "next": "Next",
   "@next": {
     "description": "Generic Next button label used in multi-step flows"
   },
-
   "cancelNotReady": "Cancel — I Wasn't Ready",
   "@cancelNotReady": {
     "description": "Cancel button used across custom metric dialogs when the user wasn't ready to proceed"
   },
-
   "packGoodLabel": "The Good",
   "@packGoodLabel": {
-    "description": "Tab label for The Good pack \u2014 100 positive, healthy relationship pattern metrics"
+    "description": "Tab label for The Good pack — 100 positive, healthy relationship pattern metrics"
   },
-
   "packBadLabel": "The Bad",
   "@packBadLabel": {
-    "description": "Tab label for The Bad pack \u2014 100 warning-sign / harmful-pattern metrics"
+    "description": "Tab label for The Bad pack — 100 warning-sign / harmful-pattern metrics"
   },
-
   "packUglyLabel": "The Ugly",
   "@packUglyLabel": {
-    "description": "Tab label for The Ugly pack \u2014 100 severe red-flag / abuse-indicator metrics"
+    "description": "Tab label for The Ugly pack — 100 severe red-flag / abuse-indicator metrics"
   },
-
   "metric_good_1_name": "Active Listening Cues",
   "metric_good_1_description": "Detects paraphrasing, clarifying questions, and demonstrated understanding of the partner's perspective in text.",
   "metric_good_2_name": "Appreciation Expression",
@@ -1632,5 +1521,207 @@
   "metric_ugly_99_name": "Child Weaponization",
   "metric_ugly_99_description": "Identifies using children as pawns, threats regarding custody, or leveraging parental bonds as control mechanisms.",
   "metric_ugly_100_name": "Systematic Dehumanization",
-  "metric_ugly_100_description": "Detects sustained language that strips the partner of personhood, dignity, or their right to basic humanity."
+  "metric_ugly_100_description": "Detects sustained language that strips the partner of personhood, dignity, or their right to basic humanity.",
+  "metric_narcissist_1_name": "Grandiose Self-Importance",
+  "metric_narcissist_1_description": "Exaggerated claims of achievements, talents, or status beyond realistic evidence, often with a sense of uniqueness.",
+  "metric_narcissist_2_name": "Entitlement Demands",
+  "metric_narcissist_2_description": "Unreasonable expectations of special treatment or automatic compliance with their wishes without reciprocity.",
+  "metric_narcissist_3_name": "Empathy Deficit",
+  "metric_narcissist_3_description": "Inability or unwillingness to recognize or validate others' feelings, dismissing emotional needs as irrelevant.",
+  "metric_narcissist_4_name": "Supply-Seeking Praise",
+  "metric_narcissist_4_description": "Excessive fishing for admiration, compliments, or validation to bolster fragile self-esteem.",
+  "metric_narcissist_5_name": "Triangulation Tactics",
+  "metric_narcissist_5_description": "Introducing a third party into conflicts to create jealousy, competition, or manipulate perceptions.",
+  "metric_narcissist_6_name": "Love Bombing Intensity",
+  "metric_narcissist_6_description": "Overwhelming flattery, gifts, or attention early in a relationship to gain control and idealize the target.",
+  "metric_narcissist_7_name": "Devaluation Criticism",
+  "metric_narcissist_7_description": "Sudden shift to harsh criticism, belittling, or contempt after idealization, eroding the target's self-worth.",
+  "metric_narcissist_8_name": "Silent Treatment Punishment",
+  "metric_narcissist_8_description": "Withholding communication or affection as a deliberate punishment to induce anxiety and compliance.",
+  "metric_narcissist_9_name": "DARVO Blame Shift",
+  "metric_narcissist_9_description": "Denying responsibility, attacking the accuser, and reversing victim-offender roles to evade accountability.",
+  "metric_narcissist_10_name": "Gaslighting Reality Distortion",
+  "metric_narcissist_10_description": "Denying or twisting facts, events, or feelings to make the target doubt their own memory or sanity.",
+  "metric_narcissist_11_name": "Rage at Criticism",
+  "metric_narcissist_11_description": "Intense anger, contempt, or retaliation in response to any perceived slight or feedback, even if constructive.",
+  "metric_narcissist_12_name": "Boundary Violation",
+  "metric_narcissist_12_description": "Ignoring or overriding stated limits, privacy, or personal space without remorse or negotiation.",
+  "metric_narcissist_13_name": "Envy Expression",
+  "metric_narcissist_13_description": "Resentment of others' successes or possessions, often accompanied by devaluation or attempts to undermine.",
+  "metric_narcissist_14_name": "Exploitative Behavior",
+  "metric_narcissist_14_description": "Using others for personal gain, status, or resources without regard for their well-being or consent.",
+  "metric_narcissist_15_name": "Mirroring Manipulation",
+  "metric_narcissist_15_description": "Imitating the target's interests, values, or traits to create false rapport and gain trust.",
+  "metric_narcissist_16_name": "Superiority Claims",
+  "metric_narcissist_16_description": "Asserting inherent superiority over others, often with condescending or dismissive language.",
+  "metric_narcissist_17_name": "Fantasy Preoccupation",
+  "metric_narcissist_17_description": "Obsessive talk about unlimited success, power, brilliance, or ideal love that is unrealistic.",
+  "metric_narcissist_18_name": "Special Status Assertion",
+  "metric_narcissist_18_description": "Belief that they can only be understood by or associate with high-status people or institutions.",
+  "metric_narcissist_19_name": "Interpersonal Exploitation",
+  "metric_narcissist_19_description": "Taking advantage of others' resources, time, or emotions without reciprocation or gratitude.",
+  "metric_narcissist_20_name": "Lack of Remorse",
+  "metric_narcissist_20_description": "Absence of guilt or apology after causing harm, often justifying actions as deserved by the target.",
+  "metric_narcissist_21_name": "Competitive Undermining",
+  "metric_narcissist_21_description": "Sabotaging others' achievements or relationships to maintain a superior position.",
+  "metric_narcissist_22_name": "Idealization Phase",
+  "metric_narcissist_22_description": "Excessive praise and adoration early in a relationship, setting unrealistic expectations for the target.",
+  "metric_narcissist_23_name": "Devaluation Phase",
+  "metric_narcissist_23_description": "Gradual or sudden criticism and contempt after idealization, creating confusion and self-doubt.",
+  "metric_narcissist_24_name": "Discard Impulse",
+  "metric_narcissist_24_description": "Abruptly ending relationships when the target no longer provides narcissistic supply or challenges them.",
+  "metric_narcissist_25_name": "Hoovering Attempts",
+  "metric_narcissist_25_description": "Re-engaging a discarded target with promises, guilt, or manipulation to regain supply.",
+  "metric_narcissist_26_name": "Projection of Flaws",
+  "metric_narcissist_26_description": "Accusing others of their own negative traits or behaviors to avoid self-awareness.",
+  "metric_narcissist_27_name": "Control Through Guilt",
+  "metric_narcissist_27_description": "Using guilt-inducing statements to manipulate others into compliance or caretaking.",
+  "metric_narcissist_28_name": "Emotional Volatility",
+  "metric_narcissist_28_description": "Rapid mood swings from charm to rage, often triggered by perceived narcissistic injury.",
+  "metric_narcissist_29_name": "Invalidation of Feelings",
+  "metric_narcissist_29_description": "Dismissing or minimizing others' emotions as overreactions or irrational.",
+  "metric_narcissist_30_name": "Monopolizing Conversations",
+  "metric_narcissist_30_description": "Dominating dialogue with self-focused topics, interrupting, or ignoring others' input.",
+  "metric_narcissist_31_name": "Name-Calling Derogation",
+  "metric_narcissist_31_description": "Using insults, labels, or demeaning terms to devalue and control the target.",
+  "metric_narcissist_32_name": "Threats of Abandonment",
+  "metric_narcissist_32_description": "Using fear of loss or rejection to coerce compliance or attention.",
+  "metric_narcissist_33_name": "Playing the Victim",
+  "metric_narcissist_33_description": "Portraying themselves as unfairly treated to elicit sympathy and deflect accountability.",
+  "metric_narcissist_34_name": "Martyr Complex",
+  "metric_narcissist_34_description": "Claiming excessive sacrifice or suffering to induce guilt and obligation in others.",
+  "metric_narcissist_35_name": "Selective Memory",
+  "metric_narcissist_35_description": "Conveniently forgetting promises, agreements, or harmful actions to avoid responsibility.",
+  "metric_narcissist_36_name": "Stonewalling Communication",
+  "metric_narcissist_36_description": "Refusing to engage in dialogue, ignoring questions, or shutting down discussions to maintain control.",
+  "metric_narcissist_37_name": "Future Faking",
+  "metric_narcissist_37_description": "Making grandiose promises about shared future plans to create false hope and dependency.",
+  "metric_narcissist_38_name": "Smear Campaign",
+  "metric_narcissist_38_description": "Spreading malicious rumors or lies about the target to isolate them and damage reputation.",
+  "metric_narcissist_39_name": "Isolation Tactics",
+  "metric_narcissist_39_description": "Discouraging or preventing contact with friends, family, or support systems to increase dependence.",
+  "metric_narcissist_40_name": "Financial Exploitation",
+  "metric_narcissist_40_description": "Manipulating or controlling financial resources for personal gain or to create dependency.",
+  "metric_narcissist_41_name": "Sexual Coercion",
+  "metric_narcissist_41_description": "Using pressure, guilt, or manipulation to obtain sexual compliance without genuine consent.",
+  "metric_narcissist_42_name": "Boundary Testing",
+  "metric_narcissist_42_description": "Repeatedly pushing limits to see what behavior is tolerated, then escalating violations.",
+  "metric_narcissist_43_name": "Gaslighting Denial",
+  "metric_narcissist_43_description": "Flatly denying events or statements that occurred, causing the target to question reality.",
+  "metric_narcissist_44_name": "Trivializing Concerns",
+  "metric_narcissist_44_description": "Dismissing legitimate complaints as unimportant or overly sensitive.",
+  "metric_narcissist_45_name": "Blame Externalization",
+  "metric_narcissist_45_description": "Attributing all problems and conflicts to others, never accepting personal fault.",
+  "metric_narcissist_46_name": "Jealousy Provocation",
+  "metric_narcissist_46_description": "Flirting with or praising others to incite jealousy and maintain emotional control.",
+  "metric_narcissist_47_name": "Emotional Blackmail",
+  "metric_narcissist_47_description": "Using fear, obligation, or guilt to manipulate decisions and behavior.",
+  "metric_narcissist_48_name": "Pseudo-Insight",
+  "metric_narcissist_48_description": "Feigning self-awareness or empathy to appear reformed, then reverting to toxic patterns.",
+  "metric_narcissist_49_name": "Contemptuous Tone",
+  "metric_narcissist_49_description": "Using sarcasm, mockery, or disdainful language to degrade and dismiss others.",
+  "metric_narcissist_50_name": "Revenge Fantasies",
+  "metric_narcissist_50_description": "Expressing desires for retaliation or punishment against those who have slighted them.",
+  "metric_serial_killer_1_name": "Predatory Framing",
+  "metric_serial_killer_1_description": "Detects language that positions the speaker as a hunter and the target as prey, indicating predatory intent.",
+  "metric_serial_killer_2_name": "Empathy Deficit",
+  "metric_serial_killer_2_description": "Identifies statements lacking emotional resonance or concern for others' suffering, suggesting callousness.",
+  "metric_serial_killer_3_name": "Dehumanizing Labels",
+  "metric_serial_killer_3_description": "Flags use of derogatory terms or objectifying labels that strip victims of humanity.",
+  "metric_serial_killer_4_name": "Objectification Cues",
+  "metric_serial_killer_4_description": "Recognizes language treating individuals as tools or objects for gratification.",
+  "metric_serial_killer_5_name": "Control Fixation",
+  "metric_serial_killer_5_description": "Detects obsessive references to dominance, manipulation, or enforcing compliance.",
+  "metric_serial_killer_6_name": "Thrill-Seeking Tone",
+  "metric_serial_killer_6_description": "Identifies excitement or arousal in describing risky, violent, or predatory acts.",
+  "metric_serial_killer_7_name": "Compartmentalization Markers",
+  "metric_serial_killer_7_description": "Flags abrupt shifts between normal and violent topics, indicating psychological separation.",
+  "metric_serial_killer_8_name": "Victim Selection Signals",
+  "metric_serial_killer_8_description": "Detects criteria or preferences for targeting specific vulnerable groups.",
+  "metric_serial_killer_9_name": "Sadistic Enjoyment",
+  "metric_serial_killer_9_description": "Recognizes pleasure derived from others' pain, fear, or suffering.",
+  "metric_serial_killer_10_name": "Manipulative Harm",
+  "metric_serial_killer_10_description": "Identifies language used to deceive or coerce others into harmful situations.",
+  "metric_serial_killer_11_name": "Stalking Indicators",
+  "metric_serial_killer_11_description": "Flags detailed tracking, surveillance, or obsessive monitoring of a target.",
+  "metric_serial_killer_12_name": "Grooming Language",
+  "metric_serial_killer_12_description": "Detects gradual trust-building tactics to exploit or abuse victims.",
+  "metric_serial_killer_13_name": "Violent Fantasizing",
+  "metric_serial_killer_13_description": "Identifies vivid descriptions of harming or killing others as a mental rehearsal.",
+  "metric_serial_killer_14_name": "Power Assertion",
+  "metric_serial_killer_14_description": "Recognizes statements emphasizing superiority or control over others.",
+  "metric_serial_killer_15_name": "Lack of Remorse",
+  "metric_serial_killer_15_description": "Flags absence of guilt or regret after discussing harmful actions.",
+  "metric_serial_killer_16_name": "Blame Externalization",
+  "metric_serial_killer_16_description": "Detects shifting responsibility for violent urges onto victims or society.",
+  "metric_serial_killer_17_name": "Sexualized Violence",
+  "metric_serial_killer_17_description": "Identifies merging of sexual and violent themes in language.",
+  "metric_serial_killer_18_name": "Isolation Tactics",
+  "metric_serial_killer_18_description": "Recognizes efforts to separate a target from support networks.",
+  "metric_serial_killer_19_name": "Gaslighting Patterns",
+  "metric_serial_killer_19_description": "Flags language designed to distort reality and undermine a victim's sanity.",
+  "metric_serial_killer_20_name": "Threat Veiling",
+  "metric_serial_killer_20_description": "Detects implied threats or warnings masked as casual statements.",
+  "metric_serial_killer_21_name": "Possessive Language",
+  "metric_serial_killer_21_description": "Identifies claims of ownership or entitlement over another person.",
+  "metric_serial_killer_22_name": "Revenge Themes",
+  "metric_serial_killer_22_description": "Recognizes fixation on retaliation or punishing perceived wrongs.",
+  "metric_serial_killer_23_name": "Narcissistic Grandeur",
+  "metric_serial_killer_23_description": "Flags exaggerated self-importance and disregard for others' worth.",
+  "metric_serial_killer_24_name": "Emotional Detachment",
+  "metric_serial_killer_24_description": "Detects clinical or distant tone when discussing trauma or harm.",
+  "metric_serial_killer_25_name": "Predatory Patience",
+  "metric_serial_killer_25_description": "Identifies long-term planning language for future victimization.",
+  "metric_serial_killer_26_name": "Boundary Testing",
+  "metric_serial_killer_26_description": "Recognizes probing for limits or resistance in potential victims.",
+  "metric_serial_killer_27_name": "Minimization of Harm",
+  "metric_serial_killer_27_description": "Flags downplaying the severity of violent or abusive acts.",
+  "metric_serial_killer_28_name": "Justification of Violence",
+  "metric_serial_killer_28_description": "Detects rationalizations for harming others as necessary or deserved.",
+  "metric_serial_killer_29_name": "Obsessive Focus",
+  "metric_serial_killer_29_description": "Identifies repetitive, fixated thoughts on a specific person or act.",
+  "metric_serial_killer_30_name": "Cold Calculation",
+  "metric_serial_killer_30_description": "Recognizes strategic, emotionless planning of harmful actions.",
+  "metric_serial_killer_31_name": "Deceptive Charm",
+  "metric_serial_killer_31_description": "Flags overly flattering or ingratiating language to manipulate.",
+  "metric_serial_killer_32_name": "Victim Blaming",
+  "metric_serial_killer_32_description": "Detects attributing fault to the target for their own victimization.",
+  "metric_serial_killer_33_name": "Escalation Signals",
+  "metric_serial_killer_33_description": "Identifies progression from fantasy to intent in violent language.",
+  "metric_serial_killer_34_name": "Parasitic Orientation",
+  "metric_serial_killer_34_description": "Recognizes language treating others as resources to exploit.",
+  "metric_serial_killer_35_name": "Arousal Cues",
+  "metric_serial_killer_35_description": "Flags physiological excitement indicators linked to violent themes.",
+  "metric_serial_killer_36_name": "Testing Loyalty",
+  "metric_serial_killer_36_description": "Detects demands for proof of allegiance or secrecy from accomplices.",
+  "metric_serial_killer_37_name": "Ritualistic Language",
+  "metric_serial_killer_37_description": "Identifies patterned, ceremonial phrasing around violent acts.",
+  "metric_serial_killer_38_name": "Superiority Claims",
+  "metric_serial_killer_38_description": "Recognizes assertions of being above moral or legal constraints.",
+  "metric_serial_killer_39_name": "Emotional Vacuum",
+  "metric_serial_killer_39_description": "Flags absence of emotional words in contexts requiring empathy.",
+  "metric_serial_killer_40_name": "Predatory Curiosity",
+  "metric_serial_killer_40_description": "Detects probing questions about a target's fears or vulnerabilities.",
+  "metric_serial_killer_41_name": "Silencing Threats",
+  "metric_serial_killer_41_description": "Identifies warnings to prevent disclosure or reporting.",
+  "metric_serial_killer_42_name": "Dehumanizing Comparisons",
+  "metric_serial_killer_42_description": "Recognizes equating people to animals, objects, or subhuman entities.",
+  "metric_serial_killer_43_name": "Control Language",
+  "metric_serial_killer_43_description": "Flags imperative or commanding tones aimed at dominating others.",
+  "metric_serial_killer_44_name": "Sadistic Detail",
+  "metric_serial_killer_44_description": "Detects excessive focus on graphic pain or suffering in narratives.",
+  "metric_serial_killer_45_name": "Manipulative Empathy",
+  "metric_serial_killer_45_description": "Identifies feigned concern to lower a target's defenses.",
+  "metric_serial_killer_46_name": "Predatory Gaze",
+  "metric_serial_killer_46_description": "Recognizes language describing intense, invasive observation of targets.",
+  "metric_serial_killer_47_name": "Violent Identity",
+  "metric_serial_killer_47_description": "Flags self-identification as a predator, killer, or monster.",
+  "metric_serial_killer_48_name": "Thrill of the Hunt",
+  "metric_serial_killer_48_description": "Detects excitement in the process of stalking or pursuing victims.",
+  "metric_serial_killer_49_name": "Compulsive Confession",
+  "metric_serial_killer_49_description": "Identifies urges to disclose violent acts for psychological relief.",
+  "metric_serial_killer_50_name": "Finality Language",
+  "metric_serial_killer_50_description": "Recognizes references to ending, killing, or permanent silencing of targets.",
+  "packNarcissistLabel": "The Narcissist",
+  "packSerialKillerLabel": "The Serial Killer"
 }

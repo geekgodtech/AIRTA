@@ -3496,4 +3496,698 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get metric_ugly_100_description =>
       'パートナーから人間性、尊厳、または基本的人権を奪う持続的な言葉を検出します。';
+
+  @override
+  String get metric_narcissist_1_name => '誇大的自己重要感';
+
+  @override
+  String get metric_narcissist_1_description =>
+      '現実的な証拠を超えて、業績、才能、地位を誇張して主張し、しばしば独自性を感じている。';
+
+  @override
+  String get metric_narcissist_2_name => '特権要求';
+
+  @override
+  String get metric_narcissist_2_description =>
+      '相互性なしに、特別な扱いや自分の希望への自動的な従順を不合理に期待すること。';
+
+  @override
+  String get metric_narcissist_3_name => '共感欠如';
+
+  @override
+  String get metric_narcissist_3_description =>
+      '他者の感情を認識または検証する能力または意欲の欠如により、感情的なニーズを無関係として退けること。';
+
+  @override
+  String get metric_narcissist_4_name => '賞賛追求';
+
+  @override
+  String get metric_narcissist_4_description =>
+      '脆弱な自尊心を支えるために、称賛、賛辞、または承認を過度に求めること。';
+
+  @override
+  String get metric_narcissist_5_name => '三角関係戦術';
+
+  @override
+  String get metric_narcissist_5_description =>
+      '対立に第三者を導入し、嫉妬、競争を生み出したり、認識を操作したりすること。';
+
+  @override
+  String get metric_narcissist_6_name => '愛情爆撃の強度';
+
+  @override
+  String get metric_narcissist_6_description =>
+      '関係初期に過剰な賛辞、贈り物、または注意を浴びせ、支配力を得て対象を理想化すること。';
+
+  @override
+  String get metric_narcissist_7_name => '価値低下批判';
+
+  @override
+  String get metric_narcissist_7_description =>
+      '理想化の後、突然厳しい批判、軽蔑、または侮蔑に転じ、対象の自己価値を損なうこと。';
+
+  @override
+  String get metric_narcissist_8_name => '沈黙の罰';
+
+  @override
+  String get metric_narcissist_8_description =>
+      'コミュニケーションや愛情を意図的に差し控え、不安と従順を誘発する罰として用いること。';
+
+  @override
+  String get metric_narcissist_9_name => 'DARVO責任転嫁';
+
+  @override
+  String get metric_narcissist_9_description =>
+      '責任を否定し、告発者を攻撃し、被害者と加害者の役割を逆転させて責任を回避すること。';
+
+  @override
+  String get metric_narcissist_10_name => 'ガスライティング現実歪曲';
+
+  @override
+  String get metric_narcissist_10_description =>
+      '事実、出来事、または感情を否定または歪曲し、対象が自分の記憶や正気を疑うように仕向けること。';
+
+  @override
+  String get metric_narcissist_11_name => '批判への怒り';
+
+  @override
+  String get metric_narcissist_11_description =>
+      '建設的なものであっても、わずかな批判やフィードバックに対して激しい怒り、軽蔑、または報復を示す。';
+
+  @override
+  String get metric_narcissist_12_name => '境界侵犯';
+
+  @override
+  String get metric_narcissist_12_description =>
+      '設定された限界、プライバシー、またはパーソナルスペースを、反省や交渉なしに無視または無効にする。';
+
+  @override
+  String get metric_narcissist_13_name => '羨望の表現';
+
+  @override
+  String get metric_narcissist_13_description =>
+      '他者の成功や所有物に対する恨み。しばしば価値の切り下げや妨害行為を伴う。';
+
+  @override
+  String get metric_narcissist_14_name => '搾取的行動';
+
+  @override
+  String get metric_narcissist_14_description =>
+      '個人の利益、地位、または資源のために他者を利用し、その幸福や同意を考慮しない。';
+
+  @override
+  String get metric_narcissist_15_name => 'ミラーリング操作';
+
+  @override
+  String get metric_narcissist_15_description =>
+      '対象の興味、価値観、特性を模倣して偽の親密さを築き、信頼を得る。';
+
+  @override
+  String get metric_narcissist_16_name => '優越性の主張';
+
+  @override
+  String get metric_narcissist_16_description =>
+      '他者に対する本質的な優越性を主張し、しばしば見下したまたは軽蔑的な言葉を用いる。';
+
+  @override
+  String get metric_narcissist_17_name => '空想への没頭';
+
+  @override
+  String get metric_narcissist_17_description =>
+      '非現実的な無限の成功、権力、才能、または理想的な愛についての強迫的な話。';
+
+  @override
+  String get metric_narcissist_18_name => '特別な地位の主張';
+
+  @override
+  String get metric_narcissist_18_description =>
+      '自分は高地位の人々や機関にのみ理解される、または関連できるという信念。';
+
+  @override
+  String get metric_narcissist_19_name => '対人搾取';
+
+  @override
+  String get metric_narcissist_19_description => '他者の資源、時間、感情を、返礼や感謝なしに利用する。';
+
+  @override
+  String get metric_narcissist_20_name => '反省の欠如';
+
+  @override
+  String get metric_narcissist_20_description =>
+      '害を与えた後に罪悪感や謝罪がなく、しばしば対象が当然受けるべきだったと行動を正当化する。';
+
+  @override
+  String get metric_narcissist_21_name => '競争的妨害';
+
+  @override
+  String get metric_narcissist_21_description =>
+      '優位な立場を維持するために、他者の成果や人間関係を妨害すること。';
+
+  @override
+  String get metric_narcissist_22_name => '理想化段階';
+
+  @override
+  String get metric_narcissist_22_description =>
+      '関係の初期段階で過剰な賞賛と崇拝を示し、対象に非現実的な期待を抱かせること。';
+
+  @override
+  String get metric_narcissist_23_name => '価値低下段階';
+
+  @override
+  String get metric_narcissist_23_description =>
+      '理想化の後、徐々にまたは突然の批判と軽蔑を示し、混乱と自己不信を引き起こすこと。';
+
+  @override
+  String get metric_narcissist_24_name => '破棄衝動';
+
+  @override
+  String get metric_narcissist_24_description =>
+      '対象が自己愛的な供給を提供しなくなったり、挑戦したりした場合に関係を突然終了すること。';
+
+  @override
+  String get metric_narcissist_25_name => 'フーバリング試行';
+
+  @override
+  String get metric_narcissist_25_description =>
+      '約束、罪悪感、または操作を用いて、破棄した対象を再び関与させ、供給を得ようとすること。';
+
+  @override
+  String get metric_narcissist_26_name => '欠点の投影';
+
+  @override
+  String get metric_narcissist_26_description =>
+      '自己認識を避けるために、自身の否定的な特性や行動を他者に非難すること。';
+
+  @override
+  String get metric_narcissist_27_name => '罪悪感による支配';
+
+  @override
+  String get metric_narcissist_27_description =>
+      '罪悪感を誘発する発言を用いて、他者を服従や世話に操作すること。';
+
+  @override
+  String get metric_narcissist_28_name => '感情の不安定性';
+
+  @override
+  String get metric_narcissist_28_description =>
+      '魅力から怒りへの急激な気分変動。知覚された自己愛的傷によって引き起こされることが多い。';
+
+  @override
+  String get metric_narcissist_29_name => '感情の無効化';
+
+  @override
+  String get metric_narcissist_29_description =>
+      '他者の感情を過剰反応や非合理的として退けたり軽視したりすること。';
+
+  @override
+  String get metric_narcissist_30_name => '会話の独占';
+
+  @override
+  String get metric_narcissist_30_description =>
+      '自己中心的な話題で対話を支配し、他者の発言を遮ったり無視したりすること。';
+
+  @override
+  String get metric_narcissist_31_name => '名前呼びの軽蔑';
+
+  @override
+  String get metric_narcissist_31_description =>
+      '侮辱、レッテル、または軽蔑的な言葉を使って対象を貶め、支配すること。';
+
+  @override
+  String get metric_narcissist_32_name => '見捨てる脅し';
+
+  @override
+  String get metric_narcissist_32_description => '喪失や拒絶の恐怖を利用して、服従や注意を強要すること。';
+
+  @override
+  String get metric_narcissist_33_name => '被害者ぶり';
+
+  @override
+  String get metric_narcissist_33_description =>
+      '不当に扱われていると装い、同情を引き、責任を回避すること。';
+
+  @override
+  String get metric_narcissist_34_name => '殉教者コンプレックス';
+
+  @override
+  String get metric_narcissist_34_description =>
+      '過剰な犠牲や苦しみを主張し、他者に罪悪感や義務感を抱かせること。';
+
+  @override
+  String get metric_narcissist_35_name => '選択的記憶';
+
+  @override
+  String get metric_narcissist_35_description =>
+      '約束、合意、有害な行動を都合よく忘れ、責任を回避すること。';
+
+  @override
+  String get metric_narcissist_36_name => 'コミュニケーションの拒絶';
+
+  @override
+  String get metric_narcissist_36_description =>
+      '対話を拒否し、質問を無視し、議論を打ち切ることで支配を維持すること。';
+
+  @override
+  String get metric_narcissist_37_name => '未来の偽装';
+
+  @override
+  String get metric_narcissist_37_description =>
+      '共有する将来計画について大げさな約束をし、偽りの希望と依存を生み出すこと。';
+
+  @override
+  String get metric_narcissist_38_name => '中傷キャンペーン';
+
+  @override
+  String get metric_narcissist_38_description =>
+      '対象について悪意のある噂や嘘を広め、孤立させ、評判を傷つけること。';
+
+  @override
+  String get metric_narcissist_39_name => '孤立戦術';
+
+  @override
+  String get metric_narcissist_39_description =>
+      '友人、家族、支援システムとの接触を妨げたり阻止し、依存度を高めること。';
+
+  @override
+  String get metric_narcissist_40_name => '経済的搾取';
+
+  @override
+  String get metric_narcissist_40_description =>
+      '経済的資源を操作・支配し、個人的利益を得たり依存を生み出すこと。';
+
+  @override
+  String get metric_narcissist_41_name => '性的強要';
+
+  @override
+  String get metric_narcissist_41_description =>
+      '圧力、罪悪感、または操作を用いて、真の同意なしに性的服従を得ること。';
+
+  @override
+  String get metric_narcissist_42_name => '境界テスト';
+
+  @override
+  String get metric_narcissist_42_description =>
+      '繰り返し限界を押し広げ、どのような行動が許容されるかを探り、その後違反をエスカレートさせること。';
+
+  @override
+  String get metric_narcissist_43_name => 'ガスライティング否定';
+
+  @override
+  String get metric_narcissist_43_description =>
+      '実際に起こった出来事や発言を断固として否定し、対象者に現実を疑わせること。';
+
+  @override
+  String get metric_narcissist_44_name => '懸念の軽視';
+
+  @override
+  String get metric_narcissist_44_description => '正当な不満を重要でない、または過敏すぎると退けること。';
+
+  @override
+  String get metric_narcissist_45_name => '責任の外部化';
+
+  @override
+  String get metric_narcissist_45_description =>
+      'すべての問題や対立を他人のせいにし、決して自分の過ちを認めないこと。';
+
+  @override
+  String get metric_narcissist_46_name => '嫉妬誘発';
+
+  @override
+  String get metric_narcissist_46_description =>
+      '他の人と flirt したり称賛したりして、嫉妬を引き起こし、感情的なコントロールを維持すること。';
+
+  @override
+  String get metric_narcissist_47_name => '感情的脅迫';
+
+  @override
+  String get metric_narcissist_47_description =>
+      '恐怖、義務感、または罪悪感を用いて、決定や行動を操作すること。';
+
+  @override
+  String get metric_narcissist_48_name => '疑似洞察';
+
+  @override
+  String get metric_narcissist_48_description =>
+      '自己認識や共感を装って改善したように見せかけ、その後有害なパターンに戻ること。';
+
+  @override
+  String get metric_narcissist_49_name => '軽蔑的な口調';
+
+  @override
+  String get metric_narcissist_49_description =>
+      '皮肉、嘲笑、または侮蔑的な言葉を使って、他人を貶め、退けること。';
+
+  @override
+  String get metric_narcissist_50_name => '復讐幻想';
+
+  @override
+  String get metric_narcissist_50_description =>
+      '自分を軽んじた者に対する報復や罰を望む気持ちを表現すること。';
+
+  @override
+  String get metric_serial_killer_1_name => '捕食的枠組み';
+
+  @override
+  String get metric_serial_killer_1_description =>
+      '話し手を狩人、標的を獲物として位置づける言語を検出し、捕食意図を示します。';
+
+  @override
+  String get metric_serial_killer_2_name => '共感欠如';
+
+  @override
+  String get metric_serial_killer_2_description =>
+      '他者の苦しみに対する感情的な共鳴や関心の欠如を示す発言を特定し、冷淡さを示唆します。';
+
+  @override
+  String get metric_serial_killer_3_name => '非人間化ラベル';
+
+  @override
+  String get metric_serial_killer_3_description =>
+      '被害者から人間性を奪う侮蔑的用語や客体化ラベルの使用をフラグします。';
+
+  @override
+  String get metric_serial_killer_4_name => '客体化の手がかり';
+
+  @override
+  String get metric_serial_killer_4_description =>
+      '個人を満足のための道具や対象として扱う言語を認識します。';
+
+  @override
+  String get metric_serial_killer_5_name => '支配固執';
+
+  @override
+  String get metric_serial_killer_5_description => '支配、操作、服従強制への執着的言及を検出します。';
+
+  @override
+  String get metric_serial_killer_6_name => 'スリル追求の口調';
+
+  @override
+  String get metric_serial_killer_6_description =>
+      '危険、暴力的、または捕食的行為の記述における興奮や高揚感を特定します。';
+
+  @override
+  String get metric_serial_killer_7_name => '区画化マーカー';
+
+  @override
+  String get metric_serial_killer_7_description =>
+      '通常の話題と暴力的な話題の間の急激な変化をフラグし、心理的分離を示します。';
+
+  @override
+  String get metric_serial_killer_8_name => '被害者選択シグナル';
+
+  @override
+  String get metric_serial_killer_8_description => '特定の脆弱な集団を標的とする基準や嗜好を検出します。';
+
+  @override
+  String get metric_serial_killer_9_name => 'サディスティックな楽しみ';
+
+  @override
+  String get metric_serial_killer_9_description =>
+      '他者の痛み、恐怖、苦しみから得られる快楽を認識します。';
+
+  @override
+  String get metric_serial_killer_10_name => '操作的危害';
+
+  @override
+  String get metric_serial_killer_10_description =>
+      '他者を欺いたり強制して有害な状況に導く言語を特定します。';
+
+  @override
+  String get metric_serial_killer_11_name => 'ストーキング指標';
+
+  @override
+  String get metric_serial_killer_11_description =>
+      '対象の詳細な追跡、監視、または強迫的な観察を示すフラグ。';
+
+  @override
+  String get metric_serial_killer_12_name => 'グルーミング言語';
+
+  @override
+  String get metric_serial_killer_12_description =>
+      '被害者を搾取または虐待するための段階的な信頼構築戦術を検出します。';
+
+  @override
+  String get metric_serial_killer_13_name => '暴力的空想';
+
+  @override
+  String get metric_serial_killer_13_description =>
+      '他者への危害や殺害の生々しい描写を精神的リハーサルとして識別します。';
+
+  @override
+  String get metric_serial_killer_14_name => '権力主張';
+
+  @override
+  String get metric_serial_killer_14_description =>
+      '他者に対する優越性や支配を強調する発言を認識します。';
+
+  @override
+  String get metric_serial_killer_15_name => '良心の欠如';
+
+  @override
+  String get metric_serial_killer_15_description =>
+      '有害な行動について話し合った後の罪悪感や後悔の欠如を示すフラグ。';
+
+  @override
+  String get metric_serial_killer_16_name => '責任の外在化';
+
+  @override
+  String get metric_serial_killer_16_description =>
+      '暴力的衝動の責任を被害者や社会に転嫁することを検出します。';
+
+  @override
+  String get metric_serial_killer_17_name => '性的暴力';
+
+  @override
+  String get metric_serial_killer_17_description =>
+      '言語における性的テーマと暴力的テーマの融合を識別します。';
+
+  @override
+  String get metric_serial_killer_18_name => '孤立戦術';
+
+  @override
+  String get metric_serial_killer_18_description =>
+      '対象を支援ネットワークから切り離そうとする試みを認識します。';
+
+  @override
+  String get metric_serial_killer_19_name => 'ガスライティングパターン';
+
+  @override
+  String get metric_serial_killer_19_description =>
+      '現実を歪め、被害者の正気を損なうように設計された言語を示すフラグ。';
+
+  @override
+  String get metric_serial_killer_20_name => '脅威の隠蔽';
+
+  @override
+  String get metric_serial_killer_20_description =>
+      'カジュアルな発言に偽装された暗黙の脅威や警告を検出します。';
+
+  @override
+  String get metric_serial_killer_21_name => '所有言語';
+
+  @override
+  String get metric_serial_killer_21_description =>
+      '他者に対する所有権や権利を主張する表現を特定します。';
+
+  @override
+  String get metric_serial_killer_22_name => '復讐テーマ';
+
+  @override
+  String get metric_serial_killer_22_description =>
+      '報復や認識された不正への罰に固執することを認識します。';
+
+  @override
+  String get metric_serial_killer_23_name => '自己愛性誇大';
+
+  @override
+  String get metric_serial_killer_23_description => '過剰な自己重要感と他者の価値への無視を示します。';
+
+  @override
+  String get metric_serial_killer_24_name => '感情の乖離';
+
+  @override
+  String get metric_serial_killer_24_description =>
+      'トラウマや危害について語る際の臨床的または距離を置いた口調を検出します。';
+
+  @override
+  String get metric_serial_killer_25_name => '捕食者の忍耐';
+
+  @override
+  String get metric_serial_killer_25_description =>
+      '将来の被害者化に向けた長期的な計画言語を特定します。';
+
+  @override
+  String get metric_serial_killer_26_name => '境界テスト';
+
+  @override
+  String get metric_serial_killer_26_description => '潜在的な被害者の限界や抵抗を探る行動を認識します。';
+
+  @override
+  String get metric_serial_killer_27_name => '危害の最小化';
+
+  @override
+  String get metric_serial_killer_27_description =>
+      '暴力的または虐待的行為の重大性を軽視することを示します。';
+
+  @override
+  String get metric_serial_killer_28_name => '暴力の正当化';
+
+  @override
+  String get metric_serial_killer_28_description =>
+      '他者を傷つけることを必要または当然とする合理化を検出します。';
+
+  @override
+  String get metric_serial_killer_29_name => '強迫的焦点';
+
+  @override
+  String get metric_serial_killer_29_description =>
+      '特定の人物や行為に対する反復的で固執した思考を特定します。';
+
+  @override
+  String get metric_serial_killer_30_name => '冷徹な計算';
+
+  @override
+  String get metric_serial_killer_30_description => '戦略的で感情を伴わない有害行為の計画を認識します。';
+
+  @override
+  String get metric_serial_killer_31_name => '偽りの魅力';
+
+  @override
+  String get metric_serial_killer_31_description =>
+      '過度に褒めたりへつらう言葉を使って操作することを検出します。';
+
+  @override
+  String get metric_serial_killer_32_name => '被害者非難';
+
+  @override
+  String get metric_serial_killer_32_description =>
+      '対象が自分自身の被害に対して責任を負わせることを検出します。';
+
+  @override
+  String get metric_serial_killer_33_name => 'エスカレーションの兆候';
+
+  @override
+  String get metric_serial_killer_33_description =>
+      '暴力的な言葉における空想から意図への進行を識別します。';
+
+  @override
+  String get metric_serial_killer_34_name => '寄生志向';
+
+  @override
+  String get metric_serial_killer_34_description => '他者を搾取する資源として扱う言葉を認識します。';
+
+  @override
+  String get metric_serial_killer_35_name => '覚醒の手がかり';
+
+  @override
+  String get metric_serial_killer_35_description =>
+      '暴力的なテーマに関連する生理的興奮の指標を検出します。';
+
+  @override
+  String get metric_serial_killer_36_name => '忠誠の試練';
+
+  @override
+  String get metric_serial_killer_36_description =>
+      '共犯者からの忠誠や秘密保持の証明を要求することを検出します。';
+
+  @override
+  String get metric_serial_killer_37_name => '儀式的言語';
+
+  @override
+  String get metric_serial_killer_37_description =>
+      '暴力的行為に関するパターン化された儀式的な表現を識別します。';
+
+  @override
+  String get metric_serial_killer_38_name => '優越性の主張';
+
+  @override
+  String get metric_serial_killer_38_description =>
+      '道徳的または法的制約を超越しているという主張を認識します。';
+
+  @override
+  String get metric_serial_killer_39_name => '感情の空白';
+
+  @override
+  String get metric_serial_killer_39_description =>
+      '共感が必要な文脈での感情的な言葉の欠如を検出します。';
+
+  @override
+  String get metric_serial_killer_40_name => '捕食的好奇心';
+
+  @override
+  String get metric_serial_killer_40_description => '対象の恐怖や脆弱性について探る質問を検出します。';
+
+  @override
+  String get metric_serial_killer_41_name => '沈黙の脅威';
+
+  @override
+  String get metric_serial_killer_41_description => '暴露や報告を防ぐための警告を特定します。';
+
+  @override
+  String get metric_serial_killer_42_name => '非人間化の比較';
+
+  @override
+  String get metric_serial_killer_42_description =>
+      '人を動物、物体、または人間以下の存在に例えることを認識します。';
+
+  @override
+  String get metric_serial_killer_43_name => '支配の言語';
+
+  @override
+  String get metric_serial_killer_43_description =>
+      '他者を支配することを目的とした命令的または威圧的な口調を検出します。';
+
+  @override
+  String get metric_serial_killer_44_name => 'サディスティックな詳細';
+
+  @override
+  String get metric_serial_killer_44_description =>
+      '物語におけるグラフィックな痛みや苦しみへの過度な焦点を検出します。';
+
+  @override
+  String get metric_serial_killer_45_name => '操作的な共感';
+
+  @override
+  String get metric_serial_killer_45_description => '標的の防御を下げるための偽りの関心を特定します。';
+
+  @override
+  String get metric_serial_killer_46_name => '捕食者の視線';
+
+  @override
+  String get metric_serial_killer_46_description =>
+      '標的に対する激しく侵入的な観察を表す言語を認識します。';
+
+  @override
+  String get metric_serial_killer_47_name => '暴力的なアイデンティティ';
+
+  @override
+  String get metric_serial_killer_47_description =>
+      '自分自身を捕食者、殺人者、または怪物として認識することを検出します。';
+
+  @override
+  String get metric_serial_killer_48_name => '狩りのスリル';
+
+  @override
+  String get metric_serial_killer_48_description =>
+      '被害者をストーキングまたは追跡する過程での興奮を検出します。';
+
+  @override
+  String get metric_serial_killer_49_name => '強迫的な告白';
+
+  @override
+  String get metric_serial_killer_49_description =>
+      '心理的な解放のために暴力的な行為を開示したい衝動を特定します。';
+
+  @override
+  String get metric_serial_killer_50_name => '終局の言語';
+
+  @override
+  String get metric_serial_killer_50_description =>
+      '標的の終了、殺害、または永久的な沈黙への言及を認識します。';
+
+  @override
+  String get packNarcissistLabel => 'ナルシシスト';
+
+  @override
+  String get packSerialKillerLabel => 'シリアルキラー';
 }
