@@ -166,10 +166,6 @@ class _AnalysisReportViewState extends State<_AnalysisReportView> {
                     isOpen: _isPdfPreviewOpen,
                     canAccessFullReport: canAccessFullReport,
                     onPressed: () {
-                      if (!canAccessFullReport) {
-                        _openMembershipLandingPage(context);
-                        return;
-                      }
                       if (pdfBytes == null) return;
                       setState(() => _isPdfPreviewOpen = !_isPdfPreviewOpen);
                     },
@@ -415,10 +411,6 @@ class _PdfActionCard extends StatelessWidget {
             FilledButton.icon(
               onPressed: hasPdf
                   ? () async {
-                      if (!canAccessFullReport) {
-                        _openMembershipLandingPage(context);
-                        return;
-                      }
                       final temporaryDirectory = await getTemporaryDirectory();
                       final pdfFile = File(
                         '${temporaryDirectory.path}/relationship_analysis_report.pdf',
@@ -433,10 +425,6 @@ class _PdfActionCard extends StatelessWidget {
             OutlinedButton.icon(
               onPressed: hasPdf
                   ? () async {
-                      if (!canAccessFullReport) {
-                        _openMembershipLandingPage(context);
-                        return;
-                      }
                       await Share.shareXFiles([XFile.fromData(pdfBytes!)]);
                     }
                   : null,
@@ -446,10 +434,6 @@ class _PdfActionCard extends StatelessWidget {
             OutlinedButton.icon(
               onPressed: hasPdf
                   ? () async {
-                      if (!canAccessFullReport) {
-                        _openMembershipLandingPage(context);
-                        return;
-                      }
                       await Printing.layoutPdf(onLayout: (format) => pdfBytes!);
                     }
                   : null,
