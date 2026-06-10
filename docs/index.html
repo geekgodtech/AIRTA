@@ -1379,13 +1379,17 @@ window.checkMath = checkMath;
   setLang(detected);
 })();
 
-// Belt-and-suspenders: re-run after DOM is fully loaded in case
-// the inline IIFE ran before layout was complete (e.g. cached page)
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', generateMathQuestion);
-} else {
+// Belt-and-suspenders: ensure math question is visible after all
+// third-party scripts (including Cloudflare's email-decode) have run.
+// Use window 'load' event + setTimeout fallback to survive any race.
+function _ensureMathVisible() {
+  const span = document.getElementById('mathQuestion');
+  if (!span || span.textContent.trim()) return; // already set
   generateMathQuestion();
 }
+window.addEventListener('load', _ensureMathVisible);
+// Also fire after a short delay as a final fallback
+setTimeout(_ensureMathVisible, 300);
 
 </script>
 </body>
