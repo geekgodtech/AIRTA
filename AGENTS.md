@@ -97,3 +97,15 @@ Installing a sideloaded APK downloaded from a URL DOES trigger a Play Protect wa
 - Output: `Screenshots/Android/<Language>/` and `Screenshots/Apple/<Language>/`
 - 16 languages, multiple device sizes per platform
 - Firebase Remote Config causes errors in headless screenshot mode — expected/harmless
+
+## Firebase — NEEDS SETUP (HIGH PRIORITY)
+**Read `FIREBASE_SETUP_TODO.md` for the full soup-to-nuts checklist.**
+
+Quick summary of what needs to be done:
+1. Enable Firestore Database in Firebase Console
+2. Register a Web App to get a real `appId` (needed for web forms + admin tool)
+3. Create all 18 Remote Config parameters
+4. Deploy Firestore security rules
+5. Update placeholder appId in: `docs/submit-50.html`, `docs/submit-100.html`, `admin_tool/lib/main.dart`
+
+Firebase MCP server is configured in `~/.codeium/windsurf/mcp_config.json` — needs `npx firebase-tools login` to authenticate first.
