@@ -537,18 +537,18 @@ class _DiscordButtonState extends State<_DiscordButton> {
                     color: Colors.white,
                   ),
                 )
-              : Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(Icons.discord, size: 20),
-                    const SizedBox(width: 8),
-                    Flexible(
-                      child: Text(
+              : Center(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.discord, size: 20),
+                      const SizedBox(width: 8),
+                      Text(
                         l10n.selectDiscordChannel,
                         overflow: TextOverflow.ellipsis,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
         ),
       ],
