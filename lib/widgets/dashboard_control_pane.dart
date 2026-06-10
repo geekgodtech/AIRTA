@@ -1256,26 +1256,30 @@ class _MetricSelectorSectionState extends State<_MetricSelectorSection> {
               colorOffset: 450,
             ),
           // User-submitted installed packs — one accordion per purchased pack
-          ...context.read<UserSubmittedPacksService>().purchasedPackIds.map((packId) {
-            final svc = context.read<UserSubmittedPacksService>();
-            final pack = svc.availablePacks.where((p) => p.id == packId).firstOrNull;
-            final metrics = svc.installedPacks[packId] ?? [];
-            if (metrics.isEmpty) return const SizedBox.shrink();
-            final idx = svc.purchasedPackIds.toList().indexOf(packId);
-            return _MetricAccordionSection(
-              title: pack?.packName ?? packId,
-              subtitle: l10n.installedPacksAccordionSubtitle(metrics.length),
-              icon: Icons.inventory_2,
-              isExpanded: _userPackExpanded[packId] ?? false,
-              onToggle: () => setState(() {
-                _userPackExpanded[packId] = !(_userPackExpanded[packId] ?? false);
-              }),
-              metrics: metrics,
-              controller: controller,
-              columnCount: columnCount,
-              colorOffset: 501 + idx * 100,
-            );
-          }),
+          // Uses singleton directly (not Provider — service is not in the widget tree)
+          ...() {
+            final svc = UserSubmittedPacksService();
+            final packIds = svc.purchasedPackIds.toList();
+            return packIds.map((packId) {
+              final pack = svc.availablePacks.where((p) => p.id == packId).firstOrNull;
+              final metrics = svc.installedPacks[packId] ?? [];
+              if (metrics.isEmpty) return const SizedBox.shrink();
+              final idx = packIds.indexOf(packId);
+              return _MetricAccordionSection(
+                title: pack?.packName ?? packId,
+                subtitle: l10n.installedPacksAccordionSubtitle(metrics.length),
+                icon: Icons.inventory_2,
+                isExpanded: _userPackExpanded[packId] ?? false,
+                onToggle: () => setState(() {
+                  _userPackExpanded[packId] = !(_userPackExpanded[packId] ?? false);
+                }),
+                metrics: metrics,
+                controller: controller,
+                columnCount: columnCount,
+                colorOffset: 501 + idx * 100,
+              );
+            });
+          }(),
           if (customMetrics.isNotEmpty)
             _MetricAccordionSection(
               title: l10n.customMetricsTitle,
