@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:airta/controllers/toxicity_analyzer_controller.dart';
 import 'package:airta/l10n/app_localizations.dart';
 import 'package:airta/widgets/analyzer_workspace.dart';
 import 'package:airta/widgets/language_selector.dart';
@@ -59,8 +61,14 @@ class _HamburgerMenu extends StatelessWidget {
             );
             break;
           case 'membership':
+            final controller = context.read<ToxicityAnalyzerController>();
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const MembershipLandingPage()),
+              MaterialPageRoute(
+                builder: (_) => Provider.value(
+                  value: controller,
+                  child: const MembershipLandingPage(),
+                ),
+              ),
             );
             break;
           case 'referral':
