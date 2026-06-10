@@ -121,31 +121,8 @@ class MembershipLandingPage extends StatelessWidget {
                           ],
                         )
                     else
-                      // All packs unlocked - show "All packs owned" message
-                      Card(
-                        elevation: 2,
-                        color: colorScheme.primaryContainer.withOpacity(0.5),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.check_circle,
-                                color: colorScheme.primary,
-                              ),
-                              const SizedBox(width: 12),
-                              Expanded(
-                                child: Text(
-                                  l10n.allPacksOwned,
-                                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      // Show all packs with checkmarks for owned ones
+                      _buildPacksListWithCheckmarks(context, controller, l10n),
                     // Custom Metric Purchase Section
                     const SizedBox(height: 32),
                     _CustomMetricCard(
@@ -427,10 +404,10 @@ class MembershipLandingPage extends StatelessWidget {
     if (!controller.isPackSerialKillerUnlocked) {
       cards.add(_TierCard(
         width: cardWidth,
-        icon: Icons.coronavirus_outlined,
+        icon: Icons.dangerous_outlined,
         title: l10n.serialKillerPackTitle,
-        price: r'$9.99',
-        accentColor: Colors.black87,
+        price: r'$4.99',
+        accentColor: const Color(0xFF5C6BC0), // Light indigo - visible on dark backgrounds
         benefits: [
           l10n.serialKillerPackBenefit1,
           l10n.serialKillerPackBenefit2,
@@ -1164,7 +1141,7 @@ class _ReferralProgramCard extends StatelessWidget {
                   const SizedBox(width: 12),
                   const Expanded(
                     child: Text(
-                      'Refer Friends â€” Get a FREE Month!',
+                      'Refer Friends — Get a FREE Month!',
                       style: TextStyle(
                         color: Color(0xFFd0d0ff),
                         fontSize: 17,

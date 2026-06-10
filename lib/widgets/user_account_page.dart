@@ -4,6 +4,7 @@ import 'package:airta/services/referral_service.dart';
 import 'package:airta/services/developer_license_service.dart';
 import 'package:airta/services/user_submitted_packs_service.dart';
 import 'package:airta/widgets/referral_screen.dart';
+import 'package:airta/widgets/membership_landing_page.dart';
 
 /// User account page showing membership, referrals, purchases, sales, and developer license.
 class UserAccountPage extends StatefulWidget {
@@ -244,74 +245,366 @@ class _UserAccountPageState extends State<UserAccountPage> {
   }
 
   Widget _buildPurchasesCard() {
-    final purchases = <_PurchaseItem>[];
-
-    // Check metric packs
-    if (_subService.activeTier != MembershipTier.free) {
-      purchases.add(_PurchaseItem(
-        name: '${_subService.activeTier.displayName} Membership',
-        type: 'Subscription',
-        icon: Icons.card_membership,
-      ));
-    }
-
-    // Check purchased user-submitted packs
+    final hasMembership = _subService.activeTier != MembershipTier.free;
+    final hasDiscordAddon = _subService.hasDiscordAccess;
     final purchasedPacks = _packsService.purchasedPackIds;
-    for (final packId in purchasedPacks) {
-      purchases.add(_PurchaseItem(
-        name: 'User Pack: $packId',
-        type: 'One-time',
-        icon: Icons.inventory_2,
-      ));
-    }
-
-    // Developer license
-    if (_devLicenseService.hasLicense) {
-      purchases.add(_PurchaseItem(
-        name: 'Metric Pack Developer License',
-        type: 'Lifetime',
-        icon: Icons.developer_mode,
-      ));
-    }
-
-    if (purchases.isEmpty) {
-      return _CardContainer(
-        child: const Text(
-          'No purchases yet. Browse metric packs or subscribe to unlock full features!',
-          style: TextStyle(color: Color(0xFF6666aa), fontSize: 13),
-        ),
-      );
-    }
+    final hasDevLicense = _devLicenseService.hasLicense;
 
     return _CardContainer(
       child: Column(
-        children: purchases
-            .map((p) => Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Memberships Section
+          const Text(
+            'Memberships:',
+            style: TextStyle(
+              color: Color(0xFFd0d0ff),
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 8),
+          if (hasMembership)
+            Row(
+              children: [
+                const Icon(Icons.card_membership, color: Color(0xFF6060ff), size: 18),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Text(
+                    '${_subService.activeTier.displayName} Membership',
+                    style: const TextStyle(color: Color(0xFFd0d0ff), fontSize: 13),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const MembershipLandingPage()),
+                  ),
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: const Text(
+                    'Upgrade NOW!',
+                    style: TextStyle(color: Color(0xFF60ff60), fontSize: 12),
+                  ),
+                ),
+              ],
+            )
+          else
+            Row(
+              children: [
+                const Icon(Icons.card_membership, color: Color(0xFF6060ff), size: 18),
+                const SizedBox(width: 10),
+                const Expanded(
+                  child: Text(
+                    'Free Membership',
+                    style: TextStyle(color: Color(0xFFd0d0ff), fontSize: 13),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const MembershipLandingPage()),
+                  ),
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
+                  child: const Text(
+                    'Upgrade NOW!',
+                    style: TextStyle(color: Color(0xFF60ff60), fontSize: 12),
+                  ),
+                ),
+              ],
+            ),
+          if (hasDiscordAddon) ...[
+            const SizedBox(height: 6),
+            Row(
+              children: [
+                const Icon(Icons.discord, color: Color(0xFF5865F2), size: 18),
+                const SizedBox(width: 10),
+                const Expanded(
+                  child: Text(
+                    'Discord Integration Add-on',
+                    style: TextStyle(color: Color(0xFFd0d0ff), fontSize: 13),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF1a3a1a),
+                    borderRadius: BorderRadius.circular(4),
+                    border: Border.all(color: const Color(0xFF2a5a2a)),
+                  ),
+                  child: const Text(
+                    'Active',
+                    style: TextStyle(color: Color(0xFF60ff60), fontSize: 10),
+                  ),
+                ),
+              ],
+            ),
+          ],
+          const SizedBox(height: 16),
+          const Divider(color: Color(0xFF2a2a5a), height: 1),
+          const SizedBox(height: 16),
+
+          // Licenses Section
+          const Text(
+            'Licenses:',
+            style: TextStyle(
+              color: Color(0xFFd0d0ff),
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 8),
+          if (hasDevLicense)
+            Row(
+              children: [
+                const Icon(Icons.developer_mode, color: Color(0xFF6060ff), size: 18),
+                const SizedBox(width: 10),
+                const Expanded(
+                  child: Text(
+                    'Metric Pack Developer License',
+                    style: TextStyle(color: Color(0xFFd0d0ff), fontSize: 13),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF1a1a3a),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  child: const Text(
+                    '\$29.99 Lifetime',
+                    style: TextStyle(color: Color(0xFF6666aa), fontSize: 10),
+                  ),
+                ),
+              ],
+            )
+          else
+            const Text(
+              'No licenses purchased',
+              style: TextStyle(color: Color(0xFF6666aa), fontSize: 12),
+            ),
+          const SizedBox(height: 16),
+          const Divider(color: Color(0xFF2a2a5a), height: 1),
+          const SizedBox(height: 16),
+
+          // Metrics Packs Purchased Section
+          const Text(
+            'Metric Packs Purchased:',
+            style: TextStyle(
+              color: Color(0xFFd0d0ff),
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          const SizedBox(height: 8),
+          if (purchasedPacks.isEmpty)
+            const Text(
+              'No metric packs purchased yet',
+              style: TextStyle(color: Color(0xFF6666aa), fontSize: 12),
+            )
+          else
+            ...purchasedPacks.map((packId) => Padding(
+              padding: const EdgeInsets.only(bottom: 6),
+              child: Row(
+                children: [
+                  const Icon(Icons.inventory_2, color: Color(0xFF6060ff), size: 18),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Text(
+                      packId,
+                      style: const TextStyle(color: Color(0xFFd0d0ff), fontSize: 13),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF1a1a3a),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: const Text(
+                      'Owned',
+                      style: TextStyle(color: Color(0xFF6666aa), fontSize: 10),
+                    ),
+                  ),
+                ],
+              ),
+            )),
+          const SizedBox(height: 16),
+          const Divider(color: Color(0xFF2a2a5a), height: 1),
+          const SizedBox(height: 16),
+
+          // Statistics Section
+          Row(
+            children: [
+              Expanded(
+                child: _buildStatBox(
+                  'Total Custom Metrics',
+                  _packsService.getUserCustomMetricsCount().toString(),
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: _buildStatBox(
+                  'Total Metrics Owned',
+                  _calculateTotalMetricsOwned().toString(),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildStatBox(String label, String value) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: const Color(0xFF1a1a3a),
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: const Color(0xFF2a2a5a)),
+      ),
+      child: Column(
+        children: [
+          Text(
+            value,
+            style: const TextStyle(
+              color: Color(0xFF60ff60),
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            label,
+            style: const TextStyle(
+              color: Color(0xFF8888aa),
+              fontSize: 11,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
+  }
+
+  int _calculateTotalMetricsOwned() {
+    // Base metrics + purchased packs + custom metrics
+    int total = 50; // Base free metrics
+    if (_subService.isPackGoodUnlocked) total += 100;
+    if (_subService.isPackBadUnlocked) total += 100;
+    if (_subService.isPackUglyUnlocked) total += 100;
+    if (_subService.isPackNarcissistUnlocked) total += 50;
+    if (_subService.isPackSerialKillerUnlocked) total += 50;
+    total += _packsService.purchasedPackIds.length * 25; // Avg 25 metrics per user pack
+    total += _packsService.getUserCustomMetricsCount();
+    return total;
+  }
+
+
+  Widget _buildEmailNotificationsCard() {
+    return _CardContainer(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.email_outlined, color: Color(0xFF6060ff), size: 20),
+              const SizedBox(width: 10),
+              const Expanded(
+                child: Text(
+                  'Email Notifications',
+                  style: TextStyle(
+                    color: Color(0xFFd0d0ff),
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Container(
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: const Color(0xFF1a1a3a),
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: const Color(0xFF2a2a5a)),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Icon(p.icon, color: const Color(0xFF6060ff), size: 18),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Text(p.name,
-                            style: const TextStyle(
-                                color: Color(0xFFd0d0ff), fontSize: 13)),
-                      ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 6, vertical: 2),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF1a1a3a),
-                          borderRadius: BorderRadius.circular(4),
+                      const Text(
+                        'Pack Sale Notifications',
+                        style: TextStyle(
+                          color: Color(0xFFd0d0ff),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
                         ),
-                        child: Text(p.type,
-                            style: const TextStyle(
-                                color: Color(0xFF6666aa), fontSize: 10)),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Get an email when someone buys your metric pack',
+                        style: TextStyle(
+                          color: const Color(0xFF8888aa),
+                          fontSize: 11,
+                        ),
                       ),
                     ],
                   ),
-                ))
-            .toList(),
+                ),
+                StatefulBuilder(
+                  builder: (context, setLocalState) {
+                    // TODO: Load from persistent storage
+                    bool enabled = _devLicenseService.emailNotificationsEnabled;
+                    return Switch(
+                      value: enabled,
+                      onChanged: _devLicenseService.hasLicense
+                          ? (value) async {
+                              await _devLicenseService.setEmailNotificationsEnabled(value);
+                              setLocalState(() {});
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    value
+                                        ? 'Email notifications enabled'
+                                        : 'Email notifications disabled',
+                                  ),
+                                  backgroundColor: const Color(0xFF2a5a2a),
+                                  duration: const Duration(seconds: 2),
+                                ),
+                              );
+                            }
+                          : null,
+                      activeColor: const Color(0xFF60ff60),
+                      inactiveTrackColor: const Color(0xFF2a2a5a),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+          if (!_devLicenseService.hasLicense)
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Text(
+                'Purchase a Developer License to enable email notifications',
+                style: TextStyle(
+                  color: const Color(0xFF8888aa),
+                  fontSize: 11,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }
@@ -371,7 +664,7 @@ class _UserAccountPageState extends State<UserAccountPage> {
           ),
           const SizedBox(height: 6),
           const Text(
-            'Purchase a Metric Pack Developer License for a one-time fee of \$9.99. '
+            'Purchase a Metric Pack Developer License for a one-time fee of \$29.99. '
             'This grants you lifetime access to submit packs and earn 50% of every sale.',
             style: TextStyle(color: Color(0xFF8888aa), fontSize: 12),
           ),
@@ -381,7 +674,7 @@ class _UserAccountPageState extends State<UserAccountPage> {
             child: ElevatedButton.icon(
               onPressed: () => _showDeveloperLicensePurchase(context),
               icon: const Icon(Icons.shopping_cart, size: 16),
-              label: const Text('Get Developer License — \$9.99'),
+              label: const Text('Get Developer License — \$29.99'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF4040cc),
                 foregroundColor: Colors.white,

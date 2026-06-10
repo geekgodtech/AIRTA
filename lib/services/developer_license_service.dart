@@ -11,12 +11,13 @@ class DeveloperLicenseService extends ChangeNotifier {
   factory DeveloperLicenseService() => _instance;
   DeveloperLicenseService._internal();
 
-  static const String productId = 'developer_license_9_99';
-  static const double price = 9.99;
+  static const String productId = 'developer_license_29_99';
+  static const double price = 29.99;
 
   static const String _licenseKey = 'developer_license_purchased_v1';
   static const String _licenseEmailKey = 'developer_license_email_v1';
   static const String _licenseDateKey = 'developer_license_date_v1';
+  static const String _emailNotificationsKey = 'developer_email_notifications_v1';
 
   bool _hasLicense = false;
   bool get hasLicense => _hasLicense;
@@ -27,6 +28,9 @@ class DeveloperLicenseService extends ChangeNotifier {
   DateTime? _purchaseDate;
   DateTime? get purchaseDate => _purchaseDate;
 
+  bool _emailNotificationsEnabled = false;
+  bool get emailNotificationsEnabled => _emailNotificationsEnabled;
+
   bool _isInitialized = false;
 
   /// Initialize — load license state from local storage.
@@ -35,6 +39,7 @@ class DeveloperLicenseService extends ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     _hasLicense = prefs.getBool(_licenseKey) ?? false;
     _licenseEmail = prefs.getString(_licenseEmailKey) ?? '';
+    _emailNotificationsEnabled = prefs.getBool(_emailNotificationsKey) ?? false;
     final dateMs = prefs.getInt(_licenseDateKey);
     if (dateMs != null) {
       _purchaseDate = DateTime.fromMillisecondsSinceEpoch(dateMs);
@@ -46,6 +51,7 @@ class DeveloperLicenseService extends ChangeNotifier {
       _hasLicense = true;
       _licenseEmail = 'demo@airta.net';
       _purchaseDate = DateTime.now();
+      _emailNotificationsEnabled = true;
     }
 
     _isInitialized = true;
@@ -99,5 +105,28 @@ class DeveloperLicenseService extends ChangeNotifier {
       debugPrint('DeveloperLicenseService.verifyLicense error: $e');
       return _hasLicense; // Fallback to local state
     }
+  }
+
+  /// Enable or disable email notifications for pack sales.
+  Future<void> setEmailNotificationsEnabled(bool enabled) async {
+    _emailNotificationsEnabled = enabled;
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_emailNotificationsKey, enabled);
+
+    // Also update in Firestore if user has a license
+    if (_hasLicense && _licenseEmail.isNotEmpty) {
+      try {
+        final firestore = FirebaseFirestore.instance;
+        await firestore.collection('developer_licenses').doc(_licenseEmail).update({
+          'emailNotificationsEnabled': enabled,
+          'updatedAt': FieldValue.serverTimestamp(),
+        });
+      } catch (e) {
+        debugPrint('DeveloperLicenseService.setEmailNotificationsEnabled Firestore error: $e');
+        // Non-fatal — local storage is primary
+      }
+    }
+
+    notifyListeners();
   }
 }
