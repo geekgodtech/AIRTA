@@ -5,6 +5,9 @@ import 'package:airta/controllers/toxicity_analyzer_controller.dart';
 import 'package:airta/l10n/app_localizations.dart';
 import 'package:airta/services/subscription_service.dart';
 import 'package:airta/widgets/referral_screen.dart';
+import 'package:airta/widgets/user_account_page.dart';
+import 'package:airta/widgets/user_submitted_packs_page.dart';
+import 'package:airta/services/developer_license_service.dart';
 import 'package:airta/services/referral_service.dart';
 
 class MembershipLandingPage extends StatelessWidget {
@@ -40,6 +43,20 @@ class MembershipLandingPage extends StatelessWidget {
             );
           },
         ),
+        actions: [
+          TextButton.icon(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const UserAccountPage()),
+              );
+            },
+            icon: const Icon(Icons.account_circle),
+            label: const Text('My Account'),
+            style: TextButton.styleFrom(
+              foregroundColor: colorScheme.onPrimary,
+            ),
+          ),
+        ],
       ),
       body: ColoredBox(
         color: colorScheme.surfaceContainerHighest,
@@ -134,6 +151,18 @@ class MembershipLandingPage extends StatelessWidget {
                     // Referral Program Section
                     const SizedBox(height: 32),
                     const _ReferralProgramCard(),
+                    // Developer License Section
+                    const SizedBox(height: 32),
+                    _DeveloperLicenseCard(
+                      width: cardWidth,
+                      colorScheme: colorScheme,
+                    ),
+                    // User Submitted Packs Marketplace Section
+                    const SizedBox(height: 32),
+                    _UserSubmittedPacksCard(
+                      width: cardWidth,
+                      colorScheme: colorScheme,
+                    ),
                     // Restore Purchases Section
                     const SizedBox(height: 32),
                     _RestorePurchasesButton(),
@@ -608,6 +637,208 @@ class MembershipLandingPage extends StatelessWidget {
             : Icon(Icons.lock, color: Colors.grey),
         );
       }).toList(),
+    );
+  }
+}
+
+/// Developer License card for creators to submit metric packs
+class _DeveloperLicenseCard extends StatelessWidget {
+  final double width;
+  final ColorScheme colorScheme;
+
+  const _DeveloperLicenseCard({
+    required this.width,
+    required this.colorScheme,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final devLicense = DeveloperLicenseService();
+
+    return Card(
+      elevation: 4,
+      child: Container(
+        width: width,
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              const Color(0xFF1a1a3e),
+              const Color(0xFF0d0d1a),
+            ],
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.developer_mode,
+                  color: const Color(0xFFc080ff),
+                  size: 32,
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    'Developer License',
+                    style: TextStyle(
+                      color: colorScheme.onSurface,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            Text(
+              'Create and sell your own metric packs. Earn 50% on every sale. One-time purchase.',
+              style: TextStyle(
+                color: colorScheme.onSurface.withOpacity(0.7),
+                fontSize: 14,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              '\$9.99 one-time',
+              style: TextStyle(
+                color: const Color(0xFF60ff60),
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const UserAccountPage()),
+                  );
+                },
+                icon: const Icon(Icons.account_circle),
+                label: Text(devLicense.hasLicense ? 'View Dashboard' : 'Get License'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFc080ff),
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// User Submitted Packs Marketplace card
+class _UserSubmittedPacksCard extends StatelessWidget {
+  final double width;
+  final ColorScheme colorScheme;
+
+  const _UserSubmittedPacksCard({
+    required this.width,
+    required this.colorScheme,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
+    return Card(
+      elevation: 4,
+      child: Container(
+        width: width,
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              const Color(0xFF1a3a1a),
+              const Color(0xFF0d1a0d),
+            ],
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.people,
+                  color: const Color(0xFF60ff60),
+                  size: 32,
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    'Community Packs',
+                    style: TextStyle(
+                      color: colorScheme.onSurface,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            Text(
+              'Buy unique metric packs created by the community. Auto-translated to 16 languages.',
+              style: TextStyle(
+                color: colorScheme.onSurface.withOpacity(0.7),
+                fontSize: 14,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                Text(
+                  'Starting at ',
+                  style: TextStyle(
+                    color: colorScheme.onSurface.withOpacity(0.7),
+                    fontSize: 14,
+                  ),
+                ),
+                Text(
+                  '\$4.99',
+                  style: TextStyle(
+                    color: const Color(0xFF60ff60),
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const UserSubmittedPacksPage()),
+                  );
+                },
+                icon: const Icon(Icons.store),
+                label: const Text('Browse Marketplace'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF60ff60),
+                  foregroundColor: Colors.black,
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
