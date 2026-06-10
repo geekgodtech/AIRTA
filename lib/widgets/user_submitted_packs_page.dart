@@ -43,17 +43,37 @@ class _UserSubmittedPacksPageState extends State<UserSubmittedPacksPage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
+  double _creatorEarnings = 0.0;
+  bool _hasDeveloperLicense = false;
+
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: _languages.length, vsync: this);
-    // Initialize and fetch packs
+    // Initialize and fetch packs, load earnings
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       final service = UserSubmittedPacksService();
       await service.initialize();
       // Auto-translate any pending packs in the background
       PackTranslationService().autoTranslateAllPending();
+      // Load developer license and earnings
+      await _loadEarnings();
     });
+  }
+
+  Future<void> _loadEarnings() async {
+    final licenseService = DeveloperLicenseService();
+    await licenseService.initialize();
+    if (licenseService.hasLicense && licenseService.licenseEmail.isNotEmpty) {
+      final packsService = UserSubmittedPacksService();
+      final balance = await packsService.getCreatorBalance(licenseService.licenseEmail);
+      if (mounted) {
+        setState(() {
+          _hasDeveloperLicense = true;
+          _creatorEarnings = balance;
+        });
+      }
+    }
   }
 
   @override
@@ -70,9 +90,43 @@ class _UserSubmittedPacksPageState extends State<UserSubmittedPacksPage>
         backgroundColor: const Color(0xFF0d0d1a),
         appBar: AppBar(
           backgroundColor: const Color(0xFF1a1a3e),
-          title: const Text(
-            'User Submitted Metric Packs',
-            style: TextStyle(color: Color(0xFFd0d0ff), fontSize: 18),
+          title: Row(
+            children: [
+              const Expanded(
+                child: Text(
+                  'User Submitted Metric Packs',
+                  style: TextStyle(color: Color(0xFFd0d0ff), fontSize: 18),
+                ),
+              ),
+              if (_hasDeveloperLicense && _creatorEarnings > 0)
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF00FF41).withOpacity(0.15),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: const Color(0xFF00FF41),
+                      width: 2,
+                    ),
+                  ),
+                  child: Text(
+                    '\$${_creatorEarnings.toStringAsFixed(2)}',
+                    style: const TextStyle(
+                      color: Color(0xFF00FF41),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                      letterSpacing: 1,
+                      shadows: [
+                        Shadow(
+                          color: Color(0xFF00FF41),
+                          blurRadius: 8,
+                          offset: Offset(0, 0),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+            ],
           ),
           iconTheme: const IconThemeData(color: Color(0xFFa0a0c0)),
           actions: [
