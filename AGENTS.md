@@ -45,18 +45,18 @@ Stored in `deploy.ps1` and `run_with_secrets.ps1` (both gitignored):
 - **Keystore:** `android/app/airta-release.keystore`
 - **Key alias:** `airta`
 - **Store/Key password:** `Kennyloggins1!`
-- **DeepSeek API key:** `sk-61422c74411549248f23b4656d4152ae`
+- **DeepSeek API key:** `sk-abefd4ab22054c12941abb85f1180504`
 
 ## Build Commands
 ```powershell
 # Demo APK (DEMO_MODE=true, all features unlocked, no paywall)
-flutter build apk --release --dart-define=DEEPSEEK_API_KEY=sk-61422c74411549248f23b4656d4152ae --dart-define=DEMO_MODE=true
+flutter build apk --release --dart-define=DEEPSEEK_API_KEY=sk-abefd4ab22054c12941abb85f1180504 --dart-define=DEMO_MODE=true
 
 # Production APK
-flutter build apk --release --dart-define=DEEPSEEK_API_KEY=sk-61422c74411549248f23b4656d4152ae
+flutter build apk --release --dart-define=DEEPSEEK_API_KEY=sk-abefd4ab22054c12941abb85f1180504
 
 # Production AAB (for Play Store)
-flutter build appbundle --release --dart-define=DEEPSEEK_API_KEY=sk-61422c74411549248f23b4656d4152ae
+flutter build appbundle --release --dart-define=DEEPSEEK_API_KEY=sk-abefd4ab22054c12941abb85f1180504
 ```
 
 ## ADB Phone Management
