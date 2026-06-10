@@ -20,6 +20,7 @@
 | `one_time_unlock`         | Non-consumable| $19.99   | CODED ✅          | NOT YET CREATED ⏳   |
 | `discord_addon_monthly`   | Subscription  | $9.99/mo | CODED ✅          | NOT YET CREATED ⏳   |
 | `custom_metric_4_99`      | Consumable    | $4.99    | CODED ✅          | NOT YET CREATED ⏳   |
+| `developer_license_9_99`  | Non-consumable| $9.99    | CODED ✅          | NOT YET CREATED ⏳   |
 
 ALL product IDs must be created identically in Google Play Console and Apple App Store Connect
 before any real purchases can process. See PAYMENT SETUP section below.
@@ -209,10 +210,15 @@ Uses the same DeepSeek API with the report as context. Would be a Pro/Pro Plus f
 - Guide: UNIPILE_REACTIVATION_GUIDE.md
 - Proposed deal: $0.25/API call
 
-### Firebase / Remote Config
-- Firebase IS integrated (google-services.json present)
-- Remote Config controls: force_update, min_required_version, tier enables
-- Full guide: REMOTE_CONFIG_GUIDE.md
+### Firebase / Remote Config — FULLY CONFIGURED ✅
+- **Project:** `airta-app` | **Account:** `ceo@airta.net`
+- **Console:** https://console.firebase.google.com/project/airta-app
+- Firestore Database: ENABLED (us-east1), security rules deployed
+- Remote Config: ALL 17 parameters published and live
+- Android App: `1:201308661380:android:8599c2e705afda679844d1`
+- Web App: `1:201308661380:web:479c8ba0454cb3dc9844d1`
+- CLI authenticated, `firebase.json` + `.firebaserc` in project root
+- Full reference: `FIREBASE_SETUP_TODO.md`
 
 ### Discord Integration
 - OAuth2 + bot API fully implemented
@@ -262,14 +268,16 @@ Plus one-time unlocks ($19.99) and custom metrics ($4.99) on top.
 
 ---
 
-## LAUNCH CHECKLIST — VERIFIED STATE AS OF 2026-06-08
+## LAUNCH CHECKLIST — VERIFIED STATE AS OF 2026-06-10
 
 ### DONE — Code-verified complete ✅
-- [x] Firebase project created (project ID: airta-6e049)
-- [x] google-services.json in android/app/ ✅
+- [x] Firebase project created (project ID: airta-app, account: ceo@airta.net) ✅
+- [x] google-services.json in android/app/ (updated to airta-app) ✅
 - [x] GoogleService-Info.plist in ios/Runner/ ✅
 - [x] Firebase initialized in main.dart ✅
 - [x] Firebase Remote Config service — all keys wired up ✅
+- [x] Remote Config — all 17 parameters published to Firebase ✅
+- [x] Firestore Database — enabled, security rules deployed ✅
 - [x] Force update / version check system — fully live ✅
 - [x] SubscriptionService — real IAP code, initialized in main.dart ✅
 - [x] Membership landing page — real purchaseSubscription() calls ✅
@@ -280,6 +288,16 @@ Plus one-time unlocks ($19.99) and custom metrics ($4.99) on top.
 - [x] 16-language localization ✅
 - [x] Unipile code — fully built (commented out pending negotiation) ✅
 - [x] PDF export — fully built (disabled extension, re-enable before launch) ✅
+- [x] Referral Program — full implementation (service, screen, dashboard tile, attribution) ✅
+- [x] Developer License purchase flow ($9.99 lifetime) ✅
+- [x] User Account Page (membership, referrals, purchases, sales) ✅
+- [x] User Submitted Metric Packs — web forms + in-app browsing + developer license gate ✅
+- [x] Admin Panel (Windows GUI) — god-mode user management, override system ✅
+- [x] Admin Override Service — app checks Firebase for admin-granted features on startup ✅
+- [x] User registration in Firestore (devices register on startup for admin panel) ✅
+- [x] Website "Try It Out" — live web demo with 20 metrics, DeepSeek API, uncensored reports ✅
+- [x] CAPTCHA (Cloudflare Turnstile) on web demo to prevent spam ✅
+- [x] Spell/grammar check (LanguageTool API, all 16 languages) on metric pack submissions ✅
 
 ### OUTSTANDING — Must do before app stores ⏳
 - [ ] **Create Google Play Developer account** ($25 one-time) — https://play.google.com/console
@@ -289,9 +307,9 @@ Plus one-time unlocks ($19.99) and custom metrics ($4.99) on top.
 - [ ] **Add Discord credentials to Firebase Remote Config** (Bot Token, Client ID, Client Secret)
       — Go to Firebase Console → Remote Config → add discord_bot_token, discord_client_id, discord_client_secret
 - [ ] **Re-enable PDF export** — rename lib/services/pdf_synthesis_service.dart.disabled → .dart
+- [ ] **Register real Cloudflare Turnstile site key** — https://dash.cloudflare.com/turnstile (replace test key in try-it.html)
 - [ ] **Submit v1.0.0 to Google Play Store**
 - [ ] **Submit v1.0.0 to Apple App Store**
-- [ ] **Set Firebase Remote Config v1.0.0 launch values** (see LAUNCH ROADMAP above)
 
 ### PAYMENT SETUP — What you need to do (see detail below) 💳
 - [ ] Create product IDs in Play Console
@@ -379,14 +397,23 @@ This is a manual admin task — no code changes needed.
 
 ---
 
-## 💡 REFERRAL PROGRAM — Full Spec (Implement with Pro/Pro Plus launch — v1.1.0+)
+## ✅ REFERRAL PROGRAM — FULLY IMPLEMENTED
 
-**DO NOT BUILD UNTIL:** Pro and Pro Plus subscription tiers are live in the stores.
+**STATUS: DONE — Committed and pushed.**
 
-### Concept
-Users earn a free 31-day Pro Plus trial by successfully referring 5 friends who each download
-the app and run at least one report. Attribution is tracked via phone number matching — elegant
-because the app already has SMS/contacts access for its core feature.
+### What was built:
+- `lib/services/referral_service.dart` — Full referral tracking (pending/credited, phone normalization, Firebase Firestore + SharedPreferences)
+- `lib/widgets/referral_screen.dart` — Contact picker, SMS intent with pre-populated message, 5-dot progress indicator, reward/trial banners
+- Dashboard tile (`_ReferFriendsTile`) with progress dots
+- Membership landing page card (`_ReferralProgramCard`)
+- Attribution hook in `toxicity_analyzer_controller.dart` — checks for referrals after report completion
+- `flutter_contacts` dependency added
+- Firestore `referrals` collection with security rules
+- Reward: Free 31-day Standard membership (switchable to Pro Plus later when tiers are live)
+
+### Original Concept (preserved for reference)
+Users earn a free 31-day membership by successfully referring 5 friends who each download
+the app and run at least one report. Attribution is tracked via phone number matching.
 
 ---
 
