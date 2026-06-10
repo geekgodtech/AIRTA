@@ -522,8 +522,12 @@ class _DiscordButtonState extends State<_DiscordButton> {
                   : null
               : () => _openDiscordPicker(context),
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF5865F2),
-            foregroundColor: Colors.white,
+            backgroundColor: canUse
+                ? const Color(0xFF5865F2)
+                : const Color(0xFF5865F2).withOpacity(0.45),
+            foregroundColor: canUse ? Colors.white : Colors.white54,
+            disabledBackgroundColor: const Color(0xFF5865F2).withOpacity(0.35),
+            disabledForegroundColor: Colors.white38,
             minimumSize: const Size(double.infinity, 48),
             alignment: Alignment.center,
             shape: RoundedRectangleBorder(
@@ -539,10 +543,13 @@ class _DiscordButtonState extends State<_DiscordButton> {
                   ),
                 )
               : Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(Icons.discord, size: 20),
+                    Icon(
+                      Icons.discord,
+                      size: 20,
+                      color: canUse ? Colors.white : Colors.white38,
+                    ),
                     const SizedBox(width: 8),
                     Text(
                       l10n.selectDiscordChannel,
