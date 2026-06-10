@@ -641,7 +641,7 @@ class MembershipLandingPage extends StatelessWidget {
   }
 }
 
-/// Developer License card for creators to submit metric packs
+/// Developer License card for creators to submit metric packs - JAZZED UP
 class _DeveloperLicenseCard extends StatelessWidget {
   final double width;
   final ColorScheme colorScheme;
@@ -655,64 +655,158 @@ class _DeveloperLicenseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final devLicense = DeveloperLicenseService();
+    final hasLicense = devLicense.hasLicense;
 
     return Card(
-      elevation: 4,
+      elevation: 6,
+      shadowColor: const Color(0xFFc080ff).withOpacity(0.3),
       child: Container(
         width: width,
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(16),
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              const Color(0xFF1a1a3e),
-              const Color(0xFF0d0d1a),
+              const Color(0xFF2a1a4e),
+              const Color(0xFF1a0d2e),
+              const Color(0xFF0d0618),
             ],
+          ),
+          border: Border.all(
+            color: const Color(0xFFc080ff).withOpacity(0.3),
+            width: 1,
           ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Header with badge
             Row(
               children: [
-                Icon(
-                  Icons.developer_mode,
-                  color: const Color(0xFFc080ff),
-                  size: 32,
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFc080ff).withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Icon(
+                    Icons.developer_mode,
+                    color: Color(0xFFc080ff),
+                    size: 28,
+                  ),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
-                  child: Text(
-                    'Developer License',
-                    style: TextStyle(
-                      color: colorScheme.onSurface,
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Metrics Pack Developer',
+                        style: TextStyle(
+                          color: colorScheme.onSurface,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      if (hasLicense)
+                        Container(
+                          margin: const EdgeInsets.only(top: 4),
+                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF60ff60).withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: const Text(
+                            'LICENSED',
+                            style: TextStyle(
+                              color: Color(0xFF60ff60),
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                    ],
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 12),
-            Text(
-              'Create and sell your own metric packs. Earn 50% on every sale. One-time purchase.',
-              style: TextStyle(
-                color: colorScheme.onSurface.withOpacity(0.7),
-                fontSize: 14,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              '\$9.99 one-time',
-              style: TextStyle(
-                color: const Color(0xFF60ff60),
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
             const SizedBox(height: 16),
+            
+            // Benefit highlights
+            _buildBenefitRow(Icons.language, '🌍 16 Languages = Global Exposure!'),
+            const SizedBox(height: 8),
+            _buildBenefitRow(Icons.auto_awesome, 'Auto-translated to 16 markets'),
+            const SizedBox(height: 8),
+            _buildBenefitRow(Icons.attach_money, 'Earn 50% on EVERY sale'),
+            const SizedBox(height: 8),
+            _buildBenefitRow(Icons.trending_up, 'ROI in days, not months'),
+            
+            const SizedBox(height: 16),
+            
+            // ROI Banner
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: const Color(0xFFffaa40).withOpacity(0.15),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: const Color(0xFFffaa40).withOpacity(0.3),
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '💰 ROI in as little as 6-12 sales!',
+                    style: TextStyle(
+                      color: const Color(0xFFffaa40),
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'Make back your \$29.99 license fee fast, then it\'s pure profit.',
+                    style: TextStyle(
+                      color: colorScheme.onSurface.withOpacity(0.7),
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            
+            const SizedBox(height: 16),
+            
+            // Price
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  '\$29.99',
+                  style: TextStyle(
+                    color: const Color(0xFF60ff60),
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  'one-time • lifetime access',
+                  style: TextStyle(
+                    color: colorScheme.onSurface.withOpacity(0.6),
+                    fontSize: 12,
+                  ),
+                ),
+              ],
+            ),
+            
+            const SizedBox(height: 16),
+            
+            // CTA Button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
@@ -721,18 +815,53 @@ class _DeveloperLicenseCard extends StatelessWidget {
                     MaterialPageRoute(builder: (_) => const UserAccountPage()),
                   );
                 },
-                icon: const Icon(Icons.account_circle),
-                label: Text(devLicense.hasLicense ? 'View Dashboard' : 'Get License'),
+                icon: Icon(
+                  hasLicense ? Icons.dashboard : Icons.rocket_launch,
+                ),
+                label: Text(
+                  hasLicense ? 'View Creator Dashboard' : 'Become a Creator',
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFc080ff),
                   foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  elevation: 4,
+                  shadowColor: const Color(0xFFc080ff).withOpacity(0.4),
                 ),
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildBenefitRow(IconData icon, String text) {
+    return Row(
+      children: [
+        Icon(
+          icon,
+          color: const Color(0xFFc080ff),
+          size: 18,
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Text(
+            text,
+            style: TextStyle(
+              color: colorScheme.onSurface.withOpacity(0.85),
+              fontSize: 13,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
