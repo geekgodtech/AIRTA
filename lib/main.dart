@@ -173,7 +173,12 @@ class _ToxicityAnalyzerAppState extends State<ToxicityAnalyzerApp> {
     setState(() {
       _checkingVersion = false;
     });
-    _checkPermissions();
+    await _checkPermissions();
+
+    // Check for referral reward after everything is initialized
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _checkReferralReward();
+    });
   }
 
   void _onDisclaimerAccepted() {
@@ -201,6 +206,152 @@ class _ToxicityAnalyzerAppState extends State<ToxicityAnalyzerApp> {
       _showPermissionDialog = false;
       _permissionsGranted = true;
     });
+
+    // After permissions granted, check for referral reward
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _checkReferralReward();
+    });
+  }
+
+  /// Check if user has earned referral reward and show dialog if so
+  void _checkReferralReward() async {
+    final referralService = ReferralService();
+
+    // Wait for service to be initialized
+    if (!referralService.isInitialized) {
+      await referralService.initialize();
+    }
+
+    // Check if user has earned reward but not claimed yet
+    if (referralService.hasEarnedReward && !referralService.trialActivated) {
+      // Show dialog after a short delay so UI is ready
+      Future.delayed(const Duration(milliseconds: 500), () {
+        if (mounted) {
+          _showReferralRewardDialog(referralService);
+        }
+      });
+    }
+  }
+
+  /// Show the referral reward dialog
+  void _showReferralRewardDialog(ReferralService referralService) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        backgroundColor: const Color(0xFF1a1a3e),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: const BorderSide(color: Color(0xFF40cc40), width: 2),
+        ),
+        title: const Row(
+          children: [
+            Icon(Icons.card_giftcard, color: Color(0xFF60ff60)),
+            SizedBox(width: 10),
+            Text(
+              'Congratulations!',
+              style: TextStyle(
+                color: Color(0xFF60ff60),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'You\'ve successfully referred 5 friends who ran their first report!',
+              style: const TextStyle(color: Color(0xFFe8e8f0), fontSize: 14),
+            ),
+            const SizedBox(height: 16),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: const Color(0xFF1a3a1a),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: const Color(0xFF40cc40)),
+              ),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Your Reward:',
+                    style: TextStyle(
+                      color: Color(0xFF60ff60),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 13,
+                    ),
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    '31 Days of Standard Membership FREE',
+                    style: TextStyle(
+                      color: Color(0xFFa0ffa0),
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'Would you like to activate your free month now?',
+              style: TextStyle(color: Color(0xFFa0a0c0), fontSize: 13),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Your membership will automatically revert after 31 days.',
+              style: TextStyle(color: Color(0xFF8888aa), fontSize: 11),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Text(
+              'Not Now',
+              style: TextStyle(color: Color(0xFF8888aa)),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              Navigator.of(context).pop();
+
+              // Activate the reward
+              await referralService.activateRewardTrial();
+
+              // Reset for next cycle
+              await referralService.resetForNextCycle();
+
+              // Show success message
+              if (mounted) {
+                final cycles = referralService.cyclesCompleted;
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      cycles == 1
+                          ? 'Free Standard month activated! You can now earn 5 more referrals for another reward.'
+                          : 'Free Standard month activated! Cycle $cycles complete. Earn 5 more for another reward!',
+                    ),
+                    backgroundColor: const Color(0xFF2a5a2a),
+                    duration: const Duration(seconds: 5),
+                  ),
+                );
+              }
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF40cc40),
+              foregroundColor: Colors.white,
+            ),
+            child: const Text('Activate Free Month'),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
