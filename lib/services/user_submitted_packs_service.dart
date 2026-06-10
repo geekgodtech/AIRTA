@@ -386,4 +386,9 @@ class UserSubmittedPacksService extends ChangeNotifier {
       return false;
     }
   }
+
+  /// Get the count of custom metrics created by the user (sum of all installed pack metrics)
+  int getUserCustomMetricsCount() {
+    return allInstalledMetrics.length;
+  }
 }

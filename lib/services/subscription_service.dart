@@ -39,6 +39,7 @@ class SubscriptionService extends ChangeNotifier {
   // Add-ons
   bool _hasDiscordAddon = false;
   bool get hasDiscordAddon => _hasDiscordAddon;
+  bool get hasDiscordAccess => _hasDiscordAddon || activeTier != MembershipTier.free; // Discord available with addon or any paid tier
 
   bool _isInitialized = false;
   bool get isInitialized => _isInitialized;
@@ -59,11 +60,23 @@ class SubscriptionService extends ChangeNotifier {
   bool _pendingPackSerialKillerPurchase = false;
   bool get pendingPackSerialKillerPurchase => _pendingPackSerialKillerPurchase;
 
-  void clearPendingPackGoodPurchase() { _pendingPackGoodPurchase = false; notifyListeners(); }
-  void clearPendingPackBadPurchase() { _pendingPackBadPurchase = false; notifyListeners(); }
-  void clearPendingPackUglyPurchase() { _pendingPackUglyPurchase = false; notifyListeners(); }
-  void clearPendingPackNarcissistPurchase() { _pendingPackNarcissistPurchase = false; notifyListeners(); }
-  void clearPendingPackSerialKillerPurchase() { _pendingPackSerialKillerPurchase = false; notifyListeners(); }
+  // Pack unlocked flags (synced from SharedPreferences)
+  bool _isPackGoodUnlocked = false;
+  bool get isPackGoodUnlocked => _isPackGoodUnlocked;
+  bool _isPackBadUnlocked = false;
+  bool get isPackBadUnlocked => _isPackBadUnlocked;
+  bool _isPackUglyUnlocked = false;
+  bool get isPackUglyUnlocked => _isPackUglyUnlocked;
+  bool _isPackNarcissistUnlocked = false;
+  bool get isPackNarcissistUnlocked => _isPackNarcissistUnlocked;
+  bool _isPackSerialKillerUnlocked = false;
+  bool get isPackSerialKillerUnlocked => _isPackSerialKillerUnlocked;
+
+  void clearPendingPackGoodPurchase() { _pendingPackGoodPurchase = false; _isPackGoodUnlocked = true; notifyListeners(); }
+  void clearPendingPackBadPurchase() { _pendingPackBadPurchase = false; _isPackBadUnlocked = true; notifyListeners(); }
+  void clearPendingPackUglyPurchase() { _pendingPackUglyPurchase = false; _isPackUglyUnlocked = true; notifyListeners(); }
+  void clearPendingPackNarcissistPurchase() { _pendingPackNarcissistPurchase = false; _isPackNarcissistUnlocked = true; notifyListeners(); }
+  void clearPendingPackSerialKillerPurchase() { _pendingPackSerialKillerPurchase = false; _isPackSerialKillerUnlocked = true; notifyListeners(); }
 
   /// Clear the pending custom metric flag once the UI has handled it.
   void clearPendingCustomMetricPurchase() {
@@ -347,11 +360,11 @@ class SubscriptionService extends ChangeNotifier {
       final savedTier = prefs.getString('membership_tier');
 
     // Restore pack purchases
-    if (prefs.getBool('pack_good') == true) { _pendingPackGoodPurchase = true; }
-    if (prefs.getBool('pack_bad') == true)  { _pendingPackBadPurchase  = true; }
-    if (prefs.getBool('pack_ugly') == true) { _pendingPackUglyPurchase = true; }
-    if (prefs.getBool('pack_narcissist') == true) { _pendingPackNarcissistPurchase = true; }
-    if (prefs.getBool('pack_serial_killer') == true) { _pendingPackSerialKillerPurchase = true; }
+    if (prefs.getBool('pack_good') == true) { _pendingPackGoodPurchase = true; _isPackGoodUnlocked = true; }
+    if (prefs.getBool('pack_bad') == true)  { _pendingPackBadPurchase  = true; _isPackBadUnlocked = true; }
+    if (prefs.getBool('pack_ugly') == true) { _pendingPackUglyPurchase = true; _isPackUglyUnlocked = true; }
+    if (prefs.getBool('pack_narcissist') == true) { _pendingPackNarcissistPurchase = true; _isPackNarcissistUnlocked = true; }
+    if (prefs.getBool('pack_serial_killer') == true) { _pendingPackSerialKillerPurchase = true; _isPackSerialKillerUnlocked = true; }
 
       if (savedTier != null) {
         _activeTier = MembershipTier.values.firstWhere(
