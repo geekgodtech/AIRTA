@@ -146,7 +146,10 @@ class _HamburgerMenu extends StatelessWidget {
             children: [
               Icon(Icons.account_circle, color: colorScheme.primary, size: 20),
               const SizedBox(width: 12),
-              const Text('My Account'),
+              Text(
+                'My Account',
+                style: TextStyle(color: colorScheme.onSurface),
+              ),
             ],
           ),
         ),
@@ -156,7 +159,10 @@ class _HamburgerMenu extends StatelessWidget {
             children: [
               Icon(Icons.workspace_premium, color: colorScheme.primary, size: 20),
               const SizedBox(width: 12),
-              const Text('Membership Options'),
+              Text(
+                'Membership Options',
+                style: TextStyle(color: colorScheme.onSurface),
+              ),
             ],
           ),
         ),
@@ -166,7 +172,10 @@ class _HamburgerMenu extends StatelessWidget {
             children: [
               Icon(Icons.card_giftcard, color: colorScheme.primary, size: 20),
               const SizedBox(width: 12),
-              const Text('Referral Program'),
+              Text(
+                'Referral Program',
+                style: TextStyle(color: colorScheme.onSurface),
+              ),
             ],
           ),
         ),
@@ -179,7 +188,10 @@ class _HamburgerMenu extends StatelessWidget {
             children: [
               Icon(Icons.support_agent, color: colorScheme.primary, size: 20),
               const SizedBox(width: 12),
-              const Text('Support'),
+              Text(
+                'Support',
+                style: TextStyle(color: colorScheme.onSurface),
+              ),
             ],
           ),
         ),
@@ -189,7 +201,10 @@ class _HamburgerMenu extends StatelessWidget {
             children: [
               Icon(Icons.info, color: colorScheme.primary, size: 20),
               const SizedBox(width: 12),
-              const Text('About'),
+              Text(
+                'About',
+                style: TextStyle(color: colorScheme.onSurface),
+              ),
             ],
           ),
         ),

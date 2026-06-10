@@ -22,10 +22,10 @@ class LanguageSelector extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: isNarrow ? 4 : 8, vertical: 4),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.1),
+              color: Theme.of(context).colorScheme.onSurface.withOpacity(0.1),
               borderRadius: BorderRadius.circular(8),
               border: Border.all(
-                color: Colors.white.withOpacity(0.3),
+                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.3),
                 width: 1,
               ),
             ),
@@ -41,7 +41,7 @@ class LanguageSelector extends StatelessWidget {
                   style: TextStyle(
                     fontSize: isNarrow ? 9 : 10,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                 ),
               ],
