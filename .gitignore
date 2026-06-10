@@ -65,3 +65,33 @@ deploy.ps1
 # Social monitor — secrets and local DB
 social_monitor/.env
 social_monitor/data/
+
+# API Keys and sensitive files (never commit)
+*api*key*.txt
+*api*key*.png
+*api*key*.jpg
+*token*.txt
+*token*.png
+*secret*.txt
+Gemini API Key.png
+deepseek api key.txt
+firebase-*-token.txt
+openai-api-key.txt
+anthropic-api-key.txt
+*_API_*.png
+*_API_*.txt
+
+# Email and personal info images
+ceo@*.png
+*email*alias*.png
+*email*alias*.txt
+
+# Backup and copy files that might contain secrets
+backup_*.ps1
+backup_*.py
+*_copy.png
+*_copy.txt
+*_backup.*
+
+# AirtaSuite build output (contains EXE with embedded keys)
+AirtaSuite/

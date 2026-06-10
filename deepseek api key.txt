@@ -1,5 +1,0 @@
-sk-61422c74411549248f23b4656d4152ae
-
-flutter run -d windows 
-
-flutter run -d windows --dart-define=DEEPSEEK_API_KEY=sk-61422c74411549248f23b4656d4152ae
