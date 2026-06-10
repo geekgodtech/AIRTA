@@ -1,0 +1,31 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // User Submitted Packs - anyone can write (submit), anyone can read approved
+    match /user_submitted_packs/{packId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if request.resource.data.diff(resource.data).affectedKeys()
+                      .hasOnly(['salesCount']);
+    }
+
+    // Creator Credits - read by owner, written by system on purchase
+    match /creator_credits/{email} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Sales Transactions - write on purchase, read by admin
+    match /sales_transactions/{txId} {
+      allow create: if true;
+      allow read: if true;
+    }
+
+    // Cashout Requests - creators can submit, admin reads
+    match /cashout_requests/{reqId} {
+      allow create: if true;
+      allow read: if true;
+    }
+  }
+}

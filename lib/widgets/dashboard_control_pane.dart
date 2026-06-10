@@ -21,6 +21,7 @@ import 'package:airta/widgets/dark_mode_switch.dart';
 import 'package:airta/widgets/discord_setup_help.dart';
 import 'package:airta/services/remote_config_service.dart';
 import 'package:airta/services/custom_metric_service.dart';
+import 'package:airta/widgets/user_submitted_packs_page.dart';
 // UNIPILE INTEGRATION - COMMENTED OUT PENDING BUSINESS NEGOTIATION
 // Uncomment these imports if Unipile deal is finalized:
 // import 'package:airta/widgets/unipile_auth_view.dart';
@@ -466,7 +467,7 @@ class _DiscordButtonState extends State<_DiscordButton> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // White circle with "i" inside - original size
+                    // White circle (plain, empty)
                     Container(
                       width: 40,
                       height: 40,
@@ -474,15 +475,20 @@ class _DiscordButtonState extends State<_DiscordButton> {
                         color: Colors.white,
                         shape: BoxShape.circle,
                       ),
-                      child: const Center(
-                        child: Icon(
-                          Icons.info_outline,
-                          color: Color(0xFF800000), // Maroon icon
-                          size: 24,
-                        ),
-                      ),
                     ),
                     const SizedBox(width: 4),
+                    // Bold white "i" on maroon background
+                    const Text(
+                      'i',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
+                        fontWeight: FontWeight.w900,
+                        fontFamily: 'Roboto',
+                        height: 1.0,
+                      ),
+                    ),
+                    const SizedBox(width: 2),
                     // White exclamation mark inside maroon area - same height as circle (40px)
                     Transform.rotate(
                       angle: 0.35, // ~20 degrees slant
@@ -1092,6 +1098,7 @@ class _MetricSelectorSectionState extends State<_MetricSelectorSection> {
     // Sales tiles — below all accordion sections, always visible until purchased
     final salesTiles = <Widget>[
       _PurchaseCustomMetricTile(controller: controller),
+      _UserSubmittedPacksTile(),
       if (!goodUnlocked)         _MetricPackTile.good(controller: controller),
       if (!badUnlocked)          _MetricPackTile.bad(controller: controller),
       if (!uglyUnlocked)         _MetricPackTile.ugly(controller: controller),
@@ -2100,6 +2107,118 @@ class _PurchaseCustomMetricTile extends StatelessWidget {
 
 /// Shown while waiting for the store to confirm a custom metric purchase.
 // ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// USER SUBMITTED METRIC PACKS TILE
+// ---------------------------------------------------------------------------
+
+class _UserSubmittedPacksTile extends StatelessWidget {
+  const _UserSubmittedPacksTile();
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return AnimatedScale(
+      scale: 0.94,
+      duration: const Duration(milliseconds: 160),
+      child: Material(
+        color: const Color(0xFF1a2a3a).withOpacity(0.85),
+        borderRadius: BorderRadius.circular(14),
+        elevation: 1,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(14),
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const UserSubmittedPacksPage(),
+              ),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 3),
+                                child: Icon(Icons.people_outline,
+                                    color: const Color(0xFF60a0ff),
+                                    size: (constraints.maxWidth * 0.165).clamp(14.0, 26.0)),
+                              ),
+                              const SizedBox(width: 5),
+                              Expanded(
+                                child: AutoSizeText(
+                                  'User Submitted\nMetric Packs',
+                                  maxLines: 2,
+                                  minFontSize: 10,
+                                  wrapWords: false,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    color: colorScheme.onSecondaryContainer,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: (constraints.maxWidth * 0.26).clamp(16.0, 30.0),
+                                    height: 1.12,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: constraints.maxWidth * 0.03),
+                          Expanded(
+                            child: AutoSizeText(
+                              'Browse & purchase community-created metric packs. Earn credits by submitting your own!',
+                              minFontSize: 9,
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                color: colorScheme.onSecondaryContainer.withOpacity(0.78),
+                                fontSize: 32,
+                                height: 1.3,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Container(
+                        padding:
+                            const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF4060aa),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: const Text(
+                          'Browse',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w800,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 // METRIC EXPANSION PACK TILES  (Good / Bad / Ugly)
 // ---------------------------------------------------------------------------
 

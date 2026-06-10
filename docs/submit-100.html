@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIRTA – Submit Metric Pack (100 Metrics)</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d0d1a; color: #e8e8f0; line-height: 1.6; }
+    header { background: linear-gradient(135deg, #1a1a3e 0%, #0d0d1a 100%); padding: 40px 20px; text-align: center; border-bottom: 1px solid #2a2a5a; }
+    header h1 { font-size: 1.8rem; color: #d0d0ff; margin-bottom: 8px; }
+    header h2 { font-size: 1.2rem; color: #a0a0c0; font-weight: 400; }
+    .pricing-banner { background: linear-gradient(135deg, #1a1a3a 0%, #0d0d2a 100%); border: 1px solid #3a3a7a; border-radius: 12px; padding: 20px; margin: 20px auto; max-width: 600px; text-align: center; }
+    .pricing-banner .price { font-size: 2rem; color: #80a0ff; font-weight: 700; }
+    .pricing-banner .credit { font-size: 1.1rem; color: #a0c0ff; margin-top: 4px; }
+    main { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+    .step-header { background: #12122a; border: 1px solid #2a2a5a; border-radius: 10px; padding: 16px 20px; margin-bottom: 20px; }
+    .step-header h3 { color: #d0d0ff; font-size: 1.2rem; }
+    .step-header p { color: #8888aa; font-size: 0.9rem; margin-top: 4px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; color: #a0a0c0; font-size: 0.9rem; margin-bottom: 6px; font-weight: 500; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 16px; background: #12122a; border: 1px solid #2a2a5a;
+      border-radius: 8px; color: #e8e8f0; font-size: 1rem; font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: #6060ff;
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .char-count { text-align: right; font-size: 0.75rem; color: #6666aa; margin-top: 2px; }
+    .char-count.over { color: #ff4444; }
+    .metric-block { background: #0a0a18; border: 1px solid #1a1a3a; border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+    .metric-block h4 { color: #8080ff; font-size: 0.95rem; margin-bottom: 10px; }
+    .metric-grid { display: grid; gap: 10px; }
+    .date-display { background: #12122a; border: 1px solid #2a2a5a; border-radius: 8px; padding: 12px 16px; color: #a0a0c0; font-size: 0.95rem; }
+    .submit-btn {
+      display: block; width: 100%; padding: 18px; margin-top: 30px;
+      background: linear-gradient(135deg, #4040cc 0%, #6060ff 100%);
+      border: none; border-radius: 12px; color: white; font-size: 1.2rem;
+      font-weight: 700; cursor: pointer; transition: transform 0.1s, box-shadow 0.2s;
+    }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(96,96,255,0.4); }
+    .submit-btn:active { transform: translateY(0); }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+    .success-msg { display: none; background: #1a3a1a; border: 1px solid #2a5a2a; border-radius: 12px; padding: 30px; text-align: center; margin-top: 20px; }
+    .success-msg h3 { color: #60ff60; font-size: 1.4rem; margin-bottom: 10px; }
+    .success-msg p { color: #a0ffa0; }
+    .progress-bar { width: 100%; height: 4px; background: #1a1a3a; border-radius: 2px; margin-bottom: 20px; overflow: hidden; }
+    .progress-bar .fill { height: 100%; background: linear-gradient(90deg, #4040cc, #6060ff); transition: width 0.3s; }
+    footer { text-align: center; padding: 40px 20px; color: #4a4a6a; font-size: 0.85rem; border-top: 1px solid #1a1a3a; }
+    .back-link { display: inline-block; margin-bottom: 20px; color: #6060ff; text-decoration: none; font-size: 0.9rem; }
+    .back-link:hover { color: #8080ff; }
+    .section-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; position: sticky; top: 0; z-index: 10; background: #0d0d1a; padding: 10px 0; }
+    .section-nav button { background: #1a1a3a; border: 1px solid #2a2a5a; border-radius: 6px; padding: 6px 12px; color: #a0a0c0; font-size: 0.8rem; cursor: pointer; }
+    .section-nav button:hover { background: #2a2a5a; color: #d0d0ff; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.4rem; }
+      .pricing-banner .price { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>AIRTA USER METRIC<br>PACK SUBMISSION FORM</h1>
+  <h2>Submit 100 Metrics</h2>
+  <div class="pricing-banner">
+    <div class="price">$10.00 Sales Price</div>
+    <div class="credit">$5.00 Credit per sale to YOU, the creator of this pack</div>
+  </div>
+</header>
+
+<main>
+  <a href="index.html" class="back-link">&larr; Back to AIRTA</a>
+  
+  <div class="progress-bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+
+  <form id="metricPackForm" autocomplete="on">
+    <!-- Creator Info -->
+    <div class="step-header">
+      <h3>Creator Information</h3>
+      <p>Your details for attribution and payment of sales credits</p>
+    </div>
+    
+    <div class="form-group">
+      <label for="creatorName">Creator Name *</label>
+      <input type="text" id="creatorName" name="creatorName" required placeholder="Your full name" />
+    </div>
+    <div class="form-group">
+      <label for="creatorEmail">Creator Email *</label>
+      <input type="email" id="creatorEmail" name="creatorEmail" required placeholder="you@example.com" />
+    </div>
+    <div class="form-group">
+      <label for="creatorPhone">Creator Phone *</label>
+      <input type="tel" id="creatorPhone" name="creatorPhone" required placeholder="+1 (555) 123-4567" />
+    </div>
+    <div class="form-group">
+      <label>Date of Submission</label>
+      <div class="date-display" id="submissionDate"></div>
+    </div>
+    <div class="form-group">
+      <label for="submissionLanguage">Submission Language *</label>
+      <select id="submissionLanguage" name="submissionLanguage" required>
+        <option value="">-- Select Language --</option>
+        <option value="en">English</option>
+        <option value="es">Espa&ntilde;ol (Spanish)</option>
+        <option value="fr">Fran&ccedil;ais (French)</option>
+        <option value="de">Deutsch (German)</option>
+        <option value="it">Italiano (Italian)</option>
+        <option value="pt">Portugu&ecirc;s (Portuguese)</option>
+        <option value="nl">Nederlands (Dutch)</option>
+        <option value="pl">Polski (Polish)</option>
+        <option value="ru">&#x0420;&#x0443;&#x0441;&#x0441;&#x043A;&#x0438;&#x0439; (Russian)</option>
+        <option value="tr">T&uuml;rk&ccedil;e (Turkish)</option>
+        <option value="uk">&#x0423;&#x043A;&#x0440;&#x0430;&#x0457;&#x043D;&#x0441;&#x044C;&#x043A;&#x0430; (Ukrainian)</option>
+        <option value="ar">&#x0627;&#x0644;&#x0639;&#x0631;&#x0628;&#x064A;&#x0629; (Arabic)</option>
+        <option value="zh">&#x4E2D;&#x6587; (Chinese)</option>
+        <option value="ja">&#x65E5;&#x672C;&#x8A9E; (Japanese)</option>
+        <option value="ko">&#xD55C;&#xAD6D;&#xC5B4; (Korean)</option>
+        <option value="hi">&#x0939;&#x093F;&#x0928;&#x094D;&#x0926;&#x0940; (Hindi)</option>
+      </select>
+    </div>
+
+    <!-- Step 1: Pack Name -->
+    <div class="step-header" style="margin-top:30px;">
+      <h3>Step 1 &mdash; Pack Name / Theme</h3>
+      <p>Choose a descriptive name for your metric pack</p>
+    </div>
+    <div class="form-group">
+      <label for="packName">Pack Name / Theme *</label>
+      <input type="text" id="packName" name="packName" required placeholder="e.g. Emotional Manipulation Indicators" maxlength="80" />
+    </div>
+
+    <!-- Step 2: 100 Metrics -->
+    <div class="step-header" style="margin-top:30px;">
+      <h3>Step 2 &mdash; 100 Metrics</h3>
+      <p>Define each metric with a name and description (max 250 characters each)</p>
+    </div>
+
+    <!-- Quick navigation -->
+    <div class="section-nav" id="sectionNav"></div>
+
+    <div id="metricsContainer"></div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">Submit Metric Pack (100 Metrics)</button>
+  </form>
+
+  <div class="success-msg" id="successMsg">
+    <h3>Submission Received!</h3>
+    <p>Your metric pack has been submitted for review. You'll receive a confirmation email once it's approved and available for purchase in the AIRTA app.</p>
+    <p style="margin-top:12px; color:#80ff80;">You will earn <strong>$5.00</strong> for every sale of your pack.</p>
+    <br>
+    <a href="index.html" style="color:#6060ff;">Return to AIRTA</a>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 AIRTA Corp &middot; Lady Lake, Florida &middot; <a href="mailto:submissions@airta.net" style="color:#5a5a8a;">submissions@airta.net</a></p>
+</footer>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCkUwNaUgV7_JoY7kfTE7zvWIAmzOzY2gc",
+    authDomain: "airta-6e049.firebaseapp.com",
+    projectId: "airta-6e049",
+    storageBucket: "airta-6e049.firebasestorage.app",
+    messagingSenderId: "1075538671730",
+    appId: "1:1075538671730:web:airta_submissions"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const METRIC_COUNT = 100;
+  const container = document.getElementById('metricsContainer');
+  const form = document.getElementById('metricPackForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const successMsg = document.getElementById('successMsg');
+  const progressFill = document.getElementById('progressFill');
+  const sectionNav = document.getElementById('sectionNav');
+
+  // Set date
+  document.getElementById('submissionDate').textContent = new Date().toLocaleDateString('en-US', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+  });
+
+  // Build quick nav (jump to metric groups of 10)
+  for (let g = 0; g < 10; g++) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = `${g * 10 + 1}-${(g + 1) * 10}`;
+    btn.addEventListener('click', () => {
+      document.getElementById(`metricBlock${g * 10 + 1}`).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    sectionNav.appendChild(btn);
+  }
+
+  // Generate metric fields
+  for (let i = 1; i <= METRIC_COUNT; i++) {
+    const block = document.createElement('div');
+    block.className = 'metric-block';
+    block.id = `metricBlock${i}`;
+    block.innerHTML = `
+      <h4>Metric ${i} of ${METRIC_COUNT}</h4>
+      <div class="metric-grid">
+        <div class="form-group">
+          <label for="metricName${i}">Metric Name *</label>
+          <input type="text" id="metricName${i}" name="metricName${i}" required placeholder="e.g. Guilt Tripping" maxlength="60" />
+        </div>
+        <div class="form-group">
+          <label for="metricDef${i}">Metric Definition * <span style="color:#6666aa;">(max 250 chars)</span></label>
+          <textarea id="metricDef${i}" name="metricDef${i}" required maxlength="250" placeholder="Describe what this metric measures in the context of relationship communication patterns..."></textarea>
+          <div class="char-count" id="charCount${i}">0 / 250</div>
+        </div>
+      </div>
+    `;
+    container.appendChild(block);
+
+    // Character counter
+    const textarea = block.querySelector(`#metricDef${i}`);
+    const counter = block.querySelector(`#charCount${i}`);
+    textarea.addEventListener('input', () => {
+      const len = textarea.value.length;
+      counter.textContent = `${len} / 250`;
+      counter.className = len > 250 ? 'char-count over' : 'char-count';
+    });
+  }
+
+  // Progress tracking
+  function updateProgress() {
+    let filled = 0;
+    const total = METRIC_COUNT * 2 + 5;
+    if (document.getElementById('creatorName').value) filled++;
+    if (document.getElementById('creatorEmail').value) filled++;
+    if (document.getElementById('creatorPhone').value) filled++;
+    if (document.getElementById('submissionLanguage').value) filled++;
+    if (document.getElementById('packName').value) filled++;
+    for (let i = 1; i <= METRIC_COUNT; i++) {
+      if (document.getElementById(`metricName${i}`).value) filled++;
+      if (document.getElementById(`metricDef${i}`).value) filled++;
+    }
+    const pct = Math.round((filled / total) * 100);
+    progressFill.style.width = pct + '%';
+  }
+  form.addEventListener('input', updateProgress);
+
+  // Submit
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    const metrics = [];
+    for (let i = 1; i <= METRIC_COUNT; i++) {
+      metrics.push({
+        name: document.getElementById(`metricName${i}`).value.trim(),
+        definition: document.getElementById(`metricDef${i}`).value.trim()
+      });
+    }
+
+    const submission = {
+      creatorName: document.getElementById('creatorName').value.trim(),
+      creatorEmail: document.getElementById('creatorEmail').value.trim(),
+      creatorPhone: document.getElementById('creatorPhone').value.trim(),
+      submissionDate: new Date().toISOString(),
+      submissionLanguage: document.getElementById('submissionLanguage').value,
+      packName: document.getElementById('packName').value.trim(),
+      metricCount: METRIC_COUNT,
+      price: 10.00,
+      creatorCreditPerSale: 5.00,
+      metrics: metrics,
+      status: 'pending_review',
+      salesCount: 0,
+      createdAt: serverTimestamp()
+    };
+
+    try {
+      await addDoc(collection(db, 'user_submitted_packs'), submission);
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+    } catch (err) {
+      console.error('Submission error:', err);
+      alert('Submission failed. Please try again.\n\nError: ' + err.message);
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Metric Pack (100 Metrics)';
+    }
+  });
+</script>
+</body>
+</html>
