@@ -5,6 +5,9 @@ import 'package:airta/widgets/analyzer_workspace.dart';
 import 'package:airta/widgets/language_selector.dart';
 import 'package:airta/widgets/dark_mode_switch.dart';
 import 'package:airta/widgets/about_page.dart';
+import 'package:airta/widgets/user_account_page.dart';
+import 'package:airta/widgets/membership_landing_page.dart';
+import 'package:airta/widgets/referral_screen.dart';
 
 class ToxicityAnalyzerMasterView extends StatelessWidget {
   const ToxicityAnalyzerMasterView({super.key});
@@ -26,54 +29,168 @@ class ToxicityAnalyzerMasterView extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
         actions: [
-          const DarkModeSwitch(),
-          SizedBox(width: isNarrow ? 4 : 8),
-          const LanguageSelector(),
-          SizedBox(width: isNarrow ? 4 : 8),
-          PopupMenuButton<String>(
-            icon: const Icon(Icons.more_vert),
-            onSelected: (value) {
-              if (value == 'about') {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const AboutPage(),
-                  ),
-                );
-              } else if (value == 'support') {
-                showDialog(
-                  context: context,
-                  builder: (context) => _SupportDialog(),
-                );
-              }
-            },
-            itemBuilder: (context) => [
-              PopupMenuItem(
-                value: 'support',
-                child: Row(
-                  children: [
-                    Icon(Icons.support_agent, color: Theme.of(context).colorScheme.primary),
-                    const SizedBox(width: 12),
-                    const Text('Support'),
-                  ],
-                ),
-              ),
-              PopupMenuItem(
-                value: 'about',
-                child: Row(
-                  children: [
-                    Icon(Icons.info, color: Theme.of(context).colorScheme.primary),
-                    const SizedBox(width: 12),
-                    const Text('About'),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          SizedBox(width: isNarrow ? 2 : 4),
+          // Hamburger menu with all options
+          _HamburgerMenu(),
+          const SizedBox(width: 8),
         ],
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: const AnalyzerWorkspace(),
+    );
+  }
+}
+
+
+/// Hamburger menu containing all app options
+class _HamburgerMenu extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    
+    return PopupMenuButton<String>(
+      icon: const Icon(Icons.menu),
+      tooltip: 'Menu',
+      offset: const Offset(0, 40),
+      onSelected: (value) {
+        switch (value) {
+          case 'my_account':
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const UserAccountPage()),
+            );
+            break;
+          case 'membership':
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const MembershipLandingPage()),
+            );
+            break;
+          case 'referral':
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const ReferralScreen()),
+            );
+            break;
+          case 'about':
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const AboutPage()),
+            );
+            break;
+          case 'support':
+            showDialog(
+              context: context,
+              builder: (context) => _SupportDialog(),
+            );
+            break;
+        }
+      },
+      itemBuilder: (context) => [
+        // Dark Mode Switch Section
+        PopupMenuItem<String>(
+          enabled: false,
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Row(
+              children: [
+                Icon(Icons.brightness_6, color: colorScheme.primary, size: 20),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    'Dark Mode',
+                    style: TextStyle(
+                      color: colorScheme.onSurface,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 60,
+                  height: 30,
+                  child: DarkModeSwitch(),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const PopupMenuDivider(),
+        
+        // Language Selector Section
+        PopupMenuItem<String>(
+          enabled: false,
+          child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Row(
+              children: [
+                Icon(Icons.language, color: colorScheme.primary, size: 20),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    'Language',
+                    style: TextStyle(
+                      color: colorScheme.onSurface,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+                const LanguageSelector(),
+              ],
+            ),
+          ),
+        ),
+        const PopupMenuDivider(),
+        
+        // Navigation Links
+        PopupMenuItem<String>(
+          value: 'my_account',
+          child: Row(
+            children: [
+              Icon(Icons.account_circle, color: colorScheme.primary, size: 20),
+              const SizedBox(width: 12),
+              const Text('My Account'),
+            ],
+          ),
+        ),
+        PopupMenuItem<String>(
+          value: 'membership',
+          child: Row(
+            children: [
+              Icon(Icons.workspace_premium, color: colorScheme.primary, size: 20),
+              const SizedBox(width: 12),
+              const Text('Membership Options'),
+            ],
+          ),
+        ),
+        PopupMenuItem<String>(
+          value: 'referral',
+          child: Row(
+            children: [
+              Icon(Icons.card_giftcard, color: colorScheme.primary, size: 20),
+              const SizedBox(width: 12),
+              const Text('Referral Program'),
+            ],
+          ),
+        ),
+        const PopupMenuDivider(),
+        
+        // Help Section
+        PopupMenuItem<String>(
+          value: 'support',
+          child: Row(
+            children: [
+              Icon(Icons.support_agent, color: colorScheme.primary, size: 20),
+              const SizedBox(width: 12),
+              const Text('Support'),
+            ],
+          ),
+        ),
+        PopupMenuItem<String>(
+          value: 'about',
+          child: Row(
+            children: [
+              Icon(Icons.info, color: colorScheme.primary, size: 20),
+              const SizedBox(width: 12),
+              const Text('About'),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
