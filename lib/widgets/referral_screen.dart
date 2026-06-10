@@ -162,6 +162,40 @@ class _ReferralScreenState extends State<ReferralScreen> {
             '$credits / $required referral credits earned',
             style: const TextStyle(color: Color(0xFFa0a0c0), fontSize: 13),
           ),
+          // Show cycle counter and total referrals
+          if (_referralService.cyclesCompleted > 0 || _referralService.totalReferralsAllTime > 0)
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Column(
+                children: [
+                  if (_referralService.cyclesCompleted > 0)
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFc080ff).withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: const Color(0xFFc080ff).withOpacity(0.4)),
+                      ),
+                      child: Text(
+                        '${_referralService.cyclesCompleted} ${ _referralService.cyclesCompleted == 1 ? 'reward claimed' : 'rewards claimed'}',
+                        style: const TextStyle(
+                          color: Color(0xFFc080ff),
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  if (_referralService.totalReferralsAllTime > 0)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4),
+                      child: Text(
+                        '${_referralService.totalReferralsAllTime + _referralService.creditCount} total referrals',
+                        style: const TextStyle(color: Color(0xFF8888aa), fontSize: 11),
+                      ),
+                    ),
+                ],
+              ),
+            ),
           if (_referralService.pendingNumbers.isNotEmpty)
             Padding(
               padding: const EdgeInsets.only(top: 4),
@@ -198,6 +232,9 @@ class _ReferralScreenState extends State<ReferralScreen> {
   }
 
   Widget _buildRewardBanner() {
+    final cycles = _referralService.cyclesCompleted;
+    final isRepeat = cycles > 0;
+
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.all(12),
@@ -211,9 +248,29 @@ class _ReferralScreenState extends State<ReferralScreen> {
       ),
       child: Column(
         children: [
-          const Text(
-            'You\'ve earned a FREE month of Standard!',
-            style: TextStyle(
+          if (isRepeat)
+            Container(
+              margin: const EdgeInsets.only(bottom: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+              decoration: BoxDecoration(
+                color: const Color(0xFFc080ff).withOpacity(0.2),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: const Color(0xFFc080ff)),
+              ),
+              child: Text(
+                'Cycle ${cycles + 1} Complete!',
+                style: const TextStyle(
+                  color: Color(0xFFc080ff),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+          Text(
+            isRepeat
+                ? 'You\'ve earned another FREE month!'
+                : 'You\'ve earned a FREE month of Standard!',
+            style: const TextStyle(
               color: Color(0xFF60ff60),
               fontSize: 16,
               fontWeight: FontWeight.w700,
@@ -221,9 +278,11 @@ class _ReferralScreenState extends State<ReferralScreen> {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 4),
-          const Text(
-            'You successfully referred 5 friends who ran their first report.',
-            style: TextStyle(color: Color(0xFFa0ffa0), fontSize: 12),
+          Text(
+            isRepeat
+                ? 'You\'ve completed ${cycles + 1} referral cycles. Claim your reward and start earning again!'
+                : 'You successfully referred 5 friends who ran their first report.',
+            style: const TextStyle(color: Color(0xFFa0ffa0), fontSize: 12),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 12),
@@ -237,8 +296,10 @@ class _ReferralScreenState extends State<ReferralScreen> {
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 ),
-                child: const Text('Start Free Month',
-                    style: TextStyle(fontWeight: FontWeight.w700)),
+                child: Text(
+                  isRepeat ? 'Claim Reward & Continue' : 'Start Free Month',
+                  style: const TextStyle(fontWeight: FontWeight.w700),
+                ),
               ),
             ],
           ),
@@ -425,11 +486,20 @@ class _ReferralScreenState extends State<ReferralScreen> {
 
   Future<void> _activateFreeTrial() async {
     await _referralService.activateRewardTrial();
+
+    // Reset the counter for the next cycle after claiming
+    await _referralService.resetForNextCycle();
+
     if (mounted) {
+      final cycles = _referralService.cyclesCompleted;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Free Standard month activated! Enjoy!'),
-          backgroundColor: Color(0xFF2a5a2a),
+        SnackBar(
+          content: Text(
+            cycles == 1
+                ? 'Free Standard month activated! You can now earn 5 more referrals for another reward.'
+                : 'Free Standard month activated! Cycle $cycles complete. Earn 5 more for another reward!',
+          ),
+          backgroundColor: const Color(0xFF2a5a2a),
         ),
       );
       setState(() {});

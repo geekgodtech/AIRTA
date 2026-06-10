@@ -22,6 +22,8 @@ class ReferralService extends ChangeNotifier {
   static const String _trialStartKey = 'referral_trial_start_v1';
   static const String _preTrialTierKey = 'referral_pre_trial_tier_v1';
   static const String _deviceIdKey = 'referral_device_id_v1';
+  static const String _cyclesCompletedKey = 'referral_cycles_completed_v1';
+  static const String _totalReferralsKey = 'referral_total_count_v1';
 
   // Configuration
   static const int requiredCredits = 5;
@@ -52,14 +54,20 @@ class ReferralService extends ChangeNotifier {
   String _deviceId = '';
   String get deviceId => _deviceId;
 
+  int _cyclesCompleted = 0;
+  int get cyclesCompleted => _cyclesCompleted;
+
+  int _totalReferralsAllTime = 0;
+  int get totalReferralsAllTime => _totalReferralsAllTime;
+
   bool _isInitialized = false;
   bool get isInitialized => _isInitialized;
 
+  /// Whether the user has earned a reward in the current cycle
+  bool get hasEarnedReward => _creditCount >= requiredCredits;
+
   /// Progress toward reward (0.0 to 1.0)
   double get progress => (_creditCount / requiredCredits).clamp(0.0, 1.0);
-
-  /// Whether the user has earned the referral reward
-  bool get hasEarnedReward => _creditCount >= requiredCredits;
 
   /// Whether a trial is currently active and not expired
   bool get isTrialActive {
@@ -92,6 +100,10 @@ class ReferralService extends ChangeNotifier {
 
     // Load credit count
     _creditCount = prefs.getInt(_creditCountKey) ?? 0;
+
+    // Load cycle tracking
+    _cyclesCompleted = prefs.getInt(_cyclesCompletedKey) ?? 0;
+    _totalReferralsAllTime = prefs.getInt(_totalReferralsKey) ?? 0;
 
     // Load trial state
     _trialActivated = prefs.getBool(_trialActivatedKey) ?? false;
@@ -127,6 +139,8 @@ class ReferralService extends ChangeNotifier {
     await prefs.setStringList(_pendingReferralsKey, _pendingNumbers);
     await prefs.setStringList(_creditedReferralsKey, _creditedNumbers);
     await prefs.setInt(_creditCountKey, _creditCount);
+    await prefs.setInt(_cyclesCompletedKey, _cyclesCompleted);
+    await prefs.setInt(_totalReferralsKey, _totalReferralsAllTime);
     await prefs.setBool(_trialActivatedKey, _trialActivated);
     if (_trialStart != null) {
       await prefs.setInt(_trialStartKey, _trialStart!.millisecondsSinceEpoch);
@@ -178,6 +192,8 @@ class ReferralService extends ChangeNotifier {
         'pendingNumbers': _pendingNumbers,
         'creditedNumbers': _creditedNumbers,
         'creditCount': _creditCount,
+        'cyclesCompleted': _cyclesCompleted,
+        'totalReferralsAllTime': _totalReferralsAllTime,
         'trialActivated': _trialActivated,
         'lastUpdated': FieldValue.serverTimestamp(),
       }, SetOptions(merge: true));
@@ -205,6 +221,7 @@ class ReferralService extends ChangeNotifier {
       _pendingNumbers.remove(normalized);
       _creditedNumbers.add(normalized);
       _creditCount++;
+      _totalReferralsAllTime++;
       await _save();
       await _syncToFirestore();
       notifyListeners();
@@ -252,15 +269,18 @@ class ReferralService extends ChangeNotifier {
 
   /// Activate the referral reward (free 31-day Standard membership).
   /// Call this when the user taps "Start Free Month" after earning 5 credits.
+  /// After claiming, resets the counter so they can earn again (cyclical).
   Future<void> activateRewardTrial() async {
     if (!hasEarnedReward) return;
-    if (_trialActivated) return; // Already used
 
     // Store current tier before granting trial
     final subService = SubscriptionService();
     _preTrialTier = subService.activeTier;
     _trialActivated = true;
     _trialStart = DateTime.now();
+
+    // Track completed cycle
+    _cyclesCompleted++;
 
     await _save();
     await _syncToFirestore();
@@ -274,6 +294,33 @@ class ReferralService extends ChangeNotifier {
     await prefs.setString('active_subscription_tier', rewardTier.name);
 
     notifyListeners();
+  }
+
+  /// Reset the referral counter for the next cycle.
+  /// Call this after the user claims their reward to start earning again.
+  Future<void> resetForNextCycle() async {
+    // Save total before reset
+    _totalReferralsAllTime += _creditCount;
+
+    // Reset current cycle
+    _creditCount = 0;
+    _trialActivated = false;
+    _trialStart = null;
+
+    // Clear credited numbers for the new cycle (keep pending as they might still convert)
+    _creditedNumbers = [];
+
+    await _save();
+    await _syncToFirestore();
+
+    notifyListeners();
+  }
+
+  /// Check if user can start a new cycle (has claimed current reward and trial is done)
+  bool get canStartNewCycle {
+    if (!hasEarnedReward) return false; // Haven't earned current cycle
+    if (_trialActivated && isTrialActive) return false; // Still in trial
+    return true; // Ready for next cycle
   }
 
   /// Check if trial has expired and revert to pre-trial tier.
