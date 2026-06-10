@@ -20,7 +20,7 @@
   "discordStep5Title": "चैनल चुनें",
   "discordStep5Description": "'Discord चैनल चुनें' टैप करें, अपना सर्वर चुनें, फिर विश्लेषण के लिए चैनल चुनें।",
   "discordBotConfiguration": "बॉट कॉन्फ़िगरेशन",
-    "discordBotConfigTitle": "Discord Bot Configuration",
+  "discordBotConfigTitle": "Discord Bot Configuration",
   "discordBotTokenSetupTitle": "Bot Token Setup",
   "discordBotTokenSetupDescription": "Enter your Discord bot token below. This is required to access your Discord servers and channels.",
   "discordWhereToFindToken": "Where to find your bot token:",
@@ -43,7 +43,7 @@
   "discordConnectionTestNotImplemented": "Connection test not yet implemented",
   "discordReadyToConfigureTitle": "Ready to configure your bot?",
   "discordReadyToConfigureDescription": "Once you've created your Discord bot following the steps above, enter your bot token in the settings to start analyzing.",
-"gotIt": "समझ गया",
+  "gotIt": "समझ गया",
   "selectFile": "फ़ाइल चुनें",
   "analyzeSelectedMetrics": "चयनित मेट्रिक्स का विश्लेषण करें",
   "analyze20RandomMetrics": "20 यादृच्छिक मेट्रिक्स का विश्लेषण करें",
@@ -502,7 +502,7 @@
       }
     }
   },
-  "noMessagesInDateRange": "चयनित दिनांक सीमा में कोई संदेश नहीं मिला। कृपया अलग-अलग तारीख चुनें या दिनांक फ़िल्टर साफ़ करें।",
+  "noMessagesInDateRange": "चयनित दिनांक सीमा में कोई संदेश नहीं",
   "next": "अगला",
   "cancelNotReady": "रद्द करें — मैं तैयार नहीं था",
   "purchaseCustomMetricTileTitle": "कस्टम मेट्रिक खरीदें",
@@ -1335,8 +1335,7 @@
   "metric_serial_killer_50_name": "अंतिमता भाषा",
   "metric_serial_killer_50_description": "लक्ष्यों को समाप्त करने, मारने या स्थायी रूप से चुप कराने के संदर्भों को पहचानता है।",
   "packNarcissistLabel": "नार्सिसिस्ट",
-  "packSerialKillerLabel": "सीरियल किलर"
-,
+  "packSerialKillerLabel": "सीरियल किलर",
   "expansionPacksPurchased": "खरीदे गए विस्तार पैक:",
   "expansionPacksStillAvailable": "अभी भी उपलब्ध विस्तार पैक",
   "metricsOwned": "स्वामित्व वाले मेट्रिक्स",
@@ -1377,31 +1376,24 @@
       "count": {}
     }
   },
-  "metricPlural": "{count} मेट्रिक्स"
-,
+  "metricPlural": "{count} मेट्रिक्स",
   "restorePurchases": "खरीदारी पुनर्स्थापित करें",
   "restorePurchasesButton": "पिछली खरीदारी पुनर्स्थापित करें",
   "restorePurchasesSuccess": "खरीदारी सफलतापूर्वक पुनर्स्थापित हो गई!",
   "restorePurchasesError": "खरीदारी पुनर्स्थापित नहीं हो सकी। कृपया पुनः प्रयास करें।",
-  "restorePurchasesNoneFound": "कोई पिछली खरीदारी नहीं मिली।"
-,
+  "restorePurchasesNoneFound": "कोई पिछली खरीदारी नहीं मिली।",
   "discordAddonPopupTitle": "Discord सुविधा",
-  "discordAddonPopupMessage": "यह सुविधा एक ऐड-ऑन के रूप में उपलब्ध है।"
-,
+  "discordAddonPopupMessage": "यह सुविधा एक ऐड-ऑन के रूप में उपलब्ध है।",
   "discordAccordionTitle": "Discord एकीकरण",
-  "discordAccordionSubtitle": "Discord सर्वर कनेक्ट करें"
-,
-  "selectDiscord": "Discord चुनें"
-,
-  "enableDiscord": "Discord सक्षम करें"
-,
+  "discordAccordionSubtitle": "Discord सर्वर कनेक्ट करें",
+  "selectDiscord": "Discord चुनें",
+  "enableDiscord": "Discord सक्षम करें",
   "packTheGood": "पैक: अच्छा",
   "packTheBad": "पैक: बुरा",
   "packTheUgly": "पैक: बदसूरत",
   "packTheNarcissist": "पैक: नार्सिसिस्ट",
   "metricsExpansionPack": "मेट्रिक्स विस्तार पैक",
   "purchaseTitle": "खरीदारी",
-  "notNow": "अभी नहीं",
   "buyForPrice": "{price} में खरीदें",
   "processingPurchase": "खरीदारी प्रसंस्करण...",
   "waitingForStoreConfirmation": "स्टोर पुष्टि की प्रतीक्षा...",
@@ -1427,7 +1419,6 @@
   "startOver": "फिर से शुरू करें",
   "capturingStatus": "कैप्चर कर रहा है...",
   "captureComplete": "कैप्चर पूर्ण!",
-  "noMessagesInDateRange": "चयनित दिनांक सीमा में कोई संदेश नहीं",
   "errorDialogTitle": "त्रुटि",
   "failedToLoadConversation": "वार्तालाप लोड करने में विफल",
   "selectConversationTitle": "वार्तालाप चुनें",
@@ -1439,5 +1430,14 @@
   "nextSizeButton": "अगला आकार",
   "startSequenceButton": "अनुक्रम प्रारंभ करें",
   "nextSizeInstruction": "जारी रखने के लिए अगला आकार दबाएं",
-  "okButton": "ठीक है"
+  "okButton": "ठीक है",
+  "tileMyAccountTitle": "मेरा खाता",
+  "tileMyAccountDesc": "सदस्यता, रेफ़रल, खरीदारी, बिक्री और डेवलपर लाइसेंस",
+  "tileReferFriendsTitle": "दोस्तों को आमंत्रित करें\nमुफ्त महीना पाएं",
+  "tileReferFriendsDesc": "5 दोस्तों को आमंत्रित करें जो रिपोर्ट चलाएं और स्टैंडर्ड का एक मुफ्त महीना पाएं!",
+  "tileUserPacksTitle": "उपयोगकर्ता द्वारा\nसबमिट किए गए मेट्रिक पैक",
+  "tileUserPacksDesc": "समुदाय-निर्मित मेट्रिक पैक ब्राउज़ करें और खरीदें। अपना सबमिट करके क्रेडिट अर्जित करें!",
+  "tileBrowseButton": "ब्राउज़ करें",
+  "purchaseDialogCancel": "रद्द करें",
+  "installedPacksAccordionSubtitle": "{count} मेट्रिक्स — सामुदायिक पैक"
 }

@@ -1,4 +1,4 @@
-﻿{
+{
   "@@locale": "ja",
   "appTitle": "AIé–¢ä¿‚æ€§æ¯’æ€§ã‚¢ãƒŠãƒ©ã‚¤ã‚¶ãƒ¼",
   "psychologicalMetrics": "å¿ƒç†çš„æŒ‡æ¨™",
@@ -20,7 +20,7 @@
   "discordStep5Title": "ãƒãƒ£ãƒ³ãƒãƒ«ã‚’é¸æŠž",
   "discordStep5Description": "ã€ŒDiscordãƒãƒ£ãƒ³ãƒãƒ«ã‚’é¸æŠžã€ã‚’ã‚¿ãƒƒãƒ—ã—ã€ã‚µãƒ¼ãƒãƒ¼ã‚’é¸æŠžã—ã¦ã‹ã‚‰ã€åˆ†æžã™ã‚‹ãƒãƒ£ãƒ³ãƒãƒ«ã‚’é¸æŠžã—ã¾ã™ã€‚",
   "discordBotConfiguration": "ãƒœãƒƒãƒˆè¨­å®š",
-    "discordBotConfigTitle": "Discord Bot Configuration",
+  "discordBotConfigTitle": "Discord Bot Configuration",
   "discordBotTokenSetupTitle": "Bot Token Setup",
   "discordBotTokenSetupDescription": "Enter your Discord bot token below. This is required to access your Discord servers and channels.",
   "discordWhereToFindToken": "Where to find your bot token:",
@@ -43,7 +43,7 @@
   "discordConnectionTestNotImplemented": "Connection test not yet implemented",
   "discordReadyToConfigureTitle": "Ready to configure your bot?",
   "discordReadyToConfigureDescription": "Once you've created your Discord bot following the steps above, enter your bot token in the settings to start analyzing.",
-"gotIt": "äº†è§£",
+  "gotIt": "äº†è§£",
   "selectFile": "ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é¸æŠž",
   "analyzeSelectedMetrics": "é¸æŠžã—ãŸæŒ‡æ¨™ã‚’åˆ†æž",
   "analyze20RandomMetrics": "20ã®ãƒ©ãƒ³ãƒ€ãƒ ãªæŒ‡æ¨™ã‚’åˆ†æž",
@@ -61,7 +61,7 @@
   "closePdfPreview": "PDFãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‰ã˜ã‚‹",
   "openPdfPreview": "PDFãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‹ã",
   "pdfPreviewDescription": "åŸ‹ã‚è¾¼ã¾ã‚ŒãŸPDFã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã¯ã€ãƒ¬ãƒãƒ¼ãƒˆã‚’ã‚³ãƒ³ãƒ‘ã‚¯ãƒˆã«ä¿ã¤ãŸã‚æœ€åˆã¯é–‰ã˜ãŸçŠ¶æ…‹ã§å§‹ã¾ã‚Šã¾ã™ã€‚",
-  "notNow": "å¾Œã§",
+  "notNow": "ä»Šã¯ã—ãªã„",
   "unlockThisReport": "ã“ã®ãƒ¬ãƒãƒ¼ãƒˆã®ãƒ­ãƒƒã‚¯ã‚’è§£é™¤ - $20",
   "joinStandard": "ã‚¹ã‚¿ãƒ³ãƒ€ãƒ¼ãƒ‰ã«åŠ å…¥ - $9.99/æœˆ",
   "instantUnlockTitle": "å³æ™‚ãƒ¬ãƒãƒ¼ãƒˆãƒ­ãƒƒã‚¯è§£é™¤ - $20",
@@ -502,7 +502,7 @@
       }
     }
   },
-  "noMessagesInDateRange": "é¸æŠžã•ã‚ŒãŸæ—¥ä»˜ç¯„å›²å†…ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸã€‚åˆ¥ã®æ—¥ä»˜ã‚’é¸æŠžã™ã‚‹ã‹ã€æ—¥ä»˜ãƒ•ã‚£ãƒ«ã‚¿ãƒ¼ã‚’ã‚¯ãƒªã‚¢ã—ã¦ãã ã•ã„ã€‚",
+  "noMessagesInDateRange": "é¸æŠžã—ãŸæ—¥ä»˜ç¯„å›²ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒã‚ã‚Šã¾ã›ã‚“",
   "next": "æ¬¡ã¸",
   "cancelNotReady": "ã‚­ãƒ£ãƒ³ã‚»ãƒ« â€” æº–å‚™ãŒã§ãã¦ã„ã¾ã›ã‚“ã§ã—ãŸ",
   "purchaseCustomMetricTileTitle": "ã‚«ã‚¹ã‚¿ãƒ æŒ‡æ¨™ã‚’è³¼å…¥",
@@ -1335,8 +1335,7 @@
   "metric_serial_killer_50_name": "çµ‚å±€ã®è¨€èªž",
   "metric_serial_killer_50_description": "æ¨™çš„ã®çµ‚äº†ã€æ®ºå®³ã€ã¾ãŸã¯æ°¸ä¹…çš„ãªæ²ˆé»™ã¸ã®è¨€åŠã‚’èªè­˜ã—ã¾ã™ã€‚",
   "packNarcissistLabel": "ãƒŠãƒ«ã‚·ã‚·ã‚¹ãƒˆ",
-  "packSerialKillerLabel": "ã‚·ãƒªã‚¢ãƒ«ã‚­ãƒ©ãƒ¼"
-,
+  "packSerialKillerLabel": "ã‚·ãƒªã‚¢ãƒ«ã‚­ãƒ©ãƒ¼",
   "expansionPacksPurchased": "è³¼å…¥ã—ãŸæ‹¡å¼µãƒ‘ãƒƒã‚¯:",
   "expansionPacksStillAvailable": "ã¾ã åˆ©ç”¨å¯èƒ½ãªæ‹¡å¼µãƒ‘ãƒƒã‚¯",
   "metricsOwned": "æ‰€æœ‰ã—ã¦ã„ã‚‹æŒ‡æ¨™",
@@ -1377,31 +1376,24 @@
       "count": {}
     }
   },
-  "metricPlural": "{count}æŒ‡æ¨™"
-,
+  "metricPlural": "{count}æŒ‡æ¨™",
   "restorePurchases": "è³¼å…¥ã‚’å¾©å…ƒ",
   "restorePurchasesButton": "ä»¥å‰ã®è³¼å…¥ã‚’å¾©å…ƒ",
   "restorePurchasesSuccess": "è³¼å…¥ãŒæ­£å¸¸ã«å¾©å…ƒã•ã‚Œã¾ã—ãŸï¼",
   "restorePurchasesError": "è³¼å…¥ã‚’å¾©å…ƒã§ãã¾ã›ã‚“ã§ã—ãŸã€‚ã‚‚ã†ä¸€åº¦ãŠè©¦ã—ãã ã•ã„ã€‚",
-  "restorePurchasesNoneFound": "ä»¥å‰ã®è³¼å…¥ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸã€‚"
-,
+  "restorePurchasesNoneFound": "ä»¥å‰ã®è³¼å…¥ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸã€‚",
   "discordAddonPopupTitle": "Discordæ©Ÿèƒ½",
-  "discordAddonPopupMessage": "ã“ã®æ©Ÿèƒ½ã¯ã‚¢ãƒ‰ã‚ªãƒ³ã¨ã—ã¦ã”åˆ©ç”¨ã„ãŸã ã‘ã¾ã™ã€‚"
-,
+  "discordAddonPopupMessage": "ã“ã®æ©Ÿèƒ½ã¯ã‚¢ãƒ‰ã‚ªãƒ³ã¨ã—ã¦ã”åˆ©ç”¨ã„ãŸã ã‘ã¾ã™ã€‚",
   "discordAccordionTitle": "Discordçµ±åˆ",
-  "discordAccordionSubtitle": "Discordã‚µãƒ¼ãƒãƒ¼ã«æŽ¥ç¶š"
-,
-  "selectDiscord": "Discordã‚’é¸æŠž"
-,
-  "enableDiscord": "Discordã‚’æœ‰åŠ¹ã«ã™ã‚‹"
-,
+  "discordAccordionSubtitle": "Discordã‚µãƒ¼ãƒãƒ¼ã«æŽ¥ç¶š",
+  "selectDiscord": "Discordã‚’é¸æŠž",
+  "enableDiscord": "Discordã‚’æœ‰åŠ¹ã«ã™ã‚‹",
   "packTheGood": "ãƒ‘ãƒƒã‚¯ï¼šè‰¯ã„",
   "packTheBad": "ãƒ‘ãƒƒã‚¯ï¼šæ‚ªã„",
   "packTheUgly": "ãƒ‘ãƒƒã‚¯ï¼šé†œã„",
   "packTheNarcissist": "ãƒ‘ãƒƒã‚¯ï¼šãƒŠãƒ«ã‚·ã‚¹ãƒˆ",
   "metricsExpansionPack": "æŒ‡æ¨™æ‹¡å¼µãƒ‘ãƒƒã‚¯",
   "purchaseTitle": "è³¼å…¥",
-  "notNow": "ä»Šã¯ã—ãªã„",
   "buyForPrice": "{price}ã§è³¼å…¥",
   "processingPurchase": "è³¼å…¥å‡¦ç†ä¸­...",
   "waitingForStoreConfirmation": "ã‚¹ãƒˆã‚¢ç¢ºèªå¾…ã¡...",
@@ -1427,7 +1419,6 @@
   "startOver": "æœ€åˆã‹ã‚‰ã‚„ã‚Šç›´ã—",
   "capturingStatus": "ã‚­ãƒ£ãƒ—ãƒãƒ£ä¸­...",
   "captureComplete": "ã‚­ãƒ£ãƒ—ãƒãƒ£å®Œäº†ï¼",
-  "noMessagesInDateRange": "é¸æŠžã—ãŸæ—¥ä»˜ç¯„å›²ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒã‚ã‚Šã¾ã›ã‚“",
   "errorDialogTitle": "ã‚¨ãƒ©ãƒ¼",
   "failedToLoadConversation": "ä¼šè©±ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸ",
   "selectConversationTitle": "ä¼šè©±ã‚’é¸æŠž",
@@ -1439,5 +1430,14 @@
   "nextSizeButton": "æ¬¡ã®ã‚µã‚¤ã‚º",
   "startSequenceButton": "ã‚·ãƒ¼ã‚±ãƒ³ã‚¹é–‹å§‹",
   "nextSizeInstruction": "æ¬¡ã¸ã‚’ã‚¿ãƒƒãƒ—ã—ã¦ç¶šã‘ã‚‹",
-  "okButton": "OK"
+  "okButton": "OK",
+  "tileMyAccountTitle": "マイアカウント",
+  "tileMyAccountDesc": "メンバーシップ、紹介、購入、販売、開発者ライセンス",
+  "tileReferFriendsTitle": "友達を招待\n無料1ヶ月",
+  "tileReferFriendsDesc": "レポートを実行する友達5人を招待してスタンダードの無料1ヶ月を獲得しましょう！",
+  "tileUserPacksTitle": "ユーザー投稿\nメトリクスパック",
+  "tileUserPacksDesc": "コミュニティ作成のメトリクスパックを閲覧・購入できます。投稿してクレジットを獲得しましょう！",
+  "tileBrowseButton": "閲覧",
+  "purchaseDialogCancel": "キャンセル",
+  "installedPacksAccordionSubtitle": "{count}個のメトリクス — コミュニティパック"
 }

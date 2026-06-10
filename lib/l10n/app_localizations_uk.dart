@@ -4850,4 +4850,36 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get noConversationsFoundBody =>
       'No conversations were found. Make sure your credentials are correct and try again.';
+
+  @override
+  String get tileMyAccountTitle => 'Мій Акаунт';
+
+  @override
+  String get tileMyAccountDesc =>
+      'Членство, реферали, покупки, продажі та ліцензія розробника';
+
+  @override
+  String get tileReferFriendsTitle => 'Запросити Друзів\nБезкоштовний Місяць';
+
+  @override
+  String get tileReferFriendsDesc =>
+      'Запросіть 5 друзів, які запустять звіт, і отримайте безкоштовний місяць Standard!';
+
+  @override
+  String get tileUserPacksTitle => 'Пакети Метрик\nвід Користувачів';
+
+  @override
+  String get tileUserPacksDesc =>
+      'Переглядайте та купуйте пакети метрик, створені спільнотою. Заробляйте кредити, надсилаючи власні!';
+
+  @override
+  String get tileBrowseButton => 'Переглянути';
+
+  @override
+  String get purchaseDialogCancel => 'Скасувати';
+
+  @override
+  String installedPacksAccordionSubtitle(int count) {
+    return '$count Метрик — Пакет Спільноти';
+  }
 }

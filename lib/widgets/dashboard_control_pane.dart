@@ -1091,6 +1091,8 @@ class _MetricSelectorSectionState extends State<_MetricSelectorSection> {
   bool _narcissistExpanded = false;
   bool _serialKillerExpanded = false;
   bool _customExpanded     = false;
+  // Track expand state for each user-submitted installed pack by ID
+  final Map<String, bool> _userPackExpanded = {};
 
   @override
   Widget build(BuildContext context) {
@@ -1253,6 +1255,27 @@ class _MetricSelectorSectionState extends State<_MetricSelectorSection> {
               columnCount: columnCount,
               colorOffset: 450,
             ),
+          // User-submitted installed packs — one accordion per purchased pack
+          ...context.read<UserSubmittedPacksService>().purchasedPackIds.map((packId) {
+            final svc = context.read<UserSubmittedPacksService>();
+            final pack = svc.availablePacks.where((p) => p.id == packId).firstOrNull;
+            final metrics = svc.installedPacks[packId] ?? [];
+            if (metrics.isEmpty) return const SizedBox.shrink();
+            final idx = svc.purchasedPackIds.toList().indexOf(packId);
+            return _MetricAccordionSection(
+              title: pack?.packName ?? packId,
+              subtitle: l10n.installedPacksAccordionSubtitle(metrics.length),
+              icon: Icons.inventory_2,
+              isExpanded: _userPackExpanded[packId] ?? false,
+              onToggle: () => setState(() {
+                _userPackExpanded[packId] = !(_userPackExpanded[packId] ?? false);
+              }),
+              metrics: metrics,
+              controller: controller,
+              columnCount: columnCount,
+              colorOffset: 501 + idx * 100,
+            );
+          }),
           if (customMetrics.isNotEmpty)
             _MetricAccordionSection(
               title: l10n.customMetricsTitle,
@@ -2197,7 +2220,7 @@ class _MyAccountTile extends StatelessWidget {
                               const SizedBox(width: 5),
                               Expanded(
                                 child: AutoSizeText(
-                                  'My Account',
+                                  AppLocalizations.of(context)!.tileMyAccountTitle,
                                   maxLines: 1,
                                   minFontSize: 10,
                                   overflow: TextOverflow.ellipsis,
@@ -2214,7 +2237,7 @@ class _MyAccountTile extends StatelessWidget {
                           SizedBox(height: constraints.maxWidth * 0.03),
                           Expanded(
                             child: AutoSizeText(
-                              'Membership, referrals, purchases, sales & developer license',
+                              AppLocalizations.of(context)!.tileMyAccountDesc,
                               minFontSize: 9,
                               overflow: TextOverflow.clip,
                               style: TextStyle(
@@ -2313,7 +2336,7 @@ class _ReferFriendsTile extends StatelessWidget {
                               const SizedBox(width: 5),
                               Expanded(
                                 child: AutoSizeText(
-                                  'Refer Friends\nGet FREE Month',
+                                  AppLocalizations.of(context)!.tileReferFriendsTitle,
                                   maxLines: 2,
                                   minFontSize: 10,
                                   wrapWords: false,
@@ -2331,7 +2354,7 @@ class _ReferFriendsTile extends StatelessWidget {
                           SizedBox(height: constraints.maxWidth * 0.03),
                           Expanded(
                             child: AutoSizeText(
-                              'Refer 5 friends who run a report and earn a free month of Standard!',
+                              AppLocalizations.of(context)!.tileReferFriendsDesc,
                               minFontSize: 9,
                               overflow: TextOverflow.clip,
                               style: TextStyle(
@@ -2441,7 +2464,7 @@ class _UserSubmittedPacksTile extends StatelessWidget {
                               const SizedBox(width: 5),
                               Expanded(
                                 child: AutoSizeText(
-                                  'User Submitted\nMetric Packs',
+                                  AppLocalizations.of(context)!.tileUserPacksTitle,
                                   maxLines: 2,
                                   minFontSize: 10,
                                   wrapWords: false,
@@ -2459,7 +2482,7 @@ class _UserSubmittedPacksTile extends StatelessWidget {
                           SizedBox(height: constraints.maxWidth * 0.03),
                           Expanded(
                             child: AutoSizeText(
-                              'Browse & purchase community-created metric packs. Earn credits by submitting your own!',
+                              AppLocalizations.of(context)!.tileUserPacksDesc,
                               minFontSize: 9,
                               overflow: TextOverflow.clip,
                               style: TextStyle(
@@ -2482,9 +2505,9 @@ class _UserSubmittedPacksTile extends StatelessWidget {
                           color: colorScheme.secondary,
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: const Text(
-                          'Browse',
-                          style: TextStyle(
+                        child: Text(
+                          AppLocalizations.of(context)!.tileBrowseButton,
+                          style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w800,
                             fontSize: 12,

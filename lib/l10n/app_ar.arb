@@ -20,7 +20,7 @@
   "discordStep5Title": "اختيار القناة",
   "discordStep5Description": "اضغط على 'اختيار قناة Discord'، اختر الخادم الخاص بك، ثم حدد القناة للتحليل.",
   "discordBotConfiguration": "تكوين البوت",
-    "discordBotConfigTitle": "Discord Bot Configuration",
+  "discordBotConfigTitle": "Discord Bot Configuration",
   "discordBotTokenSetupTitle": "Bot Token Setup",
   "discordBotTokenSetupDescription": "Enter your Discord bot token below. This is required to access your Discord servers and channels.",
   "discordWhereToFindToken": "Where to find your bot token:",
@@ -43,7 +43,7 @@
   "discordConnectionTestNotImplemented": "Connection test not yet implemented",
   "discordReadyToConfigureTitle": "Ready to configure your bot?",
   "discordReadyToConfigureDescription": "Once you've created your Discord bot following the steps above, enter your bot token in the settings to start analyzing.",
-"gotIt": "فهمت",
+  "gotIt": "فهمت",
   "selectFile": "اختر ملفًا",
   "analyzeSelectedMetrics": "تحليل المقاييس المحددة",
   "analyze20RandomMetrics": "تحليل 20 مقياسًا عشوائيًا",
@@ -502,7 +502,7 @@
       }
     }
   },
-  "noMessagesInDateRange": "لم يتم العثور على رسائل في نطاق التاريخ المحدد. يرجى تحديد تواريخ مختلفة أو مسح مرشح التاريخ.",
+  "noMessagesInDateRange": "لا توجد رسائل في نطاق التاريخ",
   "next": "التالي",
   "cancelNotReady": "إلغاء — لم أكن مستعدًا",
   "purchaseCustomMetricTileTitle": "شراء مقياس مخصص",
@@ -1335,8 +1335,7 @@
   "metric_serial_killer_50_name": "لغة النهاية",
   "metric_serial_killer_50_description": "يتعرف على الإشارات إلى إنهاء أو قتل أو إسكات دائم للأهداف.",
   "packNarcissistLabel": "النرجسي",
-  "packSerialKillerLabel": "القاتل المتسلسل"
-,
+  "packSerialKillerLabel": "القاتل المتسلسل",
   "expansionPacksPurchased": "حزم التوسعة المشتراة:",
   "expansionPacksStillAvailable": "حزم التوسعة المتاحة",
   "metricsOwned": "المقاييس المملوكة",
@@ -1377,22 +1376,17 @@
       "count": {}
     }
   },
-  "metricPlural": "{count} مقاييس"
-,
+  "metricPlural": "{count} مقاييس",
   "restorePurchases": "استعادة المشتريات",
   "restorePurchasesButton": "استعادة المشتريات السابقة",
   "restorePurchasesSuccess": "تم استعادة المشتريات بنجاح!",
   "restorePurchasesError": "تعذر استعادة المشتريات. يرجى المحاولة مرة أخرى.",
-  "restorePurchasesNoneFound": "لم يتم العثور على مشتريات سابقة."
-,
+  "restorePurchasesNoneFound": "لم يتم العثور على مشتريات سابقة.",
   "discordAddonPopupTitle": "ميزة Discord",
-  "discordAddonPopupMessage": "هذه الميزة متاحة كإضافة."
-,
+  "discordAddonPopupMessage": "هذه الميزة متاحة كإضافة.",
   "discordAccordionTitle": "تكامل Discord",
-  "discordAccordionSubtitle": "ربط خوادم Discord"
-,
-  "selectDiscord": "اختر Discord"
-,
+  "discordAccordionSubtitle": "ربط خوادم Discord",
+  "selectDiscord": "اختر Discord",
   "enableDiscord": "تفعيل Discord",
   "packTheGood": "حزمة الجيدين",
   "packTheBad": "حزمة الأشرار",
@@ -1400,7 +1394,6 @@
   "packTheNarcissist": "حزمة النرجسيين",
   "metricsExpansionPack": "حزمة توسيع المقاييس",
   "purchaseTitle": "شراء",
-  "notNow": "ليس الآن",
   "buyForPrice": "شراء مقابل {price}",
   "processingPurchase": "جاري معالجة الشراء...",
   "waitingForStoreConfirmation": "في انتظار تأكيد المتجر...",
@@ -1426,7 +1419,6 @@
   "startOver": "البدء من جديد",
   "capturingStatus": "جاري الالتقاط...",
   "captureComplete": "اكتمل الالتقاط",
-  "noMessagesInDateRange": "لا توجد رسائل في نطاق التاريخ",
   "errorDialogTitle": "خطأ",
   "failedToLoadConversation": "فشل تحميل المحادثة",
   "selectConversationTitle": "اختيار المحادثة",
@@ -1438,5 +1430,14 @@
   "nextSizeButton": "الحجم التالي",
   "startSequenceButton": "بدء التسلسل",
   "nextSizeInstruction": "جاهز للحجم التالي",
-  "okButton": "موافق"
+  "okButton": "موافق",
+  "tileMyAccountTitle": "حسابي",
+  "tileMyAccountDesc": "العضوية والإحالات والمشتريات والمبيعات وترخيص المطور",
+  "tileReferFriendsTitle": "دعوة الأصدقاء\nشهر مجاني",
+  "tileReferFriendsDesc": "أحل 5 أصدقاء يقومون بتشغيل تقرير واحصل على شهر مجاني من الاشتراك القياسي!",
+  "tileUserPacksTitle": "حزم المقاييس\nالمقدمة من المستخدمين",
+  "tileUserPacksDesc": "تصفح وشراء حزم المقاييس التي أنشأها المجتمع. اكسب أرصدة بتقديم حزمك الخاصة!",
+  "tileBrowseButton": "تصفح",
+  "purchaseDialogCancel": "إلغاء",
+  "installedPacksAccordionSubtitle": "{count} مقياس — حزمة مجتمعية"
 }

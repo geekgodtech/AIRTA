@@ -20,7 +20,7 @@
   "discordStep5Title": "Kanal Seç",
   "discordStep5Description": "'Discord Kanalı Seç'e dokunun, sunucunuzu seçin, ardından analiz edilecek kanalı seçin.",
   "discordBotConfiguration": "Bot Yapılandırması",
-    "discordBotConfigTitle": "Discord Bot Configuration",
+  "discordBotConfigTitle": "Discord Bot Configuration",
   "discordBotTokenSetupTitle": "Bot Token Setup",
   "discordBotTokenSetupDescription": "Enter your Discord bot token below. This is required to access your Discord servers and channels.",
   "discordWhereToFindToken": "Where to find your bot token:",
@@ -43,7 +43,7 @@
   "discordConnectionTestNotImplemented": "Connection test not yet implemented",
   "discordReadyToConfigureTitle": "Ready to configure your bot?",
   "discordReadyToConfigureDescription": "Once you've created your Discord bot following the steps above, enter your bot token in the settings to start analyzing.",
-"gotIt": "Anladım",
+  "gotIt": "Anladım",
   "selectFile": "Dosya Seç",
   "analyzeSelectedMetrics": "Seçili metrikleri analiz et",
   "analyze20RandomMetrics": "20 rastgele metriği analiz et",
@@ -61,7 +61,7 @@
   "closePdfPreview": "PDF Önizleme Penceresini Kapat",
   "openPdfPreview": "PDF Önizleme Penceresini Aç",
   "pdfPreviewDescription": "Gömülü PDF penceresi, raporu kompakt tutmak için kapalı olarak başlar.",
-  "notNow": "Şimdi değil",
+  "notNow": "Şimdi Değil",
   "unlockThisReport": "Bu raporun kilidini aç - $20",
   "joinStandard": "Standart'a katıl - $9.99/ay",
   "instantUnlockTitle": "Anında rapor kilidi açma - $20",
@@ -502,7 +502,7 @@
       }
     }
   },
-  "noMessagesInDateRange": "Seçilen tarih aralığında mesaj bulunamadı. Lütfen farklı tarihler seçin veya tarih filtresini temizleyin.",
+  "noMessagesInDateRange": "Tarih aralığında mesaj yok",
   "next": "Sonraki",
   "cancelNotReady": "İptal — Hazır Değildim",
   "purchaseCustomMetricTileTitle": "Özel Metrik Satın Al",
@@ -1335,8 +1335,7 @@
   "metric_serial_killer_50_name": "Sonluluk Dili",
   "metric_serial_killer_50_description": "Hedeflerin sonlandırılması, öldürülmesi veya kalıcı olarak sessizleştirilmesine yapılan atıfları tanır.",
   "packNarcissistLabel": "Narsist",
-  "packSerialKillerLabel": "Seri Katil"
-,
+  "packSerialKillerLabel": "Seri Katil",
   "expansionPacksPurchased": "Satın Alınan Genişletme Paketleri:",
   "expansionPacksStillAvailable": "Hala Mevcut Genişletme Paketleri",
   "metricsOwned": "Sahip Olunan Metrikler",
@@ -1377,22 +1376,17 @@
       "count": {}
     }
   },
-  "metricPlural": "{count} Metrik"
-,
+  "metricPlural": "{count} Metrik",
   "restorePurchases": "Satın Alımları Geri Yükle",
   "restorePurchasesButton": "Önceki Satın Alımları Geri Yükle",
   "restorePurchasesSuccess": "Satın alımlar başarıyla geri yüklendi!",
   "restorePurchasesError": "Satın alımlar geri yüklenemedi. Lütfen tekrar deneyin.",
-  "restorePurchasesNoneFound": "Önceki satın alıma bulunamadı."
-,
+  "restorePurchasesNoneFound": "Önceki satın alıma bulunamadı.",
   "discordAddonPopupTitle": "Discord Özelliği",
-  "discordAddonPopupMessage": "Bu özellik bir eklenti olarak mevcuttur."
-,
+  "discordAddonPopupMessage": "Bu özellik bir eklenti olarak mevcuttur.",
   "discordAccordionTitle": "Discord Entegrasyonu",
-  "discordAccordionSubtitle": "Discord sunucularını bağla"
-,
-  "selectDiscord": "Discord Seç"
-,
+  "discordAccordionSubtitle": "Discord sunucularını bağla",
+  "selectDiscord": "Discord Seç",
   "enableDiscord": "Discord'u Etkinleştir",
   "packTheGood": "İyiler Paketi",
   "packTheBad": "Kötüler Paketi",
@@ -1400,7 +1394,6 @@
   "packTheNarcissist": "Narsist Paketi",
   "metricsExpansionPack": "Metrik Genişletme Paketi",
   "purchaseTitle": "Satın Al",
-  "notNow": "Şimdi Değil",
   "buyForPrice": "{price} karşılığında satın al",
   "processingPurchase": "Satın alma işleniyor...",
   "waitingForStoreConfirmation": "Mağaza onayı bekleniyor...",
@@ -1426,7 +1419,6 @@
   "startOver": "Baştan Başla",
   "capturingStatus": "Yakalanıyor...",
   "captureComplete": "Yakalama tamamlandı",
-  "noMessagesInDateRange": "Tarih aralığında mesaj yok",
   "errorDialogTitle": "Hata",
   "failedToLoadConversation": "Konuşma yüklenemedi",
   "selectConversationTitle": "Konuşma Seç",
@@ -1438,5 +1430,14 @@
   "nextSizeButton": "Sonraki Boyut",
   "startSequenceButton": "Diziyi Başlat",
   "nextSizeInstruction": "Sonraki boyut için hazır",
-  "okButton": "Tamam"
+  "okButton": "Tamam",
+  "tileMyAccountTitle": "Hesabım",
+  "tileMyAccountDesc": "Üyelik, tavsiyeler, satın almalar, satışlar ve geliştirici lisansı",
+  "tileReferFriendsTitle": "Arkadaş Davet Et\nÜCRETSİZ Ay Kazan",
+  "tileReferFriendsDesc": "Rapor çalıştıran 5 arkadaş davet et ve Standard'ın ücretsiz bir ayını kazan!",
+  "tileUserPacksTitle": "Kullanıcı Gönderimi\nMetrik Paketleri",
+  "tileUserPacksDesc": "Topluluk tarafından oluşturulan metrik paketlere göz atın ve satın alın. Kendi paketinizi göndererek kredi kazanın!",
+  "tileBrowseButton": "Göz At",
+  "purchaseDialogCancel": "İptal",
+  "installedPacksAccordionSubtitle": "{count} Metrik — Topluluk Paketi"
 }

@@ -4856,4 +4856,36 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get noConversationsFoundBody =>
       'No conversations were found. Make sure your credentials are correct and try again.';
+
+  @override
+  String get tileMyAccountTitle => 'Мой Аккаунт';
+
+  @override
+  String get tileMyAccountDesc =>
+      'Членство, рефералы, покупки, продажи и лицензия разработчика';
+
+  @override
+  String get tileReferFriendsTitle => 'Пригласить Друзей\nБесплатный месяц';
+
+  @override
+  String get tileReferFriendsDesc =>
+      'Пригласите 5 друзей, которые запустят отчёт, и получите бесплатный месяц Standard!';
+
+  @override
+  String get tileUserPacksTitle => 'Метрические Пакеты\nот Пользователей';
+
+  @override
+  String get tileUserPacksDesc =>
+      'Просматривайте и покупайте метрические пакеты, созданные сообществом. Зарабатывайте кредиты, отправляя свои!';
+
+  @override
+  String get tileBrowseButton => 'Обзор';
+
+  @override
+  String get purchaseDialogCancel => 'Отмена';
+
+  @override
+  String installedPacksAccordionSubtitle(int count) {
+    return '$count Метрик — Пакет Сообщества';
+  }
 }

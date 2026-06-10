@@ -20,7 +20,7 @@
   "discordStep5Title": "Wybierz Kanał",
   "discordStep5Description": "Dotknij 'Wybierz Kanał Discord', wybierz swój serwer, a następnie wybierz kanał do analizy.",
   "discordBotConfiguration": "Konfiguracja Bota",
-    "discordBotConfigTitle": "Discord Bot Configuration",
+  "discordBotConfigTitle": "Discord Bot Configuration",
   "discordBotTokenSetupTitle": "Bot Token Setup",
   "discordBotTokenSetupDescription": "Enter your Discord bot token below. This is required to access your Discord servers and channels.",
   "discordWhereToFindToken": "Where to find your bot token:",
@@ -43,7 +43,7 @@
   "discordConnectionTestNotImplemented": "Connection test not yet implemented",
   "discordReadyToConfigureTitle": "Ready to configure your bot?",
   "discordReadyToConfigureDescription": "Once you've created your Discord bot following the steps above, enter your bot token in the settings to start analyzing.",
-"gotIt": "Rozumiem",
+  "gotIt": "Rozumiem",
   "selectFile": "Wybierz plik",
   "analyzeSelectedMetrics": "Analizuj wybrane metryki",
   "analyze20RandomMetrics": "Analizuj 20 losowych metryk",
@@ -502,7 +502,7 @@
       }
     }
   },
-  "noMessagesInDateRange": "Nie znaleziono wiadomości w wybranym zakresie dat. Wybierz inne daty lub wyczyść filtr daty.",
+  "noMessagesInDateRange": "Brak wiadomości w zakresie dat",
   "next": "Dalej",
   "cancelNotReady": "Anuluj — Nie byłem/am gotowy/a",
   "purchaseCustomMetricTileTitle": "Kup Metrykę Własną",
@@ -1335,8 +1335,7 @@
   "metric_serial_killer_50_name": "Język ostateczności",
   "metric_serial_killer_50_description": "Rozpoznaje odniesienia do zakończenia, zabijania lub trwałego uciszenia celów.",
   "packNarcissistLabel": "Narcysta",
-  "packSerialKillerLabel": "Seryjny Morderca"
-,
+  "packSerialKillerLabel": "Seryjny Morderca",
   "expansionPacksPurchased": "Zakupione Paczki Rozszerzeń:",
   "expansionPacksStillAvailable": "Dostępne Paczki Rozszerzeń",
   "metricsOwned": "Posiadane Metryki",
@@ -1377,25 +1376,18 @@
       "count": {}
     }
   },
-  "metricPlural": "{count} Metryk"
-,
+  "metricPlural": "{count} Metryk",
   "restorePurchases": "Przywróć Zakupy",
   "restorePurchasesButton": "Przywróć Poprzednie Zakupy",
   "restorePurchasesSuccess": "Zakupy pomyślnie przywrócone!",
   "restorePurchasesError": "Nie można przywrócić zakupów. Spróbuj ponownie.",
-  "restorePurchasesNoneFound": "Nie znaleziono poprzednich zakupów."
-,
+  "restorePurchasesNoneFound": "Nie znaleziono poprzednich zakupów.",
   "discordAddonPopupTitle": "Funkcja Discord",
-  "discordAddonPopupMessage": "Ta funkcja jest dostępna jako dodatek."
-,
+  "discordAddonPopupMessage": "Ta funkcja jest dostępna jako dodatek.",
   "discordAccordionTitle": "Integracja Discord",
-  "discordAccordionSubtitle": "Połącz serwery Discord"
-,
-  "selectDiscord": "Wybierz Discord"
-,
-  "enableDiscord": "Włącz Discord"
-
-,
+  "discordAccordionSubtitle": "Połącz serwery Discord",
+  "selectDiscord": "Wybierz Discord",
+  "enableDiscord": "Włącz Discord",
   "packTheGood": "Pakiet The Good",
   "packTheBad": "Pakiet The Bad",
   "packTheUgly": "Pakiet The Ugly",
@@ -1427,7 +1419,6 @@
   "startOver": "Zacznij Od Nowa",
   "capturingStatus": "Przechwytywanie...",
   "captureComplete": "Przechwytywanie zakończone",
-  "noMessagesInDateRange": "Brak wiadomości w zakresie dat",
   "errorDialogTitle": "Błąd",
   "failedToLoadConversation": "Nie udało się załadować rozmowy",
   "selectConversationTitle": "Wybierz Rozmowę",
@@ -1439,5 +1430,14 @@
   "nextSizeButton": "Następny Rozmiar",
   "startSequenceButton": "Rozpocznij Sekwencję",
   "nextSizeInstruction": "Wybierz następny rozmiar",
-  "okButton": "OK"
+  "okButton": "OK",
+  "tileMyAccountTitle": "Moje Konto",
+  "tileMyAccountDesc": "Członkostwo, polecenia, zakupy, sprzedaż i licencja deweloperska",
+  "tileReferFriendsTitle": "Zaproś Znajomych\nDarmowy Miesiąc",
+  "tileReferFriendsDesc": "Zaproś 5 znajomych, którzy uruchomią raport i zdobądź darmowy miesiąc Standard!",
+  "tileUserPacksTitle": "Pakiety Metryk\nOd Użytkowników",
+  "tileUserPacksDesc": "Przeglądaj i kupuj pakiety metryk tworzone przez społeczność. Zdobywaj kredyty, przesyłając własne!",
+  "tileBrowseButton": "Przeglądaj",
+  "purchaseDialogCancel": "Anuluj",
+  "installedPacksAccordionSubtitle": "{count} Metryk — Pakiet Społeczności"
 }

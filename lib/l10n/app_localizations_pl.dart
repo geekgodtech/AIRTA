@@ -4843,4 +4843,36 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get noConversationsFoundBody =>
       'No conversations were found. Make sure your credentials are correct and try again.';
+
+  @override
+  String get tileMyAccountTitle => 'Moje Konto';
+
+  @override
+  String get tileMyAccountDesc =>
+      'Członkostwo, polecenia, zakupy, sprzedaż i licencja deweloperska';
+
+  @override
+  String get tileReferFriendsTitle => 'Zaproś Znajomych\nDarmowy Miesiąc';
+
+  @override
+  String get tileReferFriendsDesc =>
+      'Zaproś 5 znajomych, którzy uruchomią raport i zdobądź darmowy miesiąc Standard!';
+
+  @override
+  String get tileUserPacksTitle => 'Pakiety Metryk\nOd Użytkowników';
+
+  @override
+  String get tileUserPacksDesc =>
+      'Przeglądaj i kupuj pakiety metryk tworzone przez społeczność. Zdobywaj kredyty, przesyłając własne!';
+
+  @override
+  String get tileBrowseButton => 'Przeglądaj';
+
+  @override
+  String get purchaseDialogCancel => 'Anuluj';
+
+  @override
+  String installedPacksAccordionSubtitle(int count) {
+    return '$count Metryk — Pakiet Społeczności';
+  }
 }

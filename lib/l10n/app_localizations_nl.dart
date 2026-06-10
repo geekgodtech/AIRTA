@@ -4853,4 +4853,36 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get noConversationsFoundBody =>
       'No conversations were found. Make sure your credentials are correct and try again.';
+
+  @override
+  String get tileMyAccountTitle => 'Mijn Account';
+
+  @override
+  String get tileMyAccountDesc =>
+      'Lidmaatschap, verwijzingen, aankopen, verkopen & ontwikkelaarslicentie';
+
+  @override
+  String get tileReferFriendsTitle => 'Vrienden Uitnodigen\nGRATIS Maand';
+
+  @override
+  String get tileReferFriendsDesc =>
+      'Nodig 5 vrienden uit die een rapport uitvoeren en verdien een gratis maand Standard!';
+
+  @override
+  String get tileUserPacksTitle => 'Ingediende\nMetrieken Pakketten';
+
+  @override
+  String get tileUserPacksDesc =>
+      'Blader door en koop metriekpakketten gemaakt door de community. Verdien credits door je eigen in te dienen!';
+
+  @override
+  String get tileBrowseButton => 'Bladeren';
+
+  @override
+  String get purchaseDialogCancel => 'Annuleren';
+
+  @override
+  String installedPacksAccordionSubtitle(int count) {
+    return '$count Metrisch — Community Pakket';
+  }
 }

@@ -1,4 +1,4 @@
-﻿{
+{
   "@@locale": "de",
   "appTitle": "KI-Beziehungstoxizitäts-Analysator",
   "psychologicalMetrics": "Psychologische Metriken",
@@ -1312,8 +1312,7 @@
   "metric_serial_killer_50_name": "Endgültigkeitssprache",
   "metric_serial_killer_50_description": "Erkennt Verweise auf das Beenden, Töten oder dauerhafte Schweigen von Zielen.",
   "packNarcissistLabel": "Der Narzisst",
-  "packSerialKillerLabel": "Der Serienmörder"
-,
+  "packSerialKillerLabel": "Der Serienmörder",
   "expansionPacksPurchased": "Gekaufte Erweiterungspakete:",
   "expansionPacksStillAvailable": "Verfügbare Erweiterungspakete",
   "metricsOwned": "Metriken im Besitz",
@@ -1354,24 +1353,18 @@
       "count": {}
     }
   },
-  "metricPlural": "{count} Metriken"
-,
+  "metricPlural": "{count} Metriken",
   "restorePurchases": "Käufe Wiederherstellen",
   "restorePurchasesButton": "Frühere Käufe Wiederherstellen",
   "restorePurchasesSuccess": "Käufe erfolgreich wiederhergestellt!",
   "restorePurchasesError": "Käufe konnten nicht wiederhergestellt werden. Bitte versuchen Sie es erneut.",
-  "restorePurchasesNoneFound": "Keine früheren Käufe gefunden."
-,
+  "restorePurchasesNoneFound": "Keine früheren Käufe gefunden.",
   "discordAddonPopupTitle": "Discord-Funktion",
-  "discordAddonPopupMessage": "Diese Funktion ist als Erweiterung verfügbar."
-,
+  "discordAddonPopupMessage": "Diese Funktion ist als Erweiterung verfügbar.",
   "discordAccordionTitle": "Discord-Integration",
-  "discordAccordionSubtitle": "Discord-Server verbinden"
-,
-  "selectDiscord": "Discord wählen"
-,
-  "enableDiscord": "Discord aktivieren"
-,
+  "discordAccordionSubtitle": "Discord-Server verbinden",
+  "selectDiscord": "Discord wählen",
+  "enableDiscord": "Discord aktivieren",
   "packTheGood": "Das Gute",
   "packTheBad": "Das Schlechte",
   "packTheUgly": "Das Hässliche",
@@ -1382,7 +1375,9 @@
   "@buyForPrice": {
     "description": "Button label to purchase something at a given price",
     "placeholders": {
-      "price": { "type": "String" }
+      "price": {
+        "type": "String"
+      }
     }
   },
   "processingPurchase": "Kauf wird verarbeitet…",
@@ -1393,7 +1388,9 @@
   "@failedToSaveError": {
     "description": "Error message when saving fails",
     "placeholders": {
-      "error": { "type": "String" }
+      "error": {
+        "type": "String"
+      }
     }
   },
   "connectionTestNotImplemented": "Verbindungstest noch nicht implementiert",
@@ -1409,7 +1406,9 @@
   "@failedToImportError": {
     "description": "Error message when import fails",
     "placeholders": {
-      "error": { "type": "String" }
+      "error": {
+        "type": "String"
+      }
     }
   },
   "proMembershipUpsell": "Schalten Sie die Pro-Mitgliedschaft frei, um auf alle Funktionen zuzugreifen.",
@@ -1417,7 +1416,9 @@
   "@unlockForPrice": {
     "description": "Button label to unlock something at a given price",
     "placeholders": {
-      "price": { "type": "String" }
+      "price": {
+        "type": "String"
+      }
     }
   },
   "startCapture": "Aufnahme starten",
@@ -1444,5 +1445,14 @@
   "nextSizeButton": "Nächste Größe",
   "startSequenceButton": "Sequenz starten",
   "nextSizeInstruction": "Wechseln Sie zur nächsten Gerätegröße und tippen Sie dann auf „Sequenz starten“.",
-  "okButton": "OK"
+  "okButton": "OK",
+  "tileMyAccountTitle": "Mein Konto",
+  "tileMyAccountDesc": "Mitgliedschaft, Empfehlungen, Käufe, Verkäufe & Entwicklerlizenz",
+  "tileReferFriendsTitle": "Freunde werben\nKOSTENLOSER Monat",
+  "tileReferFriendsDesc": "Werbe 5 Freunde, die einen Bericht erstellen, und erhalte einen kostenlosen Monat Standard!",
+  "tileUserPacksTitle": "Eingereichte\nMetrik-Pakete",
+  "tileUserPacksDesc": "Durchsuche und kaufe von der Community erstellte Metrik-Pakete. Verdiene Credits durch eigene Einreichungen!",
+  "tileBrowseButton": "Durchsuchen",
+  "purchaseDialogCancel": "Abbrechen",
+  "installedPacksAccordionSubtitle": "{count} Metriken — Community-Paket"
 }

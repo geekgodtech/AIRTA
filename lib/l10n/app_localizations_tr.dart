@@ -4843,4 +4843,36 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get noConversationsFoundBody =>
       'No conversations were found. Make sure your credentials are correct and try again.';
+
+  @override
+  String get tileMyAccountTitle => 'Hesabım';
+
+  @override
+  String get tileMyAccountDesc =>
+      'Üyelik, tavsiyeler, satın almalar, satışlar ve geliştirici lisansı';
+
+  @override
+  String get tileReferFriendsTitle => 'Arkadaş Davet Et\nÜCRETSİZ Ay Kazan';
+
+  @override
+  String get tileReferFriendsDesc =>
+      'Rapor çalıştıran 5 arkadaş davet et ve Standard\'ın ücretsiz bir ayını kazan!';
+
+  @override
+  String get tileUserPacksTitle => 'Kullanıcı Gönderimi\nMetrik Paketleri';
+
+  @override
+  String get tileUserPacksDesc =>
+      'Topluluk tarafından oluşturulan metrik paketlere göz atın ve satın alın. Kendi paketinizi göndererek kredi kazanın!';
+
+  @override
+  String get tileBrowseButton => 'Göz At';
+
+  @override
+  String get purchaseDialogCancel => 'İptal';
+
+  @override
+  String installedPacksAccordionSubtitle(int count) {
+    return '$count Metrik — Topluluk Paketi';
+  }
 }

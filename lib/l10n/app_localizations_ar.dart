@@ -4830,4 +4830,36 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get noConversationsFoundBody =>
       'No conversations were found. Make sure your credentials are correct and try again.';
+
+  @override
+  String get tileMyAccountTitle => 'حسابي';
+
+  @override
+  String get tileMyAccountDesc =>
+      'العضوية والإحالات والمشتريات والمبيعات وترخيص المطور';
+
+  @override
+  String get tileReferFriendsTitle => 'دعوة الأصدقاء\nشهر مجاني';
+
+  @override
+  String get tileReferFriendsDesc =>
+      'أحل 5 أصدقاء يقومون بتشغيل تقرير واحصل على شهر مجاني من الاشتراك القياسي!';
+
+  @override
+  String get tileUserPacksTitle => 'حزم المقاييس\nالمقدمة من المستخدمين';
+
+  @override
+  String get tileUserPacksDesc =>
+      'تصفح وشراء حزم المقاييس التي أنشأها المجتمع. اكسب أرصدة بتقديم حزمك الخاصة!';
+
+  @override
+  String get tileBrowseButton => 'تصفح';
+
+  @override
+  String get purchaseDialogCancel => 'إلغاء';
+
+  @override
+  String installedPacksAccordionSubtitle(int count) {
+    return '$count مقياس — حزمة مجتمعية';
+  }
 }

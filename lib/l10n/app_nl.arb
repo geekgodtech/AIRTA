@@ -20,7 +20,7 @@
   "discordStep5Title": "Kanaal Selecteren",
   "discordStep5Description": "Tik op 'Discord-kanaal Selecteren', kies uw server en selecteer vervolgens het kanaal om te analyseren.",
   "discordBotConfiguration": "Bot Configuratie",
-    "discordBotConfigTitle": "Discord Bot Configuration",
+  "discordBotConfigTitle": "Discord Bot Configuration",
   "discordBotTokenSetupTitle": "Bot Token Setup",
   "discordBotTokenSetupDescription": "Enter your Discord bot token below. This is required to access your Discord servers and channels.",
   "discordWhereToFindToken": "Where to find your bot token:",
@@ -43,7 +43,7 @@
   "discordConnectionTestNotImplemented": "Connection test not yet implemented",
   "discordReadyToConfigureTitle": "Ready to configure your bot?",
   "discordReadyToConfigureDescription": "Once you've created your Discord bot following the steps above, enter your bot token in the settings to start analyzing.",
-"gotIt": "Begrepen",
+  "gotIt": "Begrepen",
   "selectFile": "Bestand selecteren",
   "analyzeSelectedMetrics": "Geselecteerde metingen analyseren",
   "analyze20RandomMetrics": "20 willekeurige metingen analyseren",
@@ -502,7 +502,7 @@
       }
     }
   },
-  "noMessagesInDateRange": "Geen berichten gevonden in het geselecteerde datumbereik. Selecteer andere datums of wis het datumfilter.",
+  "noMessagesInDateRange": "Geen berichten in datumbereik",
   "next": "Volgende",
   "cancelNotReady": "Annuleren — Ik Was Niet Klaar",
   "purchaseCustomMetricTileTitle": "Aangepaste Meting Kopen",
@@ -1335,8 +1335,7 @@
   "metric_serial_killer_50_name": "Finaliteitstaal",
   "metric_serial_killer_50_description": "Herken verwijzingen naar het beëindigen, doden of permanent tot zwijgen brengen van doelwitten.",
   "packNarcissistLabel": "De Narcist",
-  "packSerialKillerLabel": "De Seriemoordenaar"
-,
+  "packSerialKillerLabel": "De Seriemoordenaar",
   "expansionPacksPurchased": "Uitbreidingspakketten Gekocht:",
   "expansionPacksStillAvailable": "Uitbreidingspakketten Nog Beschikbaar",
   "metricsOwned": "Metingen in bezit",
@@ -1377,25 +1376,18 @@
     }
   },
   "metricPlural": "{count} Metingen",
-  "allPacksOwned": "Alle uitbreidingspakketten in bezit!"
-,
+  "allPacksOwned": "Alle uitbreidingspakketten in bezit!",
   "restorePurchases": "Aankopen Herstellen",
   "restorePurchasesButton": "Eerdere Aankopen Herstellen",
   "restorePurchasesSuccess": "Aankopen succesvol hersteld!",
   "restorePurchasesError": "Kon aankopen niet herstellen. Probeer het opnieuw.",
-  "restorePurchasesNoneFound": "Geen eerdere aankopen gevonden."
-,
+  "restorePurchasesNoneFound": "Geen eerdere aankopen gevonden.",
   "discordAddonPopupTitle": "Discord-functie",
-  "discordAddonPopupMessage": "Deze functie is beschikbaar als een add-on."
-,
+  "discordAddonPopupMessage": "Deze functie is beschikbaar als een add-on.",
   "discordAccordionTitle": "Discord-integratie",
-  "discordAccordionSubtitle": "Verbind Discord-servers"
-,
-  "selectDiscord": "Selecteer Discord"
-,
-  "enableDiscord": "Discord inschakelen"
-
-,
+  "discordAccordionSubtitle": "Verbind Discord-servers",
+  "selectDiscord": "Selecteer Discord",
+  "enableDiscord": "Discord inschakelen",
   "packTheGood": "The Good Pakket",
   "packTheBad": "The Bad Pakket",
   "packTheUgly": "The Ugly Pakket",
@@ -1427,7 +1419,6 @@
   "startOver": "Opnieuw Beginnen",
   "capturingStatus": "Bezig met opnemen...",
   "captureComplete": "Opname voltooid",
-  "noMessagesInDateRange": "Geen berichten in datumbereik",
   "errorDialogTitle": "Fout",
   "failedToLoadConversation": "Gesprek laden mislukt",
   "selectConversationTitle": "Gesprek Selecteren",
@@ -1439,5 +1430,14 @@
   "nextSizeButton": "Volgende Grootte",
   "startSequenceButton": "Sequentiereeks Starten",
   "nextSizeInstruction": "Selecteer de volgende grootte",
-  "okButton": "OK"
+  "okButton": "OK",
+  "tileMyAccountTitle": "Mijn Account",
+  "tileMyAccountDesc": "Lidmaatschap, verwijzingen, aankopen, verkopen & ontwikkelaarslicentie",
+  "tileReferFriendsTitle": "Vrienden Uitnodigen\nGRATIS Maand",
+  "tileReferFriendsDesc": "Nodig 5 vrienden uit die een rapport uitvoeren en verdien een gratis maand Standard!",
+  "tileUserPacksTitle": "Ingediende\nMetrieken Pakketten",
+  "tileUserPacksDesc": "Blader door en koop metriekpakketten gemaakt door de community. Verdien credits door je eigen in te dienen!",
+  "tileBrowseButton": "Bladeren",
+  "purchaseDialogCancel": "Annuleren",
+  "installedPacksAccordionSubtitle": "{count} Metrisch — Community Pakket"
 }

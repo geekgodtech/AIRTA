@@ -1430,5 +1430,14 @@
   "nextSizeButton": "Taille Suivante",
   "startSequenceButton": "Démarrer la Séquence",
   "nextSizeInstruction": "Cliquez sur \"Taille Suivante\" pour la dimension suivante",
-  "okButton": "OK"
+  "okButton": "OK",
+  "tileMyAccountTitle": "Mon Compte",
+  "tileMyAccountDesc": "Abonnement, parrainages, achats, ventes et licence développeur",
+  "tileReferFriendsTitle": "Parrainer des Amis\nMois GRATUIT",
+  "tileReferFriendsDesc": "Parrainez 5 amis qui font un rapport et gagnez un mois gratuit de Standard !",
+  "tileUserPacksTitle": "Packs de Métriques\nSoumis",
+  "tileUserPacksDesc": "Parcourez et achetez des packs de métriques créés par la communauté. Gagnez des crédits en soumettant les vôtres !",
+  "tileBrowseButton": "Parcourir",
+  "purchaseDialogCancel": "Annuler",
+  "installedPacksAccordionSubtitle": "{count} Métriques — Pack Communautaire"
 }

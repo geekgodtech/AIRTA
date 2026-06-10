@@ -4847,4 +4847,38 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get noConversationsFoundBody =>
       'No conversations were found. Make sure your credentials are correct and try again.';
+
+  @override
+  String get tileMyAccountTitle => 'मेरा खाता';
+
+  @override
+  String get tileMyAccountDesc =>
+      'सदस्यता, रेफ़रल, खरीदारी, बिक्री और डेवलपर लाइसेंस';
+
+  @override
+  String get tileReferFriendsTitle =>
+      'दोस्तों को आमंत्रित करें\nमुफ्त महीना पाएं';
+
+  @override
+  String get tileReferFriendsDesc =>
+      '5 दोस्तों को आमंत्रित करें जो रिपोर्ट चलाएं और स्टैंडर्ड का एक मुफ्त महीना पाएं!';
+
+  @override
+  String get tileUserPacksTitle =>
+      'उपयोगकर्ता द्वारा\nसबमिट किए गए मेट्रिक पैक';
+
+  @override
+  String get tileUserPacksDesc =>
+      'समुदाय-निर्मित मेट्रिक पैक ब्राउज़ करें और खरीदें। अपना सबमिट करके क्रेडिट अर्जित करें!';
+
+  @override
+  String get tileBrowseButton => 'ब्राउज़ करें';
+
+  @override
+  String get purchaseDialogCancel => 'रद्द करें';
+
+  @override
+  String installedPacksAccordionSubtitle(int count) {
+    return '$count मेट्रिक्स — सामुदायिक पैक';
+  }
 }

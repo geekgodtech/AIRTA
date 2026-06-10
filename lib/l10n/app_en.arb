@@ -81,7 +81,7 @@
   "@discordBotConfiguration": {
     "description": "Button to go to bot configuration page"
   },
-    "discordBotConfigTitle": "Discord Bot Configuration",
+  "discordBotConfigTitle": "Discord Bot Configuration",
   "@discordBotConfigTitle": {
     "description": "Discord bot settings localization"
   },
@@ -173,7 +173,7 @@
   "@discordReadyToConfigureDescription": {
     "description": "Discord bot settings localization"
   },
-"gotIt": "Got it",
+  "gotIt": "Got it",
   "@gotIt": {
     "description": "Button to dismiss help dialog"
   },
@@ -247,7 +247,7 @@
   },
   "notNow": "Not now",
   "@notNow": {
-    "description": "Button to dismiss dialog"
+    "description": "Button to dismiss purchase dialog"
   },
   "unlockThisReport": "Unlock This Report - $20",
   "@unlockThisReport": {
@@ -878,7 +878,7 @@
       }
     }
   },
-  "noMessagesInDateRange": "No messages found in the selected date range. Please select different dates or clear the date filter.",
+  "noMessagesInDateRange": "No Messages Found in Date Range",
   "purchaseCustomMetricTileTitle": "Purchase Custom Metric",
   "@purchaseCustomMetricTileTitle": {
     "description": "Title label on the Purchase Custom Metric tile in the metrics grid"
@@ -1824,8 +1824,7 @@
   "expansionPacksStillAvailable": "Expansion Packs Still Available",
   "metricsOwned": "Metrics owned",
   "metricsStillAvailable": "Metrics Still Available",
-  "getMore": "Get more!"
-,
+  "getMore": "Get more!",
   "standardPackTitle": "Standard Pack",
   "goodPackTitle": "The Good Pack",
   "badPackTitle": "The Bad Pack",
@@ -1860,9 +1859,7 @@
       "count": {}
     }
   },
-  "metricPlural": "{count} Metrics"
-,
-  "getMore": "Get more!",
+  "metricPlural": "{count} Metrics",
   "viewMembershipOptions": "View Membership Options",
   "metricExpansionPacksTitle": "Metric Expansion Packs",
   "oneTimePurchasesSubtitle": "One-time purchases — additional metrics forever",
@@ -1896,8 +1893,7 @@
   "serialKillerPackBenefit3": "Psychopathy & sadism markers",
   "serialKillerPackBenefit4": "One-time purchase — yours forever",
   "serialKillerPackBenefit5": "Unlocks instantly after purchase",
-  "allPacksOwned": "All expansion packs owned!"
-,
+  "allPacksOwned": "All expansion packs owned!",
   "restorePurchases": "Restore Purchases",
   "restorePurchasesButton": "Restore Previous Purchases",
   "restorePurchasesSuccess": "Purchases restored successfully!",
@@ -1909,7 +1905,6 @@
   "discordAccordionSubtitle": "Connect Discord servers",
   "selectDiscord": "Select Discord",
   "enableDiscord": "Enable Discord",
-
   "aboutTitle": "About",
   "@aboutTitle": {
     "description": "Title for About page"
@@ -1986,10 +1981,6 @@
         "type": "String"
       }
     }
-  },
-  "notNow": "Not now",
-  "@notNow": {
-    "description": "Button to dismiss purchase dialog"
   },
   "buyForPrice": "Buy for {price}",
   "@buyForPrice": {
@@ -2078,7 +2069,9 @@
   "@unlockForPrice": {
     "description": "Button to unlock feature for price",
     "placeholders": {
-      "price": { "type": "String" }
+      "price": {
+        "type": "String"
+      }
     }
   },
   "startCapture": "Start Capture",
@@ -2109,7 +2102,6 @@
   "@captureComplete": {
     "description": "Status when capture is complete"
   },
-  "noMessagesInDateRange": "No Messages Found in Date Range",
   "@noMessagesInDateRange": {
     "description": "Status when no messages in date range"
   },
@@ -2178,7 +2170,9 @@
   "@errorSavingCredentials": {
     "description": "Error message when saving platform credentials fails",
     "placeholders": {
-      "error": { "type": "String" }
+      "error": {
+        "type": "String"
+      }
     }
   },
   "credentialsSecurityInfo": "Your credentials are stored securely on this device only and are never uploaded to our servers.",
@@ -2216,5 +2210,21 @@
   "noConversationsFoundBody": "No conversations were found. Make sure your credentials are correct and try again.",
   "@noConversationsFoundBody": {
     "description": "Body text when no conversations are found"
+  },
+  "tileMyAccountTitle": "My Account",
+  "tileMyAccountDesc": "Membership, referrals, purchases, sales & developer license",
+  "tileReferFriendsTitle": "Refer Friends\nGet FREE Month",
+  "tileReferFriendsDesc": "Refer 5 friends who run a report and earn a free month of Standard!",
+  "tileUserPacksTitle": "User Submitted\nMetric Packs",
+  "tileUserPacksDesc": "Browse & purchase community-created metric packs. Earn credits by submitting your own!",
+  "tileBrowseButton": "Browse",
+  "purchaseDialogCancel": "Cancel",
+  "installedPacksAccordionSubtitle": "{count} Metrics — Community Pack",
+  "@installedPacksAccordionSubtitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   }
 }

@@ -4831,4 +4831,33 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get noConversationsFoundBody =>
       'No conversations were found. Make sure your credentials are correct and try again.';
+
+  @override
+  String get tileMyAccountTitle => '我的账户';
+
+  @override
+  String get tileMyAccountDesc => '会员资格、推荐、购买、销售和开发者许可证';
+
+  @override
+  String get tileReferFriendsTitle => '推荐好友\n获得免费月份';
+
+  @override
+  String get tileReferFriendsDesc => '推荐5位运行报告的好友，即可获得一个月免费标准版！';
+
+  @override
+  String get tileUserPacksTitle => '用户提交的\n指标包';
+
+  @override
+  String get tileUserPacksDesc => '浏览并购买社区创建的指标包。提交您自己的指标包以获得积分！';
+
+  @override
+  String get tileBrowseButton => '浏览';
+
+  @override
+  String get purchaseDialogCancel => '取消';
+
+  @override
+  String installedPacksAccordionSubtitle(int count) {
+    return '$count 个指标 — 社区包';
+  }
 }

@@ -1,4 +1,4 @@
-﻿{
+{
   "@@locale": "it",
   "appTitle": "Analizzatore IA di Tossicità nelle Relazioni",
   "psychologicalMetrics": "Metriche Psicologiche",
@@ -20,7 +20,7 @@
   "discordStep5Title": "Seleziona il Canale",
   "discordStep5Description": "Tocca 'Seleziona Canale Discord', scegli il tuo server, quindi seleziona il canale da analizzare.",
   "discordBotConfiguration": "Configurazione Bot",
-    "discordBotConfigTitle": "Discord Bot Configuration",
+  "discordBotConfigTitle": "Discord Bot Configuration",
   "discordBotTokenSetupTitle": "Bot Token Setup",
   "discordBotTokenSetupDescription": "Enter your Discord bot token below. This is required to access your Discord servers and channels.",
   "discordWhereToFindToken": "Where to find your bot token:",
@@ -43,7 +43,7 @@
   "discordConnectionTestNotImplemented": "Connection test not yet implemented",
   "discordReadyToConfigureTitle": "Ready to configure your bot?",
   "discordReadyToConfigureDescription": "Once you've created your Discord bot following the steps above, enter your bot token in the settings to start analyzing.",
-"gotIt": "Capito",
+  "gotIt": "Capito",
   "selectFile": "Seleziona file",
   "analyzeSelectedMetrics": "Analizza metriche selezionate",
   "analyze20RandomMetrics": "Analizza 20 metriche casuali",
@@ -1335,8 +1335,7 @@
   "metric_serial_killer_50_name": "Linguaggio di Finalità",
   "metric_serial_killer_50_description": "Riconosce riferimenti alla fine, all'uccisione o al silenziamento permanente dei bersagli.",
   "packNarcissistLabel": "Il Narcisista",
-  "packSerialKillerLabel": "Il Serial Killer"
-,
+  "packSerialKillerLabel": "Il Serial Killer",
   "expansionPacksPurchased": "Pacchetti di Espansione Acquistati:",
   "expansionPacksStillAvailable": "Pacchetti di Espansione Ancora Disponibili",
   "metricsOwned": "Metriche in Proprietà",
@@ -1377,24 +1376,18 @@
       "count": {}
     }
   },
-  "metricPlural": "{count} Metriche"
-,
+  "metricPlural": "{count} Metriche",
   "restorePurchases": "Ripristina Acquisti",
   "restorePurchasesButton": "Ripristina Acquisti Precedenti",
   "restorePurchasesSuccess": "Acquisti ripristinati con successo!",
   "restorePurchasesError": "Impossibile ripristinare gli acquisti. Riprova.",
-  "restorePurchasesNoneFound": "Nessun acquisto precedente trovato."
-,
+  "restorePurchasesNoneFound": "Nessun acquisto precedente trovato.",
   "discordAddonPopupTitle": "Funzione Discord",
-  "discordAddonPopupMessage": "Questa funzione è disponibile come componente aggiuntivo."
-,
+  "discordAddonPopupMessage": "Questa funzione è disponibile come componente aggiuntivo.",
   "discordAccordionTitle": "Integrazione Discord",
-  "discordAccordionSubtitle": "Connetti server Discord"
-,
-  "selectDiscord": "Seleziona Discord"
-,
-  "enableDiscord": "Abilita Discord"
-,
+  "discordAccordionSubtitle": "Connetti server Discord",
+  "selectDiscord": "Seleziona Discord",
+  "enableDiscord": "Abilita Discord",
   "packTheGood": "Il Bene",
   "@packTheGood": {
     "description": "Title for The Good metrics pack"
@@ -1596,5 +1589,14 @@
   "okButton": "OK",
   "@okButton": {
     "description": "OK button"
-  }
+  },
+  "tileMyAccountTitle": "Il Mio Account",
+  "tileMyAccountDesc": "Abbonamento, referral, acquisti, vendite e licenza sviluppatore",
+  "tileReferFriendsTitle": "Invita Amici\nMese GRATIS",
+  "tileReferFriendsDesc": "Invita 5 amici che eseguono un report e guadagna un mese gratis di Standard!",
+  "tileUserPacksTitle": "Pacchetti Metriche\nInviati dagli Utenti",
+  "tileUserPacksDesc": "Sfoglia e acquista pacchetti di metriche creati dalla community. Guadagna crediti inviando i tuoi!",
+  "tileBrowseButton": "Sfoglia",
+  "purchaseDialogCancel": "Annulla",
+  "installedPacksAccordionSubtitle": "{count} Metriche — Pacchetto Community"
 }

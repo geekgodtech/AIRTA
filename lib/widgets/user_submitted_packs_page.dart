@@ -964,8 +964,9 @@ class _PackRowState extends State<_PackRow> {
             onPressed: () => Navigator.pop(ctx, true),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF4040cc),
+              foregroundColor: Colors.white,
             ),
-            child: Text('Buy for ${pack.priceFormatted}'),
+            child: Text('Buy for \${pack.priceFormatted}'),
           ),
         ],
       ),

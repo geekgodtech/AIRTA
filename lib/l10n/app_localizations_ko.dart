@@ -9,17 +9,17 @@ class AppLocalizationsKo extends AppLocalizations {
   AppLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
-  String get appTitle => 'AI ?? ?? ???';
+  String get appTitle => 'AI 관계 독성 분석기';
 
   @override
-  String get psychologicalMetrics => '?? ??';
+  String get psychologicalMetrics => '심리적 지표';
 
   @override
   String get metricsDescription =>
-      'Fewer selected metrics produce a deeper, more concentrated analysis of those behaviors. More selected metrics produce a broader report with less detail per metric.';
+      '선택한 지표가 적을수록 해당 행동에 대한 더 깊고 집중적인 분석이 이루어집니다. 선택한 지표가 많을수록 지표당 세부 정보가 적은 더 광범위한 보고서가 생성됩니다.';
 
   @override
-  String get selectSMS => 'SMS / RCS ?? ??';
+  String get selectSMS => 'SMS / RCS 채팅 선택';
 
   @override
   String get selectDiscordChannel => '채널 선택';
@@ -517,7 +517,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String selectUpToCount(Object current, Object max) {
-    return 'Select up to $max. Current: $current';
+    return '$max개까지 선택 가능. 현재: $current개';
   }
 
   @override
@@ -553,40 +553,40 @@ class AppLocalizationsKo extends AppLocalizations {
   String get metricListLoaded => 'Metric list loaded successfully.';
 
   @override
-  String get filters => '??';
+  String get filters => '필터';
 
   @override
-  String get sortBy => '?? ??:';
+  String get sortBy => '정렬 기준:';
 
   @override
-  String get recent => '??';
+  String get recent => '최근';
 
   @override
-  String get name => '??';
+  String get name => '이름';
 
   @override
   String get count => '?';
 
   @override
-  String get namedOnly => '?? ?? ??';
+  String get namedOnly => '이름 있는 것만';
 
   @override
-  String get minMessages => '?? ???:';
+  String get minMessages => '최소 메시지:';
 
   @override
-  String get minimumMessages => '?? ??? ?:';
+  String get minimumMessages => '최소 메시지 수:';
 
   @override
-  String get executiveSummary => '??';
+  String get executiveSummary => '요약';
 
   @override
-  String get metricScores => '??? ??';
+  String get metricScores => '지표 점수';
 
   @override
-  String get contextualEvidenceExamples => '?? ?? ??';
+  String get contextualEvidenceExamples => '맥락적 증거 예시';
 
   @override
-  String get neutralSynthesis => '??? ??';
+  String get neutralSynthesis => '중립적 종합';
 
   @override
   String analysisOfSender(Object sender) {
@@ -599,7 +599,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get finalConclusion => '?? ??';
+  String get finalConclusion => '최종 결론';
 
   @override
   String get metric_1_name => 'Contempt';
@@ -4445,104 +4445,103 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get viewMembershipOptions => 'View Membership Options';
+  String get viewMembershipOptions => '멤버십 옵션 보기';
 
   @override
-  String get metricExpansionPacksTitle => 'Metric Expansion Packs';
+  String get metricExpansionPacksTitle => '지표 확장 팩';
 
   @override
-  String get oneTimePurchasesSubtitle =>
-      'One-time purchases — additional metrics forever';
+  String get oneTimePurchasesSubtitle => '일회성 구매 — 추가 지표 영구 소유';
 
   @override
-  String get unlockGoodPackButton => 'Unlock The Good Pack';
+  String get unlockGoodPackButton => '굿 팩 잠금 해제';
 
   @override
-  String get unlockBadPackButton => 'Unlock The Bad Pack';
+  String get unlockBadPackButton => '배드 팩 잠금 해제';
 
   @override
-  String get unlockUglyPackButton => 'Unlock The Ugly Pack';
+  String get unlockUglyPackButton => '어글리 팩 잠금 해제';
 
   @override
-  String get unlockNarcissistPackButton => 'Unlock Narcissist Pack';
+  String get unlockNarcissistPackButton => '나르시시스트 팩 잠금 해제';
 
   @override
-  String get unlockSerialKillerPackButton => 'Unlock Serial Killer Pack';
+  String get unlockSerialKillerPackButton => '시리얼 킬러 팩 잠금 해제';
 
   @override
-  String get goodPackBenefit1 => '100 healthy relationship metrics';
+  String get goodPackBenefit1 => '건강한 관계 지표 100개';
 
   @override
-  String get goodPackBenefit2 => 'Positive communication patterns';
+  String get goodPackBenefit2 => '긍정적 의사소통 패턴';
 
   @override
-  String get goodPackBenefit3 => 'Appreciation, empathy & trust signals';
+  String get goodPackBenefit3 => '감사, 공감 및 신뢰 신호';
 
   @override
-  String get goodPackBenefit4 => 'One-time purchase — yours forever';
+  String get goodPackBenefit4 => '일회성 구매 — 영구 소유';
 
   @override
-  String get goodPackBenefit5 => 'Unlocks instantly after purchase';
+  String get goodPackBenefit5 => '구매 후 즉시 잠금 해제';
 
   @override
-  String get badPackBenefit1 => '100 warning-sign relationship metrics';
+  String get badPackBenefit1 => '경고 신호 관계 지표 100개';
 
   @override
-  String get badPackBenefit2 => 'Spot manipulation & dismissal patterns';
+  String get badPackBenefit2 => '조종 및 무시 패턴 식별';
 
   @override
-  String get badPackBenefit3 => 'Guilt-tripping, stonewalling & more';
+  String get badPackBenefit3 => '죄책감 유발, 냉담 등';
 
   @override
-  String get badPackBenefit4 => 'One-time purchase — yours forever';
+  String get badPackBenefit4 => '일회성 구매 — 영구 소유';
 
   @override
-  String get badPackBenefit5 => 'Unlocks instantly after purchase';
+  String get badPackBenefit5 => '구매 후 즉시 잠금 해제';
 
   @override
-  String get uglyPackBenefit1 => '100 severe red-flag abuse metrics';
+  String get uglyPackBenefit1 => '심각한 적신호 학대 지표 100개';
 
   @override
-  String get uglyPackBenefit2 => 'Identify coercion, threats & control';
+  String get uglyPackBenefit2 => '강압, 위협 및 통제 식별';
 
   @override
-  String get uglyPackBenefit3 => 'Trauma bonding & isolation indicators';
+  String get uglyPackBenefit3 => '트라우마 유대 및 고립 지표';
 
   @override
-  String get uglyPackBenefit4 => 'One-time purchase — yours forever';
+  String get uglyPackBenefit4 => '일회성 구매 — 영구 소유';
 
   @override
-  String get uglyPackBenefit5 => 'Unlocks instantly after purchase';
+  String get uglyPackBenefit5 => '구매 후 즉시 잠금 해제';
 
   @override
-  String get narcissistPackBenefit1 => '50 narcissistic behavior metrics';
+  String get narcissistPackBenefit1 => '자기도취 행동 지표 50개';
 
   @override
-  String get narcissistPackBenefit2 => 'Detect gaslighting & love-bombing';
+  String get narcissistPackBenefit2 => '가스라이팅 및 러브 바밍 감지';
 
   @override
-  String get narcissistPackBenefit3 => 'Hoovering & devaluation patterns';
+  String get narcissistPackBenefit3 => '후버링 및 평가절하 패턴';
 
   @override
-  String get narcissistPackBenefit4 => 'One-time purchase — yours forever';
+  String get narcissistPackBenefit4 => '일회성 구매 — 영구 소유';
 
   @override
-  String get narcissistPackBenefit5 => 'Unlocks instantly after purchase';
+  String get narcissistPackBenefit5 => '구매 후 즉시 잠금 해제';
 
   @override
-  String get serialKillerPackBenefit1 => '50 extreme danger indicators';
+  String get serialKillerPackBenefit1 => '극단적 위험 지표 50개';
 
   @override
-  String get serialKillerPackBenefit2 => 'Detect predatory & violent language';
+  String get serialKillerPackBenefit2 => '포식적이고 폭력적인 언어 감지';
 
   @override
-  String get serialKillerPackBenefit3 => 'Psychopathy & sadism markers';
+  String get serialKillerPackBenefit3 => '정신병증 및 가학성 마커';
 
   @override
-  String get serialKillerPackBenefit4 => 'One-time purchase — yours forever';
+  String get serialKillerPackBenefit4 => '일회성 구매 — 영구 소유';
 
   @override
-  String get serialKillerPackBenefit5 => 'Unlocks instantly after purchase';
+  String get serialKillerPackBenefit5 => '구매 후 즉시 잠금 해제';
 
   @override
   String get allPacksOwned => '모든 확장팩을 보유하고 있습니다!';
@@ -4581,50 +4580,50 @@ class AppLocalizationsKo extends AppLocalizations {
   String get enableDiscord => 'Discord 활성화';
 
   @override
-  String get aboutTitle => 'About';
+  String get aboutTitle => '정보';
 
   @override
   String get aboutDescription =>
-      'AIRTA (AI Relationship Toxicity Analyzer) helps you identify unhealthy patterns in your relationships through AI-powered conversation analysis. Our mission is to provide insights that promote healthier, more balanced relationships.';
+      'AIRTA(AI 관계 독성 분석기)는 대화에서 건강하지 않은 패턴을 식별하는 데 도움을 줍니다.';
 
   @override
-  String get contactUs => 'Contact Us';
+  String get contactUs => '문의하기';
 
   @override
-  String get supportEmail => 'Support';
+  String get supportEmail => '지원';
 
   @override
-  String get supportEmailDesc => 'Get help with using the app';
+  String get supportEmailDesc => '앱 사용 도움 받기';
 
   @override
-  String get businessEmail => 'Business';
+  String get businessEmail => '비즈니스';
 
   @override
-  String get businessEmailDesc => 'Partnerships and inquiries';
+  String get businessEmailDesc => '파트너십 및 문의';
 
   @override
-  String get privacyEmail => 'Privacy';
+  String get privacyEmail => '개인정보';
 
   @override
-  String get privacyEmailDesc => 'Data and privacy questions';
+  String get privacyEmailDesc => '데이터 및 개인정보 문의';
 
   @override
-  String get importantLinks => 'Links';
+  String get importantLinks => '링크';
 
   @override
-  String get website => 'Website';
+  String get website => '웹사이트';
 
   @override
-  String get privacyPolicy => 'Privacy Policy';
+  String get privacyPolicy => '개인정보 처리방침';
 
   @override
-  String get termsOfService => 'Terms of Service';
+  String get termsOfService => '이용약관';
 
   @override
   String get github => 'GitHub';
 
   @override
-  String get allRightsReserved => 'All rights reserved.';
+  String get allRightsReserved => '모든 권리 보유.';
 
   @override
   String get packTheGood => '팩: 좋은';
@@ -4769,43 +4768,72 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get noMessagesInDateRangeBody =>
-      'No messages were found in the selected date range. Try adjusting the date range.';
+      '선택한 날짜 범위에서 메시지를 찾을 수 없습니다. 날짜 범위를 조정해 보세요.';
 
   @override
-  String get credentialsSavedSuccess => 'Credentials saved successfully';
+  String get credentialsSavedSuccess => '자격 증명이 성공적으로 저장되었습니다';
 
   @override
   String errorSavingCredentials(String error) {
-    return 'Error saving credentials: $error';
+    return '자격 증명 저장 오류: $error';
   }
 
   @override
-  String get credentialsSecurityInfo =>
-      'Your credentials are stored securely on this device only and are never uploaded to our servers.';
+  String get credentialsSecurityInfo => '자격 증명은 이 기기에만 안전하게 저장되며 업로드되지 않습니다.';
 
   @override
-  String get savingButton => 'Saving...';
+  String get savingButton => '저장 중...';
 
   @override
-  String get saveAllCredentials => 'Save Credentials';
+  String get saveAllCredentials => '자격 증명 저장';
 
   @override
   String get proPlusLabel => 'Pro+';
 
   @override
-  String get upgradeButton => 'Upgrade';
+  String get upgradeButton => '업그레이드';
 
   @override
-  String get usernameLabel => 'Username';
+  String get usernameLabel => '사용자 이름';
 
   @override
-  String get passwordLabel => 'Password';
+  String get passwordLabel => '비밀번호';
 
   @override
   String get upgradeToProPlusBody =>
-      'Upgrade to Pro Plus to access third-party platform integrations and advanced features.';
+      '서드파티 플랫폼 통합 및 고급 기능을 이용하려면 Pro Plus로 업그레이드하세요.';
 
   @override
   String get noConversationsFoundBody =>
-      'No conversations were found. Make sure your credentials are correct and try again.';
+      '대화를 찾을 수 없습니다. 자격 증명이 올바른지 확인하고 다시 시도해 보세요.';
+
+  @override
+  String get tileMyAccountTitle => '내 계정';
+
+  @override
+  String get tileMyAccountDesc => '멤버십, 추천, 구매, 판매 및 개발자 라이선스';
+
+  @override
+  String get tileReferFriendsTitle => '친구 추천\n무료 한 달';
+
+  @override
+  String get tileReferFriendsDesc => '보고서를 실행하는 친구 5명을 추천하면 스탠다드 무료 한 달을 받으세요!';
+
+  @override
+  String get tileUserPacksTitle => '사용자 제출\n지표 팩';
+
+  @override
+  String get tileUserPacksDesc =>
+      '커뮤니티가 만든 지표 팩을 검색하고 구매하세요. 직접 제출하여 크레딧을 적립하세요!';
+
+  @override
+  String get tileBrowseButton => '탐색';
+
+  @override
+  String get purchaseDialogCancel => '취소';
+
+  @override
+  String installedPacksAccordionSubtitle(int count) {
+    return '$count개 지표 — 커뮤니티 팩';
+  }
 }

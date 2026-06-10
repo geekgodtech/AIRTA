@@ -8555,6 +8555,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No conversations were found. Make sure your credentials are correct and try again.'**
   String get noConversationsFoundBody;
+
+  /// No description provided for @tileMyAccountTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'My Account'**
+  String get tileMyAccountTitle;
+
+  /// No description provided for @tileMyAccountDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Membership, referrals, purchases, sales & developer license'**
+  String get tileMyAccountDesc;
+
+  /// No description provided for @tileReferFriendsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Refer Friends\nGet FREE Month'**
+  String get tileReferFriendsTitle;
+
+  /// No description provided for @tileReferFriendsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Refer 5 friends who run a report and earn a free month of Standard!'**
+  String get tileReferFriendsDesc;
+
+  /// No description provided for @tileUserPacksTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'User Submitted\nMetric Packs'**
+  String get tileUserPacksTitle;
+
+  /// No description provided for @tileUserPacksDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse & purchase community-created metric packs. Earn credits by submitting your own!'**
+  String get tileUserPacksDesc;
+
+  /// No description provided for @tileBrowseButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse'**
+  String get tileBrowseButton;
+
+  /// No description provided for @purchaseDialogCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get purchaseDialogCancel;
+
+  /// No description provided for @installedPacksAccordionSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Metrics — Community Pack'**
+  String installedPacksAccordionSubtitle(int count);
 }
 
 class _AppLocalizationsDelegate

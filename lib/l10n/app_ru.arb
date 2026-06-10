@@ -20,7 +20,7 @@
   "discordStep5Title": "Выбрать Канал",
   "discordStep5Description": "Нажмите 'Выбрать Канал Discord', выберите свой сервер, затем выберите канал для анализа.",
   "discordBotConfiguration": "Конфигурация Бота",
-    "discordBotConfigTitle": "Discord Bot Configuration",
+  "discordBotConfigTitle": "Discord Bot Configuration",
   "discordBotTokenSetupTitle": "Bot Token Setup",
   "discordBotTokenSetupDescription": "Enter your Discord bot token below. This is required to access your Discord servers and channels.",
   "discordWhereToFindToken": "Where to find your bot token:",
@@ -43,7 +43,7 @@
   "discordConnectionTestNotImplemented": "Connection test not yet implemented",
   "discordReadyToConfigureTitle": "Ready to configure your bot?",
   "discordReadyToConfigureDescription": "Once you've created your Discord bot following the steps above, enter your bot token in the settings to start analyzing.",
-"gotIt": "Понятно",
+  "gotIt": "Понятно",
   "selectFile": "Выбрать файл",
   "analyzeSelectedMetrics": "Анализировать выбранные метрики",
   "analyze20RandomMetrics": "Анализировать 20 случайных метрик",
@@ -1335,8 +1335,7 @@
   "metric_serial_killer_50_name": "Язык окончательности",
   "metric_serial_killer_50_description": "Распознает ссылки на завершение, убийство или постоянное замалчивание целей.",
   "packNarcissistLabel": "Нарцисс",
-  "packSerialKillerLabel": "Серийный убийца"
-,
+  "packSerialKillerLabel": "Серийный убийца",
   "expansionPacksPurchased": "Купленные пакеты расширения:",
   "expansionPacksStillAvailable": "Доступные пакеты расширения",
   "metricsOwned": "Метрики в собственности",
@@ -1377,24 +1376,18 @@
       "count": {}
     }
   },
-  "metricPlural": "{count} метрик"
-,
+  "metricPlural": "{count} метрик",
   "restorePurchases": "Восстановить Покупки",
   "restorePurchasesButton": "Восстановить Предыдущие Покупки",
   "restorePurchasesSuccess": "Покупки успешно восстановлены!",
   "restorePurchasesError": "Не удалось восстановить покупки. Пожалуйста, попробуйте снова.",
-  "restorePurchasesNoneFound": "Предыдущие покупки не найдены."
-,
+  "restorePurchasesNoneFound": "Предыдущие покупки не найдены.",
   "discordAddonPopupTitle": "Функция Discord",
-  "discordAddonPopupMessage": "Эта функция доступна как дополнение."
-,
+  "discordAddonPopupMessage": "Эта функция доступна как дополнение.",
   "discordAccordionTitle": "Интеграция Discord",
-  "discordAccordionSubtitle": "Подключить серверы Discord"
-,
-  "selectDiscord": "Выбрать Discord"
-,
-  "enableDiscord": "Включить Discord"
-,
+  "discordAccordionSubtitle": "Подключить серверы Discord",
+  "selectDiscord": "Выбрать Discord",
+  "enableDiscord": "Включить Discord",
   "packTheGood": "Хорошее",
   "packTheBad": "Плохое",
   "packTheUgly": "Безобразное",
@@ -1437,5 +1430,14 @@
   "nextSizeButton": "Следующий размер",
   "startSequenceButton": "Начать последовательность",
   "nextSizeInstruction": "Нажмите «Следующий размер» для следующего измерения",
-  "okButton": "ОК"
+  "okButton": "ОК",
+  "tileMyAccountTitle": "Мой Аккаунт",
+  "tileMyAccountDesc": "Членство, рефералы, покупки, продажи и лицензия разработчика",
+  "tileReferFriendsTitle": "Пригласить Друзей\nБесплатный месяц",
+  "tileReferFriendsDesc": "Пригласите 5 друзей, которые запустят отчёт, и получите бесплатный месяц Standard!",
+  "tileUserPacksTitle": "Метрические Пакеты\nот Пользователей",
+  "tileUserPacksDesc": "Просматривайте и покупайте метрические пакеты, созданные сообществом. Зарабатывайте кредиты, отправляя свои!",
+  "tileBrowseButton": "Обзор",
+  "purchaseDialogCancel": "Отмена",
+  "installedPacksAccordionSubtitle": "{count} Метрик — Пакет Сообщества"
 }

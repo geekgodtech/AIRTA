@@ -20,7 +20,7 @@
   "discordStep5Title": "Вибрати Канал",
   "discordStep5Description": "Натисніть 'Вибрати Канал Discord', виберіть свій сервер, потім виберіть канал для аналізу.",
   "discordBotConfiguration": "Конфігурація Бота",
-    "discordBotConfigTitle": "Discord Bot Configuration",
+  "discordBotConfigTitle": "Discord Bot Configuration",
   "discordBotTokenSetupTitle": "Bot Token Setup",
   "discordBotTokenSetupDescription": "Enter your Discord bot token below. This is required to access your Discord servers and channels.",
   "discordWhereToFindToken": "Where to find your bot token:",
@@ -43,7 +43,7 @@
   "discordConnectionTestNotImplemented": "Connection test not yet implemented",
   "discordReadyToConfigureTitle": "Ready to configure your bot?",
   "discordReadyToConfigureDescription": "Once you've created your Discord bot following the steps above, enter your bot token in the settings to start analyzing.",
-"gotIt": "Зрозумів",
+  "gotIt": "Зрозумів",
   "selectFile": "Вибрати файл",
   "analyzeSelectedMetrics": "Аналізувати вибрані метрики",
   "analyze20RandomMetrics": "Аналізувати 20 випадкових метрик",
@@ -1335,8 +1335,7 @@
   "metric_serial_killer_50_name": "Мова остаточності",
   "metric_serial_killer_50_description": "Розпізнає посилання на завершення, вбивство або постійне замовчування цілей.",
   "packNarcissistLabel": "Нарцис",
-  "packSerialKillerLabel": "Серійний вбивця"
-,
+  "packSerialKillerLabel": "Серійний вбивця",
   "expansionPacksPurchased": "Придбані пакети розширення:",
   "expansionPacksStillAvailable": "Пакети розширення ще доступні",
   "metricsOwned": "Метрики у власності",
@@ -1377,24 +1376,18 @@
       "count": {}
     }
   },
-  "metricPlural": "{count} метрик"
-,
+  "metricPlural": "{count} метрик",
   "restorePurchases": "Відновити Покупки",
   "restorePurchasesButton": "Відновити Попередні Покупки",
   "restorePurchasesSuccess": "Покупки успішно відновлено!",
   "restorePurchasesError": "Не вдалося відновити покупки. Будь ласка, спробуйте ще раз.",
-  "restorePurchasesNoneFound": "Попередні покупки не знайдено."
-,
+  "restorePurchasesNoneFound": "Попередні покупки не знайдено.",
   "discordAddonPopupTitle": "Функція Discord",
-  "discordAddonPopupMessage": "Ця функція доступна як додаток."
-,
+  "discordAddonPopupMessage": "Ця функція доступна як додаток.",
   "discordAccordionTitle": "Інтеграція Discord",
-  "discordAccordionSubtitle": "Підключити сервери Discord"
-,
-  "selectDiscord": "Вибрати Discord"
-,
-  "enableDiscord": "Увімкнути Discord"
-,
+  "discordAccordionSubtitle": "Підключити сервери Discord",
+  "selectDiscord": "Вибрати Discord",
+  "enableDiscord": "Увімкнути Discord",
   "packTheGood": "Хороше",
   "packTheBad": "Погане",
   "packTheUgly": "Потворне",
@@ -1437,5 +1430,14 @@
   "nextSizeButton": "Наступний розмір",
   "startSequenceButton": "Почати послідовність",
   "nextSizeInstruction": "Натисніть «Наступний розмір» для наступного виміру",
-  "okButton": "Гаразд"
+  "okButton": "Гаразд",
+  "tileMyAccountTitle": "Мій Акаунт",
+  "tileMyAccountDesc": "Членство, реферали, покупки, продажі та ліцензія розробника",
+  "tileReferFriendsTitle": "Запросити Друзів\nБезкоштовний Місяць",
+  "tileReferFriendsDesc": "Запросіть 5 друзів, які запустять звіт, і отримайте безкоштовний місяць Standard!",
+  "tileUserPacksTitle": "Пакети Метрик\nвід Користувачів",
+  "tileUserPacksDesc": "Переглядайте та купуйте пакети метрик, створені спільнотою. Заробляйте кредити, надсилаючи власні!",
+  "tileBrowseButton": "Переглянути",
+  "purchaseDialogCancel": "Скасувати",
+  "installedPacksAccordionSubtitle": "{count} Метрик — Пакет Спільноти"
 }

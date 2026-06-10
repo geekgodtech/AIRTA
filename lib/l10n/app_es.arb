@@ -20,7 +20,7 @@
   "discordStep5Title": "Seleccionar Canal",
   "discordStep5Description": "Toca 'Seleccionar Canal de Discord', elige tu servidor, luego selecciona el canal para analizar.",
   "discordBotConfiguration": "Configuración del Bot",
-    "discordBotConfigTitle": "Discord Bot Configuration",
+  "discordBotConfigTitle": "Discord Bot Configuration",
   "discordBotTokenSetupTitle": "Bot Token Setup",
   "discordBotTokenSetupDescription": "Enter your Discord bot token below. This is required to access your Discord servers and channels.",
   "discordWhereToFindToken": "Where to find your bot token:",
@@ -43,7 +43,7 @@
   "discordConnectionTestNotImplemented": "Connection test not yet implemented",
   "discordReadyToConfigureTitle": "Ready to configure your bot?",
   "discordReadyToConfigureDescription": "Once you've created your Discord bot following the steps above, enter your bot token in the settings to start analyzing.",
-"gotIt": "Entendido",
+  "gotIt": "Entendido",
   "selectFile": "Seleccionar archivo",
   "analyzeSelectedMetrics": "Analizar métricas seleccionadas",
   "analyze20RandomMetrics": "Analizar 20 métricas aleatorias",
@@ -1335,8 +1335,7 @@
   "metric_serial_killer_50_name": "Lenguaje de Finalidad",
   "metric_serial_killer_50_description": "Reconoce referencias a terminar, matar o silenciar permanentemente a los objetivos.",
   "packNarcissistLabel": "El Narcisista",
-  "packSerialKillerLabel": "El Asesino en Serie"
-,
+  "packSerialKillerLabel": "El Asesino en Serie",
   "expansionPacksPurchased": "Paquetes de Expansión Comprados:",
   "expansionPacksStillAvailable": "Paquetes de Expansión Disponibles",
   "metricsOwned": "Métricas en Propiedad",
@@ -1377,21 +1376,25 @@
       "count": {}
     }
   },
-  "metricPlural": "{count} Métricas"
-,
+  "metricPlural": "{count} Métricas",
   "restorePurchases": "Restaurar Compras",
   "restorePurchasesButton": "Restaurar Compras Anteriores",
   "restorePurchasesSuccess": "¡Compras restauradas con éxito!",
   "restorePurchasesError": "No se pudieron restaurar las compras. Inténtalo de nuevo.",
-  "restorePurchasesNoneFound": "No se encontraron compras anteriores."
-,
+  "restorePurchasesNoneFound": "No se encontraron compras anteriores.",
   "discordAddonPopupTitle": "Función de Discord",
-  "discordAddonPopupMessage": "Esta función está disponible como complemento."
-,
+  "discordAddonPopupMessage": "Esta función está disponible como complemento.",
   "discordAccordionTitle": "Integración de Discord",
-  "discordAccordionSubtitle": "Conectar servidores de Discord"
-,
-  "selectDiscord": "Seleccionar Discord"
-,
-  "enableDiscord": "Habilitar Discord"
+  "discordAccordionSubtitle": "Conectar servidores de Discord",
+  "selectDiscord": "Seleccionar Discord",
+  "enableDiscord": "Habilitar Discord",
+  "tileMyAccountTitle": "Mi Cuenta",
+  "tileMyAccountDesc": "Membresía, referencias, compras, ventas y licencia de desarrollador",
+  "tileReferFriendsTitle": "Recomendar Amigos\nMes GRATIS",
+  "tileReferFriendsDesc": "¡Recomienda 5 amigos que hagan un informe y gana un mes gratis de Standard!",
+  "tileUserPacksTitle": "Paquetes de\nMétricas Enviados",
+  "tileUserPacksDesc": "Explora y compra paquetes de métricas creados por la comunidad. ¡Gana créditos enviando los tuyos!",
+  "tileBrowseButton": "Explorar",
+  "purchaseDialogCancel": "Cancelar",
+  "installedPacksAccordionSubtitle": "{count} Métricas — Paquete Comunitario"
 }

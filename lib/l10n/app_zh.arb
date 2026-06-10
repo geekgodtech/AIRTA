@@ -1,4 +1,4 @@
-﻿{
+{
   "@@locale": "zh",
   "appTitle": "AI å…³ç³»æ¯’æ€§åˆ†æžå™¨",
   "psychologicalMetrics": "å¿ƒç†æŒ‡æ ‡",
@@ -20,7 +20,7 @@
   "discordStep5Title": "é€‰æ‹©é¢‘é“",
   "discordStep5Description": "ç‚¹å‡» 'é€‰æ‹© Discord é¢‘é“'ï¼Œé€‰æ‹©æ‚¨çš„æœåŠ¡å™¨ï¼Œç„¶åŽé€‰æ‹©è¦åˆ†æžçš„é¢‘é“ã€‚",
   "discordBotConfiguration": "æœºå™¨äººé…ç½®",
-    "discordBotConfigTitle": "Discord Bot Configuration",
+  "discordBotConfigTitle": "Discord Bot Configuration",
   "discordBotTokenSetupTitle": "Bot Token Setup",
   "discordBotTokenSetupDescription": "Enter your Discord bot token below. This is required to access your Discord servers and channels.",
   "discordWhereToFindToken": "Where to find your bot token:",
@@ -43,7 +43,7 @@
   "discordConnectionTestNotImplemented": "Connection test not yet implemented",
   "discordReadyToConfigureTitle": "Ready to configure your bot?",
   "discordReadyToConfigureDescription": "Once you've created your Discord bot following the steps above, enter your bot token in the settings to start analyzing.",
-"gotIt": "æ˜Žç™½äº†",
+  "gotIt": "æ˜Žç™½äº†",
   "selectFile": "é€‰æ‹©æ–‡ä»¶",
   "analyzeSelectedMetrics": "åˆ†æžæ‰€é€‰æŒ‡æ ‡",
   "analyze20RandomMetrics": "åˆ†æž 20 ä¸ªéšæœºæŒ‡æ ‡",
@@ -502,7 +502,7 @@
       }
     }
   },
-  "noMessagesInDateRange": "åœ¨æ‰€é€‰æ—¥æœŸèŒƒå›´å†…æœªæ‰¾åˆ°æ¶ˆæ¯ã€‚è¯·é€‰æ‹©å…¶ä»–æ—¥æœŸæˆ–æ¸…é™¤æ—¥æœŸç­›é€‰å™¨ã€‚",
+  "noMessagesInDateRange": "æ‰€é€‰æ—¥æœŸèŒƒå›´å†…æ— æ¶ˆæ¯",
   "next": "ä¸‹ä¸€æ­¥",
   "cancelNotReady": "å–æ¶ˆ â€” æˆ‘è¿˜æ²¡å‡†å¤‡å¥½",
   "purchaseCustomMetricTileTitle": "è´­ä¹°è‡ªå®šä¹‰æŒ‡æ ‡",
@@ -1335,8 +1335,7 @@
   "metric_serial_killer_50_name": "ç»ˆç»“æ€§è¯­è¨€",
   "metric_serial_killer_50_description": "è¯†åˆ«æ¶‰åŠç»“æŸã€æ€å®³æˆ–æ°¸ä¹…æ²‰é»˜ç›®æ ‡çš„è¡¨è¿°ã€‚",
   "packNarcissistLabel": "è‡ªæ‹è€…",
-  "packSerialKillerLabel": "è¿žçŽ¯æ€æ‰‹"
-,
+  "packSerialKillerLabel": "è¿žçŽ¯æ€æ‰‹",
   "expansionPacksPurchased": "å·²è´­ä¹°çš„æ‰©å±•åŒ…:",
   "expansionPacksStillAvailable": "ä»å¯è´­ä¹°çš„æ‰©å±•åŒ…",
   "metricsOwned": "å·²æ‹¥æœ‰çš„æŒ‡æ ‡",
@@ -1377,31 +1376,24 @@
       "count": {}
     }
   },
-  "metricPlural": "{count}ä¸ªæŒ‡æ ‡"
-,
+  "metricPlural": "{count}ä¸ªæŒ‡æ ‡",
   "restorePurchases": "æ¢å¤è´­ä¹°",
   "restorePurchasesButton": "æ¢å¤ä¹‹å‰çš„è´­ä¹°",
   "restorePurchasesSuccess": "è´­ä¹°å·²æˆåŠŸæ¢å¤ï¼",
   "restorePurchasesError": "æ— æ³•æ¢å¤è´­ä¹°ã€‚è¯·é‡è¯•ã€‚",
-  "restorePurchasesNoneFound": "æœªæ‰¾åˆ°ä¹‹å‰çš„è´­ä¹°ã€‚"
-,
+  "restorePurchasesNoneFound": "æœªæ‰¾åˆ°ä¹‹å‰çš„è´­ä¹°ã€‚",
   "discordAddonPopupTitle": "DiscordåŠŸèƒ½",
-  "discordAddonPopupMessage": "æ­¤åŠŸèƒ½å¯ä½œä¸ºé™„åŠ ç»„ä»¶ä½¿ç”¨ã€‚"
-,
+  "discordAddonPopupMessage": "æ­¤åŠŸèƒ½å¯ä½œä¸ºé™„åŠ ç»„ä»¶ä½¿ç”¨ã€‚",
   "discordAccordionTitle": "Discordé›†æˆ",
-  "discordAccordionSubtitle": "è¿žæŽ¥DiscordæœåŠ¡å™¨"
-,
-  "selectDiscord": "é€‰æ‹© Discord"
-,
-  "enableDiscord": "å¯ç”¨ Discord"
-,
+  "discordAccordionSubtitle": "è¿žæŽ¥DiscordæœåŠ¡å™¨",
+  "selectDiscord": "é€‰æ‹© Discord",
+  "enableDiscord": "å¯ç”¨ Discord",
   "packTheGood": "åŒ…ï¼šå¥½çš„",
   "packTheBad": "åŒ…ï¼šåçš„",
   "packTheUgly": "åŒ…ï¼šä¸‘é™‹çš„",
   "packTheNarcissist": "åŒ…ï¼šè‡ªæ‹è€…",
   "metricsExpansionPack": "æŒ‡æ ‡æ‰©å±•åŒ…",
   "purchaseTitle": "è´­ä¹°",
-  "notNow": "æš‚ä¸",
   "buyForPrice": "ä»¥{price}è´­ä¹°",
   "processingPurchase": "æ­£åœ¨å¤„ç†è´­ä¹°...",
   "waitingForStoreConfirmation": "ç­‰å¾…å•†åº—ç¡®è®¤...",
@@ -1427,7 +1419,6 @@
   "startOver": "é‡æ–°å¼€å§‹",
   "capturingStatus": "æ­£åœ¨æ•èŽ·...",
   "captureComplete": "æ•èŽ·å®Œæˆï¼",
-  "noMessagesInDateRange": "æ‰€é€‰æ—¥æœŸèŒƒå›´å†…æ— æ¶ˆæ¯",
   "errorDialogTitle": "é”™è¯¯",
   "failedToLoadConversation": "åŠ è½½å¯¹è¯å¤±è´¥",
   "selectConversationTitle": "é€‰æ‹©å¯¹è¯",
@@ -1439,5 +1430,14 @@
   "nextSizeButton": "ä¸‹ä¸€ä¸ªå°ºå¯¸",
   "startSequenceButton": "å¼€å§‹åºåˆ—",
   "nextSizeInstruction": "ç‚¹å‡»ä¸‹ä¸€ä¸ªå°ºå¯¸ç»§ç»­",
-  "okButton": "ç¡®å®š"
+  "okButton": "ç¡®å®š",
+  "tileMyAccountTitle": "我的账户",
+  "tileMyAccountDesc": "会员资格、推荐、购买、销售和开发者许可证",
+  "tileReferFriendsTitle": "推荐好友\n获得免费月份",
+  "tileReferFriendsDesc": "推荐5位运行报告的好友，即可获得一个月免费标准版！",
+  "tileUserPacksTitle": "用户提交的\n指标包",
+  "tileUserPacksDesc": "浏览并购买社区创建的指标包。提交您自己的指标包以获得积分！",
+  "tileBrowseButton": "浏览",
+  "purchaseDialogCancel": "取消",
+  "installedPacksAccordionSubtitle": "{count} 个指标 — 社区包"
 }

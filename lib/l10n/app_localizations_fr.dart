@@ -4876,4 +4876,36 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get noConversationsFoundBody =>
       'No conversations were found. Make sure your credentials are correct and try again.';
+
+  @override
+  String get tileMyAccountTitle => 'Mon Compte';
+
+  @override
+  String get tileMyAccountDesc =>
+      'Abonnement, parrainages, achats, ventes et licence développeur';
+
+  @override
+  String get tileReferFriendsTitle => 'Parrainer des Amis\nMois GRATUIT';
+
+  @override
+  String get tileReferFriendsDesc =>
+      'Parrainez 5 amis qui font un rapport et gagnez un mois gratuit de Standard !';
+
+  @override
+  String get tileUserPacksTitle => 'Packs de Métriques\nSoumis';
+
+  @override
+  String get tileUserPacksDesc =>
+      'Parcourez et achetez des packs de métriques créés par la communauté. Gagnez des crédits en soumettant les vôtres !';
+
+  @override
+  String get tileBrowseButton => 'Parcourir';
+
+  @override
+  String get purchaseDialogCancel => 'Annuler';
+
+  @override
+  String installedPacksAccordionSubtitle(int count) {
+    return '$count Métriques — Pack Communautaire';
+  }
 }

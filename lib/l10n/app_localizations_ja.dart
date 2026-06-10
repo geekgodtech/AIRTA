@@ -4892,4 +4892,34 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get noConversationsFoundBody =>
       'No conversations were found. Make sure your credentials are correct and try again.';
+
+  @override
+  String get tileMyAccountTitle => 'マイアカウント';
+
+  @override
+  String get tileMyAccountDesc => 'メンバーシップ、紹介、購入、販売、開発者ライセンス';
+
+  @override
+  String get tileReferFriendsTitle => '友達を招待\n無料1ヶ月';
+
+  @override
+  String get tileReferFriendsDesc => 'レポートを実行する友達5人を招待してスタンダードの無料1ヶ月を獲得しましょう！';
+
+  @override
+  String get tileUserPacksTitle => 'ユーザー投稿\nメトリクスパック';
+
+  @override
+  String get tileUserPacksDesc =>
+      'コミュニティ作成のメトリクスパックを閲覧・購入できます。投稿してクレジットを獲得しましょう！';
+
+  @override
+  String get tileBrowseButton => '閲覧';
+
+  @override
+  String get purchaseDialogCancel => 'キャンセル';
+
+  @override
+  String installedPacksAccordionSubtitle(int count) {
+    return '$count個のメトリクス — コミュニティパック';
+  }
 }
