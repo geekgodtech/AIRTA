@@ -10,8 +10,8 @@
 ## Project Overview
 AIRTA (AI Relationship Toxicity Analyzer) is a Flutter app for Android and iOS.
 - **Package:** `com.airta.airelationshiptoxicityanalyzer`
-- **GitHub:** https://github.com/geekgodtech/AIRTA
-- **Demo URL:** https://geekgodtech.github.io/AIRTA/releases/airta-demo.apk
+- **GitHub:** https://github.com/Airta-Admin/AIRTA
+- **Demo URL:** https://airta.net/releases/airta-demo.apk
 - **Flutter version:** 3.44.0 (stable)
 - **Dart version:** 3.12.0
 

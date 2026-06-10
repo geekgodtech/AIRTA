@@ -296,7 +296,7 @@ class ReferralService extends ChangeNotifier {
     return 'Hey $contactName! I found this app called AIRTA – AI Relationship '
         'Analyzer and it\'s honestly eye-opening. It reads your text conversations '
         'and uses AI to detect toxic patterns, manipulation, gaslighting — the works. '
-        'You should check it out: https://geekgodtech.github.io/AIRTA/releases/airta-demo.apk';
+        'You should check it out: https://airta.net/releases/airta-demo.apk';
   }
 
   /// Get the number of referrals still needed to earn the reward.

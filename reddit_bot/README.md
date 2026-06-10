@@ -1,7 +1,7 @@
 # AIRTA Reddit Monitor
 
 Monitors Reddit in real-time for relationship-strife posts that match your target criteria.
-When a match is found it emails you at `geekgodtech@gmail.com` with:
+When a match is found it emails you at your configured address with:
 - The post title, author, URL, and first 1000 characters
 - A pre-composed, personalized reply draft ready to copy-paste into Reddit
 - A relevance score (0–10) based on keyword density

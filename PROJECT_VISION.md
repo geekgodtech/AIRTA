@@ -441,7 +441,7 @@ the app and run at least one report. Attribution is tracked via phone number mat
    Hey [Contact Name]! I found this app called AIRTA – AI Relationship Analyzer and it's
    honestly eye-opening. It reads your text conversations and uses AI to detect toxic patterns,
    manipulation, gaslighting — the works. You should check it out:
-   https://geekgodtech.github.io/AIRTA/releases/airta-demo.apk
+   https://airta.net/releases/airta-demo.apk
    ```
 
    **Android implementation:**

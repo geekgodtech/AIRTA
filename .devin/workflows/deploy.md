@@ -38,7 +38,7 @@ powershell -ExecutionPolicy Bypass -File "C:\My Projects\AIRTA\deploy.ps1" -noin
 - **Package ID:** `com.airta.airelationshiptoxicityanalyzer`
 - **Keystore:** `C:\My Projects\AIRTA\android\app\airta-release.keystore`
 - **Key alias:** `airta`
-- **Demo APK URL:** https://geekgodtech.github.io/AIRTA/releases/airta-demo.apk
+- **Demo APK URL:** https://airta.net/releases/airta-demo.apk
 - **Git push uses:** `C:\Program Files\Git\bin\git.exe` (Windows Git with stored credentials — NOT MSYS2 git which lacks auth)
 - **Credentials file:** `C:\My Projects\AIRTA\deploy.ps1` (gitignored, never commit)
 

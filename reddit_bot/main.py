@@ -4,7 +4,7 @@ AIRTA Reddit Monitor
 ====================
 Monitors Reddit for relationship-strife posts matching target criteria.
 When a match is found:
-  1. Sends an email alert to geekgodtech@gmail.com
+  1. Sends an email alert to your configured address
   2. Includes a pre-composed, personalized reply draft
   3. Tracks all seen/alerted posts in JSON to avoid duplicates across restarts
   4. Monitors upvote scores on your previous replies
@@ -17,7 +17,7 @@ Usage:
   2. pip install -r requirements.txt
   3. python main.py
 
-Author: geekgodtech
+Author: Airta Corp
 Version: 2.0.0
 """
 
@@ -45,15 +45,15 @@ REDDIT_USERNAME = os.getenv("REDDIT_USERNAME")
 REDDIT_PASSWORD = os.getenv("REDDIT_PASSWORD")
 
 # 2. Email alert settings (from .env)
-SENDER_EMAIL      = os.getenv("SENDER_EMAIL",   "geekgodtech@gmail.com")
-RECEIVER_EMAIL    = os.getenv("RECEIVER_EMAIL",  "geekgodtech@gmail.com")
+SENDER_EMAIL      = os.getenv("SENDER_EMAIL",   "your-email@gmail.com")
+RECEIVER_EMAIL    = os.getenv("RECEIVER_EMAIL",  "your-email@gmail.com")
 GMAIL_APP_PASSWORD = os.getenv("GMAIL_APP_PASSWORD")
 
 # 3. App store links (update when live in stores)
 APP_NAME      = "AI Relationship Toxicity Analyzer"
 ANDROID_LINK  = "https://play.google.com/store/apps/details?id=com.airta.airelationshiptoxicityanalyzer"
 IOS_LINK      = "https://apps.apple.com/app/airta/id1234567890"
-DEMO_LINK     = "https://geekgodtech.github.io/AIRTA/releases/airta-demo.apk"
+DEMO_LINK     = "https://airta.net/releases/airta-demo.apk"
 
 # 4. Target subreddits (joined with + for multi-subreddit stream)
 SUBREDDITS = (
