@@ -515,50 +515,44 @@ class _DiscordButtonState extends State<_DiscordButton> {
         ),
         const SizedBox(height: 12),
         // Main action button - full width, cleaner text
-        ElevatedButton(
-          onPressed: controller.isIngesting || !canUse
-              ? (!hasDiscordAddon && _discordEnabled)
-                  ? () => _showDiscordAddonPopup(context)
-                  : null
-              : () => _openDiscordPicker(context),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: canUse
-                ? const Color(0xFF5865F2)
-                : const Color(0xFF5865F2).withOpacity(0.45),
-            foregroundColor: canUse ? Colors.white : Colors.white54,
-            disabledBackgroundColor: const Color(0xFF5865F2).withOpacity(0.35),
-            disabledForegroundColor: Colors.white38,
-            minimumSize: const Size(double.infinity, 48),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
+        SizedBox(
+          width: double.infinity,
+          height: 48,
+          child: ElevatedButton.icon(
+            onPressed: controller.isIngesting || !canUse
+                ? (!hasDiscordAddon && _discordEnabled)
+                    ? () => _showDiscordAddonPopup(context)
+                    : null
+                : () => _openDiscordPicker(context),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: canUse
+                  ? const Color(0xFF5865F2)
+                  : const Color(0xFF5865F2).withOpacity(0.45),
+              foregroundColor: canUse ? Colors.white : Colors.white38,
+              disabledBackgroundColor: const Color(0xFF5865F2).withOpacity(0.35),
+              disabledForegroundColor: Colors.white38,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            icon: controller.isIngesting
+                ? const SizedBox.square(
+                    dimension: 20,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2,
+                      color: Colors.white,
+                    ),
+                  )
+                : Icon(
+                    Icons.discord,
+                    size: 20,
+                    color: canUse ? Colors.white : Colors.white38,
+                  ),
+            label: Text(
+              controller.isIngesting ? '' : l10n.selectDiscordChannel,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
-          child: controller.isIngesting
-              ? const SizedBox.square(
-                  dimension: 20,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 2,
-                    color: Colors.white,
-                  ),
-                )
-              : SizedBox(
-                  width: double.infinity,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.discord,
-                        size: 20,
-                        color: canUse ? Colors.white : Colors.white38,
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        l10n.selectDiscordChannel,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
-                  ),
-                ),
         ),
       ],
     );
