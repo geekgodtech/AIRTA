@@ -327,12 +327,16 @@
         <span class="slider-value" id="sliderValue">20</span>
       </div>
 
-      <h3 style="margin-top:24px;" data-i18n="quick_check">3. Quick Check</h3>
-      <div style="display:flex; align-items:center; gap:10px; justify-content:center; margin:12px 0;">
-        <span id="mathQuestion" style="color:#a0a0ff; font-size:1rem; font-weight:600;"></span>
-        <input id="mathAnswer" type="number" placeholder="?" style="width:70px; padding:8px; border-radius:8px; border:1px solid #3a3a7a; background:#1a1a3a; color:#e0e0ff; font-size:1rem; text-align:center;" oninput="checkMath()" />
+            <h3 style="margin-top:24px;" data-i18n="quick_check">3. Quick Check</h3>
+      <div style="display:flex; align-items:center; gap:16px; justify-content:center; margin:16px 0;">
+        <span id="mathQuestion" style="color:#a0a0ff; font-size:1.5rem; font-weight:700;"></span>
+        <input id="mathAnswer" type="number" placeholder="?" inputmode="numeric"
+          style="width:90px; padding:12px; border-radius:10px; border:2px solid #4040aa;
+                 background:#1a1a3a; color:#ffffff; font-size:1.5rem; font-weight:700;
+                 text-align:center; outline:none; -moz-appearance:textfield;"
+          oninput="if(window.checkMath)window.checkMath()" />
       </div>
-      <div id="captchaStatus" style="text-align:center; color:#6666aa; font-size:0.8rem; min-height:18px;"></div>
+      <div id="captchaStatus" style="text-align:center; font-size:0.9rem; min-height:20px; font-weight:600;"></div>
 
       <div style="margin-top:20px; text-align:center;">
         <button class="btn btn-primary" id="analyzeBtn" disabled>
@@ -511,15 +515,15 @@ let captchaPassed = false;
 let mathCorrectAnswer = 0;
 
 function updateAnalyzeButton() {
+  const btnSpan = analyzeBtn.querySelector('[data-i18n]') || analyzeBtn;
   if (isUsageLimitReached()) {
     analyzeBtn.disabled = true;
-    analyzeBtn.textContent = 'Demo Limit Reached (2/2)';
+    btnSpan.textContent = 'Demo Limit Reached (2/2)';
     return;
   }
   analyzeBtn.disabled = !(conversationText && captchaPassed);
-  const used = getUsageCount();
-  if (used > 0) {
-    analyzeBtn.textContent = `🔬 Analyze Conversation (${MAX_ANALYSES - used} remaining)`;
+  if (typeof t === 'function') {
+    btnSpan.textContent = t('analyze_btn');
   }
 }
 
@@ -1364,6 +1368,7 @@ function checkMath() {
   }
   updateAnalyzeButton();
 }
+window.checkMath = checkMath;
 
 // Auto-detect browser language on load
 (function() {
