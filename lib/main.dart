@@ -17,6 +17,8 @@ import 'package:airta/services/theme_service.dart';
 import 'package:airta/services/user_submitted_packs_service.dart';
 import 'package:airta/services/referral_service.dart';
 import 'package:airta/services/developer_license_service.dart';
+import 'package:airta/services/admin_override_service.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:airta/l10n/app_localizations.dart';
 import 'package:airta/screens/force_update_screen.dart';
 import 'package:airta/screens/disclaimer_screen.dart';
@@ -58,7 +60,36 @@ void main() async {
   // Initialize developer license service
   await DeveloperLicenseService().initialize();
 
+  // Check for admin-granted overrides from Firebase
+  await AdminOverrideService().initialize();
+
+  // Register this device in Firestore users collection
+  _registerUser();
+
   runApp(const ToxicityAnalyzerApp());
+}
+
+/// Register this device in Firestore so the admin panel can see and manage it.
+void _registerUser() async {
+  try {
+    final prefs = await SharedPreferences.getInstance();
+    final deviceId = prefs.getString('referral_device_id_v1') ?? '';
+    if (deviceId.isEmpty) return;
+
+    final tier = prefs.getString('active_subscription_tier') ?? 'free';
+    final email = prefs.getString('developer_license_email_v1') ?? '';
+
+    final firestore = FirebaseFirestore.instance;
+    await firestore.collection('users').doc(deviceId).set({
+      'deviceId': deviceId,
+      'email': email,
+      'tier': tier,
+      'lastSeen': FieldValue.serverTimestamp(),
+      'appVersion': '1.0.0',
+    }, SetOptions(merge: true));
+  } catch (e) {
+    // Non-fatal - app works without registration
+  }
 }
 
 class ToxicityAnalyzerApp extends StatefulWidget {
